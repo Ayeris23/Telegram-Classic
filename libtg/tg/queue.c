@@ -664,7 +664,7 @@ static void * tg_run_queue(void * data)
 	// receive loop
 	enum RTL res; 
 	while (queue->loop) {
-		res = _tg_receive(queue, queue->socket);
+		//res = _tg_receive(queue, queue->socket);
 		//if (res == RTL_RESEND)
 		//{	
 			//if (tg_send(data) == 0)
@@ -730,7 +730,7 @@ static void * tg_run_timer(void * data)
 	tg_t *tg = queue->tg;
 
 	//usleep(1000); // in microseconds
-	sleep(2);
+	sleep(60);
 	ON_LOG(tg, "%s: stop queue", __func__);
 	
 	queue->loop = false;

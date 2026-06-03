@@ -25,10 +25,14 @@
 #include "../libtg/tg/user.h"
 #include "../libtg/tg/peer.h"
 #include "AVFoundation/AVAudioSession.h"
+#include "../tdlib/include/td/telegram/td_json_client.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+	// libtd
+	void *td = td_json_client_create();
 
 	// lock crush
 	//UIApplication.sharedApplication.idleTimerDisabled = YES;

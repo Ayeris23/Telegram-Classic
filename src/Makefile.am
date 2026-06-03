@@ -49,16 +49,16 @@ iTgLegacy_CXXFLAGS = \
 		-std=gnu++11
 
 iTgLegacy_OBJCFLAGS = \
-	-Iogg -Iogg/ogg -Iopus/include -Iopus/include/opus -fobjc-arc
+	-Iogg -Iogg/ogg -Iopus/include -Iopus/include/opus -fobjc-arc -I../tdlib/include
 
 iTgLegacy_CFLAGS = \
-			-framework UIKit -framework Foundation -framework QuickLook -framework SystemConfiguration -framework CoreGraphics -framework QuartzCore -framework MediaPlayer -framework AVFoundation -framework AudioToolbox -framework CoreMedia -framework AddressBook -framework AddressBookUI -framework MobileCoreServices -framework CoreLocation -framework MapKit -Iogg -Iogg/ogg -Iopus/include -Iopus/include/opus -Ilibopusenc/include -Ilibopusenc/src
+			-framework UIKit -framework Foundation -framework QuickLook -framework SystemConfiguration -framework CoreGraphics -framework QuartzCore -framework MediaPlayer -framework AVFoundation -framework AudioToolbox -framework CoreMedia -framework AddressBook -framework AddressBookUI -framework MobileCoreServices -framework CoreLocation -framework MapKit -Iogg -Iogg/ogg -Iopus/include -Iopus/include/opus -Ilibopusenc/include -Ilibopusenc/src -I../tdlib/include
 
 iTgLegacy_LDFLAGS = \
-			-framework UIKit -framework Foundation -framework QuickLook -framework SystemConfiguration -framework CoreGraphics -framework QuartzCore -framework MediaPlayer -framework AVFoundation -framework AudioToolbox -framework CoreMedia -framework AddressBook -framework AddressBookUI -framework MobileCoreServices -framework CoreLocation -framework MapKit ../libtg/tg/*.o ../libtg/tl/*.o ../libtg/mtx/src/*.o
+			-framework UIKit -framework Foundation -framework QuickLook -framework SystemConfiguration -framework CoreGraphics -framework QuartzCore -framework MediaPlayer -framework AVFoundation -framework AudioToolbox -framework CoreMedia -framework AddressBook -framework AddressBookUI -framework MobileCoreServices -framework CoreLocation -framework MapKit ../libtg/tg/*.o ../libtg/tl/*.o ../libtg/mtx/src/*.o ../tdlib/*.a
 
 iTgLegacy_LDADD = \
-			-L../libs -Lopus/lib -lopus -lc++ -lsqlite3 -lz -lcrypto
+			-L../libs -Lopus/lib -lopus -lc++ -lsqlite3 -lz -lcrypto ../tdlib/*.a
 
 bin_SCRIPTS = iTgLegacy.ipa
 CLEANiFILES = $(bin_SCRIPTS)

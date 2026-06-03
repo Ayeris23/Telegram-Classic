@@ -338,6 +338,11 @@
 
 				self.loadAddDialogs = NO;
 
+				// update read status
+				for (TGDialog *dialog in self.loadedData){
+					[dialog syncReadDate];
+				}
+
 				dispatch_sync(dispatch_get_main_queue(), ^{
 					//[self.appDelegate showMessage:@"done"];
 					self.firstLaunchLabel.hidden = YES;
@@ -384,7 +389,7 @@ static int get_dialogs_cb(void *d, const tg_dialog_t *dialog)
 		current.unread_count = dialog->unread_count;
 		current.topMessageId = dialog->top_message_id;
 		current.topMessageFromId = dialog->top_message_from_peer_id;
-		[current syncReadDate];
+		//[current syncReadDate];
 		
 		if (dialog->name)
 			current.title =
@@ -395,7 +400,6 @@ static int get_dialogs_cb(void *d, const tg_dialog_t *dialog)
 																					forKey:@"isNotFirstLaunch"];
 
 	dispatch_sync(dispatch_get_main_queue(), ^{
-					//[self.appDelegate showMessage:@"done"];
 					if (!self.loadDialogsCached)
 						[self filterData];
 				});
