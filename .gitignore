@@ -3,3 +3,5 @@ configure_ios.sh
 .vim*
 *~
 *.o
+.DS_Store
+Libraries/libtg/api_id.h
