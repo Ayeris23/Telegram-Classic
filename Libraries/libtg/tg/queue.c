@@ -37,6 +37,8 @@ enum RTL{
 	RTL_RESEND, // resend query
 };
 
+static void tg_send_query_sync_cb(void *d, const tl_t *tl);
+
 static int cmp_msgid(void *msgidp, void *itemp)
 {
 	tg_queue_t *item = itemp;
@@ -220,41 +222,73 @@ static void catched_tl(tg_t *tg, uint64_t msg_id, tl_t *tl)
 			}
 			break;
 		case id_rpc_error:
-			{
-				tl_rpc_error_t *rpc_error = 
-					(tl_rpc_error_t *)tl;
-
-				ON_ERR(tg, "RPC_ERROR: %s for msgid: "_LD_"",
-						RPC_ERROR(tl), msg_id);
-
-				// check file/user/phone migrate
-				const struct dc_t *dc = 
-					tg_error_migrate(tg, RPC_ERROR(tl));
-				if (dc){
-					ON_LOG(queue->tg, "%s: %s", __func__, RPC_ERROR(tl));
-					migrate_to_dc(queue, dc, tl);
-					queue->loop = false; // stop receive data!
-					tg_mutex_unlock(&queue->lock); // unlock
-					return; // do not run on_done!
-				}
-
-				// check flood wait
-				int wait = tg_error_flood_wait(tg, RPC_ERROR(tl));
-				if (wait){
-					ON_LOG(queue->tg, "%s: %s", __func__, RPC_ERROR(tl));
-					flood_wait_for_seconds(queue, wait);
-					queue->loop = false; // stop receive data!
-					tg_mutex_unlock(&queue->lock); // unlock
-					return; // do not run on_done!
-				}
-				
-				// frint error
-				char *err = tg_strerr(tl);
-				ON_ERR(queue->tg, "%s: %s", __func__, err);
-				free(err);
-				break; // run on_done
-			}
-			break;
+        {
+            const char *error_message = RPC_ERROR(tl);
+            
+            printf("QUEUE: RPC_ERROR for msgid=%llu: %s\n",
+                   (unsigned long long)msg_id,
+                   error_message ? error_message : "(null)");
+            fflush(stdout);
+            
+            /*
+             * Synchronous calls must receive the RPC error through their
+             * callback. Otherwise tg_send_query_sync() returns NULL while a
+             * replacement queue retains a pointer to its expired stack.
+             *
+             * auth.c already handles PHONE_MIGRATE_* and can retry safely.
+             */
+            if (queue->on_done == tg_send_query_sync_cb) {
+                break;
+            }
+            
+            /*
+             * Preserve the old automatic behavior for genuinely asynchronous
+             * callers.
+             */
+            const struct dc_t *dc =
+            tg_error_migrate(tg, error_message);
+            
+            if (dc) {
+                ON_LOG(queue->tg,
+                       "%s: %s",
+                       __func__,
+                       error_message);
+                
+                migrate_to_dc(queue, dc, tl);
+                
+                queue->loop = false;
+                tg_mutex_unlock(&queue->lock);
+                return;
+            }
+            
+            int wait =
+            tg_error_flood_wait(tg, error_message);
+            
+            if (wait) {
+                ON_LOG(queue->tg,
+                       "%s: %s",
+                       __func__,
+                       error_message);
+                
+                flood_wait_for_seconds(queue, wait);
+                
+                queue->loop = false;
+                tg_mutex_unlock(&queue->lock);
+                return;
+            }
+            
+            char *err = tg_strerr(tl);
+            
+            if (err) {
+                ON_ERR(queue->tg, "%s: %s", __func__, err);
+                free(err);
+            }
+            
+            /*
+             * Fall through to the common queue->on_done call after the switch.
+             */
+        }
+            break;
 		
 		default:
 			break;
@@ -398,16 +432,42 @@ static void handle_tl(tg_queue_t *queue, tl_t *tl)
 			}
 			break;
 		case id_rpc_result:
-			{
-				tl_rpc_result_t *rpc_result = 
-					(tl_rpc_result_t *)tl;
-				if (rpc_result->result_)
-					ON_ERR(queue->tg, "got msg result: (%s) for msg_id: "_LD_"",
-							TL_NAME_FROM_ID(rpc_result->result_->_id), 
-							rpc_result->req_msg_id_);
-				catched_tl(queue->tg, rpc_result->req_msg_id_, rpc_result->result_);
-			}
-			break;
+        {
+            tl_rpc_result_t *rpc_result =
+            (tl_rpc_result_t *)tl;
+            
+            printf("QUEUE: rpc_result req_msg_id=%llu, result=%p\n",
+                   (unsigned long long)rpc_result->req_msg_id_,
+                   (void *)rpc_result->result_);
+            
+            if (rpc_result->result_ != NULL) {
+                printf("QUEUE: nested result id=0x%08x\n",
+                       (unsigned int)rpc_result->result_->_id);
+            } else {
+                unsigned int i;
+                unsigned int count =
+                rpc_result->_buf.size < 32
+                ? (unsigned int)rpc_result->_buf.size
+                : 32;
+                
+                printf("QUEUE: nested result was not deserialized\n");
+                printf("QUEUE: rpc_result first %u bytes:", count);
+                
+                for (i = 0; i < count; ++i) {
+                    printf(" %02x",
+                           (unsigned int)rpc_result->_buf.data[i]);
+                }
+                
+                printf("\n");
+            }
+            
+            fflush(stdout);
+            
+            catched_tl(queue->tg,
+                       rpc_result->req_msg_id_,
+                       rpc_result->result_);
+        }
+            break;
 		case id_updatesTooLong: case id_updateShort:
 		case id_updateShortMessage: case id_updateShortChatMessage:
 		case id_updateShortSentMessage: case id_updatesCombined:
@@ -691,26 +751,32 @@ static void * tg_run_queue(void * data)
 			continue;
 		}
 
-		if (pthread_mutex_trylock(&tg->socket_mutex))
-		{
-			// receive
-			//ON_LOG(queue->tg, "%s: receive...", __func__);
-			//usleep(1000); // in microseconds
-			res = _tg_receive(queue, queue->socket);
-			tg_mutex_unlock(&tg->socket_mutex);
-			if (res == RTL_RESEND)
-			{	
-				if (tg_send(data) == 0)
-					continue;
-				else
-				 break;
-			}
-
-			if (res == RTL_EXIT || res == RTL_ERROR)
-				break;
-
-		} else // pthread_mutex_trylock
-			continue;
+		if (pthread_mutex_trylock(&tg->socket_mutex) == 0)
+        {
+            res = _tg_receive(queue, queue->socket);
+            
+            tg_mutex_unlock(&tg->socket_mutex);
+            
+            if (res == RTL_RESEND)
+            {
+                if (tg_send(data) == 0)
+                    continue;
+                
+                break;
+            }
+            
+            if (res == RTL_EXIT || res == RTL_ERROR)
+                break;
+        }
+        else
+        {
+            /*
+             * Another queue currently owns the shared socket.
+             * Avoid spinning continuously at 100% CPU.
+             */
+            usleep(1000);
+            continue;
+        }
 	}
 
 	// close socket
@@ -777,25 +843,62 @@ tg_queue_t * tg_queue_new(
 	queue->progressp = progressp;
 	queue->progress = progress;
 
-	// start thread
-	if (pthread_create(
-			&(queue->p), 
-			NULL, 
-			tg_run_queue, 
-			queue))
-	{
-		ON_ERR(tg, "%s: can't create thread", __func__);
-		return NULL;
-	}
-
-	// start timer
-	pthread_create(
-			&(queue->p), 
-			NULL, 
-			tg_run_timer, 
-			queue);
-
-	return queue;
+	// Start the query worker.
+    // queue->p must remain the handle for this worker because
+    // tg_send_query_sync() joins it.
+    int worker_error = pthread_create(
+                                      &queue->p,
+                                      NULL,
+                                      tg_run_queue,
+                                      queue);
+    
+    if (worker_error != 0)
+    {
+        ON_ERR(tg,
+               "%s: can't create query thread: %d",
+               __func__,
+               worker_error);
+        
+        buf_free(queue->query);
+        pthread_mutex_destroy(&queue->lock);
+        pthread_mutex_destroy(&queue->inloop_lock);
+        free(queue);
+        
+        return NULL;
+    }
+    
+    // The timeout thread needs its own pthread_t.
+    // Do not overwrite queue->p.
+    pthread_t timer_thread;
+    
+    int timer_error = pthread_create(
+                                     &timer_thread,
+                                     NULL,
+                                     tg_run_timer,
+                                     queue);
+    
+    if (timer_error != 0)
+    {
+        ON_ERR(tg,
+               "%s: can't create timer thread: %d",
+               __func__,
+               timer_error);
+        
+        /*
+         * Continue for now. The query can still complete, but this
+         * particular queue will not have its 60-second timeout cleanup.
+         */
+    }
+    else
+    {
+        /*
+         * Nobody joins the timer thread. Detaching prevents its pthread
+         * resources from remaining allocated after it exits.
+         */
+        pthread_detach(timer_thread);
+    }
+    
+    return queue;
 }
 
 pthread_t tg_send_query_async_with_progress(
@@ -807,12 +910,25 @@ pthread_t tg_send_query_async_with_progress(
 	ON_LOG(tg, "%s: tg: %p, query: %p, userdata: %p, callback: %p"
 			       "progressp: %p, progress: %p",
 		 	__func__, tg, query, userdata, callback, progressp, progress);
-	tg_queue_t *queue = 
-		tg_queue_new(tg, query, 
-				tg->ip, tg->port, multithread,
-				userdata, callback,
-			 	progressp, progress);
-	return queue->p;
+	tg_queue_t *queue =
+    tg_queue_new(
+                 tg,
+                 query,
+                 tg->ip,
+                 tg->port,
+                 multithread,
+                 userdata,
+                 callback,
+                 progressp,
+                 progress);
+    
+    if (queue == NULL)
+    {
+        ON_ERR(tg, "%s: couldn't create queue", __func__);
+        return (pthread_t)0;
+    }
+    
+    return queue->p;
 }
 
 pthread_t tg_send_query_async(
@@ -829,42 +945,120 @@ pthread_t tg_send_query_async(
 
 static void tg_send_query_sync_cb(void *d, const tl_t *tl)
 {
-	fprintf(stderr, "%s\n", __func__);
-	tl_t **tlp = d;
-	*tlp = tl_deserialize((buf_t *)(&tl->_buf));
+    tl_t **tlp = (tl_t **)d;
+    
+    printf("QUEUE: sync callback entered, input=%p\n", (void *)tl);
+    fflush(stdout);
+    
+    if (tlp == NULL)
+        return;
+    
+    *tlp = NULL;
+    
+    if (tl == NULL) {
+        printf("QUEUE: callback received NULL nested result\n");
+        fflush(stdout);
+        return;
+    }
+    
+    printf("QUEUE: callback input id=0x%08x, raw size=%u\n",
+           (unsigned int)tl->_id,
+           (unsigned int)tl->_buf.size);
+    fflush(stdout);
+    
+    *tlp = tl_deserialize((buf_t *)&tl->_buf);
+    
+    printf("QUEUE: callback deserialized result=%p\n",
+           (void *)*tlp);
+    
+    if (*tlp != NULL) {
+        printf("QUEUE: callback output id=0x%08x\n",
+               (unsigned int)(*tlp)->_id);
+    }
+    
+    fflush(stdout);
 }
 
-tl_t *tg_send_query_sync_with_progress(tg_t *tg, buf_t *query,
-		void *progressp, 
-		int (*progress)(void *progressp, int size, int total))
+tl_t *tg_send_query_sync_with_progress(
+                                       tg_t *tg,
+                                       buf_t *query,
+                                       void *progressp,
+                                       int (*progress)(void *progressp, int size, int total))
 {
-	tl_t *tl = NULL;
-	pthread_t p = 
-		tg_send_query_async_with_progress(tg, query, false, 
-				&tl, tg_send_query_sync_cb, 
-				progressp, progress);
-	
-	pthread_join(p, NULL);
-
-	ON_LOG(tg, "%s got tl: %s"
-			, __func__, tl?TL_NAME_FROM_ID(tl->_id):"NULL");
-
-	return tl;
+    tl_t *tl = NULL;
+    
+    pthread_t p =
+    tg_send_query_async_with_progress(
+                                      tg,
+                                      query,
+                                      false,
+                                      &tl,
+                                      tg_send_query_sync_cb,
+                                      progressp,
+                                      progress);
+    
+    if (!p)
+    {
+        ON_ERR(tg, "%s: query thread was not created", __func__);
+        return NULL;
+    }
+    
+    int join_error = pthread_join(p, NULL);
+    
+    if (join_error != 0)
+    {
+        ON_ERR(tg,
+               "%s: pthread_join failed: %d",
+               __func__,
+               join_error);
+        
+        return NULL;
+    }
+    
+    ON_LOG(tg,
+           "%s got tl: %s",
+           __func__,
+           tl ? TL_NAME_FROM_ID(tl->_id) : "NULL");
+    
+    return tl;
 }
 
 tl_t *tg_send_query_sync(tg_t *tg, buf_t *query)
 {
-	tl_t *tl = NULL;
-	pthread_t p = 
-		tg_send_query_async(tg, query, false, 
-				&tl, tg_send_query_sync_cb);
-	
-	pthread_join(p, NULL);
-
-	ON_LOG(tg, "%s got tl: %s"
-			, __func__, tl?TL_NAME_FROM_ID(tl->_id):"NULL");
-
-	return tl;
+    tl_t *tl = NULL;
+    
+    pthread_t p =
+    tg_send_query_async(
+                        tg,
+                        query,
+                        false,
+                        &tl,
+                        tg_send_query_sync_cb);
+    
+    if (!p)
+    {
+        ON_ERR(tg, "%s: query thread was not created", __func__);
+        return NULL;
+    }
+    
+    int join_error = pthread_join(p, NULL);
+    
+    if (join_error != 0)
+    {
+        ON_ERR(tg,
+               "%s: pthread_join failed: %d",
+               __func__,
+               join_error);
+        
+        return NULL;
+    }
+    
+    ON_LOG(tg,
+           "%s got tl: %s",
+           __func__,
+           tl ? TL_NAME_FROM_ID(tl->_id) : "NULL");
+    
+    return tl;
 }
 
 void tg_queue_cancell_all(tg_t *tg)

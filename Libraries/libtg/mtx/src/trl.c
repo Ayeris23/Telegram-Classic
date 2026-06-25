@@ -46,43 +46,21 @@ buf_t_ trl_transport(buf_t_ buf)
 
 buf_t_ trl_detransport(buf_t_ a)
 {
-  if (!a.size) {
-    api.log.error("trl_transport: received nothing");
-  }
-
-  // check len
-  buf_t_ a_len = api.buf.add(a.data, 4);
-  buf_t_ a_len_ = api.buf.add((ui8_t *)&a.size, 4);
-
-  if (!api.buf.cmp(a_len, a_len_)) {
-    api.log.error("trl_transport: len mismatch");
-  }
-	
-  // check seq
-  //buf_t_ a_seq = api.buf.add(a.data+4, 4);
-  //if(!api.buf.cmp(seq, a_seq))
-  //api.log.error("trl_transport: seq mismatch");
-
-  // check crc
-  //a.size -= 4;
-  //buf_t_ a_crc = api.crc.crc32(a);
-  //a.size += 4;
-  //buf_t_ a_crc_ = api.buf.add(a.data + a.size - 4, 4);
-
-  //if (!api.buf.cmp(a_crc, a_crc_)) {
-    //api.log.error("trl_transport: crc mismatch");
-  //}
-
-  // remove
-  //a.size -= 12;
-  //a = api.buf.add(a.data + 8, a.size);
-  //ui32_t err_ = 0xfffffe6c;
-  //buf_t_ err = api.buf.add_ui32(err_);
-
-  //if (a.size == 4 && api.buf.cmp(a, err)) {
-    //api.log.error("trl_transport: 404");
-  //}
-	
-	a = api.buf.add(a.data + 4, a.size - 4);
-  return a;
+    buf_t_ empty = {};
+    
+    if (a.size < 4) {
+        api.log.error("trl_detransport: packet too short");
+        return empty;
+    }
+    
+    buf_t_ length_buf = api.buf.add(a.data, 4);
+    ui32_t declared_length = api.buf.get_ui32(length_buf);
+    ui32_t payload_length = a.size - 4;
+    
+    if (declared_length != payload_length) {
+        api.log.error("trl_detransport: len mismatch");
+        return empty;
+    }
+    
+    return api.buf.add(a.data + 4, payload_length);
 }

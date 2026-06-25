@@ -7,6 +7,7 @@
 //
 
 #include "../include/api.h"
+#include <string.h>
 
 typedef struct abstract_type_
 {
@@ -95,28 +96,24 @@ abstract_t sil_abstract(tg_api_type_system_t t)
 tg_api_type_system_t t;
 ui32_t reset_tg_api_type_system_flag = 0;
 
-void reset_tg_api_type_system()
+void reset_tg_api_type_system(void)
 {
-  tg_api_type_system_t t_ = {};
-  t = t_;
+    memset(&t, 0, sizeof(t));
 }
 
-tg_api_type_system_t sil_concrete(abstract_t a)
+tg_api_type_system_t *sil_concrete_ptr(abstract_t a)
 {
-#ifdef _MSC_VER
-  tg_api_type_system_t t = {};
-#elif defined __GNUC__
-  //tg_api_type_system_t t = {};
-  if (!reset_tg_api_type_system_flag) {
-    reset_tg_api_type_system();
-    reset_tg_api_type_system_flag++;
-  }
-#endif
-  ui32_t id = api.buf.get_ui32(a.params[0].value);
-  param_t p;
-  p.id = id;
-  buf_t_ s = a.params[1].value; // hack
-  switch (id) {
+    if (!reset_tg_api_type_system_flag) {
+        reset_tg_api_type_system();
+        reset_tg_api_type_system_flag++;
+    }
+    
+    ui32_t id = api.buf.get_ui32(a.params[0].value);
+    param_t p;
+    p.id = id;
+    buf_t_ s = a.params[1].value; // hack
+    
+    switch (id) {
     case _id_resPQ:
     {
       t.ctor_ResPQ.id__ = id;
@@ -311,5 +308,10 @@ tg_api_type_system_t sil_concrete(abstract_t a)
     }
   }
 
-  return t;
+  return &t;
+}
+
+tg_api_type_system_t sil_concrete(abstract_t a)
+{
+    return *sil_concrete_ptr(a);
 }

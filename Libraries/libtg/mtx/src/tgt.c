@@ -10,6 +10,7 @@
 #include "../include/tgt.h"
 #include "../include/api.h"
 #include "../include/buf.h"
+#include "../include/sil.h"
 
 #ifdef __GNUC__
 
@@ -844,14 +845,11 @@ ctor_Server_DH_inner_data_init(method_req_pq_t m1, method_req_DH_params_t m2)
 ctor_Server_DH_inner_data_t
 ctor_Server_DH_inner_data_drive(buf_t_ b)
 {
-	printf("%s\n", __func__);
-  ctor_Server_DH_inner_data_t c = ctor_Server_DH_inner_data;
-  tg_api_type_system_t t = {};
-  t.ctor_Server_DH_inner_data = c;
-  abstract_t a = api.sel.deserialize(b);
-  c = api.sil.concrete(a).ctor_Server_DH_inner_data;
-
-  return c;
+    printf("%s\n", __func__);
+    
+    abstract_t a = api.sel.deserialize(b);
+    
+    return sil_concrete_ptr(a)->ctor_Server_DH_inner_data;
 }
 
 ctor_Client_DH_Inner_Data_t

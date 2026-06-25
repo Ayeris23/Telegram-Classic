@@ -12,44 +12,76 @@
 #include <string.h>
 
 tg_t *tg_new(
-		const char *database_path,
-		int id,
-		int apiId, 
-		const char *apiHash, 
-		const char *pem)
+             const char *database_path,
+             int id,
+             int apiId,
+             const char *apiHash,
+             const char *pem)
 {
-	if (!database_path)
-		return NULL;
-
-	// allocate struct
-	tg_t *tg = NEW(tg_t, return NULL);	
-
-	strncpy(tg->database_path,
-		 	database_path, BUFSIZ-1);
-
-	tg->id = id;
-	
-	// connect to SQL
-	if (database_init(tg, database_path))
-		return NULL;
-	
-	// set apiId and apiHash
-	tg->apiId = apiId;
-	strncpy(tg->apiHash, apiHash, 33);
-
-	// set public_key
-	tg->pubkey = pem;
+    size_t apiHashLength;
+    
+    if (database_path == NULL)
+        return NULL;
+    
+    if (apiHash == NULL) {
+        printf("tg_new: apiHash is NULL\n");
+        fflush(stdout);
+        return NULL;
+    }
+    
+    apiHashLength = strlen(apiHash);
+    
+    if (apiId <= 0 || apiHashLength != 32) {
+        printf("tg_new: invalid API credentials; id=%d, hash length=%lu\n",
+               apiId,
+               (unsigned long)apiHashLength);
+        fflush(stdout);
+        return NULL;
+    }
+    
+    // Allocate structure.
+    tg_t *tg = NEW(tg_t, return NULL);
+    
+    // Store database path safely.
+    strncpy(tg->database_path,
+            database_path,
+            sizeof(tg->database_path) - 1);
+    
+    tg->database_path[sizeof(tg->database_path) - 1] = '\0';
+    
+    tg->id = id;
+    
+    // Connect to SQL.
+    if (database_init(tg, database_path)) {
+        free(tg);
+        return NULL;
+    }
+    
+    // Store API credentials.
+    tg->apiId = apiId;
+    
+    memcpy(tg->apiHash, apiHash, 32);
+    tg->apiHash[32] = '\0';
+    
+    printf("tg_new: stored apiId=%d, apiHash length=%lu\n",
+           tg->apiId,
+           (unsigned long)strlen(tg->apiHash));
+    fflush(stdout);
+    
+    // Set public key.
+    tg->pubkey = pem;
 
 	// set server address
-	char *ip = ip_address_from_database(tg);
-	if (ip){
-		strncpy(tg->ip, ip,
-			sizeof(tg->ip) - 1);
-		free(ip);
-	}
-	else
-		strncpy(tg->ip, SERVER_IP,
-			sizeof(tg->ip) - 1);
+    char *ip = ip_address_from_database(tg);
+    
+    if (ip) {
+        strncpy(tg->ip, ip, sizeof(tg->ip) - 1);
+        tg->ip[sizeof(tg->ip) - 1] = '\0';
+        free(ip);
+    } else {
+        strncpy(tg->ip, SERVER_IP, sizeof(tg->ip) - 1);
+        tg->ip[sizeof(tg->ip) - 1] = '\0';
+    }
 	
 	// set port
 	tg->port = SERVER_PORT;
@@ -169,7 +201,6 @@ void tg_set_server_address(tg_t *tg, const char *ip, int port)
 }
 
 void update_hash(uint64_t *hash, uint32_t msg_id){
-	int k;
 	uint64_t h = 0;
 	if (hash)
 		h = *hash;

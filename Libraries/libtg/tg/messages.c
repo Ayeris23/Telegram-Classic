@@ -778,7 +778,7 @@ int tg_messages_get_history(
 		void *userdata,
 		int (*callback)(void *, const tg_message_t *))
 {
-	int i, k, c = 0;
+	int c = 0;
 	uint64_t h = 0;
 	if (hash)
 		h = *hash;
@@ -854,7 +854,6 @@ pthread_t tg_messages_get_history_async(
 		void (*on_done)(void *userdata))
 {
 	ON_LOG(tg, "%s", __func__);
-	int i, k, c = 0;
 	uint64_t h = 0;
 	if (hash)
 		h = *hash;
@@ -897,7 +896,7 @@ int tg_get_messages(tg_t *tg, int nmsgids, uint32_t *msgids,
 		void *userdata, 
 		int (*callback)(void *userdata, const tg_message_t *message))
 {
-	int i, k, c = 0;
+	int i, c = 0;
 
 	InputMessage im[nmsgids];
 	for (i = 0; i < nmsgids; ++i) 
@@ -925,7 +924,7 @@ int tg_get_channel_messages(tg_t *tg, tg_peer_t *channel,
 		void *userdata, 
 		int (*callback)(void *userdata, const tg_message_t *message))
 {
-	int i, k, c = 0;
+	int i, c = 0;
 
 	InputMessage im[nmsgids];
 	for (i = 0; i < nmsgids; ++i) 

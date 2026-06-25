@@ -20,7 +20,7 @@ void tl_resPQ_free(tl_t *tl_) {
 
 void tl_p_q_inner_data_dc_free(tl_t *tl_) {
 	tl_p_q_inner_data_dc_t *tl = (tl_p_q_inner_data_dc_t *)tl_;
-	int i;
+	
 	buf_free(tl->pq_);
 	buf_free(tl->p_);
 	buf_free(tl->q_);
@@ -33,7 +33,7 @@ void tl_p_q_inner_data_dc_free(tl_t *tl_) {
 
 void tl_p_q_inner_data_temp_dc_free(tl_t *tl_) {
 	tl_p_q_inner_data_temp_dc_t *tl = (tl_p_q_inner_data_temp_dc_t *)tl_;
-	int i;
+	
 	buf_free(tl->pq_);
 	buf_free(tl->p_);
 	buf_free(tl->q_);
@@ -46,7 +46,7 @@ void tl_p_q_inner_data_temp_dc_free(tl_t *tl_) {
 
 void tl_server_DH_params_ok_free(tl_t *tl_) {
 	tl_server_DH_params_ok_t *tl = (tl_server_DH_params_ok_t *)tl_;
-	int i;
+	
 	buf_free(tl->nonce_);
 	buf_free(tl->server_nonce_);
 	buf_free(tl->encrypted_answer_);
@@ -56,7 +56,7 @@ void tl_server_DH_params_ok_free(tl_t *tl_) {
 
 void tl_server_DH_inner_data_free(tl_t *tl_) {
 	tl_server_DH_inner_data_t *tl = (tl_server_DH_inner_data_t *)tl_;
-	int i;
+	
 	buf_free(tl->nonce_);
 	buf_free(tl->server_nonce_);
 	buf_free(tl->dh_prime_);
@@ -67,7 +67,7 @@ void tl_server_DH_inner_data_free(tl_t *tl_) {
 
 void tl_client_DH_inner_data_free(tl_t *tl_) {
 	tl_client_DH_inner_data_t *tl = (tl_client_DH_inner_data_t *)tl_;
-	int i;
+	
 	buf_free(tl->nonce_);
 	buf_free(tl->server_nonce_);
 	buf_free(tl->g_b_);
@@ -77,7 +77,7 @@ void tl_client_DH_inner_data_free(tl_t *tl_) {
 
 void tl_dh_gen_ok_free(tl_t *tl_) {
 	tl_dh_gen_ok_t *tl = (tl_dh_gen_ok_t *)tl_;
-	int i;
+	
 	buf_free(tl->nonce_);
 	buf_free(tl->server_nonce_);
 	buf_free(tl->new_nonce_hash1_);
@@ -87,7 +87,7 @@ void tl_dh_gen_ok_free(tl_t *tl_) {
 
 void tl_dh_gen_retry_free(tl_t *tl_) {
 	tl_dh_gen_retry_t *tl = (tl_dh_gen_retry_t *)tl_;
-	int i;
+	
 	buf_free(tl->nonce_);
 	buf_free(tl->server_nonce_);
 	buf_free(tl->new_nonce_hash2_);
@@ -97,7 +97,7 @@ void tl_dh_gen_retry_free(tl_t *tl_) {
 
 void tl_dh_gen_fail_free(tl_t *tl_) {
 	tl_dh_gen_fail_t *tl = (tl_dh_gen_fail_t *)tl_;
-	int i;
+	
 	buf_free(tl->nonce_);
 	buf_free(tl->server_nonce_);
 	buf_free(tl->new_nonce_hash3_);
@@ -107,14 +107,14 @@ void tl_dh_gen_fail_free(tl_t *tl_) {
 
 void tl_bind_auth_key_inner_free(tl_t *tl_) {
 	tl_bind_auth_key_inner_t *tl = (tl_bind_auth_key_inner_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_rpc_result_free(tl_t *tl_) {
 	tl_rpc_result_t *tl = (tl_rpc_result_t *)tl_;
-	int i;
+	
 	tl_free(tl->result_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -122,7 +122,7 @@ void tl_rpc_result_free(tl_t *tl_) {
 
 void tl_rpc_error_free(tl_t *tl_) {
 	tl_rpc_error_t *tl = (tl_rpc_error_t *)tl_;
-	int i;
+	
 	buf_free(tl->error_message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -130,28 +130,28 @@ void tl_rpc_error_free(tl_t *tl_) {
 
 void tl_rpc_answer_unknown_free(tl_t *tl_) {
 	tl_rpc_answer_unknown_t *tl = (tl_rpc_answer_unknown_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_rpc_answer_dropped_running_free(tl_t *tl_) {
 	tl_rpc_answer_dropped_running_t *tl = (tl_rpc_answer_dropped_running_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_rpc_answer_dropped_free(tl_t *tl_) {
 	tl_rpc_answer_dropped_t *tl = (tl_rpc_answer_dropped_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_future_salt_free(tl_t *tl_) {
 	tl_future_salt_t *tl = (tl_future_salt_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -169,28 +169,28 @@ void tl_future_salts_free(tl_t *tl_) {
 
 void tl_pong_free(tl_t *tl_) {
 	tl_pong_t *tl = (tl_pong_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_destroy_session_ok_free(tl_t *tl_) {
 	tl_destroy_session_ok_t *tl = (tl_destroy_session_ok_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_destroy_session_none_free(tl_t *tl_) {
 	tl_destroy_session_none_t *tl = (tl_destroy_session_none_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_new_session_created_free(tl_t *tl_) {
 	tl_new_session_created_t *tl = (tl_new_session_created_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -207,7 +207,7 @@ void tl_msg_container_free(tl_t *tl_) {
 
 void tl_msg_copy_free(tl_t *tl_) {
 	tl_msg_copy_t *tl = (tl_msg_copy_t *)tl_;
-	int i;
+	
 	tl_free(tl->orig_message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -215,7 +215,7 @@ void tl_msg_copy_free(tl_t *tl_) {
 
 void tl_gzip_packed_free(tl_t *tl_) {
 	tl_gzip_packed_t *tl = (tl_gzip_packed_t *)tl_;
-	int i;
+	
 	buf_free(tl->packed_data_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -233,14 +233,14 @@ void tl_msgs_ack_free(tl_t *tl_) {
 
 void tl_bad_msg_notification_free(tl_t *tl_) {
 	tl_bad_msg_notification_t *tl = (tl_bad_msg_notification_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_bad_server_salt_free(tl_t *tl_) {
 	tl_bad_server_salt_t *tl = (tl_bad_server_salt_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -267,7 +267,7 @@ void tl_msgs_state_req_free(tl_t *tl_) {
 
 void tl_msgs_state_info_free(tl_t *tl_) {
 	tl_msgs_state_info_t *tl = (tl_msgs_state_info_t *)tl_;
-	int i;
+	
 	buf_free(tl->info_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -286,49 +286,49 @@ void tl_msgs_all_info_free(tl_t *tl_) {
 
 void tl_msg_detailed_info_free(tl_t *tl_) {
 	tl_msg_detailed_info_t *tl = (tl_msg_detailed_info_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_msg_new_detailed_info_free(tl_t *tl_) {
 	tl_msg_new_detailed_info_t *tl = (tl_msg_new_detailed_info_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_destroy_auth_key_ok_free(tl_t *tl_) {
 	tl_destroy_auth_key_ok_t *tl = (tl_destroy_auth_key_ok_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_destroy_auth_key_none_free(tl_t *tl_) {
 	tl_destroy_auth_key_none_t *tl = (tl_destroy_auth_key_none_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_destroy_auth_key_fail_free(tl_t *tl_) {
 	tl_destroy_auth_key_fail_t *tl = (tl_destroy_auth_key_fail_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_http_wait_free(tl_t *tl_) {
 	tl_http_wait_t *tl = (tl_http_wait_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_req_pq_multi_free(tl_t *tl_) {
 	tl_req_pq_multi_t *tl = (tl_req_pq_multi_t *)tl_;
-	int i;
+	
 	buf_free(tl->nonce_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -336,7 +336,7 @@ void tl_req_pq_multi_free(tl_t *tl_) {
 
 void tl_req_DH_params_free(tl_t *tl_) {
 	tl_req_DH_params_t *tl = (tl_req_DH_params_t *)tl_;
-	int i;
+	
 	buf_free(tl->nonce_);
 	buf_free(tl->server_nonce_);
 	buf_free(tl->p_);
@@ -348,7 +348,7 @@ void tl_req_DH_params_free(tl_t *tl_) {
 
 void tl_set_client_DH_params_free(tl_t *tl_) {
 	tl_set_client_DH_params_t *tl = (tl_set_client_DH_params_t *)tl_;
-	int i;
+	
 	buf_free(tl->nonce_);
 	buf_free(tl->server_nonce_);
 	buf_free(tl->encrypted_data_);
@@ -358,70 +358,70 @@ void tl_set_client_DH_params_free(tl_t *tl_) {
 
 void tl_rpc_drop_answer_free(tl_t *tl_) {
 	tl_rpc_drop_answer_t *tl = (tl_rpc_drop_answer_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_get_future_salts_free(tl_t *tl_) {
 	tl_get_future_salts_t *tl = (tl_get_future_salts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_ping_free(tl_t *tl_) {
 	tl_ping_t *tl = (tl_ping_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_ping_delay_disconnect_free(tl_t *tl_) {
 	tl_ping_delay_disconnect_t *tl = (tl_ping_delay_disconnect_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_destroy_session_free(tl_t *tl_) {
 	tl_destroy_session_t *tl = (tl_destroy_session_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_destroy_auth_key_free(tl_t *tl_) {
 	tl_destroy_auth_key_t *tl = (tl_destroy_auth_key_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_boolFalse_free(tl_t *tl_) {
 	tl_boolFalse_t *tl = (tl_boolFalse_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_boolTrue_free(tl_t *tl_) {
 	tl_boolTrue_t *tl = (tl_boolTrue_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_true_free(tl_t *tl_) {
 	tl_true_t *tl = (tl_true_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_vector_free(tl_t *tl_) {
 	tl_vector_t *tl = (tl_vector_t *)tl_;
-	int i;
+	
 	buf_free(tl->data_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -429,7 +429,7 @@ void tl_vector_free(tl_t *tl_) {
 
 void tl_error_free(tl_t *tl_) {
 	tl_error_t *tl = (tl_error_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -437,49 +437,49 @@ void tl_error_free(tl_t *tl_) {
 
 void tl_null_free(tl_t *tl_) {
 	tl_null_t *tl = (tl_null_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPeerEmpty_free(tl_t *tl_) {
 	tl_inputPeerEmpty_t *tl = (tl_inputPeerEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPeerSelf_free(tl_t *tl_) {
 	tl_inputPeerSelf_t *tl = (tl_inputPeerSelf_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPeerChat_free(tl_t *tl_) {
 	tl_inputPeerChat_t *tl = (tl_inputPeerChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPeerUser_free(tl_t *tl_) {
 	tl_inputPeerUser_t *tl = (tl_inputPeerUser_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPeerChannel_free(tl_t *tl_) {
 	tl_inputPeerChannel_t *tl = (tl_inputPeerChannel_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPeerUserFromMessage_free(tl_t *tl_) {
 	tl_inputPeerUserFromMessage_t *tl = (tl_inputPeerUserFromMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -487,7 +487,7 @@ void tl_inputPeerUserFromMessage_free(tl_t *tl_) {
 
 void tl_inputPeerChannelFromMessage_free(tl_t *tl_) {
 	tl_inputPeerChannelFromMessage_t *tl = (tl_inputPeerChannelFromMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -495,28 +495,28 @@ void tl_inputPeerChannelFromMessage_free(tl_t *tl_) {
 
 void tl_inputUserEmpty_free(tl_t *tl_) {
 	tl_inputUserEmpty_t *tl = (tl_inputUserEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputUserSelf_free(tl_t *tl_) {
 	tl_inputUserSelf_t *tl = (tl_inputUserSelf_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputUser_free(tl_t *tl_) {
 	tl_inputUser_t *tl = (tl_inputUser_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputUserFromMessage_free(tl_t *tl_) {
 	tl_inputUserFromMessage_t *tl = (tl_inputUserFromMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -524,7 +524,7 @@ void tl_inputUserFromMessage_free(tl_t *tl_) {
 
 void tl_inputPhoneContact_free(tl_t *tl_) {
 	tl_inputPhoneContact_t *tl = (tl_inputPhoneContact_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_);
 	buf_free(tl->first_name_);
 	buf_free(tl->last_name_);
@@ -534,7 +534,7 @@ void tl_inputPhoneContact_free(tl_t *tl_) {
 
 void tl_inputFile_free(tl_t *tl_) {
 	tl_inputFile_t *tl = (tl_inputFile_t *)tl_;
-	int i;
+	
 	buf_free(tl->name_);
 	buf_free(tl->md5_checksum_);
 	buf_free(tl->_buf);
@@ -543,7 +543,7 @@ void tl_inputFile_free(tl_t *tl_) {
 
 void tl_inputFileBig_free(tl_t *tl_) {
 	tl_inputFileBig_t *tl = (tl_inputFileBig_t *)tl_;
-	int i;
+	
 	buf_free(tl->name_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -551,7 +551,7 @@ void tl_inputFileBig_free(tl_t *tl_) {
 
 void tl_inputFileStoryDocument_free(tl_t *tl_) {
 	tl_inputFileStoryDocument_t *tl = (tl_inputFileStoryDocument_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -559,7 +559,7 @@ void tl_inputFileStoryDocument_free(tl_t *tl_) {
 
 void tl_inputMediaEmpty_free(tl_t *tl_) {
 	tl_inputMediaEmpty_t *tl = (tl_inputMediaEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -578,7 +578,7 @@ void tl_inputMediaUploadedPhoto_free(tl_t *tl_) {
 
 void tl_inputMediaPhoto_free(tl_t *tl_) {
 	tl_inputMediaPhoto_t *tl = (tl_inputMediaPhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -586,7 +586,7 @@ void tl_inputMediaPhoto_free(tl_t *tl_) {
 
 void tl_inputMediaGeoPoint_free(tl_t *tl_) {
 	tl_inputMediaGeoPoint_t *tl = (tl_inputMediaGeoPoint_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_point_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -594,7 +594,7 @@ void tl_inputMediaGeoPoint_free(tl_t *tl_) {
 
 void tl_inputMediaContact_free(tl_t *tl_) {
 	tl_inputMediaContact_t *tl = (tl_inputMediaContact_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->first_name_);
 	buf_free(tl->last_name_);
@@ -623,7 +623,7 @@ void tl_inputMediaUploadedDocument_free(tl_t *tl_) {
 
 void tl_inputMediaDocument_free(tl_t *tl_) {
 	tl_inputMediaDocument_t *tl = (tl_inputMediaDocument_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->query_);
 	buf_free(tl->_buf);
@@ -632,7 +632,7 @@ void tl_inputMediaDocument_free(tl_t *tl_) {
 
 void tl_inputMediaVenue_free(tl_t *tl_) {
 	tl_inputMediaVenue_t *tl = (tl_inputMediaVenue_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_point_);
 	buf_free(tl->title_);
 	buf_free(tl->address_);
@@ -645,7 +645,7 @@ void tl_inputMediaVenue_free(tl_t *tl_) {
 
 void tl_inputMediaPhotoExternal_free(tl_t *tl_) {
 	tl_inputMediaPhotoExternal_t *tl = (tl_inputMediaPhotoExternal_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -653,7 +653,7 @@ void tl_inputMediaPhotoExternal_free(tl_t *tl_) {
 
 void tl_inputMediaDocumentExternal_free(tl_t *tl_) {
 	tl_inputMediaDocumentExternal_t *tl = (tl_inputMediaDocumentExternal_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -661,7 +661,7 @@ void tl_inputMediaDocumentExternal_free(tl_t *tl_) {
 
 void tl_inputMediaGame_free(tl_t *tl_) {
 	tl_inputMediaGame_t *tl = (tl_inputMediaGame_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -669,7 +669,7 @@ void tl_inputMediaGame_free(tl_t *tl_) {
 
 void tl_inputMediaInvoice_free(tl_t *tl_) {
 	tl_inputMediaInvoice_t *tl = (tl_inputMediaInvoice_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->description_);
 	tl_free(tl->photo_);
@@ -685,7 +685,7 @@ void tl_inputMediaInvoice_free(tl_t *tl_) {
 
 void tl_inputMediaGeoLive_free(tl_t *tl_) {
 	tl_inputMediaGeoLive_t *tl = (tl_inputMediaGeoLive_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_point_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -710,7 +710,7 @@ void tl_inputMediaPoll_free(tl_t *tl_) {
 
 void tl_inputMediaDice_free(tl_t *tl_) {
 	tl_inputMediaDice_t *tl = (tl_inputMediaDice_t *)tl_;
-	int i;
+	
 	buf_free(tl->emoticon_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -718,7 +718,7 @@ void tl_inputMediaDice_free(tl_t *tl_) {
 
 void tl_inputMediaStory_free(tl_t *tl_) {
 	tl_inputMediaStory_t *tl = (tl_inputMediaStory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -726,7 +726,7 @@ void tl_inputMediaStory_free(tl_t *tl_) {
 
 void tl_inputMediaWebPage_free(tl_t *tl_) {
 	tl_inputMediaWebPage_t *tl = (tl_inputMediaWebPage_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -745,14 +745,14 @@ void tl_inputMediaPaidMedia_free(tl_t *tl_) {
 
 void tl_inputChatPhotoEmpty_free(tl_t *tl_) {
 	tl_inputChatPhotoEmpty_t *tl = (tl_inputChatPhotoEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputChatUploadedPhoto_free(tl_t *tl_) {
 	tl_inputChatUploadedPhoto_t *tl = (tl_inputChatUploadedPhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->file_);
 	tl_free(tl->video_);
 	tl_free(tl->video_emoji_markup_);
@@ -762,7 +762,7 @@ void tl_inputChatUploadedPhoto_free(tl_t *tl_) {
 
 void tl_inputChatPhoto_free(tl_t *tl_) {
 	tl_inputChatPhoto_t *tl = (tl_inputChatPhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -770,28 +770,28 @@ void tl_inputChatPhoto_free(tl_t *tl_) {
 
 void tl_inputGeoPointEmpty_free(tl_t *tl_) {
 	tl_inputGeoPointEmpty_t *tl = (tl_inputGeoPointEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputGeoPoint_free(tl_t *tl_) {
 	tl_inputGeoPoint_t *tl = (tl_inputGeoPoint_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPhotoEmpty_free(tl_t *tl_) {
 	tl_inputPhotoEmpty_t *tl = (tl_inputPhotoEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPhoto_free(tl_t *tl_) {
 	tl_inputPhoto_t *tl = (tl_inputPhoto_t *)tl_;
-	int i;
+	
 	buf_free(tl->file_reference_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -799,7 +799,7 @@ void tl_inputPhoto_free(tl_t *tl_) {
 
 void tl_inputFileLocation_free(tl_t *tl_) {
 	tl_inputFileLocation_t *tl = (tl_inputFileLocation_t *)tl_;
-	int i;
+	
 	buf_free(tl->file_reference_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -807,14 +807,14 @@ void tl_inputFileLocation_free(tl_t *tl_) {
 
 void tl_inputEncryptedFileLocation_free(tl_t *tl_) {
 	tl_inputEncryptedFileLocation_t *tl = (tl_inputEncryptedFileLocation_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputDocumentFileLocation_free(tl_t *tl_) {
 	tl_inputDocumentFileLocation_t *tl = (tl_inputDocumentFileLocation_t *)tl_;
-	int i;
+	
 	buf_free(tl->file_reference_);
 	buf_free(tl->thumb_size_);
 	buf_free(tl->_buf);
@@ -823,21 +823,21 @@ void tl_inputDocumentFileLocation_free(tl_t *tl_) {
 
 void tl_inputSecureFileLocation_free(tl_t *tl_) {
 	tl_inputSecureFileLocation_t *tl = (tl_inputSecureFileLocation_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputTakeoutFileLocation_free(tl_t *tl_) {
 	tl_inputTakeoutFileLocation_t *tl = (tl_inputTakeoutFileLocation_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPhotoFileLocation_free(tl_t *tl_) {
 	tl_inputPhotoFileLocation_t *tl = (tl_inputPhotoFileLocation_t *)tl_;
-	int i;
+	
 	buf_free(tl->file_reference_);
 	buf_free(tl->thumb_size_);
 	buf_free(tl->_buf);
@@ -846,7 +846,7 @@ void tl_inputPhotoFileLocation_free(tl_t *tl_) {
 
 void tl_inputPhotoLegacyFileLocation_free(tl_t *tl_) {
 	tl_inputPhotoLegacyFileLocation_t *tl = (tl_inputPhotoLegacyFileLocation_t *)tl_;
-	int i;
+	
 	buf_free(tl->file_reference_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -854,7 +854,7 @@ void tl_inputPhotoLegacyFileLocation_free(tl_t *tl_) {
 
 void tl_inputPeerPhotoFileLocation_free(tl_t *tl_) {
 	tl_inputPeerPhotoFileLocation_t *tl = (tl_inputPeerPhotoFileLocation_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -862,7 +862,7 @@ void tl_inputPeerPhotoFileLocation_free(tl_t *tl_) {
 
 void tl_inputStickerSetThumb_free(tl_t *tl_) {
 	tl_inputStickerSetThumb_t *tl = (tl_inputStickerSetThumb_t *)tl_;
-	int i;
+	
 	tl_free(tl->stickerset_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -870,7 +870,7 @@ void tl_inputStickerSetThumb_free(tl_t *tl_) {
 
 void tl_inputGroupCallStream_free(tl_t *tl_) {
 	tl_inputGroupCallStream_t *tl = (tl_inputGroupCallStream_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -878,98 +878,98 @@ void tl_inputGroupCallStream_free(tl_t *tl_) {
 
 void tl_peerUser_free(tl_t *tl_) {
 	tl_peerUser_t *tl = (tl_peerUser_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_peerChat_free(tl_t *tl_) {
 	tl_peerChat_t *tl = (tl_peerChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_peerChannel_free(tl_t *tl_) {
 	tl_peerChannel_t *tl = (tl_peerChannel_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_storage_fileUnknown_free(tl_t *tl_) {
 	tl_storage_fileUnknown_t *tl = (tl_storage_fileUnknown_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_storage_filePartial_free(tl_t *tl_) {
 	tl_storage_filePartial_t *tl = (tl_storage_filePartial_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_storage_fileJpeg_free(tl_t *tl_) {
 	tl_storage_fileJpeg_t *tl = (tl_storage_fileJpeg_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_storage_fileGif_free(tl_t *tl_) {
 	tl_storage_fileGif_t *tl = (tl_storage_fileGif_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_storage_filePng_free(tl_t *tl_) {
 	tl_storage_filePng_t *tl = (tl_storage_filePng_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_storage_filePdf_free(tl_t *tl_) {
 	tl_storage_filePdf_t *tl = (tl_storage_filePdf_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_storage_fileMp3_free(tl_t *tl_) {
 	tl_storage_fileMp3_t *tl = (tl_storage_fileMp3_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_storage_fileMov_free(tl_t *tl_) {
 	tl_storage_fileMov_t *tl = (tl_storage_fileMov_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_storage_fileMp4_free(tl_t *tl_) {
 	tl_storage_fileMp4_t *tl = (tl_storage_fileMp4_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_storage_fileWebp_free(tl_t *tl_) {
 	tl_storage_fileWebp_t *tl = (tl_storage_fileWebp_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_userEmpty_free(tl_t *tl_) {
 	tl_userEmpty_t *tl = (tl_userEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -1002,14 +1002,14 @@ void tl_user_free(tl_t *tl_) {
 
 void tl_userProfilePhotoEmpty_free(tl_t *tl_) {
 	tl_userProfilePhotoEmpty_t *tl = (tl_userProfilePhotoEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_userProfilePhoto_free(tl_t *tl_) {
 	tl_userProfilePhoto_t *tl = (tl_userProfilePhoto_t *)tl_;
-	int i;
+	
 	buf_free(tl->stripped_thumb_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1017,56 +1017,56 @@ void tl_userProfilePhoto_free(tl_t *tl_) {
 
 void tl_userStatusEmpty_free(tl_t *tl_) {
 	tl_userStatusEmpty_t *tl = (tl_userStatusEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_userStatusOnline_free(tl_t *tl_) {
 	tl_userStatusOnline_t *tl = (tl_userStatusOnline_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_userStatusOffline_free(tl_t *tl_) {
 	tl_userStatusOffline_t *tl = (tl_userStatusOffline_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_userStatusRecently_free(tl_t *tl_) {
 	tl_userStatusRecently_t *tl = (tl_userStatusRecently_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_userStatusLastWeek_free(tl_t *tl_) {
 	tl_userStatusLastWeek_t *tl = (tl_userStatusLastWeek_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_userStatusLastMonth_free(tl_t *tl_) {
 	tl_userStatusLastMonth_t *tl = (tl_userStatusLastMonth_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_chatEmpty_free(tl_t *tl_) {
 	tl_chatEmpty_t *tl = (tl_chatEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_chat_free(tl_t *tl_) {
 	tl_chat_t *tl = (tl_chat_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	tl_free(tl->photo_);
 	tl_free(tl->migrated_to_);
@@ -1078,7 +1078,7 @@ void tl_chat_free(tl_t *tl_) {
 
 void tl_chatForbidden_free(tl_t *tl_) {
 	tl_chatForbidden_t *tl = (tl_chatForbidden_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1110,7 +1110,7 @@ void tl_channel_free(tl_t *tl_) {
 
 void tl_channelForbidden_free(tl_t *tl_) {
 	tl_channelForbidden_t *tl = (tl_channelForbidden_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1173,28 +1173,28 @@ void tl_channelFull_free(tl_t *tl_) {
 
 void tl_chatParticipant_free(tl_t *tl_) {
 	tl_chatParticipant_t *tl = (tl_chatParticipant_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_chatParticipantCreator_free(tl_t *tl_) {
 	tl_chatParticipantCreator_t *tl = (tl_chatParticipantCreator_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_chatParticipantAdmin_free(tl_t *tl_) {
 	tl_chatParticipantAdmin_t *tl = (tl_chatParticipantAdmin_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_chatParticipantsForbidden_free(tl_t *tl_) {
 	tl_chatParticipantsForbidden_t *tl = (tl_chatParticipantsForbidden_t *)tl_;
-	int i;
+	
 	tl_free(tl->self_participant_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1213,14 +1213,14 @@ void tl_chatParticipants_free(tl_t *tl_) {
 
 void tl_chatPhotoEmpty_free(tl_t *tl_) {
 	tl_chatPhotoEmpty_t *tl = (tl_chatPhotoEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_chatPhoto_free(tl_t *tl_) {
 	tl_chatPhoto_t *tl = (tl_chatPhoto_t *)tl_;
-	int i;
+	
 	buf_free(tl->stripped_thumb_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1228,7 +1228,7 @@ void tl_chatPhoto_free(tl_t *tl_) {
 
 void tl_messageEmpty_free(tl_t *tl_) {
 	tl_messageEmpty_t *tl = (tl_messageEmpty_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1263,7 +1263,7 @@ void tl_message_free(tl_t *tl_) {
 
 void tl_messageService_free(tl_t *tl_) {
 	tl_messageService_t *tl = (tl_messageService_t *)tl_;
-	int i;
+	
 	tl_free(tl->from_id_);
 	tl_free(tl->peer_id_);
 	tl_free(tl->reply_to_);
@@ -1274,14 +1274,14 @@ void tl_messageService_free(tl_t *tl_) {
 
 void tl_messageMediaEmpty_free(tl_t *tl_) {
 	tl_messageMediaEmpty_t *tl = (tl_messageMediaEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageMediaPhoto_free(tl_t *tl_) {
 	tl_messageMediaPhoto_t *tl = (tl_messageMediaPhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->photo_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1289,7 +1289,7 @@ void tl_messageMediaPhoto_free(tl_t *tl_) {
 
 void tl_messageMediaGeo_free(tl_t *tl_) {
 	tl_messageMediaGeo_t *tl = (tl_messageMediaGeo_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1297,7 +1297,7 @@ void tl_messageMediaGeo_free(tl_t *tl_) {
 
 void tl_messageMediaContact_free(tl_t *tl_) {
 	tl_messageMediaContact_t *tl = (tl_messageMediaContact_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->first_name_);
 	buf_free(tl->last_name_);
@@ -1308,14 +1308,14 @@ void tl_messageMediaContact_free(tl_t *tl_) {
 
 void tl_messageMediaUnsupported_free(tl_t *tl_) {
 	tl_messageMediaUnsupported_t *tl = (tl_messageMediaUnsupported_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageMediaDocument_free(tl_t *tl_) {
 	tl_messageMediaDocument_t *tl = (tl_messageMediaDocument_t *)tl_;
-	int i;
+	
 	tl_free(tl->document_);
 	tl_free(tl->alt_document_);
 	buf_free(tl->_buf);
@@ -1324,7 +1324,7 @@ void tl_messageMediaDocument_free(tl_t *tl_) {
 
 void tl_messageMediaWebPage_free(tl_t *tl_) {
 	tl_messageMediaWebPage_t *tl = (tl_messageMediaWebPage_t *)tl_;
-	int i;
+	
 	tl_free(tl->webpage_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1332,7 +1332,7 @@ void tl_messageMediaWebPage_free(tl_t *tl_) {
 
 void tl_messageMediaVenue_free(tl_t *tl_) {
 	tl_messageMediaVenue_t *tl = (tl_messageMediaVenue_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_);
 	buf_free(tl->title_);
 	buf_free(tl->address_);
@@ -1345,7 +1345,7 @@ void tl_messageMediaVenue_free(tl_t *tl_) {
 
 void tl_messageMediaGame_free(tl_t *tl_) {
 	tl_messageMediaGame_t *tl = (tl_messageMediaGame_t *)tl_;
-	int i;
+	
 	tl_free(tl->game_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1353,7 +1353,7 @@ void tl_messageMediaGame_free(tl_t *tl_) {
 
 void tl_messageMediaInvoice_free(tl_t *tl_) {
 	tl_messageMediaInvoice_t *tl = (tl_messageMediaInvoice_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->description_);
 	tl_free(tl->photo_);
@@ -1366,7 +1366,7 @@ void tl_messageMediaInvoice_free(tl_t *tl_) {
 
 void tl_messageMediaGeoLive_free(tl_t *tl_) {
 	tl_messageMediaGeoLive_t *tl = (tl_messageMediaGeoLive_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1374,7 +1374,7 @@ void tl_messageMediaGeoLive_free(tl_t *tl_) {
 
 void tl_messageMediaPoll_free(tl_t *tl_) {
 	tl_messageMediaPoll_t *tl = (tl_messageMediaPoll_t *)tl_;
-	int i;
+	
 	tl_free(tl->poll_);
 	tl_free(tl->results_);
 	buf_free(tl->_buf);
@@ -1383,7 +1383,7 @@ void tl_messageMediaPoll_free(tl_t *tl_) {
 
 void tl_messageMediaDice_free(tl_t *tl_) {
 	tl_messageMediaDice_t *tl = (tl_messageMediaDice_t *)tl_;
-	int i;
+	
 	buf_free(tl->emoticon_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1391,7 +1391,7 @@ void tl_messageMediaDice_free(tl_t *tl_) {
 
 void tl_messageMediaStory_free(tl_t *tl_) {
 	tl_messageMediaStory_t *tl = (tl_messageMediaStory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->story_);
 	buf_free(tl->_buf);
@@ -1437,7 +1437,7 @@ void tl_messageMediaPaidMedia_free(tl_t *tl_) {
 
 void tl_messageActionEmpty_free(tl_t *tl_) {
 	tl_messageActionEmpty_t *tl = (tl_messageActionEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -1455,7 +1455,7 @@ void tl_messageActionChatCreate_free(tl_t *tl_) {
 
 void tl_messageActionChatEditTitle_free(tl_t *tl_) {
 	tl_messageActionChatEditTitle_t *tl = (tl_messageActionChatEditTitle_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1463,7 +1463,7 @@ void tl_messageActionChatEditTitle_free(tl_t *tl_) {
 
 void tl_messageActionChatEditPhoto_free(tl_t *tl_) {
 	tl_messageActionChatEditPhoto_t *tl = (tl_messageActionChatEditPhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->photo_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1471,7 +1471,7 @@ void tl_messageActionChatEditPhoto_free(tl_t *tl_) {
 
 void tl_messageActionChatDeletePhoto_free(tl_t *tl_) {
 	tl_messageActionChatDeletePhoto_t *tl = (tl_messageActionChatDeletePhoto_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -1488,21 +1488,21 @@ void tl_messageActionChatAddUser_free(tl_t *tl_) {
 
 void tl_messageActionChatDeleteUser_free(tl_t *tl_) {
 	tl_messageActionChatDeleteUser_t *tl = (tl_messageActionChatDeleteUser_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageActionChatJoinedByLink_free(tl_t *tl_) {
 	tl_messageActionChatJoinedByLink_t *tl = (tl_messageActionChatJoinedByLink_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageActionChannelCreate_free(tl_t *tl_) {
 	tl_messageActionChannelCreate_t *tl = (tl_messageActionChannelCreate_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1510,14 +1510,14 @@ void tl_messageActionChannelCreate_free(tl_t *tl_) {
 
 void tl_messageActionChatMigrateTo_free(tl_t *tl_) {
 	tl_messageActionChatMigrateTo_t *tl = (tl_messageActionChatMigrateTo_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageActionChannelMigrateFrom_free(tl_t *tl_) {
 	tl_messageActionChannelMigrateFrom_t *tl = (tl_messageActionChannelMigrateFrom_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1525,28 +1525,28 @@ void tl_messageActionChannelMigrateFrom_free(tl_t *tl_) {
 
 void tl_messageActionPinMessage_free(tl_t *tl_) {
 	tl_messageActionPinMessage_t *tl = (tl_messageActionPinMessage_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageActionHistoryClear_free(tl_t *tl_) {
 	tl_messageActionHistoryClear_t *tl = (tl_messageActionHistoryClear_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageActionGameScore_free(tl_t *tl_) {
 	tl_messageActionGameScore_t *tl = (tl_messageActionGameScore_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageActionPaymentSentMe_free(tl_t *tl_) {
 	tl_messageActionPaymentSentMe_t *tl = (tl_messageActionPaymentSentMe_t *)tl_;
-	int i;
+	
 	buf_free(tl->currency_);
 	buf_free(tl->payload_);
 	tl_free(tl->info_);
@@ -1558,7 +1558,7 @@ void tl_messageActionPaymentSentMe_free(tl_t *tl_) {
 
 void tl_messageActionPaymentSent_free(tl_t *tl_) {
 	tl_messageActionPaymentSent_t *tl = (tl_messageActionPaymentSent_t *)tl_;
-	int i;
+	
 	buf_free(tl->currency_);
 	buf_free(tl->invoice_slug_);
 	buf_free(tl->_buf);
@@ -1567,7 +1567,7 @@ void tl_messageActionPaymentSent_free(tl_t *tl_) {
 
 void tl_messageActionPhoneCall_free(tl_t *tl_) {
 	tl_messageActionPhoneCall_t *tl = (tl_messageActionPhoneCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->reason_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1575,14 +1575,14 @@ void tl_messageActionPhoneCall_free(tl_t *tl_) {
 
 void tl_messageActionScreenshotTaken_free(tl_t *tl_) {
 	tl_messageActionScreenshotTaken_t *tl = (tl_messageActionScreenshotTaken_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageActionCustomAction_free(tl_t *tl_) {
 	tl_messageActionCustomAction_t *tl = (tl_messageActionCustomAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1590,7 +1590,7 @@ void tl_messageActionCustomAction_free(tl_t *tl_) {
 
 void tl_messageActionBotAllowed_free(tl_t *tl_) {
 	tl_messageActionBotAllowed_t *tl = (tl_messageActionBotAllowed_t *)tl_;
-	int i;
+	
 	buf_free(tl->domain_);
 	tl_free(tl->app_);
 	buf_free(tl->_buf);
@@ -1622,14 +1622,14 @@ void tl_messageActionSecureValuesSent_free(tl_t *tl_) {
 
 void tl_messageActionContactSignUp_free(tl_t *tl_) {
 	tl_messageActionContactSignUp_t *tl = (tl_messageActionContactSignUp_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageActionGeoProximityReached_free(tl_t *tl_) {
 	tl_messageActionGeoProximityReached_t *tl = (tl_messageActionGeoProximityReached_t *)tl_;
-	int i;
+	
 	tl_free(tl->from_id_);
 	tl_free(tl->to_id_);
 	buf_free(tl->_buf);
@@ -1638,7 +1638,7 @@ void tl_messageActionGeoProximityReached_free(tl_t *tl_) {
 
 void tl_messageActionGroupCall_free(tl_t *tl_) {
 	tl_messageActionGroupCall_t *tl = (tl_messageActionGroupCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1657,14 +1657,14 @@ void tl_messageActionInviteToGroupCall_free(tl_t *tl_) {
 
 void tl_messageActionSetMessagesTTL_free(tl_t *tl_) {
 	tl_messageActionSetMessagesTTL_t *tl = (tl_messageActionSetMessagesTTL_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageActionGroupCallScheduled_free(tl_t *tl_) {
 	tl_messageActionGroupCallScheduled_t *tl = (tl_messageActionGroupCallScheduled_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1672,7 +1672,7 @@ void tl_messageActionGroupCallScheduled_free(tl_t *tl_) {
 
 void tl_messageActionSetChatTheme_free(tl_t *tl_) {
 	tl_messageActionSetChatTheme_t *tl = (tl_messageActionSetChatTheme_t *)tl_;
-	int i;
+	
 	buf_free(tl->emoticon_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1680,14 +1680,14 @@ void tl_messageActionSetChatTheme_free(tl_t *tl_) {
 
 void tl_messageActionChatJoinedByRequest_free(tl_t *tl_) {
 	tl_messageActionChatJoinedByRequest_t *tl = (tl_messageActionChatJoinedByRequest_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageActionWebViewDataSentMe_free(tl_t *tl_) {
 	tl_messageActionWebViewDataSentMe_t *tl = (tl_messageActionWebViewDataSentMe_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->data_);
 	buf_free(tl->_buf);
@@ -1696,7 +1696,7 @@ void tl_messageActionWebViewDataSentMe_free(tl_t *tl_) {
 
 void tl_messageActionWebViewDataSent_free(tl_t *tl_) {
 	tl_messageActionWebViewDataSent_t *tl = (tl_messageActionWebViewDataSent_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1704,7 +1704,7 @@ void tl_messageActionWebViewDataSent_free(tl_t *tl_) {
 
 void tl_messageActionGiftPremium_free(tl_t *tl_) {
 	tl_messageActionGiftPremium_t *tl = (tl_messageActionGiftPremium_t *)tl_;
-	int i;
+	
 	buf_free(tl->currency_);
 	buf_free(tl->crypto_currency_);
 	buf_free(tl->_buf);
@@ -1713,7 +1713,7 @@ void tl_messageActionGiftPremium_free(tl_t *tl_) {
 
 void tl_messageActionTopicCreate_free(tl_t *tl_) {
 	tl_messageActionTopicCreate_t *tl = (tl_messageActionTopicCreate_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1721,7 +1721,7 @@ void tl_messageActionTopicCreate_free(tl_t *tl_) {
 
 void tl_messageActionTopicEdit_free(tl_t *tl_) {
 	tl_messageActionTopicEdit_t *tl = (tl_messageActionTopicEdit_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	tl_free(tl->closed_);
 	tl_free(tl->hidden_);
@@ -1731,7 +1731,7 @@ void tl_messageActionTopicEdit_free(tl_t *tl_) {
 
 void tl_messageActionSuggestProfilePhoto_free(tl_t *tl_) {
 	tl_messageActionSuggestProfilePhoto_t *tl = (tl_messageActionSuggestProfilePhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->photo_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1750,7 +1750,7 @@ void tl_messageActionRequestedPeer_free(tl_t *tl_) {
 
 void tl_messageActionSetChatWallPaper_free(tl_t *tl_) {
 	tl_messageActionSetChatWallPaper_t *tl = (tl_messageActionSetChatWallPaper_t *)tl_;
-	int i;
+	
 	tl_free(tl->wallpaper_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1758,7 +1758,7 @@ void tl_messageActionSetChatWallPaper_free(tl_t *tl_) {
 
 void tl_messageActionGiftCode_free(tl_t *tl_) {
 	tl_messageActionGiftCode_t *tl = (tl_messageActionGiftCode_t *)tl_;
-	int i;
+	
 	tl_free(tl->boost_peer_);
 	buf_free(tl->slug_);
 	buf_free(tl->currency_);
@@ -1769,21 +1769,21 @@ void tl_messageActionGiftCode_free(tl_t *tl_) {
 
 void tl_messageActionGiveawayLaunch_free(tl_t *tl_) {
 	tl_messageActionGiveawayLaunch_t *tl = (tl_messageActionGiveawayLaunch_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageActionGiveawayResults_free(tl_t *tl_) {
 	tl_messageActionGiveawayResults_t *tl = (tl_messageActionGiveawayResults_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageActionBoostApply_free(tl_t *tl_) {
 	tl_messageActionBoostApply_t *tl = (tl_messageActionBoostApply_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -1801,7 +1801,7 @@ void tl_messageActionRequestedPeerSentMe_free(tl_t *tl_) {
 
 void tl_messageActionPaymentRefunded_free(tl_t *tl_) {
 	tl_messageActionPaymentRefunded_t *tl = (tl_messageActionPaymentRefunded_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->currency_);
 	buf_free(tl->payload_);
@@ -1812,7 +1812,7 @@ void tl_messageActionPaymentRefunded_free(tl_t *tl_) {
 
 void tl_messageActionGiftStars_free(tl_t *tl_) {
 	tl_messageActionGiftStars_t *tl = (tl_messageActionGiftStars_t *)tl_;
-	int i;
+	
 	buf_free(tl->currency_);
 	buf_free(tl->crypto_currency_);
 	buf_free(tl->transaction_id_);
@@ -1822,7 +1822,7 @@ void tl_messageActionGiftStars_free(tl_t *tl_) {
 
 void tl_dialog_free(tl_t *tl_) {
 	tl_dialog_t *tl = (tl_dialog_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->notify_settings_);
 	tl_free(tl->draft_);
@@ -1832,7 +1832,7 @@ void tl_dialog_free(tl_t *tl_) {
 
 void tl_dialogFolder_free(tl_t *tl_) {
 	tl_dialogFolder_t *tl = (tl_dialogFolder_t *)tl_;
-	int i;
+	
 	tl_free(tl->folder_);
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
@@ -1841,7 +1841,7 @@ void tl_dialogFolder_free(tl_t *tl_) {
 
 void tl_photoEmpty_free(tl_t *tl_) {
 	tl_photoEmpty_t *tl = (tl_photoEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -1864,7 +1864,7 @@ void tl_photo_free(tl_t *tl_) {
 
 void tl_photoSizeEmpty_free(tl_t *tl_) {
 	tl_photoSizeEmpty_t *tl = (tl_photoSizeEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->type_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1872,7 +1872,7 @@ void tl_photoSizeEmpty_free(tl_t *tl_) {
 
 void tl_photoSize_free(tl_t *tl_) {
 	tl_photoSize_t *tl = (tl_photoSize_t *)tl_;
-	int i;
+	
 	buf_free(tl->type_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1880,7 +1880,7 @@ void tl_photoSize_free(tl_t *tl_) {
 
 void tl_photoCachedSize_free(tl_t *tl_) {
 	tl_photoCachedSize_t *tl = (tl_photoCachedSize_t *)tl_;
-	int i;
+	
 	buf_free(tl->type_);
 	buf_free(tl->bytes_);
 	buf_free(tl->_buf);
@@ -1889,7 +1889,7 @@ void tl_photoCachedSize_free(tl_t *tl_) {
 
 void tl_photoStrippedSize_free(tl_t *tl_) {
 	tl_photoStrippedSize_t *tl = (tl_photoStrippedSize_t *)tl_;
-	int i;
+	
 	buf_free(tl->type_);
 	buf_free(tl->bytes_);
 	buf_free(tl->_buf);
@@ -1909,7 +1909,7 @@ void tl_photoSizeProgressive_free(tl_t *tl_) {
 
 void tl_photoPathSize_free(tl_t *tl_) {
 	tl_photoPathSize_t *tl = (tl_photoPathSize_t *)tl_;
-	int i;
+	
 	buf_free(tl->type_);
 	buf_free(tl->bytes_);
 	buf_free(tl->_buf);
@@ -1918,21 +1918,21 @@ void tl_photoPathSize_free(tl_t *tl_) {
 
 void tl_geoPointEmpty_free(tl_t *tl_) {
 	tl_geoPointEmpty_t *tl = (tl_geoPointEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_geoPoint_free(tl_t *tl_) {
 	tl_geoPoint_t *tl = (tl_geoPoint_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_sentCode_free(tl_t *tl_) {
 	tl_auth_sentCode_t *tl = (tl_auth_sentCode_t *)tl_;
-	int i;
+	
 	tl_free(tl->type_);
 	buf_free(tl->phone_code_hash_);
 	tl_free(tl->next_type_);
@@ -1942,7 +1942,7 @@ void tl_auth_sentCode_free(tl_t *tl_) {
 
 void tl_auth_sentCodeSuccess_free(tl_t *tl_) {
 	tl_auth_sentCodeSuccess_t *tl = (tl_auth_sentCodeSuccess_t *)tl_;
-	int i;
+	
 	tl_free(tl->authorization_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1950,7 +1950,7 @@ void tl_auth_sentCodeSuccess_free(tl_t *tl_) {
 
 void tl_auth_authorization_free(tl_t *tl_) {
 	tl_auth_authorization_t *tl = (tl_auth_authorization_t *)tl_;
-	int i;
+	
 	buf_free(tl->future_auth_token_);
 	tl_free(tl->user_);
 	buf_free(tl->_buf);
@@ -1959,7 +1959,7 @@ void tl_auth_authorization_free(tl_t *tl_) {
 
 void tl_auth_authorizationSignUpRequired_free(tl_t *tl_) {
 	tl_auth_authorizationSignUpRequired_t *tl = (tl_auth_authorizationSignUpRequired_t *)tl_;
-	int i;
+	
 	tl_free(tl->terms_of_service_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1967,7 +1967,7 @@ void tl_auth_authorizationSignUpRequired_free(tl_t *tl_) {
 
 void tl_auth_exportedAuthorization_free(tl_t *tl_) {
 	tl_auth_exportedAuthorization_t *tl = (tl_auth_exportedAuthorization_t *)tl_;
-	int i;
+	
 	buf_free(tl->bytes_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1975,7 +1975,7 @@ void tl_auth_exportedAuthorization_free(tl_t *tl_) {
 
 void tl_inputNotifyPeer_free(tl_t *tl_) {
 	tl_inputNotifyPeer_t *tl = (tl_inputNotifyPeer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -1983,28 +1983,28 @@ void tl_inputNotifyPeer_free(tl_t *tl_) {
 
 void tl_inputNotifyUsers_free(tl_t *tl_) {
 	tl_inputNotifyUsers_t *tl = (tl_inputNotifyUsers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputNotifyChats_free(tl_t *tl_) {
 	tl_inputNotifyChats_t *tl = (tl_inputNotifyChats_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputNotifyBroadcasts_free(tl_t *tl_) {
 	tl_inputNotifyBroadcasts_t *tl = (tl_inputNotifyBroadcasts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputNotifyForumTopic_free(tl_t *tl_) {
 	tl_inputNotifyForumTopic_t *tl = (tl_inputNotifyForumTopic_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2012,7 +2012,7 @@ void tl_inputNotifyForumTopic_free(tl_t *tl_) {
 
 void tl_inputPeerNotifySettings_free(tl_t *tl_) {
 	tl_inputPeerNotifySettings_t *tl = (tl_inputPeerNotifySettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->show_previews_);
 	tl_free(tl->silent_);
 	tl_free(tl->sound_);
@@ -2025,7 +2025,7 @@ void tl_inputPeerNotifySettings_free(tl_t *tl_) {
 
 void tl_peerNotifySettings_free(tl_t *tl_) {
 	tl_peerNotifySettings_t *tl = (tl_peerNotifySettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->show_previews_);
 	tl_free(tl->silent_);
 	tl_free(tl->ios_sound_);
@@ -2042,7 +2042,7 @@ void tl_peerNotifySettings_free(tl_t *tl_) {
 
 void tl_peerSettings_free(tl_t *tl_) {
 	tl_peerSettings_t *tl = (tl_peerSettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->request_chat_title_);
 	buf_free(tl->business_bot_manage_url_);
 	buf_free(tl->_buf);
@@ -2051,7 +2051,7 @@ void tl_peerSettings_free(tl_t *tl_) {
 
 void tl_wallPaper_free(tl_t *tl_) {
 	tl_wallPaper_t *tl = (tl_wallPaper_t *)tl_;
-	int i;
+	
 	buf_free(tl->slug_);
 	tl_free(tl->document_);
 	tl_free(tl->settings_);
@@ -2061,7 +2061,7 @@ void tl_wallPaper_free(tl_t *tl_) {
 
 void tl_wallPaperNoFile_free(tl_t *tl_) {
 	tl_wallPaperNoFile_t *tl = (tl_wallPaperNoFile_t *)tl_;
-	int i;
+	
 	tl_free(tl->settings_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2069,70 +2069,70 @@ void tl_wallPaperNoFile_free(tl_t *tl_) {
 
 void tl_inputReportReasonSpam_free(tl_t *tl_) {
 	tl_inputReportReasonSpam_t *tl = (tl_inputReportReasonSpam_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputReportReasonViolence_free(tl_t *tl_) {
 	tl_inputReportReasonViolence_t *tl = (tl_inputReportReasonViolence_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputReportReasonPornography_free(tl_t *tl_) {
 	tl_inputReportReasonPornography_t *tl = (tl_inputReportReasonPornography_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputReportReasonChildAbuse_free(tl_t *tl_) {
 	tl_inputReportReasonChildAbuse_t *tl = (tl_inputReportReasonChildAbuse_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputReportReasonOther_free(tl_t *tl_) {
 	tl_inputReportReasonOther_t *tl = (tl_inputReportReasonOther_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputReportReasonCopyright_free(tl_t *tl_) {
 	tl_inputReportReasonCopyright_t *tl = (tl_inputReportReasonCopyright_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputReportReasonGeoIrrelevant_free(tl_t *tl_) {
 	tl_inputReportReasonGeoIrrelevant_t *tl = (tl_inputReportReasonGeoIrrelevant_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputReportReasonFake_free(tl_t *tl_) {
 	tl_inputReportReasonFake_t *tl = (tl_inputReportReasonFake_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputReportReasonIllegalDrugs_free(tl_t *tl_) {
 	tl_inputReportReasonIllegalDrugs_t *tl = (tl_inputReportReasonIllegalDrugs_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputReportReasonPersonalDetails_free(tl_t *tl_) {
 	tl_inputReportReasonPersonalDetails_t *tl = (tl_inputReportReasonPersonalDetails_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -2140,6 +2140,7 @@ void tl_inputReportReasonPersonalDetails_free(tl_t *tl_) {
 void tl_userFull_free(tl_t *tl_) {
 	tl_userFull_t *tl = (tl_userFull_t *)tl_;
 	int i;
+	
 	buf_free(tl->about_);
 	tl_free(tl->settings_);
 	tl_free(tl->personal_photo_);
@@ -2169,7 +2170,7 @@ void tl_userFull_free(tl_t *tl_) {
 
 void tl_contact_free(tl_t *tl_) {
 	tl_contact_t *tl = (tl_contact_t *)tl_;
-	int i;
+	
 	tl_free(tl->mutual_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2177,14 +2178,14 @@ void tl_contact_free(tl_t *tl_) {
 
 void tl_importedContact_free(tl_t *tl_) {
 	tl_importedContact_t *tl = (tl_importedContact_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_contactStatus_free(tl_t *tl_) {
 	tl_contactStatus_t *tl = (tl_contactStatus_t *)tl_;
-	int i;
+	
 	tl_free(tl->status_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2192,7 +2193,7 @@ void tl_contactStatus_free(tl_t *tl_) {
 
 void tl_contacts_contactsNotModified_free(tl_t *tl_) {
 	tl_contacts_contactsNotModified_t *tl = (tl_contacts_contactsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -2200,6 +2201,7 @@ void tl_contacts_contactsNotModified_free(tl_t *tl_) {
 void tl_contacts_contacts_free(tl_t *tl_) {
 	tl_contacts_contacts_t *tl = (tl_contacts_contacts_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->contacts_len; ++i){
 		tl_free(tl->contacts_[i]);
 	}
@@ -2215,6 +2217,7 @@ void tl_contacts_contacts_free(tl_t *tl_) {
 void tl_contacts_importedContacts_free(tl_t *tl_) {
 	tl_contacts_importedContacts_t *tl = (tl_contacts_importedContacts_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->imported_len; ++i){
 		tl_free(tl->imported_[i]);
 	}
@@ -2237,6 +2240,7 @@ void tl_contacts_importedContacts_free(tl_t *tl_) {
 void tl_contacts_blocked_free(tl_t *tl_) {
 	tl_contacts_blocked_t *tl = (tl_contacts_blocked_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->blocked_len; ++i){
 		tl_free(tl->blocked_[i]);
 	}
@@ -2256,6 +2260,7 @@ void tl_contacts_blocked_free(tl_t *tl_) {
 void tl_contacts_blockedSlice_free(tl_t *tl_) {
 	tl_contacts_blockedSlice_t *tl = (tl_contacts_blockedSlice_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->blocked_len; ++i){
 		tl_free(tl->blocked_[i]);
 	}
@@ -2275,6 +2280,7 @@ void tl_contacts_blockedSlice_free(tl_t *tl_) {
 void tl_messages_dialogs_free(tl_t *tl_) {
 	tl_messages_dialogs_t *tl = (tl_messages_dialogs_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->dialogs_len; ++i){
 		tl_free(tl->dialogs_[i]);
 	}
@@ -2298,6 +2304,7 @@ void tl_messages_dialogs_free(tl_t *tl_) {
 void tl_messages_dialogsSlice_free(tl_t *tl_) {
 	tl_messages_dialogsSlice_t *tl = (tl_messages_dialogsSlice_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->dialogs_len; ++i){
 		tl_free(tl->dialogs_[i]);
 	}
@@ -2320,7 +2327,7 @@ void tl_messages_dialogsSlice_free(tl_t *tl_) {
 
 void tl_messages_dialogsNotModified_free(tl_t *tl_) {
 	tl_messages_dialogsNotModified_t *tl = (tl_messages_dialogsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -2328,6 +2335,7 @@ void tl_messages_dialogsNotModified_free(tl_t *tl_) {
 void tl_messages_messages_free(tl_t *tl_) {
 	tl_messages_messages_t *tl = (tl_messages_messages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->messages_len; ++i){
 		tl_free(tl->messages_[i]);
 	}
@@ -2347,6 +2355,7 @@ void tl_messages_messages_free(tl_t *tl_) {
 void tl_messages_messagesSlice_free(tl_t *tl_) {
 	tl_messages_messagesSlice_t *tl = (tl_messages_messagesSlice_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->messages_len; ++i){
 		tl_free(tl->messages_[i]);
 	}
@@ -2366,6 +2375,7 @@ void tl_messages_messagesSlice_free(tl_t *tl_) {
 void tl_messages_channelMessages_free(tl_t *tl_) {
 	tl_messages_channelMessages_t *tl = (tl_messages_channelMessages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->messages_len; ++i){
 		tl_free(tl->messages_[i]);
 	}
@@ -2388,7 +2398,7 @@ void tl_messages_channelMessages_free(tl_t *tl_) {
 
 void tl_messages_messagesNotModified_free(tl_t *tl_) {
 	tl_messages_messagesNotModified_t *tl = (tl_messages_messagesNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -2396,6 +2406,7 @@ void tl_messages_messagesNotModified_free(tl_t *tl_) {
 void tl_messages_chats_free(tl_t *tl_) {
 	tl_messages_chats_t *tl = (tl_messages_chats_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->chats_len; ++i){
 		tl_free(tl->chats_[i]);
 	}
@@ -2407,6 +2418,7 @@ void tl_messages_chats_free(tl_t *tl_) {
 void tl_messages_chatsSlice_free(tl_t *tl_) {
 	tl_messages_chatsSlice_t *tl = (tl_messages_chatsSlice_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->chats_len; ++i){
 		tl_free(tl->chats_[i]);
 	}
@@ -2418,6 +2430,7 @@ void tl_messages_chatsSlice_free(tl_t *tl_) {
 void tl_messages_chatFull_free(tl_t *tl_) {
 	tl_messages_chatFull_t *tl = (tl_messages_chatFull_t *)tl_;
 	int i;
+	
 	tl_free(tl->full_chat_);
 	for(i=0; i<tl->chats_len; ++i){
 		tl_free(tl->chats_[i]);
@@ -2433,133 +2446,133 @@ void tl_messages_chatFull_free(tl_t *tl_) {
 
 void tl_messages_affectedHistory_free(tl_t *tl_) {
 	tl_messages_affectedHistory_t *tl = (tl_messages_affectedHistory_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterEmpty_free(tl_t *tl_) {
 	tl_inputMessagesFilterEmpty_t *tl = (tl_inputMessagesFilterEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterPhotos_free(tl_t *tl_) {
 	tl_inputMessagesFilterPhotos_t *tl = (tl_inputMessagesFilterPhotos_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterVideo_free(tl_t *tl_) {
 	tl_inputMessagesFilterVideo_t *tl = (tl_inputMessagesFilterVideo_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterPhotoVideo_free(tl_t *tl_) {
 	tl_inputMessagesFilterPhotoVideo_t *tl = (tl_inputMessagesFilterPhotoVideo_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterDocument_free(tl_t *tl_) {
 	tl_inputMessagesFilterDocument_t *tl = (tl_inputMessagesFilterDocument_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterUrl_free(tl_t *tl_) {
 	tl_inputMessagesFilterUrl_t *tl = (tl_inputMessagesFilterUrl_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterGif_free(tl_t *tl_) {
 	tl_inputMessagesFilterGif_t *tl = (tl_inputMessagesFilterGif_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterVoice_free(tl_t *tl_) {
 	tl_inputMessagesFilterVoice_t *tl = (tl_inputMessagesFilterVoice_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterMusic_free(tl_t *tl_) {
 	tl_inputMessagesFilterMusic_t *tl = (tl_inputMessagesFilterMusic_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterChatPhotos_free(tl_t *tl_) {
 	tl_inputMessagesFilterChatPhotos_t *tl = (tl_inputMessagesFilterChatPhotos_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterPhoneCalls_free(tl_t *tl_) {
 	tl_inputMessagesFilterPhoneCalls_t *tl = (tl_inputMessagesFilterPhoneCalls_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterRoundVoice_free(tl_t *tl_) {
 	tl_inputMessagesFilterRoundVoice_t *tl = (tl_inputMessagesFilterRoundVoice_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterRoundVideo_free(tl_t *tl_) {
 	tl_inputMessagesFilterRoundVideo_t *tl = (tl_inputMessagesFilterRoundVideo_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterMyMentions_free(tl_t *tl_) {
 	tl_inputMessagesFilterMyMentions_t *tl = (tl_inputMessagesFilterMyMentions_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterGeo_free(tl_t *tl_) {
 	tl_inputMessagesFilterGeo_t *tl = (tl_inputMessagesFilterGeo_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterContacts_free(tl_t *tl_) {
 	tl_inputMessagesFilterContacts_t *tl = (tl_inputMessagesFilterContacts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagesFilterPinned_free(tl_t *tl_) {
 	tl_inputMessagesFilterPinned_t *tl = (tl_inputMessagesFilterPinned_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateNewMessage_free(tl_t *tl_) {
 	tl_updateNewMessage_t *tl = (tl_updateNewMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2567,7 +2580,7 @@ void tl_updateNewMessage_free(tl_t *tl_) {
 
 void tl_updateMessageID_free(tl_t *tl_) {
 	tl_updateMessageID_t *tl = (tl_updateMessageID_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -2575,6 +2588,7 @@ void tl_updateMessageID_free(tl_t *tl_) {
 void tl_updateDeleteMessages_free(tl_t *tl_) {
 	tl_updateDeleteMessages_t *tl = (tl_updateDeleteMessages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->messages_len; ++i){
 	}
 	free(tl->messages_);
@@ -2584,7 +2598,7 @@ void tl_updateDeleteMessages_free(tl_t *tl_) {
 
 void tl_updateUserTyping_free(tl_t *tl_) {
 	tl_updateUserTyping_t *tl = (tl_updateUserTyping_t *)tl_;
-	int i;
+	
 	tl_free(tl->action_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2592,7 +2606,7 @@ void tl_updateUserTyping_free(tl_t *tl_) {
 
 void tl_updateChatUserTyping_free(tl_t *tl_) {
 	tl_updateChatUserTyping_t *tl = (tl_updateChatUserTyping_t *)tl_;
-	int i;
+	
 	tl_free(tl->from_id_);
 	tl_free(tl->action_);
 	buf_free(tl->_buf);
@@ -2601,7 +2615,7 @@ void tl_updateChatUserTyping_free(tl_t *tl_) {
 
 void tl_updateChatParticipants_free(tl_t *tl_) {
 	tl_updateChatParticipants_t *tl = (tl_updateChatParticipants_t *)tl_;
-	int i;
+	
 	tl_free(tl->participants_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2609,7 +2623,7 @@ void tl_updateChatParticipants_free(tl_t *tl_) {
 
 void tl_updateUserStatus_free(tl_t *tl_) {
 	tl_updateUserStatus_t *tl = (tl_updateUserStatus_t *)tl_;
-	int i;
+	
 	tl_free(tl->status_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2618,6 +2632,7 @@ void tl_updateUserStatus_free(tl_t *tl_) {
 void tl_updateUserName_free(tl_t *tl_) {
 	tl_updateUserName_t *tl = (tl_updateUserName_t *)tl_;
 	int i;
+	
 	buf_free(tl->first_name_);
 	buf_free(tl->last_name_);
 	for(i=0; i<tl->usernames_len; ++i){
@@ -2630,7 +2645,7 @@ void tl_updateUserName_free(tl_t *tl_) {
 
 void tl_updateNewAuthorization_free(tl_t *tl_) {
 	tl_updateNewAuthorization_t *tl = (tl_updateNewAuthorization_t *)tl_;
-	int i;
+	
 	buf_free(tl->device_);
 	buf_free(tl->location_);
 	buf_free(tl->_buf);
@@ -2639,7 +2654,7 @@ void tl_updateNewAuthorization_free(tl_t *tl_) {
 
 void tl_updateNewEncryptedMessage_free(tl_t *tl_) {
 	tl_updateNewEncryptedMessage_t *tl = (tl_updateNewEncryptedMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2647,14 +2662,14 @@ void tl_updateNewEncryptedMessage_free(tl_t *tl_) {
 
 void tl_updateEncryptedChatTyping_free(tl_t *tl_) {
 	tl_updateEncryptedChatTyping_t *tl = (tl_updateEncryptedChatTyping_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateEncryption_free(tl_t *tl_) {
 	tl_updateEncryption_t *tl = (tl_updateEncryption_t *)tl_;
-	int i;
+	
 	tl_free(tl->chat_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2662,21 +2677,21 @@ void tl_updateEncryption_free(tl_t *tl_) {
 
 void tl_updateEncryptedMessagesRead_free(tl_t *tl_) {
 	tl_updateEncryptedMessagesRead_t *tl = (tl_updateEncryptedMessagesRead_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateChatParticipantAdd_free(tl_t *tl_) {
 	tl_updateChatParticipantAdd_t *tl = (tl_updateChatParticipantAdd_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateChatParticipantDelete_free(tl_t *tl_) {
 	tl_updateChatParticipantDelete_t *tl = (tl_updateChatParticipantDelete_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -2684,6 +2699,7 @@ void tl_updateChatParticipantDelete_free(tl_t *tl_) {
 void tl_updateDcOptions_free(tl_t *tl_) {
 	tl_updateDcOptions_t *tl = (tl_updateDcOptions_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->dc_options_len; ++i){
 		tl_free(tl->dc_options_[i]);
 	}
@@ -2694,7 +2710,7 @@ void tl_updateDcOptions_free(tl_t *tl_) {
 
 void tl_updateNotifySettings_free(tl_t *tl_) {
 	tl_updateNotifySettings_t *tl = (tl_updateNotifySettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->notify_settings_);
 	buf_free(tl->_buf);
@@ -2704,6 +2720,7 @@ void tl_updateNotifySettings_free(tl_t *tl_) {
 void tl_updateServiceNotification_free(tl_t *tl_) {
 	tl_updateServiceNotification_t *tl = (tl_updateServiceNotification_t *)tl_;
 	int i;
+	
 	buf_free(tl->type_);
 	buf_free(tl->message_);
 	tl_free(tl->media_);
@@ -2718,6 +2735,7 @@ void tl_updateServiceNotification_free(tl_t *tl_) {
 void tl_updatePrivacy_free(tl_t *tl_) {
 	tl_updatePrivacy_t *tl = (tl_updatePrivacy_t *)tl_;
 	int i;
+	
 	tl_free(tl->key_);
 	for(i=0; i<tl->rules_len; ++i){
 		tl_free(tl->rules_[i]);
@@ -2729,7 +2747,7 @@ void tl_updatePrivacy_free(tl_t *tl_) {
 
 void tl_updateUserPhone_free(tl_t *tl_) {
 	tl_updateUserPhone_t *tl = (tl_updateUserPhone_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2737,7 +2755,7 @@ void tl_updateUserPhone_free(tl_t *tl_) {
 
 void tl_updateReadHistoryInbox_free(tl_t *tl_) {
 	tl_updateReadHistoryInbox_t *tl = (tl_updateReadHistoryInbox_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2745,7 +2763,7 @@ void tl_updateReadHistoryInbox_free(tl_t *tl_) {
 
 void tl_updateReadHistoryOutbox_free(tl_t *tl_) {
 	tl_updateReadHistoryOutbox_t *tl = (tl_updateReadHistoryOutbox_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2753,7 +2771,7 @@ void tl_updateReadHistoryOutbox_free(tl_t *tl_) {
 
 void tl_updateWebPage_free(tl_t *tl_) {
 	tl_updateWebPage_t *tl = (tl_updateWebPage_t *)tl_;
-	int i;
+	
 	tl_free(tl->webpage_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2762,6 +2780,7 @@ void tl_updateWebPage_free(tl_t *tl_) {
 void tl_updateReadMessagesContents_free(tl_t *tl_) {
 	tl_updateReadMessagesContents_t *tl = (tl_updateReadMessagesContents_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->messages_len; ++i){
 	}
 	free(tl->messages_);
@@ -2771,21 +2790,21 @@ void tl_updateReadMessagesContents_free(tl_t *tl_) {
 
 void tl_updateChannelTooLong_free(tl_t *tl_) {
 	tl_updateChannelTooLong_t *tl = (tl_updateChannelTooLong_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateChannel_free(tl_t *tl_) {
 	tl_updateChannel_t *tl = (tl_updateChannel_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateNewChannelMessage_free(tl_t *tl_) {
 	tl_updateNewChannelMessage_t *tl = (tl_updateNewChannelMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2793,7 +2812,7 @@ void tl_updateNewChannelMessage_free(tl_t *tl_) {
 
 void tl_updateReadChannelInbox_free(tl_t *tl_) {
 	tl_updateReadChannelInbox_t *tl = (tl_updateReadChannelInbox_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -2801,6 +2820,7 @@ void tl_updateReadChannelInbox_free(tl_t *tl_) {
 void tl_updateDeleteChannelMessages_free(tl_t *tl_) {
 	tl_updateDeleteChannelMessages_t *tl = (tl_updateDeleteChannelMessages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->messages_len; ++i){
 	}
 	free(tl->messages_);
@@ -2810,14 +2830,14 @@ void tl_updateDeleteChannelMessages_free(tl_t *tl_) {
 
 void tl_updateChannelMessageViews_free(tl_t *tl_) {
 	tl_updateChannelMessageViews_t *tl = (tl_updateChannelMessageViews_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateChatParticipantAdmin_free(tl_t *tl_) {
 	tl_updateChatParticipantAdmin_t *tl = (tl_updateChatParticipantAdmin_t *)tl_;
-	int i;
+	
 	tl_free(tl->is_admin_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2825,7 +2845,7 @@ void tl_updateChatParticipantAdmin_free(tl_t *tl_) {
 
 void tl_updateNewStickerSet_free(tl_t *tl_) {
 	tl_updateNewStickerSet_t *tl = (tl_updateNewStickerSet_t *)tl_;
-	int i;
+	
 	tl_free(tl->stickerset_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2834,6 +2854,7 @@ void tl_updateNewStickerSet_free(tl_t *tl_) {
 void tl_updateStickerSetsOrder_free(tl_t *tl_) {
 	tl_updateStickerSetsOrder_t *tl = (tl_updateStickerSetsOrder_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->order_len; ++i){
 	}
 	free(tl->order_);
@@ -2843,21 +2864,21 @@ void tl_updateStickerSetsOrder_free(tl_t *tl_) {
 
 void tl_updateStickerSets_free(tl_t *tl_) {
 	tl_updateStickerSets_t *tl = (tl_updateStickerSets_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateSavedGifs_free(tl_t *tl_) {
 	tl_updateSavedGifs_t *tl = (tl_updateSavedGifs_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateBotInlineQuery_free(tl_t *tl_) {
 	tl_updateBotInlineQuery_t *tl = (tl_updateBotInlineQuery_t *)tl_;
-	int i;
+	
 	buf_free(tl->query_);
 	tl_free(tl->geo_);
 	tl_free(tl->peer_type_);
@@ -2868,7 +2889,7 @@ void tl_updateBotInlineQuery_free(tl_t *tl_) {
 
 void tl_updateBotInlineSend_free(tl_t *tl_) {
 	tl_updateBotInlineSend_t *tl = (tl_updateBotInlineSend_t *)tl_;
-	int i;
+	
 	buf_free(tl->query_);
 	tl_free(tl->geo_);
 	buf_free(tl->id_);
@@ -2879,7 +2900,7 @@ void tl_updateBotInlineSend_free(tl_t *tl_) {
 
 void tl_updateEditChannelMessage_free(tl_t *tl_) {
 	tl_updateEditChannelMessage_t *tl = (tl_updateEditChannelMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2887,7 +2908,7 @@ void tl_updateEditChannelMessage_free(tl_t *tl_) {
 
 void tl_updateBotCallbackQuery_free(tl_t *tl_) {
 	tl_updateBotCallbackQuery_t *tl = (tl_updateBotCallbackQuery_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->data_);
 	buf_free(tl->game_short_name_);
@@ -2897,7 +2918,7 @@ void tl_updateBotCallbackQuery_free(tl_t *tl_) {
 
 void tl_updateEditMessage_free(tl_t *tl_) {
 	tl_updateEditMessage_t *tl = (tl_updateEditMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2905,7 +2926,7 @@ void tl_updateEditMessage_free(tl_t *tl_) {
 
 void tl_updateInlineBotCallbackQuery_free(tl_t *tl_) {
 	tl_updateInlineBotCallbackQuery_t *tl = (tl_updateInlineBotCallbackQuery_t *)tl_;
-	int i;
+	
 	tl_free(tl->msg_id_);
 	buf_free(tl->data_);
 	buf_free(tl->game_short_name_);
@@ -2915,14 +2936,14 @@ void tl_updateInlineBotCallbackQuery_free(tl_t *tl_) {
 
 void tl_updateReadChannelOutbox_free(tl_t *tl_) {
 	tl_updateReadChannelOutbox_t *tl = (tl_updateReadChannelOutbox_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateDraftMessage_free(tl_t *tl_) {
 	tl_updateDraftMessage_t *tl = (tl_updateDraftMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->draft_);
 	buf_free(tl->_buf);
@@ -2931,35 +2952,35 @@ void tl_updateDraftMessage_free(tl_t *tl_) {
 
 void tl_updateReadFeaturedStickers_free(tl_t *tl_) {
 	tl_updateReadFeaturedStickers_t *tl = (tl_updateReadFeaturedStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateRecentStickers_free(tl_t *tl_) {
 	tl_updateRecentStickers_t *tl = (tl_updateRecentStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateConfig_free(tl_t *tl_) {
 	tl_updateConfig_t *tl = (tl_updateConfig_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updatePtsChanged_free(tl_t *tl_) {
 	tl_updatePtsChanged_t *tl = (tl_updatePtsChanged_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateChannelWebPage_free(tl_t *tl_) {
 	tl_updateChannelWebPage_t *tl = (tl_updateChannelWebPage_t *)tl_;
-	int i;
+	
 	tl_free(tl->webpage_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2967,7 +2988,7 @@ void tl_updateChannelWebPage_free(tl_t *tl_) {
 
 void tl_updateDialogPinned_free(tl_t *tl_) {
 	tl_updateDialogPinned_t *tl = (tl_updateDialogPinned_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2976,6 +2997,7 @@ void tl_updateDialogPinned_free(tl_t *tl_) {
 void tl_updatePinnedDialogs_free(tl_t *tl_) {
 	tl_updatePinnedDialogs_t *tl = (tl_updatePinnedDialogs_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->order_len; ++i){
 		tl_free(tl->order_[i]);
 	}
@@ -2986,7 +3008,7 @@ void tl_updatePinnedDialogs_free(tl_t *tl_) {
 
 void tl_updateBotWebhookJSON_free(tl_t *tl_) {
 	tl_updateBotWebhookJSON_t *tl = (tl_updateBotWebhookJSON_t *)tl_;
-	int i;
+	
 	tl_free(tl->data_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -2994,7 +3016,7 @@ void tl_updateBotWebhookJSON_free(tl_t *tl_) {
 
 void tl_updateBotWebhookJSONQuery_free(tl_t *tl_) {
 	tl_updateBotWebhookJSONQuery_t *tl = (tl_updateBotWebhookJSONQuery_t *)tl_;
-	int i;
+	
 	tl_free(tl->data_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3002,7 +3024,7 @@ void tl_updateBotWebhookJSONQuery_free(tl_t *tl_) {
 
 void tl_updateBotShippingQuery_free(tl_t *tl_) {
 	tl_updateBotShippingQuery_t *tl = (tl_updateBotShippingQuery_t *)tl_;
-	int i;
+	
 	buf_free(tl->payload_);
 	tl_free(tl->shipping_address_);
 	buf_free(tl->_buf);
@@ -3011,7 +3033,7 @@ void tl_updateBotShippingQuery_free(tl_t *tl_) {
 
 void tl_updateBotPrecheckoutQuery_free(tl_t *tl_) {
 	tl_updateBotPrecheckoutQuery_t *tl = (tl_updateBotPrecheckoutQuery_t *)tl_;
-	int i;
+	
 	buf_free(tl->payload_);
 	tl_free(tl->info_);
 	buf_free(tl->shipping_option_id_);
@@ -3022,7 +3044,7 @@ void tl_updateBotPrecheckoutQuery_free(tl_t *tl_) {
 
 void tl_updatePhoneCall_free(tl_t *tl_) {
 	tl_updatePhoneCall_t *tl = (tl_updatePhoneCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->phone_call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3030,7 +3052,7 @@ void tl_updatePhoneCall_free(tl_t *tl_) {
 
 void tl_updateLangPackTooLong_free(tl_t *tl_) {
 	tl_updateLangPackTooLong_t *tl = (tl_updateLangPackTooLong_t *)tl_;
-	int i;
+	
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3038,7 +3060,7 @@ void tl_updateLangPackTooLong_free(tl_t *tl_) {
 
 void tl_updateLangPack_free(tl_t *tl_) {
 	tl_updateLangPack_t *tl = (tl_updateLangPack_t *)tl_;
-	int i;
+	
 	tl_free(tl->difference_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3046,7 +3068,7 @@ void tl_updateLangPack_free(tl_t *tl_) {
 
 void tl_updateFavedStickers_free(tl_t *tl_) {
 	tl_updateFavedStickers_t *tl = (tl_updateFavedStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -3054,6 +3076,7 @@ void tl_updateFavedStickers_free(tl_t *tl_) {
 void tl_updateChannelReadMessagesContents_free(tl_t *tl_) {
 	tl_updateChannelReadMessagesContents_t *tl = (tl_updateChannelReadMessagesContents_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->messages_len; ++i){
 	}
 	free(tl->messages_);
@@ -3063,21 +3086,21 @@ void tl_updateChannelReadMessagesContents_free(tl_t *tl_) {
 
 void tl_updateContactsReset_free(tl_t *tl_) {
 	tl_updateContactsReset_t *tl = (tl_updateContactsReset_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateChannelAvailableMessages_free(tl_t *tl_) {
 	tl_updateChannelAvailableMessages_t *tl = (tl_updateChannelAvailableMessages_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateDialogUnreadMark_free(tl_t *tl_) {
 	tl_updateDialogUnreadMark_t *tl = (tl_updateDialogUnreadMark_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3085,7 +3108,7 @@ void tl_updateDialogUnreadMark_free(tl_t *tl_) {
 
 void tl_updateMessagePoll_free(tl_t *tl_) {
 	tl_updateMessagePoll_t *tl = (tl_updateMessagePoll_t *)tl_;
-	int i;
+	
 	tl_free(tl->poll_);
 	tl_free(tl->results_);
 	buf_free(tl->_buf);
@@ -3094,7 +3117,7 @@ void tl_updateMessagePoll_free(tl_t *tl_) {
 
 void tl_updateChatDefaultBannedRights_free(tl_t *tl_) {
 	tl_updateChatDefaultBannedRights_t *tl = (tl_updateChatDefaultBannedRights_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->default_banned_rights_);
 	buf_free(tl->_buf);
@@ -3104,6 +3127,7 @@ void tl_updateChatDefaultBannedRights_free(tl_t *tl_) {
 void tl_updateFolderPeers_free(tl_t *tl_) {
 	tl_updateFolderPeers_t *tl = (tl_updateFolderPeers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->folder_peers_len; ++i){
 		tl_free(tl->folder_peers_[i]);
 	}
@@ -3114,7 +3138,7 @@ void tl_updateFolderPeers_free(tl_t *tl_) {
 
 void tl_updatePeerSettings_free(tl_t *tl_) {
 	tl_updatePeerSettings_t *tl = (tl_updatePeerSettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->settings_);
 	buf_free(tl->_buf);
@@ -3124,6 +3148,7 @@ void tl_updatePeerSettings_free(tl_t *tl_) {
 void tl_updatePeerLocated_free(tl_t *tl_) {
 	tl_updatePeerLocated_t *tl = (tl_updatePeerLocated_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->peers_len; ++i){
 		tl_free(tl->peers_[i]);
 	}
@@ -3134,7 +3159,7 @@ void tl_updatePeerLocated_free(tl_t *tl_) {
 
 void tl_updateNewScheduledMessage_free(tl_t *tl_) {
 	tl_updateNewScheduledMessage_t *tl = (tl_updateNewScheduledMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3143,6 +3168,7 @@ void tl_updateNewScheduledMessage_free(tl_t *tl_) {
 void tl_updateDeleteScheduledMessages_free(tl_t *tl_) {
 	tl_updateDeleteScheduledMessages_t *tl = (tl_updateDeleteScheduledMessages_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->messages_len; ++i){
 	}
@@ -3153,7 +3179,7 @@ void tl_updateDeleteScheduledMessages_free(tl_t *tl_) {
 
 void tl_updateTheme_free(tl_t *tl_) {
 	tl_updateTheme_t *tl = (tl_updateTheme_t *)tl_;
-	int i;
+	
 	tl_free(tl->theme_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3161,7 +3187,7 @@ void tl_updateTheme_free(tl_t *tl_) {
 
 void tl_updateGeoLiveViewed_free(tl_t *tl_) {
 	tl_updateGeoLiveViewed_t *tl = (tl_updateGeoLiveViewed_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3169,7 +3195,7 @@ void tl_updateGeoLiveViewed_free(tl_t *tl_) {
 
 void tl_updateLoginToken_free(tl_t *tl_) {
 	tl_updateLoginToken_t *tl = (tl_updateLoginToken_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -3177,6 +3203,7 @@ void tl_updateLoginToken_free(tl_t *tl_) {
 void tl_updateMessagePollVote_free(tl_t *tl_) {
 	tl_updateMessagePollVote_t *tl = (tl_updateMessagePollVote_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->options_len; ++i){
 		buf_free(tl->options_[i]);
@@ -3188,7 +3215,7 @@ void tl_updateMessagePollVote_free(tl_t *tl_) {
 
 void tl_updateDialogFilter_free(tl_t *tl_) {
 	tl_updateDialogFilter_t *tl = (tl_updateDialogFilter_t *)tl_;
-	int i;
+	
 	tl_free(tl->filter_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3197,6 +3224,7 @@ void tl_updateDialogFilter_free(tl_t *tl_) {
 void tl_updateDialogFilterOrder_free(tl_t *tl_) {
 	tl_updateDialogFilterOrder_t *tl = (tl_updateDialogFilterOrder_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->order_len; ++i){
 	}
 	free(tl->order_);
@@ -3206,14 +3234,14 @@ void tl_updateDialogFilterOrder_free(tl_t *tl_) {
 
 void tl_updateDialogFilters_free(tl_t *tl_) {
 	tl_updateDialogFilters_t *tl = (tl_updateDialogFilters_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updatePhoneCallSignalingData_free(tl_t *tl_) {
 	tl_updatePhoneCallSignalingData_t *tl = (tl_updatePhoneCallSignalingData_t *)tl_;
-	int i;
+	
 	buf_free(tl->data_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3221,28 +3249,28 @@ void tl_updatePhoneCallSignalingData_free(tl_t *tl_) {
 
 void tl_updateChannelMessageForwards_free(tl_t *tl_) {
 	tl_updateChannelMessageForwards_t *tl = (tl_updateChannelMessageForwards_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateReadChannelDiscussionInbox_free(tl_t *tl_) {
 	tl_updateReadChannelDiscussionInbox_t *tl = (tl_updateReadChannelDiscussionInbox_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateReadChannelDiscussionOutbox_free(tl_t *tl_) {
 	tl_updateReadChannelDiscussionOutbox_t *tl = (tl_updateReadChannelDiscussionOutbox_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updatePeerBlocked_free(tl_t *tl_) {
 	tl_updatePeerBlocked_t *tl = (tl_updatePeerBlocked_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3250,7 +3278,7 @@ void tl_updatePeerBlocked_free(tl_t *tl_) {
 
 void tl_updateChannelUserTyping_free(tl_t *tl_) {
 	tl_updateChannelUserTyping_t *tl = (tl_updateChannelUserTyping_t *)tl_;
-	int i;
+	
 	tl_free(tl->from_id_);
 	tl_free(tl->action_);
 	buf_free(tl->_buf);
@@ -3260,6 +3288,7 @@ void tl_updateChannelUserTyping_free(tl_t *tl_) {
 void tl_updatePinnedMessages_free(tl_t *tl_) {
 	tl_updatePinnedMessages_t *tl = (tl_updatePinnedMessages_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->messages_len; ++i){
 	}
@@ -3271,6 +3300,7 @@ void tl_updatePinnedMessages_free(tl_t *tl_) {
 void tl_updatePinnedChannelMessages_free(tl_t *tl_) {
 	tl_updatePinnedChannelMessages_t *tl = (tl_updatePinnedChannelMessages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->messages_len; ++i){
 	}
 	free(tl->messages_);
@@ -3280,7 +3310,7 @@ void tl_updatePinnedChannelMessages_free(tl_t *tl_) {
 
 void tl_updateChat_free(tl_t *tl_) {
 	tl_updateChat_t *tl = (tl_updateChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -3288,6 +3318,7 @@ void tl_updateChat_free(tl_t *tl_) {
 void tl_updateGroupCallParticipants_free(tl_t *tl_) {
 	tl_updateGroupCallParticipants_t *tl = (tl_updateGroupCallParticipants_t *)tl_;
 	int i;
+	
 	tl_free(tl->call_);
 	for(i=0; i<tl->participants_len; ++i){
 		tl_free(tl->participants_[i]);
@@ -3299,7 +3330,7 @@ void tl_updateGroupCallParticipants_free(tl_t *tl_) {
 
 void tl_updateGroupCall_free(tl_t *tl_) {
 	tl_updateGroupCall_t *tl = (tl_updateGroupCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3307,7 +3338,7 @@ void tl_updateGroupCall_free(tl_t *tl_) {
 
 void tl_updatePeerHistoryTTL_free(tl_t *tl_) {
 	tl_updatePeerHistoryTTL_t *tl = (tl_updatePeerHistoryTTL_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3315,7 +3346,7 @@ void tl_updatePeerHistoryTTL_free(tl_t *tl_) {
 
 void tl_updateChatParticipant_free(tl_t *tl_) {
 	tl_updateChatParticipant_t *tl = (tl_updateChatParticipant_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_participant_);
 	tl_free(tl->new_participant_);
 	tl_free(tl->invite_);
@@ -3325,7 +3356,7 @@ void tl_updateChatParticipant_free(tl_t *tl_) {
 
 void tl_updateChannelParticipant_free(tl_t *tl_) {
 	tl_updateChannelParticipant_t *tl = (tl_updateChannelParticipant_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_participant_);
 	tl_free(tl->new_participant_);
 	tl_free(tl->invite_);
@@ -3335,7 +3366,7 @@ void tl_updateChannelParticipant_free(tl_t *tl_) {
 
 void tl_updateBotStopped_free(tl_t *tl_) {
 	tl_updateBotStopped_t *tl = (tl_updateBotStopped_t *)tl_;
-	int i;
+	
 	tl_free(tl->stopped_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3343,7 +3374,7 @@ void tl_updateBotStopped_free(tl_t *tl_) {
 
 void tl_updateGroupCallConnection_free(tl_t *tl_) {
 	tl_updateGroupCallConnection_t *tl = (tl_updateGroupCallConnection_t *)tl_;
-	int i;
+	
 	tl_free(tl->params_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3352,6 +3383,7 @@ void tl_updateGroupCallConnection_free(tl_t *tl_) {
 void tl_updateBotCommands_free(tl_t *tl_) {
 	tl_updateBotCommands_t *tl = (tl_updateBotCommands_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->commands_len; ++i){
 		tl_free(tl->commands_[i]);
@@ -3364,6 +3396,7 @@ void tl_updateBotCommands_free(tl_t *tl_) {
 void tl_updatePendingJoinRequests_free(tl_t *tl_) {
 	tl_updatePendingJoinRequests_t *tl = (tl_updatePendingJoinRequests_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->recent_requesters_len; ++i){
 	}
@@ -3374,7 +3407,7 @@ void tl_updatePendingJoinRequests_free(tl_t *tl_) {
 
 void tl_updateBotChatInviteRequester_free(tl_t *tl_) {
 	tl_updateBotChatInviteRequester_t *tl = (tl_updateBotChatInviteRequester_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->about_);
 	tl_free(tl->invite_);
@@ -3384,7 +3417,7 @@ void tl_updateBotChatInviteRequester_free(tl_t *tl_) {
 
 void tl_updateMessageReactions_free(tl_t *tl_) {
 	tl_updateMessageReactions_t *tl = (tl_updateMessageReactions_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reactions_);
 	buf_free(tl->_buf);
@@ -3393,21 +3426,21 @@ void tl_updateMessageReactions_free(tl_t *tl_) {
 
 void tl_updateAttachMenuBots_free(tl_t *tl_) {
 	tl_updateAttachMenuBots_t *tl = (tl_updateAttachMenuBots_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateWebViewResultSent_free(tl_t *tl_) {
 	tl_updateWebViewResultSent_t *tl = (tl_updateWebViewResultSent_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateBotMenuButton_free(tl_t *tl_) {
 	tl_updateBotMenuButton_t *tl = (tl_updateBotMenuButton_t *)tl_;
-	int i;
+	
 	tl_free(tl->button_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3415,14 +3448,14 @@ void tl_updateBotMenuButton_free(tl_t *tl_) {
 
 void tl_updateSavedRingtones_free(tl_t *tl_) {
 	tl_updateSavedRingtones_t *tl = (tl_updateSavedRingtones_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateTranscribedAudio_free(tl_t *tl_) {
 	tl_updateTranscribedAudio_t *tl = (tl_updateTranscribedAudio_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->text_);
 	buf_free(tl->_buf);
@@ -3431,14 +3464,14 @@ void tl_updateTranscribedAudio_free(tl_t *tl_) {
 
 void tl_updateReadFeaturedEmojiStickers_free(tl_t *tl_) {
 	tl_updateReadFeaturedEmojiStickers_t *tl = (tl_updateReadFeaturedEmojiStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateUserEmojiStatus_free(tl_t *tl_) {
 	tl_updateUserEmojiStatus_t *tl = (tl_updateUserEmojiStatus_t *)tl_;
-	int i;
+	
 	tl_free(tl->emoji_status_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3446,21 +3479,21 @@ void tl_updateUserEmojiStatus_free(tl_t *tl_) {
 
 void tl_updateRecentEmojiStatuses_free(tl_t *tl_) {
 	tl_updateRecentEmojiStatuses_t *tl = (tl_updateRecentEmojiStatuses_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateRecentReactions_free(tl_t *tl_) {
 	tl_updateRecentReactions_t *tl = (tl_updateRecentReactions_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateMoveStickerSetToTop_free(tl_t *tl_) {
 	tl_updateMoveStickerSetToTop_t *tl = (tl_updateMoveStickerSetToTop_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -3468,6 +3501,7 @@ void tl_updateMoveStickerSetToTop_free(tl_t *tl_) {
 void tl_updateMessageExtendedMedia_free(tl_t *tl_) {
 	tl_updateMessageExtendedMedia_t *tl = (tl_updateMessageExtendedMedia_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->extended_media_len; ++i){
 		tl_free(tl->extended_media_[i]);
@@ -3479,7 +3513,7 @@ void tl_updateMessageExtendedMedia_free(tl_t *tl_) {
 
 void tl_updateChannelPinnedTopic_free(tl_t *tl_) {
 	tl_updateChannelPinnedTopic_t *tl = (tl_updateChannelPinnedTopic_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -3487,6 +3521,7 @@ void tl_updateChannelPinnedTopic_free(tl_t *tl_) {
 void tl_updateChannelPinnedTopics_free(tl_t *tl_) {
 	tl_updateChannelPinnedTopics_t *tl = (tl_updateChannelPinnedTopics_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->order_len; ++i){
 	}
 	free(tl->order_);
@@ -3496,21 +3531,21 @@ void tl_updateChannelPinnedTopics_free(tl_t *tl_) {
 
 void tl_updateUser_free(tl_t *tl_) {
 	tl_updateUser_t *tl = (tl_updateUser_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateAutoSaveSettings_free(tl_t *tl_) {
 	tl_updateAutoSaveSettings_t *tl = (tl_updateAutoSaveSettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateStory_free(tl_t *tl_) {
 	tl_updateStory_t *tl = (tl_updateStory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->story_);
 	buf_free(tl->_buf);
@@ -3519,7 +3554,7 @@ void tl_updateStory_free(tl_t *tl_) {
 
 void tl_updateReadStories_free(tl_t *tl_) {
 	tl_updateReadStories_t *tl = (tl_updateReadStories_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3527,14 +3562,14 @@ void tl_updateReadStories_free(tl_t *tl_) {
 
 void tl_updateStoryID_free(tl_t *tl_) {
 	tl_updateStoryID_t *tl = (tl_updateStoryID_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateStoriesStealthMode_free(tl_t *tl_) {
 	tl_updateStoriesStealthMode_t *tl = (tl_updateStoriesStealthMode_t *)tl_;
-	int i;
+	
 	tl_free(tl->stealth_mode_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3542,7 +3577,7 @@ void tl_updateStoriesStealthMode_free(tl_t *tl_) {
 
 void tl_updateSentStoryReaction_free(tl_t *tl_) {
 	tl_updateSentStoryReaction_t *tl = (tl_updateSentStoryReaction_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reaction_);
 	buf_free(tl->_buf);
@@ -3551,7 +3586,7 @@ void tl_updateSentStoryReaction_free(tl_t *tl_) {
 
 void tl_updateBotChatBoost_free(tl_t *tl_) {
 	tl_updateBotChatBoost_t *tl = (tl_updateBotChatBoost_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->boost_);
 	buf_free(tl->_buf);
@@ -3560,7 +3595,7 @@ void tl_updateBotChatBoost_free(tl_t *tl_) {
 
 void tl_updateChannelViewForumAsMessages_free(tl_t *tl_) {
 	tl_updateChannelViewForumAsMessages_t *tl = (tl_updateChannelViewForumAsMessages_t *)tl_;
-	int i;
+	
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3568,7 +3603,7 @@ void tl_updateChannelViewForumAsMessages_free(tl_t *tl_) {
 
 void tl_updatePeerWallpaper_free(tl_t *tl_) {
 	tl_updatePeerWallpaper_t *tl = (tl_updatePeerWallpaper_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->wallpaper_);
 	buf_free(tl->_buf);
@@ -3578,6 +3613,7 @@ void tl_updatePeerWallpaper_free(tl_t *tl_) {
 void tl_updateBotMessageReaction_free(tl_t *tl_) {
 	tl_updateBotMessageReaction_t *tl = (tl_updateBotMessageReaction_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->actor_);
 	for(i=0; i<tl->old_reactions_len; ++i){
@@ -3595,6 +3631,7 @@ void tl_updateBotMessageReaction_free(tl_t *tl_) {
 void tl_updateBotMessageReactions_free(tl_t *tl_) {
 	tl_updateBotMessageReactions_t *tl = (tl_updateBotMessageReactions_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->reactions_len; ++i){
 		tl_free(tl->reactions_[i]);
@@ -3606,7 +3643,7 @@ void tl_updateBotMessageReactions_free(tl_t *tl_) {
 
 void tl_updateSavedDialogPinned_free(tl_t *tl_) {
 	tl_updateSavedDialogPinned_t *tl = (tl_updateSavedDialogPinned_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3615,6 +3652,7 @@ void tl_updateSavedDialogPinned_free(tl_t *tl_) {
 void tl_updatePinnedSavedDialogs_free(tl_t *tl_) {
 	tl_updatePinnedSavedDialogs_t *tl = (tl_updatePinnedSavedDialogs_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->order_len; ++i){
 		tl_free(tl->order_[i]);
 	}
@@ -3625,14 +3663,14 @@ void tl_updatePinnedSavedDialogs_free(tl_t *tl_) {
 
 void tl_updateSavedReactionTags_free(tl_t *tl_) {
 	tl_updateSavedReactionTags_t *tl = (tl_updateSavedReactionTags_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateSmsJob_free(tl_t *tl_) {
 	tl_updateSmsJob_t *tl = (tl_updateSmsJob_t *)tl_;
-	int i;
+	
 	buf_free(tl->job_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3641,6 +3679,7 @@ void tl_updateSmsJob_free(tl_t *tl_) {
 void tl_updateQuickReplies_free(tl_t *tl_) {
 	tl_updateQuickReplies_t *tl = (tl_updateQuickReplies_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->quick_replies_len; ++i){
 		tl_free(tl->quick_replies_[i]);
 	}
@@ -3651,7 +3690,7 @@ void tl_updateQuickReplies_free(tl_t *tl_) {
 
 void tl_updateNewQuickReply_free(tl_t *tl_) {
 	tl_updateNewQuickReply_t *tl = (tl_updateNewQuickReply_t *)tl_;
-	int i;
+	
 	tl_free(tl->quick_reply_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3659,14 +3698,14 @@ void tl_updateNewQuickReply_free(tl_t *tl_) {
 
 void tl_updateDeleteQuickReply_free(tl_t *tl_) {
 	tl_updateDeleteQuickReply_t *tl = (tl_updateDeleteQuickReply_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateQuickReplyMessage_free(tl_t *tl_) {
 	tl_updateQuickReplyMessage_t *tl = (tl_updateQuickReplyMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3675,6 +3714,7 @@ void tl_updateQuickReplyMessage_free(tl_t *tl_) {
 void tl_updateDeleteQuickReplyMessages_free(tl_t *tl_) {
 	tl_updateDeleteQuickReplyMessages_t *tl = (tl_updateDeleteQuickReplyMessages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->messages_len; ++i){
 	}
 	free(tl->messages_);
@@ -3684,7 +3724,7 @@ void tl_updateDeleteQuickReplyMessages_free(tl_t *tl_) {
 
 void tl_updateBotBusinessConnect_free(tl_t *tl_) {
 	tl_updateBotBusinessConnect_t *tl = (tl_updateBotBusinessConnect_t *)tl_;
-	int i;
+	
 	tl_free(tl->connection_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3692,7 +3732,7 @@ void tl_updateBotBusinessConnect_free(tl_t *tl_) {
 
 void tl_updateBotNewBusinessMessage_free(tl_t *tl_) {
 	tl_updateBotNewBusinessMessage_t *tl = (tl_updateBotNewBusinessMessage_t *)tl_;
-	int i;
+	
 	buf_free(tl->connection_id_);
 	tl_free(tl->message_);
 	tl_free(tl->reply_to_message_);
@@ -3702,7 +3742,7 @@ void tl_updateBotNewBusinessMessage_free(tl_t *tl_) {
 
 void tl_updateBotEditBusinessMessage_free(tl_t *tl_) {
 	tl_updateBotEditBusinessMessage_t *tl = (tl_updateBotEditBusinessMessage_t *)tl_;
-	int i;
+	
 	buf_free(tl->connection_id_);
 	tl_free(tl->message_);
 	tl_free(tl->reply_to_message_);
@@ -3713,6 +3753,7 @@ void tl_updateBotEditBusinessMessage_free(tl_t *tl_) {
 void tl_updateBotDeleteBusinessMessage_free(tl_t *tl_) {
 	tl_updateBotDeleteBusinessMessage_t *tl = (tl_updateBotDeleteBusinessMessage_t *)tl_;
 	int i;
+	
 	buf_free(tl->connection_id_);
 	tl_free(tl->peer_);
 	for(i=0; i<tl->messages_len; ++i){
@@ -3724,7 +3765,7 @@ void tl_updateBotDeleteBusinessMessage_free(tl_t *tl_) {
 
 void tl_updateNewStoryReaction_free(tl_t *tl_) {
 	tl_updateNewStoryReaction_t *tl = (tl_updateNewStoryReaction_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reaction_);
 	buf_free(tl->_buf);
@@ -3733,7 +3774,7 @@ void tl_updateNewStoryReaction_free(tl_t *tl_) {
 
 void tl_updateBroadcastRevenueTransactions_free(tl_t *tl_) {
 	tl_updateBroadcastRevenueTransactions_t *tl = (tl_updateBroadcastRevenueTransactions_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->balances_);
 	buf_free(tl->_buf);
@@ -3742,14 +3783,14 @@ void tl_updateBroadcastRevenueTransactions_free(tl_t *tl_) {
 
 void tl_updateStarsBalance_free(tl_t *tl_) {
 	tl_updateStarsBalance_t *tl = (tl_updateStarsBalance_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updateBusinessBotCallbackQuery_free(tl_t *tl_) {
 	tl_updateBusinessBotCallbackQuery_t *tl = (tl_updateBusinessBotCallbackQuery_t *)tl_;
-	int i;
+	
 	buf_free(tl->connection_id_);
 	tl_free(tl->message_);
 	tl_free(tl->reply_to_message_);
@@ -3760,7 +3801,7 @@ void tl_updateBusinessBotCallbackQuery_free(tl_t *tl_) {
 
 void tl_updateStarsRevenueStatus_free(tl_t *tl_) {
 	tl_updateStarsRevenueStatus_t *tl = (tl_updateStarsRevenueStatus_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->status_);
 	buf_free(tl->_buf);
@@ -3769,14 +3810,14 @@ void tl_updateStarsRevenueStatus_free(tl_t *tl_) {
 
 void tl_updates_state_free(tl_t *tl_) {
 	tl_updates_state_t *tl = (tl_updates_state_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updates_differenceEmpty_free(tl_t *tl_) {
 	tl_updates_differenceEmpty_t *tl = (tl_updates_differenceEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -3784,6 +3825,7 @@ void tl_updates_differenceEmpty_free(tl_t *tl_) {
 void tl_updates_difference_free(tl_t *tl_) {
 	tl_updates_difference_t *tl = (tl_updates_difference_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->new_messages_len; ++i){
 		tl_free(tl->new_messages_[i]);
 	}
@@ -3812,6 +3854,7 @@ void tl_updates_difference_free(tl_t *tl_) {
 void tl_updates_differenceSlice_free(tl_t *tl_) {
 	tl_updates_differenceSlice_t *tl = (tl_updates_differenceSlice_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->new_messages_len; ++i){
 		tl_free(tl->new_messages_[i]);
 	}
@@ -3839,14 +3882,14 @@ void tl_updates_differenceSlice_free(tl_t *tl_) {
 
 void tl_updates_differenceTooLong_free(tl_t *tl_) {
 	tl_updates_differenceTooLong_t *tl = (tl_updates_differenceTooLong_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updatesTooLong_free(tl_t *tl_) {
 	tl_updatesTooLong_t *tl = (tl_updatesTooLong_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -3854,6 +3897,7 @@ void tl_updatesTooLong_free(tl_t *tl_) {
 void tl_updateShortMessage_free(tl_t *tl_) {
 	tl_updateShortMessage_t *tl = (tl_updateShortMessage_t *)tl_;
 	int i;
+	
 	buf_free(tl->message_);
 	tl_free(tl->fwd_from_);
 	tl_free(tl->reply_to_);
@@ -3868,6 +3912,7 @@ void tl_updateShortMessage_free(tl_t *tl_) {
 void tl_updateShortChatMessage_free(tl_t *tl_) {
 	tl_updateShortChatMessage_t *tl = (tl_updateShortChatMessage_t *)tl_;
 	int i;
+	
 	buf_free(tl->message_);
 	tl_free(tl->fwd_from_);
 	tl_free(tl->reply_to_);
@@ -3881,7 +3926,7 @@ void tl_updateShortChatMessage_free(tl_t *tl_) {
 
 void tl_updateShort_free(tl_t *tl_) {
 	tl_updateShort_t *tl = (tl_updateShort_t *)tl_;
-	int i;
+	
 	tl_free(tl->update_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -3890,6 +3935,7 @@ void tl_updateShort_free(tl_t *tl_) {
 void tl_updatesCombined_free(tl_t *tl_) {
 	tl_updatesCombined_t *tl = (tl_updatesCombined_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->updates_len; ++i){
 		tl_free(tl->updates_[i]);
 	}
@@ -3909,6 +3955,7 @@ void tl_updatesCombined_free(tl_t *tl_) {
 void tl_updates_free(tl_t *tl_) {
 	tl_updates_t *tl = (tl_updates_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->updates_len; ++i){
 		tl_free(tl->updates_[i]);
 	}
@@ -3928,6 +3975,7 @@ void tl_updates_free(tl_t *tl_) {
 void tl_updateShortSentMessage_free(tl_t *tl_) {
 	tl_updateShortSentMessage_t *tl = (tl_updateShortSentMessage_t *)tl_;
 	int i;
+	
 	tl_free(tl->media_);
 	for(i=0; i<tl->entities_len; ++i){
 		tl_free(tl->entities_[i]);
@@ -3940,6 +3988,7 @@ void tl_updateShortSentMessage_free(tl_t *tl_) {
 void tl_photos_photos_free(tl_t *tl_) {
 	tl_photos_photos_t *tl = (tl_photos_photos_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->photos_len; ++i){
 		tl_free(tl->photos_[i]);
 	}
@@ -3955,6 +4004,7 @@ void tl_photos_photos_free(tl_t *tl_) {
 void tl_photos_photosSlice_free(tl_t *tl_) {
 	tl_photos_photosSlice_t *tl = (tl_photos_photosSlice_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->photos_len; ++i){
 		tl_free(tl->photos_[i]);
 	}
@@ -3970,6 +4020,7 @@ void tl_photos_photosSlice_free(tl_t *tl_) {
 void tl_photos_photo_free(tl_t *tl_) {
 	tl_photos_photo_t *tl = (tl_photos_photo_t *)tl_;
 	int i;
+	
 	tl_free(tl->photo_);
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
@@ -3981,7 +4032,7 @@ void tl_photos_photo_free(tl_t *tl_) {
 
 void tl_upload_file_free(tl_t *tl_) {
 	tl_upload_file_t *tl = (tl_upload_file_t *)tl_;
-	int i;
+	
 	tl_free(tl->type_);
 	buf_free(tl->bytes_);
 	buf_free(tl->_buf);
@@ -3991,6 +4042,7 @@ void tl_upload_file_free(tl_t *tl_) {
 void tl_upload_fileCdnRedirect_free(tl_t *tl_) {
 	tl_upload_fileCdnRedirect_t *tl = (tl_upload_fileCdnRedirect_t *)tl_;
 	int i;
+	
 	buf_free(tl->file_token_);
 	buf_free(tl->encryption_key_);
 	buf_free(tl->encryption_iv_);
@@ -4004,7 +4056,7 @@ void tl_upload_fileCdnRedirect_free(tl_t *tl_) {
 
 void tl_dcOption_free(tl_t *tl_) {
 	tl_dcOption_t *tl = (tl_dcOption_t *)tl_;
-	int i;
+	
 	buf_free(tl->ip_address_);
 	buf_free(tl->secret_);
 	buf_free(tl->_buf);
@@ -4014,6 +4066,7 @@ void tl_dcOption_free(tl_t *tl_) {
 void tl_config_free(tl_t *tl_) {
 	tl_config_t *tl = (tl_config_t *)tl_;
 	int i;
+	
 	tl_free(tl->test_mode_);
 	for(i=0; i<tl->dc_options_len; ++i){
 		tl_free(tl->dc_options_[i]);
@@ -4035,7 +4088,7 @@ void tl_config_free(tl_t *tl_) {
 
 void tl_nearestDc_free(tl_t *tl_) {
 	tl_nearestDc_t *tl = (tl_nearestDc_t *)tl_;
-	int i;
+	
 	buf_free(tl->country_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4044,6 +4097,7 @@ void tl_nearestDc_free(tl_t *tl_) {
 void tl_help_appUpdate_free(tl_t *tl_) {
 	tl_help_appUpdate_t *tl = (tl_help_appUpdate_t *)tl_;
 	int i;
+	
 	buf_free(tl->version_);
 	buf_free(tl->text_);
 	for(i=0; i<tl->entities_len; ++i){
@@ -4059,14 +4113,14 @@ void tl_help_appUpdate_free(tl_t *tl_) {
 
 void tl_help_noAppUpdate_free(tl_t *tl_) {
 	tl_help_noAppUpdate_t *tl = (tl_help_noAppUpdate_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_inviteText_free(tl_t *tl_) {
 	tl_help_inviteText_t *tl = (tl_help_inviteText_t *)tl_;
-	int i;
+	
 	buf_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4074,21 +4128,21 @@ void tl_help_inviteText_free(tl_t *tl_) {
 
 void tl_encryptedChatEmpty_free(tl_t *tl_) {
 	tl_encryptedChatEmpty_t *tl = (tl_encryptedChatEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_encryptedChatWaiting_free(tl_t *tl_) {
 	tl_encryptedChatWaiting_t *tl = (tl_encryptedChatWaiting_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_encryptedChatRequested_free(tl_t *tl_) {
 	tl_encryptedChatRequested_t *tl = (tl_encryptedChatRequested_t *)tl_;
-	int i;
+	
 	buf_free(tl->g_a_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4096,7 +4150,7 @@ void tl_encryptedChatRequested_free(tl_t *tl_) {
 
 void tl_encryptedChat_free(tl_t *tl_) {
 	tl_encryptedChat_t *tl = (tl_encryptedChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->g_a_or_b_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4104,42 +4158,42 @@ void tl_encryptedChat_free(tl_t *tl_) {
 
 void tl_encryptedChatDiscarded_free(tl_t *tl_) {
 	tl_encryptedChatDiscarded_t *tl = (tl_encryptedChatDiscarded_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputEncryptedChat_free(tl_t *tl_) {
 	tl_inputEncryptedChat_t *tl = (tl_inputEncryptedChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_encryptedFileEmpty_free(tl_t *tl_) {
 	tl_encryptedFileEmpty_t *tl = (tl_encryptedFileEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_encryptedFile_free(tl_t *tl_) {
 	tl_encryptedFile_t *tl = (tl_encryptedFile_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputEncryptedFileEmpty_free(tl_t *tl_) {
 	tl_inputEncryptedFileEmpty_t *tl = (tl_inputEncryptedFileEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputEncryptedFileUploaded_free(tl_t *tl_) {
 	tl_inputEncryptedFileUploaded_t *tl = (tl_inputEncryptedFileUploaded_t *)tl_;
-	int i;
+	
 	buf_free(tl->md5_checksum_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4147,21 +4201,21 @@ void tl_inputEncryptedFileUploaded_free(tl_t *tl_) {
 
 void tl_inputEncryptedFile_free(tl_t *tl_) {
 	tl_inputEncryptedFile_t *tl = (tl_inputEncryptedFile_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputEncryptedFileBigUploaded_free(tl_t *tl_) {
 	tl_inputEncryptedFileBigUploaded_t *tl = (tl_inputEncryptedFileBigUploaded_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_encryptedMessage_free(tl_t *tl_) {
 	tl_encryptedMessage_t *tl = (tl_encryptedMessage_t *)tl_;
-	int i;
+	
 	buf_free(tl->bytes_);
 	tl_free(tl->file_);
 	buf_free(tl->_buf);
@@ -4170,7 +4224,7 @@ void tl_encryptedMessage_free(tl_t *tl_) {
 
 void tl_encryptedMessageService_free(tl_t *tl_) {
 	tl_encryptedMessageService_t *tl = (tl_encryptedMessageService_t *)tl_;
-	int i;
+	
 	buf_free(tl->bytes_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4178,7 +4232,7 @@ void tl_encryptedMessageService_free(tl_t *tl_) {
 
 void tl_messages_dhConfigNotModified_free(tl_t *tl_) {
 	tl_messages_dhConfigNotModified_t *tl = (tl_messages_dhConfigNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->random_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4186,7 +4240,7 @@ void tl_messages_dhConfigNotModified_free(tl_t *tl_) {
 
 void tl_messages_dhConfig_free(tl_t *tl_) {
 	tl_messages_dhConfig_t *tl = (tl_messages_dhConfig_t *)tl_;
-	int i;
+	
 	buf_free(tl->p_);
 	buf_free(tl->random_);
 	buf_free(tl->_buf);
@@ -4195,14 +4249,14 @@ void tl_messages_dhConfig_free(tl_t *tl_) {
 
 void tl_messages_sentEncryptedMessage_free(tl_t *tl_) {
 	tl_messages_sentEncryptedMessage_t *tl = (tl_messages_sentEncryptedMessage_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_sentEncryptedFile_free(tl_t *tl_) {
 	tl_messages_sentEncryptedFile_t *tl = (tl_messages_sentEncryptedFile_t *)tl_;
-	int i;
+	
 	tl_free(tl->file_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4210,14 +4264,14 @@ void tl_messages_sentEncryptedFile_free(tl_t *tl_) {
 
 void tl_inputDocumentEmpty_free(tl_t *tl_) {
 	tl_inputDocumentEmpty_t *tl = (tl_inputDocumentEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputDocument_free(tl_t *tl_) {
 	tl_inputDocument_t *tl = (tl_inputDocument_t *)tl_;
-	int i;
+	
 	buf_free(tl->file_reference_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4225,7 +4279,7 @@ void tl_inputDocument_free(tl_t *tl_) {
 
 void tl_documentEmpty_free(tl_t *tl_) {
 	tl_documentEmpty_t *tl = (tl_documentEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -4233,6 +4287,7 @@ void tl_documentEmpty_free(tl_t *tl_) {
 void tl_document_free(tl_t *tl_) {
 	tl_document_t *tl = (tl_document_t *)tl_;
 	int i;
+	
 	buf_free(tl->file_reference_);
 	buf_free(tl->mime_type_);
 	for(i=0; i<tl->thumbs_len; ++i){
@@ -4253,7 +4308,7 @@ void tl_document_free(tl_t *tl_) {
 
 void tl_help_support_free(tl_t *tl_) {
 	tl_help_support_t *tl = (tl_help_support_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	tl_free(tl->user_);
 	buf_free(tl->_buf);
@@ -4262,7 +4317,7 @@ void tl_help_support_free(tl_t *tl_) {
 
 void tl_notifyPeer_free(tl_t *tl_) {
 	tl_notifyPeer_t *tl = (tl_notifyPeer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4270,28 +4325,28 @@ void tl_notifyPeer_free(tl_t *tl_) {
 
 void tl_notifyUsers_free(tl_t *tl_) {
 	tl_notifyUsers_t *tl = (tl_notifyUsers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_notifyChats_free(tl_t *tl_) {
 	tl_notifyChats_t *tl = (tl_notifyChats_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_notifyBroadcasts_free(tl_t *tl_) {
 	tl_notifyBroadcasts_t *tl = (tl_notifyBroadcasts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_notifyForumTopic_free(tl_t *tl_) {
 	tl_notifyForumTopic_t *tl = (tl_notifyForumTopic_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4299,119 +4354,119 @@ void tl_notifyForumTopic_free(tl_t *tl_) {
 
 void tl_sendMessageTypingAction_free(tl_t *tl_) {
 	tl_sendMessageTypingAction_t *tl = (tl_sendMessageTypingAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageCancelAction_free(tl_t *tl_) {
 	tl_sendMessageCancelAction_t *tl = (tl_sendMessageCancelAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageRecordVideoAction_free(tl_t *tl_) {
 	tl_sendMessageRecordVideoAction_t *tl = (tl_sendMessageRecordVideoAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageUploadVideoAction_free(tl_t *tl_) {
 	tl_sendMessageUploadVideoAction_t *tl = (tl_sendMessageUploadVideoAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageRecordAudioAction_free(tl_t *tl_) {
 	tl_sendMessageRecordAudioAction_t *tl = (tl_sendMessageRecordAudioAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageUploadAudioAction_free(tl_t *tl_) {
 	tl_sendMessageUploadAudioAction_t *tl = (tl_sendMessageUploadAudioAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageUploadPhotoAction_free(tl_t *tl_) {
 	tl_sendMessageUploadPhotoAction_t *tl = (tl_sendMessageUploadPhotoAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageUploadDocumentAction_free(tl_t *tl_) {
 	tl_sendMessageUploadDocumentAction_t *tl = (tl_sendMessageUploadDocumentAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageGeoLocationAction_free(tl_t *tl_) {
 	tl_sendMessageGeoLocationAction_t *tl = (tl_sendMessageGeoLocationAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageChooseContactAction_free(tl_t *tl_) {
 	tl_sendMessageChooseContactAction_t *tl = (tl_sendMessageChooseContactAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageGamePlayAction_free(tl_t *tl_) {
 	tl_sendMessageGamePlayAction_t *tl = (tl_sendMessageGamePlayAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageRecordRoundAction_free(tl_t *tl_) {
 	tl_sendMessageRecordRoundAction_t *tl = (tl_sendMessageRecordRoundAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageUploadRoundAction_free(tl_t *tl_) {
 	tl_sendMessageUploadRoundAction_t *tl = (tl_sendMessageUploadRoundAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_speakingInGroupCallAction_free(tl_t *tl_) {
 	tl_speakingInGroupCallAction_t *tl = (tl_speakingInGroupCallAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageHistoryImportAction_free(tl_t *tl_) {
 	tl_sendMessageHistoryImportAction_t *tl = (tl_sendMessageHistoryImportAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageChooseStickerAction_free(tl_t *tl_) {
 	tl_sendMessageChooseStickerAction_t *tl = (tl_sendMessageChooseStickerAction_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_sendMessageEmojiInteraction_free(tl_t *tl_) {
 	tl_sendMessageEmojiInteraction_t *tl = (tl_sendMessageEmojiInteraction_t *)tl_;
-	int i;
+	
 	buf_free(tl->emoticon_);
 	tl_free(tl->interaction_);
 	buf_free(tl->_buf);
@@ -4420,7 +4475,7 @@ void tl_sendMessageEmojiInteraction_free(tl_t *tl_) {
 
 void tl_sendMessageEmojiInteractionSeen_free(tl_t *tl_) {
 	tl_sendMessageEmojiInteractionSeen_t *tl = (tl_sendMessageEmojiInteractionSeen_t *)tl_;
-	int i;
+	
 	buf_free(tl->emoticon_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4429,6 +4484,7 @@ void tl_sendMessageEmojiInteractionSeen_free(tl_t *tl_) {
 void tl_contacts_found_free(tl_t *tl_) {
 	tl_contacts_found_t *tl = (tl_contacts_found_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->my_results_len; ++i){
 		tl_free(tl->my_results_[i]);
 	}
@@ -4451,168 +4507,168 @@ void tl_contacts_found_free(tl_t *tl_) {
 
 void tl_inputPrivacyKeyStatusTimestamp_free(tl_t *tl_) {
 	tl_inputPrivacyKeyStatusTimestamp_t *tl = (tl_inputPrivacyKeyStatusTimestamp_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyKeyChatInvite_free(tl_t *tl_) {
 	tl_inputPrivacyKeyChatInvite_t *tl = (tl_inputPrivacyKeyChatInvite_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyKeyPhoneCall_free(tl_t *tl_) {
 	tl_inputPrivacyKeyPhoneCall_t *tl = (tl_inputPrivacyKeyPhoneCall_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyKeyPhoneP2P_free(tl_t *tl_) {
 	tl_inputPrivacyKeyPhoneP2P_t *tl = (tl_inputPrivacyKeyPhoneP2P_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyKeyForwards_free(tl_t *tl_) {
 	tl_inputPrivacyKeyForwards_t *tl = (tl_inputPrivacyKeyForwards_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyKeyProfilePhoto_free(tl_t *tl_) {
 	tl_inputPrivacyKeyProfilePhoto_t *tl = (tl_inputPrivacyKeyProfilePhoto_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyKeyPhoneNumber_free(tl_t *tl_) {
 	tl_inputPrivacyKeyPhoneNumber_t *tl = (tl_inputPrivacyKeyPhoneNumber_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyKeyAddedByPhone_free(tl_t *tl_) {
 	tl_inputPrivacyKeyAddedByPhone_t *tl = (tl_inputPrivacyKeyAddedByPhone_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyKeyVoiceMessages_free(tl_t *tl_) {
 	tl_inputPrivacyKeyVoiceMessages_t *tl = (tl_inputPrivacyKeyVoiceMessages_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyKeyAbout_free(tl_t *tl_) {
 	tl_inputPrivacyKeyAbout_t *tl = (tl_inputPrivacyKeyAbout_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyKeyBirthday_free(tl_t *tl_) {
 	tl_inputPrivacyKeyBirthday_t *tl = (tl_inputPrivacyKeyBirthday_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyKeyStatusTimestamp_free(tl_t *tl_) {
 	tl_privacyKeyStatusTimestamp_t *tl = (tl_privacyKeyStatusTimestamp_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyKeyChatInvite_free(tl_t *tl_) {
 	tl_privacyKeyChatInvite_t *tl = (tl_privacyKeyChatInvite_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyKeyPhoneCall_free(tl_t *tl_) {
 	tl_privacyKeyPhoneCall_t *tl = (tl_privacyKeyPhoneCall_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyKeyPhoneP2P_free(tl_t *tl_) {
 	tl_privacyKeyPhoneP2P_t *tl = (tl_privacyKeyPhoneP2P_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyKeyForwards_free(tl_t *tl_) {
 	tl_privacyKeyForwards_t *tl = (tl_privacyKeyForwards_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyKeyProfilePhoto_free(tl_t *tl_) {
 	tl_privacyKeyProfilePhoto_t *tl = (tl_privacyKeyProfilePhoto_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyKeyPhoneNumber_free(tl_t *tl_) {
 	tl_privacyKeyPhoneNumber_t *tl = (tl_privacyKeyPhoneNumber_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyKeyAddedByPhone_free(tl_t *tl_) {
 	tl_privacyKeyAddedByPhone_t *tl = (tl_privacyKeyAddedByPhone_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyKeyVoiceMessages_free(tl_t *tl_) {
 	tl_privacyKeyVoiceMessages_t *tl = (tl_privacyKeyVoiceMessages_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyKeyAbout_free(tl_t *tl_) {
 	tl_privacyKeyAbout_t *tl = (tl_privacyKeyAbout_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyKeyBirthday_free(tl_t *tl_) {
 	tl_privacyKeyBirthday_t *tl = (tl_privacyKeyBirthday_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyValueAllowContacts_free(tl_t *tl_) {
 	tl_inputPrivacyValueAllowContacts_t *tl = (tl_inputPrivacyValueAllowContacts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyValueAllowAll_free(tl_t *tl_) {
 	tl_inputPrivacyValueAllowAll_t *tl = (tl_inputPrivacyValueAllowAll_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -4620,6 +4676,7 @@ void tl_inputPrivacyValueAllowAll_free(tl_t *tl_) {
 void tl_inputPrivacyValueAllowUsers_free(tl_t *tl_) {
 	tl_inputPrivacyValueAllowUsers_t *tl = (tl_inputPrivacyValueAllowUsers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
 	}
@@ -4630,14 +4687,14 @@ void tl_inputPrivacyValueAllowUsers_free(tl_t *tl_) {
 
 void tl_inputPrivacyValueDisallowContacts_free(tl_t *tl_) {
 	tl_inputPrivacyValueDisallowContacts_t *tl = (tl_inputPrivacyValueDisallowContacts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyValueDisallowAll_free(tl_t *tl_) {
 	tl_inputPrivacyValueDisallowAll_t *tl = (tl_inputPrivacyValueDisallowAll_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -4645,6 +4702,7 @@ void tl_inputPrivacyValueDisallowAll_free(tl_t *tl_) {
 void tl_inputPrivacyValueDisallowUsers_free(tl_t *tl_) {
 	tl_inputPrivacyValueDisallowUsers_t *tl = (tl_inputPrivacyValueDisallowUsers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
 	}
@@ -4656,6 +4714,7 @@ void tl_inputPrivacyValueDisallowUsers_free(tl_t *tl_) {
 void tl_inputPrivacyValueAllowChatParticipants_free(tl_t *tl_) {
 	tl_inputPrivacyValueAllowChatParticipants_t *tl = (tl_inputPrivacyValueAllowChatParticipants_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->chats_len; ++i){
 	}
 	free(tl->chats_);
@@ -4666,6 +4725,7 @@ void tl_inputPrivacyValueAllowChatParticipants_free(tl_t *tl_) {
 void tl_inputPrivacyValueDisallowChatParticipants_free(tl_t *tl_) {
 	tl_inputPrivacyValueDisallowChatParticipants_t *tl = (tl_inputPrivacyValueDisallowChatParticipants_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->chats_len; ++i){
 	}
 	free(tl->chats_);
@@ -4675,28 +4735,28 @@ void tl_inputPrivacyValueDisallowChatParticipants_free(tl_t *tl_) {
 
 void tl_inputPrivacyValueAllowCloseFriends_free(tl_t *tl_) {
 	tl_inputPrivacyValueAllowCloseFriends_t *tl = (tl_inputPrivacyValueAllowCloseFriends_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputPrivacyValueAllowPremium_free(tl_t *tl_) {
 	tl_inputPrivacyValueAllowPremium_t *tl = (tl_inputPrivacyValueAllowPremium_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyValueAllowContacts_free(tl_t *tl_) {
 	tl_privacyValueAllowContacts_t *tl = (tl_privacyValueAllowContacts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyValueAllowAll_free(tl_t *tl_) {
 	tl_privacyValueAllowAll_t *tl = (tl_privacyValueAllowAll_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -4704,6 +4764,7 @@ void tl_privacyValueAllowAll_free(tl_t *tl_) {
 void tl_privacyValueAllowUsers_free(tl_t *tl_) {
 	tl_privacyValueAllowUsers_t *tl = (tl_privacyValueAllowUsers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->users_len; ++i){
 	}
 	free(tl->users_);
@@ -4713,14 +4774,14 @@ void tl_privacyValueAllowUsers_free(tl_t *tl_) {
 
 void tl_privacyValueDisallowContacts_free(tl_t *tl_) {
 	tl_privacyValueDisallowContacts_t *tl = (tl_privacyValueDisallowContacts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyValueDisallowAll_free(tl_t *tl_) {
 	tl_privacyValueDisallowAll_t *tl = (tl_privacyValueDisallowAll_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -4728,6 +4789,7 @@ void tl_privacyValueDisallowAll_free(tl_t *tl_) {
 void tl_privacyValueDisallowUsers_free(tl_t *tl_) {
 	tl_privacyValueDisallowUsers_t *tl = (tl_privacyValueDisallowUsers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->users_len; ++i){
 	}
 	free(tl->users_);
@@ -4738,6 +4800,7 @@ void tl_privacyValueDisallowUsers_free(tl_t *tl_) {
 void tl_privacyValueAllowChatParticipants_free(tl_t *tl_) {
 	tl_privacyValueAllowChatParticipants_t *tl = (tl_privacyValueAllowChatParticipants_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->chats_len; ++i){
 	}
 	free(tl->chats_);
@@ -4748,6 +4811,7 @@ void tl_privacyValueAllowChatParticipants_free(tl_t *tl_) {
 void tl_privacyValueDisallowChatParticipants_free(tl_t *tl_) {
 	tl_privacyValueDisallowChatParticipants_t *tl = (tl_privacyValueDisallowChatParticipants_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->chats_len; ++i){
 	}
 	free(tl->chats_);
@@ -4757,14 +4821,14 @@ void tl_privacyValueDisallowChatParticipants_free(tl_t *tl_) {
 
 void tl_privacyValueAllowCloseFriends_free(tl_t *tl_) {
 	tl_privacyValueAllowCloseFriends_t *tl = (tl_privacyValueAllowCloseFriends_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_privacyValueAllowPremium_free(tl_t *tl_) {
 	tl_privacyValueAllowPremium_t *tl = (tl_privacyValueAllowPremium_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -4772,6 +4836,7 @@ void tl_privacyValueAllowPremium_free(tl_t *tl_) {
 void tl_account_privacyRules_free(tl_t *tl_) {
 	tl_account_privacyRules_t *tl = (tl_account_privacyRules_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->rules_len; ++i){
 		tl_free(tl->rules_[i]);
 	}
@@ -4790,28 +4855,28 @@ void tl_account_privacyRules_free(tl_t *tl_) {
 
 void tl_accountDaysTTL_free(tl_t *tl_) {
 	tl_accountDaysTTL_t *tl = (tl_accountDaysTTL_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_documentAttributeImageSize_free(tl_t *tl_) {
 	tl_documentAttributeImageSize_t *tl = (tl_documentAttributeImageSize_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_documentAttributeAnimated_free(tl_t *tl_) {
 	tl_documentAttributeAnimated_t *tl = (tl_documentAttributeAnimated_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_documentAttributeSticker_free(tl_t *tl_) {
 	tl_documentAttributeSticker_t *tl = (tl_documentAttributeSticker_t *)tl_;
-	int i;
+	
 	buf_free(tl->alt_);
 	tl_free(tl->stickerset_);
 	tl_free(tl->mask_coords_);
@@ -4821,14 +4886,14 @@ void tl_documentAttributeSticker_free(tl_t *tl_) {
 
 void tl_documentAttributeVideo_free(tl_t *tl_) {
 	tl_documentAttributeVideo_t *tl = (tl_documentAttributeVideo_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_documentAttributeAudio_free(tl_t *tl_) {
 	tl_documentAttributeAudio_t *tl = (tl_documentAttributeAudio_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->performer_);
 	buf_free(tl->waveform_);
@@ -4838,7 +4903,7 @@ void tl_documentAttributeAudio_free(tl_t *tl_) {
 
 void tl_documentAttributeFilename_free(tl_t *tl_) {
 	tl_documentAttributeFilename_t *tl = (tl_documentAttributeFilename_t *)tl_;
-	int i;
+	
 	buf_free(tl->file_name_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4846,14 +4911,14 @@ void tl_documentAttributeFilename_free(tl_t *tl_) {
 
 void tl_documentAttributeHasStickers_free(tl_t *tl_) {
 	tl_documentAttributeHasStickers_t *tl = (tl_documentAttributeHasStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_documentAttributeCustomEmoji_free(tl_t *tl_) {
 	tl_documentAttributeCustomEmoji_t *tl = (tl_documentAttributeCustomEmoji_t *)tl_;
-	int i;
+	
 	buf_free(tl->alt_);
 	tl_free(tl->stickerset_);
 	buf_free(tl->_buf);
@@ -4862,7 +4927,7 @@ void tl_documentAttributeCustomEmoji_free(tl_t *tl_) {
 
 void tl_messages_stickersNotModified_free(tl_t *tl_) {
 	tl_messages_stickersNotModified_t *tl = (tl_messages_stickersNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -4870,6 +4935,7 @@ void tl_messages_stickersNotModified_free(tl_t *tl_) {
 void tl_messages_stickers_free(tl_t *tl_) {
 	tl_messages_stickers_t *tl = (tl_messages_stickers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->stickers_len; ++i){
 		tl_free(tl->stickers_[i]);
 	}
@@ -4881,6 +4947,7 @@ void tl_messages_stickers_free(tl_t *tl_) {
 void tl_stickerPack_free(tl_t *tl_) {
 	tl_stickerPack_t *tl = (tl_stickerPack_t *)tl_;
 	int i;
+	
 	buf_free(tl->emoticon_);
 	for(i=0; i<tl->documents_len; ++i){
 	}
@@ -4891,7 +4958,7 @@ void tl_stickerPack_free(tl_t *tl_) {
 
 void tl_messages_allStickersNotModified_free(tl_t *tl_) {
 	tl_messages_allStickersNotModified_t *tl = (tl_messages_allStickersNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -4899,6 +4966,7 @@ void tl_messages_allStickersNotModified_free(tl_t *tl_) {
 void tl_messages_allStickers_free(tl_t *tl_) {
 	tl_messages_allStickers_t *tl = (tl_messages_allStickers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->sets_len; ++i){
 		tl_free(tl->sets_[i]);
 	}
@@ -4909,14 +4977,14 @@ void tl_messages_allStickers_free(tl_t *tl_) {
 
 void tl_messages_affectedMessages_free(tl_t *tl_) {
 	tl_messages_affectedMessages_t *tl = (tl_messages_affectedMessages_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_webPageEmpty_free(tl_t *tl_) {
 	tl_webPageEmpty_t *tl = (tl_webPageEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4924,7 +4992,7 @@ void tl_webPageEmpty_free(tl_t *tl_) {
 
 void tl_webPagePending_free(tl_t *tl_) {
 	tl_webPagePending_t *tl = (tl_webPagePending_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -4933,6 +5001,7 @@ void tl_webPagePending_free(tl_t *tl_) {
 void tl_webPage_free(tl_t *tl_) {
 	tl_webPage_t *tl = (tl_webPage_t *)tl_;
 	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->display_url_);
 	buf_free(tl->type_);
@@ -4955,14 +5024,14 @@ void tl_webPage_free(tl_t *tl_) {
 
 void tl_webPageNotModified_free(tl_t *tl_) {
 	tl_webPageNotModified_t *tl = (tl_webPageNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_authorization_free(tl_t *tl_) {
 	tl_authorization_t *tl = (tl_authorization_t *)tl_;
-	int i;
+	
 	buf_free(tl->device_model_);
 	buf_free(tl->platform_);
 	buf_free(tl->system_version_);
@@ -4978,6 +5047,7 @@ void tl_authorization_free(tl_t *tl_) {
 void tl_account_authorizations_free(tl_t *tl_) {
 	tl_account_authorizations_t *tl = (tl_account_authorizations_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->authorizations_len; ++i){
 		tl_free(tl->authorizations_[i]);
 	}
@@ -4988,7 +5058,7 @@ void tl_account_authorizations_free(tl_t *tl_) {
 
 void tl_account_password_free(tl_t *tl_) {
 	tl_account_password_t *tl = (tl_account_password_t *)tl_;
-	int i;
+	
 	tl_free(tl->current_algo_);
 	buf_free(tl->srp_B_);
 	buf_free(tl->hint_);
@@ -5003,7 +5073,7 @@ void tl_account_password_free(tl_t *tl_) {
 
 void tl_account_passwordSettings_free(tl_t *tl_) {
 	tl_account_passwordSettings_t *tl = (tl_account_passwordSettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->email_);
 	tl_free(tl->secure_settings_);
 	buf_free(tl->_buf);
@@ -5012,7 +5082,7 @@ void tl_account_passwordSettings_free(tl_t *tl_) {
 
 void tl_account_passwordInputSettings_free(tl_t *tl_) {
 	tl_account_passwordInputSettings_t *tl = (tl_account_passwordInputSettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->new_algo_);
 	buf_free(tl->new_password_hash_);
 	buf_free(tl->hint_);
@@ -5024,7 +5094,7 @@ void tl_account_passwordInputSettings_free(tl_t *tl_) {
 
 void tl_auth_passwordRecovery_free(tl_t *tl_) {
 	tl_auth_passwordRecovery_t *tl = (tl_auth_passwordRecovery_t *)tl_;
-	int i;
+	
 	buf_free(tl->email_pattern_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5032,14 +5102,14 @@ void tl_auth_passwordRecovery_free(tl_t *tl_) {
 
 void tl_receivedNotifyMessage_free(tl_t *tl_) {
 	tl_receivedNotifyMessage_t *tl = (tl_receivedNotifyMessage_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_chatInviteExported_free(tl_t *tl_) {
 	tl_chatInviteExported_t *tl = (tl_chatInviteExported_t *)tl_;
-	int i;
+	
 	buf_free(tl->link_);
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
@@ -5048,14 +5118,14 @@ void tl_chatInviteExported_free(tl_t *tl_) {
 
 void tl_chatInvitePublicJoinRequests_free(tl_t *tl_) {
 	tl_chatInvitePublicJoinRequests_t *tl = (tl_chatInvitePublicJoinRequests_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_chatInviteAlready_free(tl_t *tl_) {
 	tl_chatInviteAlready_t *tl = (tl_chatInviteAlready_t *)tl_;
-	int i;
+	
 	tl_free(tl->chat_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5064,6 +5134,7 @@ void tl_chatInviteAlready_free(tl_t *tl_) {
 void tl_chatInvite_free(tl_t *tl_) {
 	tl_chatInvite_t *tl = (tl_chatInvite_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->about_);
 	tl_free(tl->photo_);
@@ -5077,7 +5148,7 @@ void tl_chatInvite_free(tl_t *tl_) {
 
 void tl_chatInvitePeek_free(tl_t *tl_) {
 	tl_chatInvitePeek_t *tl = (tl_chatInvitePeek_t *)tl_;
-	int i;
+	
 	tl_free(tl->chat_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5085,21 +5156,21 @@ void tl_chatInvitePeek_free(tl_t *tl_) {
 
 void tl_inputStickerSetEmpty_free(tl_t *tl_) {
 	tl_inputStickerSetEmpty_t *tl = (tl_inputStickerSetEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputStickerSetID_free(tl_t *tl_) {
 	tl_inputStickerSetID_t *tl = (tl_inputStickerSetID_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputStickerSetShortName_free(tl_t *tl_) {
 	tl_inputStickerSetShortName_t *tl = (tl_inputStickerSetShortName_t *)tl_;
-	int i;
+	
 	buf_free(tl->short_name_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5107,14 +5178,14 @@ void tl_inputStickerSetShortName_free(tl_t *tl_) {
 
 void tl_inputStickerSetAnimatedEmoji_free(tl_t *tl_) {
 	tl_inputStickerSetAnimatedEmoji_t *tl = (tl_inputStickerSetAnimatedEmoji_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputStickerSetDice_free(tl_t *tl_) {
 	tl_inputStickerSetDice_t *tl = (tl_inputStickerSetDice_t *)tl_;
-	int i;
+	
 	buf_free(tl->emoticon_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5122,42 +5193,42 @@ void tl_inputStickerSetDice_free(tl_t *tl_) {
 
 void tl_inputStickerSetAnimatedEmojiAnimations_free(tl_t *tl_) {
 	tl_inputStickerSetAnimatedEmojiAnimations_t *tl = (tl_inputStickerSetAnimatedEmojiAnimations_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputStickerSetPremiumGifts_free(tl_t *tl_) {
 	tl_inputStickerSetPremiumGifts_t *tl = (tl_inputStickerSetPremiumGifts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputStickerSetEmojiGenericAnimations_free(tl_t *tl_) {
 	tl_inputStickerSetEmojiGenericAnimations_t *tl = (tl_inputStickerSetEmojiGenericAnimations_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputStickerSetEmojiDefaultStatuses_free(tl_t *tl_) {
 	tl_inputStickerSetEmojiDefaultStatuses_t *tl = (tl_inputStickerSetEmojiDefaultStatuses_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputStickerSetEmojiDefaultTopicIcons_free(tl_t *tl_) {
 	tl_inputStickerSetEmojiDefaultTopicIcons_t *tl = (tl_inputStickerSetEmojiDefaultTopicIcons_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputStickerSetEmojiChannelDefaultStatuses_free(tl_t *tl_) {
 	tl_inputStickerSetEmojiChannelDefaultStatuses_t *tl = (tl_inputStickerSetEmojiChannelDefaultStatuses_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -5165,6 +5236,7 @@ void tl_inputStickerSetEmojiChannelDefaultStatuses_free(tl_t *tl_) {
 void tl_stickerSet_free(tl_t *tl_) {
 	tl_stickerSet_t *tl = (tl_stickerSet_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->short_name_);
 	for(i=0; i<tl->thumbs_len; ++i){
@@ -5178,6 +5250,7 @@ void tl_stickerSet_free(tl_t *tl_) {
 void tl_messages_stickerSet_free(tl_t *tl_) {
 	tl_messages_stickerSet_t *tl = (tl_messages_stickerSet_t *)tl_;
 	int i;
+	
 	tl_free(tl->set_);
 	for(i=0; i<tl->packs_len; ++i){
 		tl_free(tl->packs_[i]);
@@ -5197,14 +5270,14 @@ void tl_messages_stickerSet_free(tl_t *tl_) {
 
 void tl_messages_stickerSetNotModified_free(tl_t *tl_) {
 	tl_messages_stickerSetNotModified_t *tl = (tl_messages_stickerSetNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_botCommand_free(tl_t *tl_) {
 	tl_botCommand_t *tl = (tl_botCommand_t *)tl_;
-	int i;
+	
 	buf_free(tl->command_);
 	buf_free(tl->description_);
 	buf_free(tl->_buf);
@@ -5214,6 +5287,7 @@ void tl_botCommand_free(tl_t *tl_) {
 void tl_botInfo_free(tl_t *tl_) {
 	tl_botInfo_t *tl = (tl_botInfo_t *)tl_;
 	int i;
+	
 	buf_free(tl->description_);
 	tl_free(tl->description_photo_);
 	tl_free(tl->description_document_);
@@ -5228,7 +5302,7 @@ void tl_botInfo_free(tl_t *tl_) {
 
 void tl_keyboardButton_free(tl_t *tl_) {
 	tl_keyboardButton_t *tl = (tl_keyboardButton_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5236,7 +5310,7 @@ void tl_keyboardButton_free(tl_t *tl_) {
 
 void tl_keyboardButtonUrl_free(tl_t *tl_) {
 	tl_keyboardButtonUrl_t *tl = (tl_keyboardButtonUrl_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
@@ -5245,7 +5319,7 @@ void tl_keyboardButtonUrl_free(tl_t *tl_) {
 
 void tl_keyboardButtonCallback_free(tl_t *tl_) {
 	tl_keyboardButtonCallback_t *tl = (tl_keyboardButtonCallback_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->data_);
 	buf_free(tl->_buf);
@@ -5254,7 +5328,7 @@ void tl_keyboardButtonCallback_free(tl_t *tl_) {
 
 void tl_keyboardButtonRequestPhone_free(tl_t *tl_) {
 	tl_keyboardButtonRequestPhone_t *tl = (tl_keyboardButtonRequestPhone_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5262,7 +5336,7 @@ void tl_keyboardButtonRequestPhone_free(tl_t *tl_) {
 
 void tl_keyboardButtonRequestGeoLocation_free(tl_t *tl_) {
 	tl_keyboardButtonRequestGeoLocation_t *tl = (tl_keyboardButtonRequestGeoLocation_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5271,6 +5345,7 @@ void tl_keyboardButtonRequestGeoLocation_free(tl_t *tl_) {
 void tl_keyboardButtonSwitchInline_free(tl_t *tl_) {
 	tl_keyboardButtonSwitchInline_t *tl = (tl_keyboardButtonSwitchInline_t *)tl_;
 	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->query_);
 	for(i=0; i<tl->peer_types_len; ++i){
@@ -5283,7 +5358,7 @@ void tl_keyboardButtonSwitchInline_free(tl_t *tl_) {
 
 void tl_keyboardButtonGame_free(tl_t *tl_) {
 	tl_keyboardButtonGame_t *tl = (tl_keyboardButtonGame_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5291,7 +5366,7 @@ void tl_keyboardButtonGame_free(tl_t *tl_) {
 
 void tl_keyboardButtonBuy_free(tl_t *tl_) {
 	tl_keyboardButtonBuy_t *tl = (tl_keyboardButtonBuy_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5299,7 +5374,7 @@ void tl_keyboardButtonBuy_free(tl_t *tl_) {
 
 void tl_keyboardButtonUrlAuth_free(tl_t *tl_) {
 	tl_keyboardButtonUrlAuth_t *tl = (tl_keyboardButtonUrlAuth_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->fwd_text_);
 	buf_free(tl->url_);
@@ -5309,7 +5384,7 @@ void tl_keyboardButtonUrlAuth_free(tl_t *tl_) {
 
 void tl_inputKeyboardButtonUrlAuth_free(tl_t *tl_) {
 	tl_inputKeyboardButtonUrlAuth_t *tl = (tl_inputKeyboardButtonUrlAuth_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->fwd_text_);
 	buf_free(tl->url_);
@@ -5320,7 +5395,7 @@ void tl_inputKeyboardButtonUrlAuth_free(tl_t *tl_) {
 
 void tl_keyboardButtonRequestPoll_free(tl_t *tl_) {
 	tl_keyboardButtonRequestPoll_t *tl = (tl_keyboardButtonRequestPoll_t *)tl_;
-	int i;
+	
 	tl_free(tl->quiz_);
 	buf_free(tl->text_);
 	buf_free(tl->_buf);
@@ -5329,7 +5404,7 @@ void tl_keyboardButtonRequestPoll_free(tl_t *tl_) {
 
 void tl_inputKeyboardButtonUserProfile_free(tl_t *tl_) {
 	tl_inputKeyboardButtonUserProfile_t *tl = (tl_inputKeyboardButtonUserProfile_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
@@ -5338,7 +5413,7 @@ void tl_inputKeyboardButtonUserProfile_free(tl_t *tl_) {
 
 void tl_keyboardButtonUserProfile_free(tl_t *tl_) {
 	tl_keyboardButtonUserProfile_t *tl = (tl_keyboardButtonUserProfile_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5346,7 +5421,7 @@ void tl_keyboardButtonUserProfile_free(tl_t *tl_) {
 
 void tl_keyboardButtonWebView_free(tl_t *tl_) {
 	tl_keyboardButtonWebView_t *tl = (tl_keyboardButtonWebView_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
@@ -5355,7 +5430,7 @@ void tl_keyboardButtonWebView_free(tl_t *tl_) {
 
 void tl_keyboardButtonSimpleWebView_free(tl_t *tl_) {
 	tl_keyboardButtonSimpleWebView_t *tl = (tl_keyboardButtonSimpleWebView_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
@@ -5364,7 +5439,7 @@ void tl_keyboardButtonSimpleWebView_free(tl_t *tl_) {
 
 void tl_keyboardButtonRequestPeer_free(tl_t *tl_) {
 	tl_keyboardButtonRequestPeer_t *tl = (tl_keyboardButtonRequestPeer_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	tl_free(tl->peer_type_);
 	buf_free(tl->_buf);
@@ -5373,7 +5448,7 @@ void tl_keyboardButtonRequestPeer_free(tl_t *tl_) {
 
 void tl_inputKeyboardButtonRequestPeer_free(tl_t *tl_) {
 	tl_inputKeyboardButtonRequestPeer_t *tl = (tl_inputKeyboardButtonRequestPeer_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	tl_free(tl->peer_type_);
 	buf_free(tl->_buf);
@@ -5383,6 +5458,7 @@ void tl_inputKeyboardButtonRequestPeer_free(tl_t *tl_) {
 void tl_keyboardButtonRow_free(tl_t *tl_) {
 	tl_keyboardButtonRow_t *tl = (tl_keyboardButtonRow_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->buttons_len; ++i){
 		tl_free(tl->buttons_[i]);
 	}
@@ -5393,14 +5469,14 @@ void tl_keyboardButtonRow_free(tl_t *tl_) {
 
 void tl_replyKeyboardHide_free(tl_t *tl_) {
 	tl_replyKeyboardHide_t *tl = (tl_replyKeyboardHide_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_replyKeyboardForceReply_free(tl_t *tl_) {
 	tl_replyKeyboardForceReply_t *tl = (tl_replyKeyboardForceReply_t *)tl_;
-	int i;
+	
 	buf_free(tl->placeholder_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5409,6 +5485,7 @@ void tl_replyKeyboardForceReply_free(tl_t *tl_) {
 void tl_replyKeyboardMarkup_free(tl_t *tl_) {
 	tl_replyKeyboardMarkup_t *tl = (tl_replyKeyboardMarkup_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->rows_len; ++i){
 		tl_free(tl->rows_[i]);
 	}
@@ -5421,6 +5498,7 @@ void tl_replyKeyboardMarkup_free(tl_t *tl_) {
 void tl_replyInlineMarkup_free(tl_t *tl_) {
 	tl_replyInlineMarkup_t *tl = (tl_replyInlineMarkup_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->rows_len; ++i){
 		tl_free(tl->rows_[i]);
 	}
@@ -5431,70 +5509,70 @@ void tl_replyInlineMarkup_free(tl_t *tl_) {
 
 void tl_messageEntityUnknown_free(tl_t *tl_) {
 	tl_messageEntityUnknown_t *tl = (tl_messageEntityUnknown_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityMention_free(tl_t *tl_) {
 	tl_messageEntityMention_t *tl = (tl_messageEntityMention_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityHashtag_free(tl_t *tl_) {
 	tl_messageEntityHashtag_t *tl = (tl_messageEntityHashtag_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityBotCommand_free(tl_t *tl_) {
 	tl_messageEntityBotCommand_t *tl = (tl_messageEntityBotCommand_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityUrl_free(tl_t *tl_) {
 	tl_messageEntityUrl_t *tl = (tl_messageEntityUrl_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityEmail_free(tl_t *tl_) {
 	tl_messageEntityEmail_t *tl = (tl_messageEntityEmail_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityBold_free(tl_t *tl_) {
 	tl_messageEntityBold_t *tl = (tl_messageEntityBold_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityItalic_free(tl_t *tl_) {
 	tl_messageEntityItalic_t *tl = (tl_messageEntityItalic_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityCode_free(tl_t *tl_) {
 	tl_messageEntityCode_t *tl = (tl_messageEntityCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityPre_free(tl_t *tl_) {
 	tl_messageEntityPre_t *tl = (tl_messageEntityPre_t *)tl_;
-	int i;
+	
 	buf_free(tl->language_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5502,7 +5580,7 @@ void tl_messageEntityPre_free(tl_t *tl_) {
 
 void tl_messageEntityTextUrl_free(tl_t *tl_) {
 	tl_messageEntityTextUrl_t *tl = (tl_messageEntityTextUrl_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5510,14 +5588,14 @@ void tl_messageEntityTextUrl_free(tl_t *tl_) {
 
 void tl_messageEntityMentionName_free(tl_t *tl_) {
 	tl_messageEntityMentionName_t *tl = (tl_messageEntityMentionName_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessageEntityMentionName_free(tl_t *tl_) {
 	tl_inputMessageEntityMentionName_t *tl = (tl_inputMessageEntityMentionName_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5525,77 +5603,77 @@ void tl_inputMessageEntityMentionName_free(tl_t *tl_) {
 
 void tl_messageEntityPhone_free(tl_t *tl_) {
 	tl_messageEntityPhone_t *tl = (tl_messageEntityPhone_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityCashtag_free(tl_t *tl_) {
 	tl_messageEntityCashtag_t *tl = (tl_messageEntityCashtag_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityUnderline_free(tl_t *tl_) {
 	tl_messageEntityUnderline_t *tl = (tl_messageEntityUnderline_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityStrike_free(tl_t *tl_) {
 	tl_messageEntityStrike_t *tl = (tl_messageEntityStrike_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityBankCard_free(tl_t *tl_) {
 	tl_messageEntityBankCard_t *tl = (tl_messageEntityBankCard_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntitySpoiler_free(tl_t *tl_) {
 	tl_messageEntitySpoiler_t *tl = (tl_messageEntitySpoiler_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityCustomEmoji_free(tl_t *tl_) {
 	tl_messageEntityCustomEmoji_t *tl = (tl_messageEntityCustomEmoji_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messageEntityBlockquote_free(tl_t *tl_) {
 	tl_messageEntityBlockquote_t *tl = (tl_messageEntityBlockquote_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputChannelEmpty_free(tl_t *tl_) {
 	tl_inputChannelEmpty_t *tl = (tl_inputChannelEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputChannel_free(tl_t *tl_) {
 	tl_inputChannel_t *tl = (tl_inputChannel_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputChannelFromMessage_free(tl_t *tl_) {
 	tl_inputChannelFromMessage_t *tl = (tl_inputChannelFromMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5604,6 +5682,7 @@ void tl_inputChannelFromMessage_free(tl_t *tl_) {
 void tl_contacts_resolvedPeer_free(tl_t *tl_) {
 	tl_contacts_resolvedPeer_t *tl = (tl_contacts_resolvedPeer_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->chats_len; ++i){
 		tl_free(tl->chats_[i]);
@@ -5619,14 +5698,14 @@ void tl_contacts_resolvedPeer_free(tl_t *tl_) {
 
 void tl_messageRange_free(tl_t *tl_) {
 	tl_messageRange_t *tl = (tl_messageRange_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updates_channelDifferenceEmpty_free(tl_t *tl_) {
 	tl_updates_channelDifferenceEmpty_t *tl = (tl_updates_channelDifferenceEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -5634,6 +5713,7 @@ void tl_updates_channelDifferenceEmpty_free(tl_t *tl_) {
 void tl_updates_channelDifferenceTooLong_free(tl_t *tl_) {
 	tl_updates_channelDifferenceTooLong_t *tl = (tl_updates_channelDifferenceTooLong_t *)tl_;
 	int i;
+	
 	tl_free(tl->dialog_);
 	for(i=0; i<tl->messages_len; ++i){
 		tl_free(tl->messages_[i]);
@@ -5654,6 +5734,7 @@ void tl_updates_channelDifferenceTooLong_free(tl_t *tl_) {
 void tl_updates_channelDifference_free(tl_t *tl_) {
 	tl_updates_channelDifference_t *tl = (tl_updates_channelDifference_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->new_messages_len; ++i){
 		tl_free(tl->new_messages_[i]);
 	}
@@ -5676,7 +5757,7 @@ void tl_updates_channelDifference_free(tl_t *tl_) {
 
 void tl_channelMessagesFilterEmpty_free(tl_t *tl_) {
 	tl_channelMessagesFilterEmpty_t *tl = (tl_channelMessagesFilterEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -5684,6 +5765,7 @@ void tl_channelMessagesFilterEmpty_free(tl_t *tl_) {
 void tl_channelMessagesFilter_free(tl_t *tl_) {
 	tl_channelMessagesFilter_t *tl = (tl_channelMessagesFilter_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->ranges_len; ++i){
 		tl_free(tl->ranges_[i]);
 	}
@@ -5694,21 +5776,21 @@ void tl_channelMessagesFilter_free(tl_t *tl_) {
 
 void tl_channelParticipant_free(tl_t *tl_) {
 	tl_channelParticipant_t *tl = (tl_channelParticipant_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channelParticipantSelf_free(tl_t *tl_) {
 	tl_channelParticipantSelf_t *tl = (tl_channelParticipantSelf_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channelParticipantCreator_free(tl_t *tl_) {
 	tl_channelParticipantCreator_t *tl = (tl_channelParticipantCreator_t *)tl_;
-	int i;
+	
 	tl_free(tl->admin_rights_);
 	buf_free(tl->rank_);
 	buf_free(tl->_buf);
@@ -5717,7 +5799,7 @@ void tl_channelParticipantCreator_free(tl_t *tl_) {
 
 void tl_channelParticipantAdmin_free(tl_t *tl_) {
 	tl_channelParticipantAdmin_t *tl = (tl_channelParticipantAdmin_t *)tl_;
-	int i;
+	
 	tl_free(tl->admin_rights_);
 	buf_free(tl->rank_);
 	buf_free(tl->_buf);
@@ -5726,7 +5808,7 @@ void tl_channelParticipantAdmin_free(tl_t *tl_) {
 
 void tl_channelParticipantBanned_free(tl_t *tl_) {
 	tl_channelParticipantBanned_t *tl = (tl_channelParticipantBanned_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->banned_rights_);
 	buf_free(tl->_buf);
@@ -5735,7 +5817,7 @@ void tl_channelParticipantBanned_free(tl_t *tl_) {
 
 void tl_channelParticipantLeft_free(tl_t *tl_) {
 	tl_channelParticipantLeft_t *tl = (tl_channelParticipantLeft_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5743,21 +5825,21 @@ void tl_channelParticipantLeft_free(tl_t *tl_) {
 
 void tl_channelParticipantsRecent_free(tl_t *tl_) {
 	tl_channelParticipantsRecent_t *tl = (tl_channelParticipantsRecent_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channelParticipantsAdmins_free(tl_t *tl_) {
 	tl_channelParticipantsAdmins_t *tl = (tl_channelParticipantsAdmins_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channelParticipantsKicked_free(tl_t *tl_) {
 	tl_channelParticipantsKicked_t *tl = (tl_channelParticipantsKicked_t *)tl_;
-	int i;
+	
 	buf_free(tl->q_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5765,14 +5847,14 @@ void tl_channelParticipantsKicked_free(tl_t *tl_) {
 
 void tl_channelParticipantsBots_free(tl_t *tl_) {
 	tl_channelParticipantsBots_t *tl = (tl_channelParticipantsBots_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channelParticipantsBanned_free(tl_t *tl_) {
 	tl_channelParticipantsBanned_t *tl = (tl_channelParticipantsBanned_t *)tl_;
-	int i;
+	
 	buf_free(tl->q_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5780,7 +5862,7 @@ void tl_channelParticipantsBanned_free(tl_t *tl_) {
 
 void tl_channelParticipantsSearch_free(tl_t *tl_) {
 	tl_channelParticipantsSearch_t *tl = (tl_channelParticipantsSearch_t *)tl_;
-	int i;
+	
 	buf_free(tl->q_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5788,7 +5870,7 @@ void tl_channelParticipantsSearch_free(tl_t *tl_) {
 
 void tl_channelParticipantsContacts_free(tl_t *tl_) {
 	tl_channelParticipantsContacts_t *tl = (tl_channelParticipantsContacts_t *)tl_;
-	int i;
+	
 	buf_free(tl->q_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5796,7 +5878,7 @@ void tl_channelParticipantsContacts_free(tl_t *tl_) {
 
 void tl_channelParticipantsMentions_free(tl_t *tl_) {
 	tl_channelParticipantsMentions_t *tl = (tl_channelParticipantsMentions_t *)tl_;
-	int i;
+	
 	buf_free(tl->q_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5805,6 +5887,7 @@ void tl_channelParticipantsMentions_free(tl_t *tl_) {
 void tl_channels_channelParticipants_free(tl_t *tl_) {
 	tl_channels_channelParticipants_t *tl = (tl_channels_channelParticipants_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->participants_len; ++i){
 		tl_free(tl->participants_[i]);
 	}
@@ -5823,7 +5906,7 @@ void tl_channels_channelParticipants_free(tl_t *tl_) {
 
 void tl_channels_channelParticipantsNotModified_free(tl_t *tl_) {
 	tl_channels_channelParticipantsNotModified_t *tl = (tl_channels_channelParticipantsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -5831,6 +5914,7 @@ void tl_channels_channelParticipantsNotModified_free(tl_t *tl_) {
 void tl_channels_channelParticipant_free(tl_t *tl_) {
 	tl_channels_channelParticipant_t *tl = (tl_channels_channelParticipant_t *)tl_;
 	int i;
+	
 	tl_free(tl->participant_);
 	for(i=0; i<tl->chats_len; ++i){
 		tl_free(tl->chats_[i]);
@@ -5847,6 +5931,7 @@ void tl_channels_channelParticipant_free(tl_t *tl_) {
 void tl_help_termsOfService_free(tl_t *tl_) {
 	tl_help_termsOfService_t *tl = (tl_help_termsOfService_t *)tl_;
 	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->text_);
 	for(i=0; i<tl->entities_len; ++i){
@@ -5859,7 +5944,7 @@ void tl_help_termsOfService_free(tl_t *tl_) {
 
 void tl_messages_savedGifsNotModified_free(tl_t *tl_) {
 	tl_messages_savedGifsNotModified_t *tl = (tl_messages_savedGifsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -5867,6 +5952,7 @@ void tl_messages_savedGifsNotModified_free(tl_t *tl_) {
 void tl_messages_savedGifs_free(tl_t *tl_) {
 	tl_messages_savedGifs_t *tl = (tl_messages_savedGifs_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->gifs_len; ++i){
 		tl_free(tl->gifs_[i]);
 	}
@@ -5878,6 +5964,7 @@ void tl_messages_savedGifs_free(tl_t *tl_) {
 void tl_inputBotInlineMessageMediaAuto_free(tl_t *tl_) {
 	tl_inputBotInlineMessageMediaAuto_t *tl = (tl_inputBotInlineMessageMediaAuto_t *)tl_;
 	int i;
+	
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
 		tl_free(tl->entities_[i]);
@@ -5891,6 +5978,7 @@ void tl_inputBotInlineMessageMediaAuto_free(tl_t *tl_) {
 void tl_inputBotInlineMessageText_free(tl_t *tl_) {
 	tl_inputBotInlineMessageText_t *tl = (tl_inputBotInlineMessageText_t *)tl_;
 	int i;
+	
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
 		tl_free(tl->entities_[i]);
@@ -5903,7 +5991,7 @@ void tl_inputBotInlineMessageText_free(tl_t *tl_) {
 
 void tl_inputBotInlineMessageMediaGeo_free(tl_t *tl_) {
 	tl_inputBotInlineMessageMediaGeo_t *tl = (tl_inputBotInlineMessageMediaGeo_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_point_);
 	tl_free(tl->reply_markup_);
 	buf_free(tl->_buf);
@@ -5912,7 +6000,7 @@ void tl_inputBotInlineMessageMediaGeo_free(tl_t *tl_) {
 
 void tl_inputBotInlineMessageMediaVenue_free(tl_t *tl_) {
 	tl_inputBotInlineMessageMediaVenue_t *tl = (tl_inputBotInlineMessageMediaVenue_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_point_);
 	buf_free(tl->title_);
 	buf_free(tl->address_);
@@ -5926,7 +6014,7 @@ void tl_inputBotInlineMessageMediaVenue_free(tl_t *tl_) {
 
 void tl_inputBotInlineMessageMediaContact_free(tl_t *tl_) {
 	tl_inputBotInlineMessageMediaContact_t *tl = (tl_inputBotInlineMessageMediaContact_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->first_name_);
 	buf_free(tl->last_name_);
@@ -5938,7 +6026,7 @@ void tl_inputBotInlineMessageMediaContact_free(tl_t *tl_) {
 
 void tl_inputBotInlineMessageGame_free(tl_t *tl_) {
 	tl_inputBotInlineMessageGame_t *tl = (tl_inputBotInlineMessageGame_t *)tl_;
-	int i;
+	
 	tl_free(tl->reply_markup_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -5946,7 +6034,7 @@ void tl_inputBotInlineMessageGame_free(tl_t *tl_) {
 
 void tl_inputBotInlineMessageMediaInvoice_free(tl_t *tl_) {
 	tl_inputBotInlineMessageMediaInvoice_t *tl = (tl_inputBotInlineMessageMediaInvoice_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->description_);
 	tl_free(tl->photo_);
@@ -5962,6 +6050,7 @@ void tl_inputBotInlineMessageMediaInvoice_free(tl_t *tl_) {
 void tl_inputBotInlineMessageMediaWebPage_free(tl_t *tl_) {
 	tl_inputBotInlineMessageMediaWebPage_t *tl = (tl_inputBotInlineMessageMediaWebPage_t *)tl_;
 	int i;
+	
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
 		tl_free(tl->entities_[i]);
@@ -5975,7 +6064,7 @@ void tl_inputBotInlineMessageMediaWebPage_free(tl_t *tl_) {
 
 void tl_inputBotInlineResult_free(tl_t *tl_) {
 	tl_inputBotInlineResult_t *tl = (tl_inputBotInlineResult_t *)tl_;
-	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->type_);
 	buf_free(tl->title_);
@@ -5990,7 +6079,7 @@ void tl_inputBotInlineResult_free(tl_t *tl_) {
 
 void tl_inputBotInlineResultPhoto_free(tl_t *tl_) {
 	tl_inputBotInlineResultPhoto_t *tl = (tl_inputBotInlineResultPhoto_t *)tl_;
-	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->type_);
 	tl_free(tl->photo_);
@@ -6001,7 +6090,7 @@ void tl_inputBotInlineResultPhoto_free(tl_t *tl_) {
 
 void tl_inputBotInlineResultDocument_free(tl_t *tl_) {
 	tl_inputBotInlineResultDocument_t *tl = (tl_inputBotInlineResultDocument_t *)tl_;
-	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->type_);
 	buf_free(tl->title_);
@@ -6014,7 +6103,7 @@ void tl_inputBotInlineResultDocument_free(tl_t *tl_) {
 
 void tl_inputBotInlineResultGame_free(tl_t *tl_) {
 	tl_inputBotInlineResultGame_t *tl = (tl_inputBotInlineResultGame_t *)tl_;
-	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->short_name_);
 	tl_free(tl->send_message_);
@@ -6025,6 +6114,7 @@ void tl_inputBotInlineResultGame_free(tl_t *tl_) {
 void tl_botInlineMessageMediaAuto_free(tl_t *tl_) {
 	tl_botInlineMessageMediaAuto_t *tl = (tl_botInlineMessageMediaAuto_t *)tl_;
 	int i;
+	
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
 		tl_free(tl->entities_[i]);
@@ -6038,6 +6128,7 @@ void tl_botInlineMessageMediaAuto_free(tl_t *tl_) {
 void tl_botInlineMessageText_free(tl_t *tl_) {
 	tl_botInlineMessageText_t *tl = (tl_botInlineMessageText_t *)tl_;
 	int i;
+	
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
 		tl_free(tl->entities_[i]);
@@ -6050,7 +6141,7 @@ void tl_botInlineMessageText_free(tl_t *tl_) {
 
 void tl_botInlineMessageMediaGeo_free(tl_t *tl_) {
 	tl_botInlineMessageMediaGeo_t *tl = (tl_botInlineMessageMediaGeo_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_);
 	tl_free(tl->reply_markup_);
 	buf_free(tl->_buf);
@@ -6059,7 +6150,7 @@ void tl_botInlineMessageMediaGeo_free(tl_t *tl_) {
 
 void tl_botInlineMessageMediaVenue_free(tl_t *tl_) {
 	tl_botInlineMessageMediaVenue_t *tl = (tl_botInlineMessageMediaVenue_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_);
 	buf_free(tl->title_);
 	buf_free(tl->address_);
@@ -6073,7 +6164,7 @@ void tl_botInlineMessageMediaVenue_free(tl_t *tl_) {
 
 void tl_botInlineMessageMediaContact_free(tl_t *tl_) {
 	tl_botInlineMessageMediaContact_t *tl = (tl_botInlineMessageMediaContact_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->first_name_);
 	buf_free(tl->last_name_);
@@ -6085,7 +6176,7 @@ void tl_botInlineMessageMediaContact_free(tl_t *tl_) {
 
 void tl_botInlineMessageMediaInvoice_free(tl_t *tl_) {
 	tl_botInlineMessageMediaInvoice_t *tl = (tl_botInlineMessageMediaInvoice_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->description_);
 	tl_free(tl->photo_);
@@ -6098,6 +6189,7 @@ void tl_botInlineMessageMediaInvoice_free(tl_t *tl_) {
 void tl_botInlineMessageMediaWebPage_free(tl_t *tl_) {
 	tl_botInlineMessageMediaWebPage_t *tl = (tl_botInlineMessageMediaWebPage_t *)tl_;
 	int i;
+	
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
 		tl_free(tl->entities_[i]);
@@ -6111,7 +6203,7 @@ void tl_botInlineMessageMediaWebPage_free(tl_t *tl_) {
 
 void tl_botInlineResult_free(tl_t *tl_) {
 	tl_botInlineResult_t *tl = (tl_botInlineResult_t *)tl_;
-	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->type_);
 	buf_free(tl->title_);
@@ -6126,7 +6218,7 @@ void tl_botInlineResult_free(tl_t *tl_) {
 
 void tl_botInlineMediaResult_free(tl_t *tl_) {
 	tl_botInlineMediaResult_t *tl = (tl_botInlineMediaResult_t *)tl_;
-	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->type_);
 	tl_free(tl->photo_);
@@ -6141,6 +6233,7 @@ void tl_botInlineMediaResult_free(tl_t *tl_) {
 void tl_messages_botResults_free(tl_t *tl_) {
 	tl_messages_botResults_t *tl = (tl_messages_botResults_t *)tl_;
 	int i;
+	
 	buf_free(tl->next_offset_);
 	tl_free(tl->switch_pm_);
 	tl_free(tl->switch_webview_);
@@ -6158,7 +6251,7 @@ void tl_messages_botResults_free(tl_t *tl_) {
 
 void tl_exportedMessageLink_free(tl_t *tl_) {
 	tl_exportedMessageLink_t *tl = (tl_exportedMessageLink_t *)tl_;
-	int i;
+	
 	buf_free(tl->link_);
 	buf_free(tl->html_);
 	buf_free(tl->_buf);
@@ -6167,7 +6260,7 @@ void tl_exportedMessageLink_free(tl_t *tl_) {
 
 void tl_messageFwdHeader_free(tl_t *tl_) {
 	tl_messageFwdHeader_t *tl = (tl_messageFwdHeader_t *)tl_;
-	int i;
+	
 	tl_free(tl->from_id_);
 	buf_free(tl->from_name_);
 	buf_free(tl->post_author_);
@@ -6181,63 +6274,63 @@ void tl_messageFwdHeader_free(tl_t *tl_) {
 
 void tl_auth_codeTypeSms_free(tl_t *tl_) {
 	tl_auth_codeTypeSms_t *tl = (tl_auth_codeTypeSms_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_codeTypeCall_free(tl_t *tl_) {
 	tl_auth_codeTypeCall_t *tl = (tl_auth_codeTypeCall_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_codeTypeFlashCall_free(tl_t *tl_) {
 	tl_auth_codeTypeFlashCall_t *tl = (tl_auth_codeTypeFlashCall_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_codeTypeMissedCall_free(tl_t *tl_) {
 	tl_auth_codeTypeMissedCall_t *tl = (tl_auth_codeTypeMissedCall_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_codeTypeFragmentSms_free(tl_t *tl_) {
 	tl_auth_codeTypeFragmentSms_t *tl = (tl_auth_codeTypeFragmentSms_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_sentCodeTypeApp_free(tl_t *tl_) {
 	tl_auth_sentCodeTypeApp_t *tl = (tl_auth_sentCodeTypeApp_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_sentCodeTypeSms_free(tl_t *tl_) {
 	tl_auth_sentCodeTypeSms_t *tl = (tl_auth_sentCodeTypeSms_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_sentCodeTypeCall_free(tl_t *tl_) {
 	tl_auth_sentCodeTypeCall_t *tl = (tl_auth_sentCodeTypeCall_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_sentCodeTypeFlashCall_free(tl_t *tl_) {
 	tl_auth_sentCodeTypeFlashCall_t *tl = (tl_auth_sentCodeTypeFlashCall_t *)tl_;
-	int i;
+	
 	buf_free(tl->pattern_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6245,7 +6338,7 @@ void tl_auth_sentCodeTypeFlashCall_free(tl_t *tl_) {
 
 void tl_auth_sentCodeTypeMissedCall_free(tl_t *tl_) {
 	tl_auth_sentCodeTypeMissedCall_t *tl = (tl_auth_sentCodeTypeMissedCall_t *)tl_;
-	int i;
+	
 	buf_free(tl->prefix_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6253,7 +6346,7 @@ void tl_auth_sentCodeTypeMissedCall_free(tl_t *tl_) {
 
 void tl_auth_sentCodeTypeEmailCode_free(tl_t *tl_) {
 	tl_auth_sentCodeTypeEmailCode_t *tl = (tl_auth_sentCodeTypeEmailCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->email_pattern_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6261,14 +6354,14 @@ void tl_auth_sentCodeTypeEmailCode_free(tl_t *tl_) {
 
 void tl_auth_sentCodeTypeSetUpEmailRequired_free(tl_t *tl_) {
 	tl_auth_sentCodeTypeSetUpEmailRequired_t *tl = (tl_auth_sentCodeTypeSetUpEmailRequired_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_sentCodeTypeFragmentSms_free(tl_t *tl_) {
 	tl_auth_sentCodeTypeFragmentSms_t *tl = (tl_auth_sentCodeTypeFragmentSms_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6276,7 +6369,7 @@ void tl_auth_sentCodeTypeFragmentSms_free(tl_t *tl_) {
 
 void tl_auth_sentCodeTypeFirebaseSms_free(tl_t *tl_) {
 	tl_auth_sentCodeTypeFirebaseSms_t *tl = (tl_auth_sentCodeTypeFirebaseSms_t *)tl_;
-	int i;
+	
 	buf_free(tl->nonce_);
 	buf_free(tl->play_integrity_nonce_);
 	buf_free(tl->receipt_);
@@ -6286,7 +6379,7 @@ void tl_auth_sentCodeTypeFirebaseSms_free(tl_t *tl_) {
 
 void tl_auth_sentCodeTypeSmsWord_free(tl_t *tl_) {
 	tl_auth_sentCodeTypeSmsWord_t *tl = (tl_auth_sentCodeTypeSmsWord_t *)tl_;
-	int i;
+	
 	buf_free(tl->beginning_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6294,7 +6387,7 @@ void tl_auth_sentCodeTypeSmsWord_free(tl_t *tl_) {
 
 void tl_auth_sentCodeTypeSmsPhrase_free(tl_t *tl_) {
 	tl_auth_sentCodeTypeSmsPhrase_t *tl = (tl_auth_sentCodeTypeSmsPhrase_t *)tl_;
-	int i;
+	
 	buf_free(tl->beginning_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6302,7 +6395,7 @@ void tl_auth_sentCodeTypeSmsPhrase_free(tl_t *tl_) {
 
 void tl_messages_botCallbackAnswer_free(tl_t *tl_) {
 	tl_messages_botCallbackAnswer_t *tl = (tl_messages_botCallbackAnswer_t *)tl_;
-	int i;
+	
 	buf_free(tl->message_);
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
@@ -6311,28 +6404,28 @@ void tl_messages_botCallbackAnswer_free(tl_t *tl_) {
 
 void tl_messages_messageEditData_free(tl_t *tl_) {
 	tl_messages_messageEditData_t *tl = (tl_messages_messageEditData_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputBotInlineMessageID_free(tl_t *tl_) {
 	tl_inputBotInlineMessageID_t *tl = (tl_inputBotInlineMessageID_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputBotInlineMessageID64_free(tl_t *tl_) {
 	tl_inputBotInlineMessageID64_t *tl = (tl_inputBotInlineMessageID64_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inlineBotSwitchPM_free(tl_t *tl_) {
 	tl_inlineBotSwitchPM_t *tl = (tl_inlineBotSwitchPM_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->start_param_);
 	buf_free(tl->_buf);
@@ -6342,6 +6435,7 @@ void tl_inlineBotSwitchPM_free(tl_t *tl_) {
 void tl_messages_peerDialogs_free(tl_t *tl_) {
 	tl_messages_peerDialogs_t *tl = (tl_messages_peerDialogs_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->dialogs_len; ++i){
 		tl_free(tl->dialogs_[i]);
 	}
@@ -6365,7 +6459,7 @@ void tl_messages_peerDialogs_free(tl_t *tl_) {
 
 void tl_topPeer_free(tl_t *tl_) {
 	tl_topPeer_t *tl = (tl_topPeer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6373,63 +6467,63 @@ void tl_topPeer_free(tl_t *tl_) {
 
 void tl_topPeerCategoryBotsPM_free(tl_t *tl_) {
 	tl_topPeerCategoryBotsPM_t *tl = (tl_topPeerCategoryBotsPM_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_topPeerCategoryBotsInline_free(tl_t *tl_) {
 	tl_topPeerCategoryBotsInline_t *tl = (tl_topPeerCategoryBotsInline_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_topPeerCategoryCorrespondents_free(tl_t *tl_) {
 	tl_topPeerCategoryCorrespondents_t *tl = (tl_topPeerCategoryCorrespondents_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_topPeerCategoryGroups_free(tl_t *tl_) {
 	tl_topPeerCategoryGroups_t *tl = (tl_topPeerCategoryGroups_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_topPeerCategoryChannels_free(tl_t *tl_) {
 	tl_topPeerCategoryChannels_t *tl = (tl_topPeerCategoryChannels_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_topPeerCategoryPhoneCalls_free(tl_t *tl_) {
 	tl_topPeerCategoryPhoneCalls_t *tl = (tl_topPeerCategoryPhoneCalls_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_topPeerCategoryForwardUsers_free(tl_t *tl_) {
 	tl_topPeerCategoryForwardUsers_t *tl = (tl_topPeerCategoryForwardUsers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_topPeerCategoryForwardChats_free(tl_t *tl_) {
 	tl_topPeerCategoryForwardChats_t *tl = (tl_topPeerCategoryForwardChats_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_topPeerCategoryBotsApp_free(tl_t *tl_) {
 	tl_topPeerCategoryBotsApp_t *tl = (tl_topPeerCategoryBotsApp_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -6437,6 +6531,7 @@ void tl_topPeerCategoryBotsApp_free(tl_t *tl_) {
 void tl_topPeerCategoryPeers_free(tl_t *tl_) {
 	tl_topPeerCategoryPeers_t *tl = (tl_topPeerCategoryPeers_t *)tl_;
 	int i;
+	
 	tl_free(tl->category_);
 	for(i=0; i<tl->peers_len; ++i){
 		tl_free(tl->peers_[i]);
@@ -6448,7 +6543,7 @@ void tl_topPeerCategoryPeers_free(tl_t *tl_) {
 
 void tl_contacts_topPeersNotModified_free(tl_t *tl_) {
 	tl_contacts_topPeersNotModified_t *tl = (tl_contacts_topPeersNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -6456,6 +6551,7 @@ void tl_contacts_topPeersNotModified_free(tl_t *tl_) {
 void tl_contacts_topPeers_free(tl_t *tl_) {
 	tl_contacts_topPeers_t *tl = (tl_contacts_topPeers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->categories_len; ++i){
 		tl_free(tl->categories_[i]);
 	}
@@ -6474,14 +6570,14 @@ void tl_contacts_topPeers_free(tl_t *tl_) {
 
 void tl_contacts_topPeersDisabled_free(tl_t *tl_) {
 	tl_contacts_topPeersDisabled_t *tl = (tl_contacts_topPeersDisabled_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_draftMessageEmpty_free(tl_t *tl_) {
 	tl_draftMessageEmpty_t *tl = (tl_draftMessageEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -6489,6 +6585,7 @@ void tl_draftMessageEmpty_free(tl_t *tl_) {
 void tl_draftMessage_free(tl_t *tl_) {
 	tl_draftMessage_t *tl = (tl_draftMessage_t *)tl_;
 	int i;
+	
 	tl_free(tl->reply_to_);
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
@@ -6502,7 +6599,7 @@ void tl_draftMessage_free(tl_t *tl_) {
 
 void tl_messages_featuredStickersNotModified_free(tl_t *tl_) {
 	tl_messages_featuredStickersNotModified_t *tl = (tl_messages_featuredStickersNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -6510,6 +6607,7 @@ void tl_messages_featuredStickersNotModified_free(tl_t *tl_) {
 void tl_messages_featuredStickers_free(tl_t *tl_) {
 	tl_messages_featuredStickers_t *tl = (tl_messages_featuredStickers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->sets_len; ++i){
 		tl_free(tl->sets_[i]);
 	}
@@ -6523,7 +6621,7 @@ void tl_messages_featuredStickers_free(tl_t *tl_) {
 
 void tl_messages_recentStickersNotModified_free(tl_t *tl_) {
 	tl_messages_recentStickersNotModified_t *tl = (tl_messages_recentStickersNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -6531,6 +6629,7 @@ void tl_messages_recentStickersNotModified_free(tl_t *tl_) {
 void tl_messages_recentStickers_free(tl_t *tl_) {
 	tl_messages_recentStickers_t *tl = (tl_messages_recentStickers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->packs_len; ++i){
 		tl_free(tl->packs_[i]);
 	}
@@ -6549,6 +6648,7 @@ void tl_messages_recentStickers_free(tl_t *tl_) {
 void tl_messages_archivedStickers_free(tl_t *tl_) {
 	tl_messages_archivedStickers_t *tl = (tl_messages_archivedStickers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->sets_len; ++i){
 		tl_free(tl->sets_[i]);
 	}
@@ -6559,7 +6659,7 @@ void tl_messages_archivedStickers_free(tl_t *tl_) {
 
 void tl_messages_stickerSetInstallResultSuccess_free(tl_t *tl_) {
 	tl_messages_stickerSetInstallResultSuccess_t *tl = (tl_messages_stickerSetInstallResultSuccess_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -6567,6 +6667,7 @@ void tl_messages_stickerSetInstallResultSuccess_free(tl_t *tl_) {
 void tl_messages_stickerSetInstallResultArchive_free(tl_t *tl_) {
 	tl_messages_stickerSetInstallResultArchive_t *tl = (tl_messages_stickerSetInstallResultArchive_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->sets_len; ++i){
 		tl_free(tl->sets_[i]);
 	}
@@ -6577,7 +6678,7 @@ void tl_messages_stickerSetInstallResultArchive_free(tl_t *tl_) {
 
 void tl_stickerSetCovered_free(tl_t *tl_) {
 	tl_stickerSetCovered_t *tl = (tl_stickerSetCovered_t *)tl_;
-	int i;
+	
 	tl_free(tl->set_);
 	tl_free(tl->cover_);
 	buf_free(tl->_buf);
@@ -6587,6 +6688,7 @@ void tl_stickerSetCovered_free(tl_t *tl_) {
 void tl_stickerSetMultiCovered_free(tl_t *tl_) {
 	tl_stickerSetMultiCovered_t *tl = (tl_stickerSetMultiCovered_t *)tl_;
 	int i;
+	
 	tl_free(tl->set_);
 	for(i=0; i<tl->covers_len; ++i){
 		tl_free(tl->covers_[i]);
@@ -6599,6 +6701,7 @@ void tl_stickerSetMultiCovered_free(tl_t *tl_) {
 void tl_stickerSetFullCovered_free(tl_t *tl_) {
 	tl_stickerSetFullCovered_t *tl = (tl_stickerSetFullCovered_t *)tl_;
 	int i;
+	
 	tl_free(tl->set_);
 	for(i=0; i<tl->packs_len; ++i){
 		tl_free(tl->packs_[i]);
@@ -6618,7 +6721,7 @@ void tl_stickerSetFullCovered_free(tl_t *tl_) {
 
 void tl_stickerSetNoCovered_free(tl_t *tl_) {
 	tl_stickerSetNoCovered_t *tl = (tl_stickerSetNoCovered_t *)tl_;
-	int i;
+	
 	tl_free(tl->set_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6626,14 +6729,14 @@ void tl_stickerSetNoCovered_free(tl_t *tl_) {
 
 void tl_maskCoords_free(tl_t *tl_) {
 	tl_maskCoords_t *tl = (tl_maskCoords_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputStickeredMediaPhoto_free(tl_t *tl_) {
 	tl_inputStickeredMediaPhoto_t *tl = (tl_inputStickeredMediaPhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6641,7 +6744,7 @@ void tl_inputStickeredMediaPhoto_free(tl_t *tl_) {
 
 void tl_inputStickeredMediaDocument_free(tl_t *tl_) {
 	tl_inputStickeredMediaDocument_t *tl = (tl_inputStickeredMediaDocument_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6649,7 +6752,7 @@ void tl_inputStickeredMediaDocument_free(tl_t *tl_) {
 
 void tl_game_free(tl_t *tl_) {
 	tl_game_t *tl = (tl_game_t *)tl_;
-	int i;
+	
 	buf_free(tl->short_name_);
 	buf_free(tl->title_);
 	buf_free(tl->description_);
@@ -6661,14 +6764,14 @@ void tl_game_free(tl_t *tl_) {
 
 void tl_inputGameID_free(tl_t *tl_) {
 	tl_inputGameID_t *tl = (tl_inputGameID_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputGameShortName_free(tl_t *tl_) {
 	tl_inputGameShortName_t *tl = (tl_inputGameShortName_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_id_);
 	buf_free(tl->short_name_);
 	buf_free(tl->_buf);
@@ -6677,7 +6780,7 @@ void tl_inputGameShortName_free(tl_t *tl_) {
 
 void tl_highScore_free(tl_t *tl_) {
 	tl_highScore_t *tl = (tl_highScore_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -6685,6 +6788,7 @@ void tl_highScore_free(tl_t *tl_) {
 void tl_messages_highScores_free(tl_t *tl_) {
 	tl_messages_highScores_t *tl = (tl_messages_highScores_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->scores_len; ++i){
 		tl_free(tl->scores_[i]);
 	}
@@ -6699,14 +6803,14 @@ void tl_messages_highScores_free(tl_t *tl_) {
 
 void tl_textEmpty_free(tl_t *tl_) {
 	tl_textEmpty_t *tl = (tl_textEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_textPlain_free(tl_t *tl_) {
 	tl_textPlain_t *tl = (tl_textPlain_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6714,7 +6818,7 @@ void tl_textPlain_free(tl_t *tl_) {
 
 void tl_textBold_free(tl_t *tl_) {
 	tl_textBold_t *tl = (tl_textBold_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6722,7 +6826,7 @@ void tl_textBold_free(tl_t *tl_) {
 
 void tl_textItalic_free(tl_t *tl_) {
 	tl_textItalic_t *tl = (tl_textItalic_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6730,7 +6834,7 @@ void tl_textItalic_free(tl_t *tl_) {
 
 void tl_textUnderline_free(tl_t *tl_) {
 	tl_textUnderline_t *tl = (tl_textUnderline_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6738,7 +6842,7 @@ void tl_textUnderline_free(tl_t *tl_) {
 
 void tl_textStrike_free(tl_t *tl_) {
 	tl_textStrike_t *tl = (tl_textStrike_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6746,7 +6850,7 @@ void tl_textStrike_free(tl_t *tl_) {
 
 void tl_textFixed_free(tl_t *tl_) {
 	tl_textFixed_t *tl = (tl_textFixed_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6754,7 +6858,7 @@ void tl_textFixed_free(tl_t *tl_) {
 
 void tl_textUrl_free(tl_t *tl_) {
 	tl_textUrl_t *tl = (tl_textUrl_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
@@ -6763,7 +6867,7 @@ void tl_textUrl_free(tl_t *tl_) {
 
 void tl_textEmail_free(tl_t *tl_) {
 	tl_textEmail_t *tl = (tl_textEmail_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->email_);
 	buf_free(tl->_buf);
@@ -6773,6 +6877,7 @@ void tl_textEmail_free(tl_t *tl_) {
 void tl_textConcat_free(tl_t *tl_) {
 	tl_textConcat_t *tl = (tl_textConcat_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->texts_len; ++i){
 		tl_free(tl->texts_[i]);
 	}
@@ -6783,7 +6888,7 @@ void tl_textConcat_free(tl_t *tl_) {
 
 void tl_textSubscript_free(tl_t *tl_) {
 	tl_textSubscript_t *tl = (tl_textSubscript_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6791,7 +6896,7 @@ void tl_textSubscript_free(tl_t *tl_) {
 
 void tl_textSuperscript_free(tl_t *tl_) {
 	tl_textSuperscript_t *tl = (tl_textSuperscript_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6799,7 +6904,7 @@ void tl_textSuperscript_free(tl_t *tl_) {
 
 void tl_textMarked_free(tl_t *tl_) {
 	tl_textMarked_t *tl = (tl_textMarked_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6807,7 +6912,7 @@ void tl_textMarked_free(tl_t *tl_) {
 
 void tl_textPhone_free(tl_t *tl_) {
 	tl_textPhone_t *tl = (tl_textPhone_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->phone_);
 	buf_free(tl->_buf);
@@ -6816,14 +6921,14 @@ void tl_textPhone_free(tl_t *tl_) {
 
 void tl_textImage_free(tl_t *tl_) {
 	tl_textImage_t *tl = (tl_textImage_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_textAnchor_free(tl_t *tl_) {
 	tl_textAnchor_t *tl = (tl_textAnchor_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->name_);
 	buf_free(tl->_buf);
@@ -6832,14 +6937,14 @@ void tl_textAnchor_free(tl_t *tl_) {
 
 void tl_pageBlockUnsupported_free(tl_t *tl_) {
 	tl_pageBlockUnsupported_t *tl = (tl_pageBlockUnsupported_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_pageBlockTitle_free(tl_t *tl_) {
 	tl_pageBlockTitle_t *tl = (tl_pageBlockTitle_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6847,7 +6952,7 @@ void tl_pageBlockTitle_free(tl_t *tl_) {
 
 void tl_pageBlockSubtitle_free(tl_t *tl_) {
 	tl_pageBlockSubtitle_t *tl = (tl_pageBlockSubtitle_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6855,7 +6960,7 @@ void tl_pageBlockSubtitle_free(tl_t *tl_) {
 
 void tl_pageBlockAuthorDate_free(tl_t *tl_) {
 	tl_pageBlockAuthorDate_t *tl = (tl_pageBlockAuthorDate_t *)tl_;
-	int i;
+	
 	tl_free(tl->author_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6863,7 +6968,7 @@ void tl_pageBlockAuthorDate_free(tl_t *tl_) {
 
 void tl_pageBlockHeader_free(tl_t *tl_) {
 	tl_pageBlockHeader_t *tl = (tl_pageBlockHeader_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6871,7 +6976,7 @@ void tl_pageBlockHeader_free(tl_t *tl_) {
 
 void tl_pageBlockSubheader_free(tl_t *tl_) {
 	tl_pageBlockSubheader_t *tl = (tl_pageBlockSubheader_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6879,7 +6984,7 @@ void tl_pageBlockSubheader_free(tl_t *tl_) {
 
 void tl_pageBlockParagraph_free(tl_t *tl_) {
 	tl_pageBlockParagraph_t *tl = (tl_pageBlockParagraph_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6887,7 +6992,7 @@ void tl_pageBlockParagraph_free(tl_t *tl_) {
 
 void tl_pageBlockPreformatted_free(tl_t *tl_) {
 	tl_pageBlockPreformatted_t *tl = (tl_pageBlockPreformatted_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->language_);
 	buf_free(tl->_buf);
@@ -6896,7 +7001,7 @@ void tl_pageBlockPreformatted_free(tl_t *tl_) {
 
 void tl_pageBlockFooter_free(tl_t *tl_) {
 	tl_pageBlockFooter_t *tl = (tl_pageBlockFooter_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6904,14 +7009,14 @@ void tl_pageBlockFooter_free(tl_t *tl_) {
 
 void tl_pageBlockDivider_free(tl_t *tl_) {
 	tl_pageBlockDivider_t *tl = (tl_pageBlockDivider_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_pageBlockAnchor_free(tl_t *tl_) {
 	tl_pageBlockAnchor_t *tl = (tl_pageBlockAnchor_t *)tl_;
-	int i;
+	
 	buf_free(tl->name_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6920,6 +7025,7 @@ void tl_pageBlockAnchor_free(tl_t *tl_) {
 void tl_pageBlockList_free(tl_t *tl_) {
 	tl_pageBlockList_t *tl = (tl_pageBlockList_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->items_len; ++i){
 		tl_free(tl->items_[i]);
 	}
@@ -6930,7 +7036,7 @@ void tl_pageBlockList_free(tl_t *tl_) {
 
 void tl_pageBlockBlockquote_free(tl_t *tl_) {
 	tl_pageBlockBlockquote_t *tl = (tl_pageBlockBlockquote_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	tl_free(tl->caption_);
 	buf_free(tl->_buf);
@@ -6939,7 +7045,7 @@ void tl_pageBlockBlockquote_free(tl_t *tl_) {
 
 void tl_pageBlockPullquote_free(tl_t *tl_) {
 	tl_pageBlockPullquote_t *tl = (tl_pageBlockPullquote_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	tl_free(tl->caption_);
 	buf_free(tl->_buf);
@@ -6948,7 +7054,7 @@ void tl_pageBlockPullquote_free(tl_t *tl_) {
 
 void tl_pageBlockPhoto_free(tl_t *tl_) {
 	tl_pageBlockPhoto_t *tl = (tl_pageBlockPhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->caption_);
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
@@ -6957,7 +7063,7 @@ void tl_pageBlockPhoto_free(tl_t *tl_) {
 
 void tl_pageBlockVideo_free(tl_t *tl_) {
 	tl_pageBlockVideo_t *tl = (tl_pageBlockVideo_t *)tl_;
-	int i;
+	
 	tl_free(tl->caption_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6965,7 +7071,7 @@ void tl_pageBlockVideo_free(tl_t *tl_) {
 
 void tl_pageBlockCover_free(tl_t *tl_) {
 	tl_pageBlockCover_t *tl = (tl_pageBlockCover_t *)tl_;
-	int i;
+	
 	tl_free(tl->cover_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -6973,7 +7079,7 @@ void tl_pageBlockCover_free(tl_t *tl_) {
 
 void tl_pageBlockEmbed_free(tl_t *tl_) {
 	tl_pageBlockEmbed_t *tl = (tl_pageBlockEmbed_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->html_);
 	tl_free(tl->caption_);
@@ -6984,6 +7090,7 @@ void tl_pageBlockEmbed_free(tl_t *tl_) {
 void tl_pageBlockEmbedPost_free(tl_t *tl_) {
 	tl_pageBlockEmbedPost_t *tl = (tl_pageBlockEmbedPost_t *)tl_;
 	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->author_);
 	for(i=0; i<tl->blocks_len; ++i){
@@ -6998,6 +7105,7 @@ void tl_pageBlockEmbedPost_free(tl_t *tl_) {
 void tl_pageBlockCollage_free(tl_t *tl_) {
 	tl_pageBlockCollage_t *tl = (tl_pageBlockCollage_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->items_len; ++i){
 		tl_free(tl->items_[i]);
 	}
@@ -7010,6 +7118,7 @@ void tl_pageBlockCollage_free(tl_t *tl_) {
 void tl_pageBlockSlideshow_free(tl_t *tl_) {
 	tl_pageBlockSlideshow_t *tl = (tl_pageBlockSlideshow_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->items_len; ++i){
 		tl_free(tl->items_[i]);
 	}
@@ -7021,7 +7130,7 @@ void tl_pageBlockSlideshow_free(tl_t *tl_) {
 
 void tl_pageBlockChannel_free(tl_t *tl_) {
 	tl_pageBlockChannel_t *tl = (tl_pageBlockChannel_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7029,7 +7138,7 @@ void tl_pageBlockChannel_free(tl_t *tl_) {
 
 void tl_pageBlockAudio_free(tl_t *tl_) {
 	tl_pageBlockAudio_t *tl = (tl_pageBlockAudio_t *)tl_;
-	int i;
+	
 	tl_free(tl->caption_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7037,7 +7146,7 @@ void tl_pageBlockAudio_free(tl_t *tl_) {
 
 void tl_pageBlockKicker_free(tl_t *tl_) {
 	tl_pageBlockKicker_t *tl = (tl_pageBlockKicker_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7046,6 +7155,7 @@ void tl_pageBlockKicker_free(tl_t *tl_) {
 void tl_pageBlockTable_free(tl_t *tl_) {
 	tl_pageBlockTable_t *tl = (tl_pageBlockTable_t *)tl_;
 	int i;
+	
 	tl_free(tl->title_);
 	for(i=0; i<tl->rows_len; ++i){
 		tl_free(tl->rows_[i]);
@@ -7058,6 +7168,7 @@ void tl_pageBlockTable_free(tl_t *tl_) {
 void tl_pageBlockOrderedList_free(tl_t *tl_) {
 	tl_pageBlockOrderedList_t *tl = (tl_pageBlockOrderedList_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->items_len; ++i){
 		tl_free(tl->items_[i]);
 	}
@@ -7069,6 +7180,7 @@ void tl_pageBlockOrderedList_free(tl_t *tl_) {
 void tl_pageBlockDetails_free(tl_t *tl_) {
 	tl_pageBlockDetails_t *tl = (tl_pageBlockDetails_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->blocks_len; ++i){
 		tl_free(tl->blocks_[i]);
 	}
@@ -7081,6 +7193,7 @@ void tl_pageBlockDetails_free(tl_t *tl_) {
 void tl_pageBlockRelatedArticles_free(tl_t *tl_) {
 	tl_pageBlockRelatedArticles_t *tl = (tl_pageBlockRelatedArticles_t *)tl_;
 	int i;
+	
 	tl_free(tl->title_);
 	for(i=0; i<tl->articles_len; ++i){
 		tl_free(tl->articles_[i]);
@@ -7092,7 +7205,7 @@ void tl_pageBlockRelatedArticles_free(tl_t *tl_) {
 
 void tl_pageBlockMap_free(tl_t *tl_) {
 	tl_pageBlockMap_t *tl = (tl_pageBlockMap_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_);
 	tl_free(tl->caption_);
 	buf_free(tl->_buf);
@@ -7101,35 +7214,35 @@ void tl_pageBlockMap_free(tl_t *tl_) {
 
 void tl_phoneCallDiscardReasonMissed_free(tl_t *tl_) {
 	tl_phoneCallDiscardReasonMissed_t *tl = (tl_phoneCallDiscardReasonMissed_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_phoneCallDiscardReasonDisconnect_free(tl_t *tl_) {
 	tl_phoneCallDiscardReasonDisconnect_t *tl = (tl_phoneCallDiscardReasonDisconnect_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_phoneCallDiscardReasonHangup_free(tl_t *tl_) {
 	tl_phoneCallDiscardReasonHangup_t *tl = (tl_phoneCallDiscardReasonHangup_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_phoneCallDiscardReasonBusy_free(tl_t *tl_) {
 	tl_phoneCallDiscardReasonBusy_t *tl = (tl_phoneCallDiscardReasonBusy_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_dataJSON_free(tl_t *tl_) {
 	tl_dataJSON_t *tl = (tl_dataJSON_t *)tl_;
-	int i;
+	
 	buf_free(tl->data_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7137,7 +7250,7 @@ void tl_dataJSON_free(tl_t *tl_) {
 
 void tl_labeledPrice_free(tl_t *tl_) {
 	tl_labeledPrice_t *tl = (tl_labeledPrice_t *)tl_;
-	int i;
+	
 	buf_free(tl->label_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7146,6 +7259,7 @@ void tl_labeledPrice_free(tl_t *tl_) {
 void tl_invoice_free(tl_t *tl_) {
 	tl_invoice_t *tl = (tl_invoice_t *)tl_;
 	int i;
+	
 	buf_free(tl->currency_);
 	for(i=0; i<tl->prices_len; ++i){
 		tl_free(tl->prices_[i]);
@@ -7161,7 +7275,7 @@ void tl_invoice_free(tl_t *tl_) {
 
 void tl_paymentCharge_free(tl_t *tl_) {
 	tl_paymentCharge_t *tl = (tl_paymentCharge_t *)tl_;
-	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->provider_charge_id_);
 	buf_free(tl->_buf);
@@ -7170,7 +7284,7 @@ void tl_paymentCharge_free(tl_t *tl_) {
 
 void tl_postAddress_free(tl_t *tl_) {
 	tl_postAddress_t *tl = (tl_postAddress_t *)tl_;
-	int i;
+	
 	buf_free(tl->street_line1_);
 	buf_free(tl->street_line2_);
 	buf_free(tl->city_);
@@ -7183,7 +7297,7 @@ void tl_postAddress_free(tl_t *tl_) {
 
 void tl_paymentRequestedInfo_free(tl_t *tl_) {
 	tl_paymentRequestedInfo_t *tl = (tl_paymentRequestedInfo_t *)tl_;
-	int i;
+	
 	buf_free(tl->name_);
 	buf_free(tl->phone_);
 	buf_free(tl->email_);
@@ -7194,7 +7308,7 @@ void tl_paymentRequestedInfo_free(tl_t *tl_) {
 
 void tl_paymentSavedCredentialsCard_free(tl_t *tl_) {
 	tl_paymentSavedCredentialsCard_t *tl = (tl_paymentSavedCredentialsCard_t *)tl_;
-	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
@@ -7204,6 +7318,7 @@ void tl_paymentSavedCredentialsCard_free(tl_t *tl_) {
 void tl_webDocument_free(tl_t *tl_) {
 	tl_webDocument_t *tl = (tl_webDocument_t *)tl_;
 	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->mime_type_);
 	for(i=0; i<tl->attributes_len; ++i){
@@ -7217,6 +7332,7 @@ void tl_webDocument_free(tl_t *tl_) {
 void tl_webDocumentNoProxy_free(tl_t *tl_) {
 	tl_webDocumentNoProxy_t *tl = (tl_webDocumentNoProxy_t *)tl_;
 	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->mime_type_);
 	for(i=0; i<tl->attributes_len; ++i){
@@ -7230,6 +7346,7 @@ void tl_webDocumentNoProxy_free(tl_t *tl_) {
 void tl_inputWebDocument_free(tl_t *tl_) {
 	tl_inputWebDocument_t *tl = (tl_inputWebDocument_t *)tl_;
 	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->mime_type_);
 	for(i=0; i<tl->attributes_len; ++i){
@@ -7242,7 +7359,7 @@ void tl_inputWebDocument_free(tl_t *tl_) {
 
 void tl_inputWebFileLocation_free(tl_t *tl_) {
 	tl_inputWebFileLocation_t *tl = (tl_inputWebFileLocation_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7250,7 +7367,7 @@ void tl_inputWebFileLocation_free(tl_t *tl_) {
 
 void tl_inputWebFileGeoPointLocation_free(tl_t *tl_) {
 	tl_inputWebFileGeoPointLocation_t *tl = (tl_inputWebFileGeoPointLocation_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_point_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7258,7 +7375,7 @@ void tl_inputWebFileGeoPointLocation_free(tl_t *tl_) {
 
 void tl_inputWebFileAudioAlbumThumbLocation_free(tl_t *tl_) {
 	tl_inputWebFileAudioAlbumThumbLocation_t *tl = (tl_inputWebFileAudioAlbumThumbLocation_t *)tl_;
-	int i;
+	
 	tl_free(tl->document_);
 	buf_free(tl->title_);
 	buf_free(tl->performer_);
@@ -7268,7 +7385,7 @@ void tl_inputWebFileAudioAlbumThumbLocation_free(tl_t *tl_) {
 
 void tl_upload_webFile_free(tl_t *tl_) {
 	tl_upload_webFile_t *tl = (tl_upload_webFile_t *)tl_;
-	int i;
+	
 	buf_free(tl->mime_type_);
 	tl_free(tl->file_type_);
 	buf_free(tl->bytes_);
@@ -7279,6 +7396,7 @@ void tl_upload_webFile_free(tl_t *tl_) {
 void tl_payments_paymentForm_free(tl_t *tl_) {
 	tl_payments_paymentForm_t *tl = (tl_payments_paymentForm_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->description_);
 	tl_free(tl->photo_);
@@ -7306,6 +7424,7 @@ void tl_payments_paymentForm_free(tl_t *tl_) {
 void tl_payments_paymentFormStars_free(tl_t *tl_) {
 	tl_payments_paymentFormStars_t *tl = (tl_payments_paymentFormStars_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->description_);
 	tl_free(tl->photo_);
@@ -7321,6 +7440,7 @@ void tl_payments_paymentFormStars_free(tl_t *tl_) {
 void tl_payments_validatedRequestedInfo_free(tl_t *tl_) {
 	tl_payments_validatedRequestedInfo_t *tl = (tl_payments_validatedRequestedInfo_t *)tl_;
 	int i;
+	
 	buf_free(tl->id_);
 	for(i=0; i<tl->shipping_options_len; ++i){
 		tl_free(tl->shipping_options_[i]);
@@ -7332,7 +7452,7 @@ void tl_payments_validatedRequestedInfo_free(tl_t *tl_) {
 
 void tl_payments_paymentResult_free(tl_t *tl_) {
 	tl_payments_paymentResult_t *tl = (tl_payments_paymentResult_t *)tl_;
-	int i;
+	
 	tl_free(tl->updates_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7340,7 +7460,7 @@ void tl_payments_paymentResult_free(tl_t *tl_) {
 
 void tl_payments_paymentVerificationNeeded_free(tl_t *tl_) {
 	tl_payments_paymentVerificationNeeded_t *tl = (tl_payments_paymentVerificationNeeded_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7349,6 +7469,7 @@ void tl_payments_paymentVerificationNeeded_free(tl_t *tl_) {
 void tl_payments_paymentReceipt_free(tl_t *tl_) {
 	tl_payments_paymentReceipt_t *tl = (tl_payments_paymentReceipt_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->description_);
 	tl_free(tl->photo_);
@@ -7368,6 +7489,7 @@ void tl_payments_paymentReceipt_free(tl_t *tl_) {
 void tl_payments_paymentReceiptStars_free(tl_t *tl_) {
 	tl_payments_paymentReceiptStars_t *tl = (tl_payments_paymentReceiptStars_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->description_);
 	tl_free(tl->photo_);
@@ -7384,7 +7506,7 @@ void tl_payments_paymentReceiptStars_free(tl_t *tl_) {
 
 void tl_payments_savedInfo_free(tl_t *tl_) {
 	tl_payments_savedInfo_t *tl = (tl_payments_savedInfo_t *)tl_;
-	int i;
+	
 	tl_free(tl->saved_info_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7392,7 +7514,7 @@ void tl_payments_savedInfo_free(tl_t *tl_) {
 
 void tl_inputPaymentCredentialsSaved_free(tl_t *tl_) {
 	tl_inputPaymentCredentialsSaved_t *tl = (tl_inputPaymentCredentialsSaved_t *)tl_;
-	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->tmp_password_);
 	buf_free(tl->_buf);
@@ -7401,7 +7523,7 @@ void tl_inputPaymentCredentialsSaved_free(tl_t *tl_) {
 
 void tl_inputPaymentCredentials_free(tl_t *tl_) {
 	tl_inputPaymentCredentials_t *tl = (tl_inputPaymentCredentials_t *)tl_;
-	int i;
+	
 	tl_free(tl->data_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7409,7 +7531,7 @@ void tl_inputPaymentCredentials_free(tl_t *tl_) {
 
 void tl_inputPaymentCredentialsApplePay_free(tl_t *tl_) {
 	tl_inputPaymentCredentialsApplePay_t *tl = (tl_inputPaymentCredentialsApplePay_t *)tl_;
-	int i;
+	
 	tl_free(tl->payment_data_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7417,7 +7539,7 @@ void tl_inputPaymentCredentialsApplePay_free(tl_t *tl_) {
 
 void tl_inputPaymentCredentialsGooglePay_free(tl_t *tl_) {
 	tl_inputPaymentCredentialsGooglePay_t *tl = (tl_inputPaymentCredentialsGooglePay_t *)tl_;
-	int i;
+	
 	tl_free(tl->payment_token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7425,7 +7547,7 @@ void tl_inputPaymentCredentialsGooglePay_free(tl_t *tl_) {
 
 void tl_account_tmpPassword_free(tl_t *tl_) {
 	tl_account_tmpPassword_t *tl = (tl_account_tmpPassword_t *)tl_;
-	int i;
+	
 	buf_free(tl->tmp_password_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7434,6 +7556,7 @@ void tl_account_tmpPassword_free(tl_t *tl_) {
 void tl_shippingOption_free(tl_t *tl_) {
 	tl_shippingOption_t *tl = (tl_shippingOption_t *)tl_;
 	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->title_);
 	for(i=0; i<tl->prices_len; ++i){
@@ -7446,7 +7569,7 @@ void tl_shippingOption_free(tl_t *tl_) {
 
 void tl_inputStickerSetItem_free(tl_t *tl_) {
 	tl_inputStickerSetItem_t *tl = (tl_inputStickerSetItem_t *)tl_;
-	int i;
+	
 	tl_free(tl->document_);
 	buf_free(tl->emoji_);
 	tl_free(tl->mask_coords_);
@@ -7457,21 +7580,21 @@ void tl_inputStickerSetItem_free(tl_t *tl_) {
 
 void tl_inputPhoneCall_free(tl_t *tl_) {
 	tl_inputPhoneCall_t *tl = (tl_inputPhoneCall_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_phoneCallEmpty_free(tl_t *tl_) {
 	tl_phoneCallEmpty_t *tl = (tl_phoneCallEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_phoneCallWaiting_free(tl_t *tl_) {
 	tl_phoneCallWaiting_t *tl = (tl_phoneCallWaiting_t *)tl_;
-	int i;
+	
 	tl_free(tl->protocol_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7479,7 +7602,7 @@ void tl_phoneCallWaiting_free(tl_t *tl_) {
 
 void tl_phoneCallRequested_free(tl_t *tl_) {
 	tl_phoneCallRequested_t *tl = (tl_phoneCallRequested_t *)tl_;
-	int i;
+	
 	buf_free(tl->g_a_hash_);
 	tl_free(tl->protocol_);
 	buf_free(tl->_buf);
@@ -7488,7 +7611,7 @@ void tl_phoneCallRequested_free(tl_t *tl_) {
 
 void tl_phoneCallAccepted_free(tl_t *tl_) {
 	tl_phoneCallAccepted_t *tl = (tl_phoneCallAccepted_t *)tl_;
-	int i;
+	
 	buf_free(tl->g_b_);
 	tl_free(tl->protocol_);
 	buf_free(tl->_buf);
@@ -7498,6 +7621,7 @@ void tl_phoneCallAccepted_free(tl_t *tl_) {
 void tl_phoneCall_free(tl_t *tl_) {
 	tl_phoneCall_t *tl = (tl_phoneCall_t *)tl_;
 	int i;
+	
 	buf_free(tl->g_a_or_b_);
 	tl_free(tl->protocol_);
 	for(i=0; i<tl->connections_len; ++i){
@@ -7511,7 +7635,7 @@ void tl_phoneCall_free(tl_t *tl_) {
 
 void tl_phoneCallDiscarded_free(tl_t *tl_) {
 	tl_phoneCallDiscarded_t *tl = (tl_phoneCallDiscarded_t *)tl_;
-	int i;
+	
 	tl_free(tl->reason_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7519,7 +7643,7 @@ void tl_phoneCallDiscarded_free(tl_t *tl_) {
 
 void tl_phoneConnection_free(tl_t *tl_) {
 	tl_phoneConnection_t *tl = (tl_phoneConnection_t *)tl_;
-	int i;
+	
 	buf_free(tl->ip_);
 	buf_free(tl->ipv6_);
 	buf_free(tl->peer_tag_);
@@ -7529,7 +7653,7 @@ void tl_phoneConnection_free(tl_t *tl_) {
 
 void tl_phoneConnectionWebrtc_free(tl_t *tl_) {
 	tl_phoneConnectionWebrtc_t *tl = (tl_phoneConnectionWebrtc_t *)tl_;
-	int i;
+	
 	buf_free(tl->ip_);
 	buf_free(tl->ipv6_);
 	buf_free(tl->username_);
@@ -7541,6 +7665,7 @@ void tl_phoneConnectionWebrtc_free(tl_t *tl_) {
 void tl_phoneCallProtocol_free(tl_t *tl_) {
 	tl_phoneCallProtocol_t *tl = (tl_phoneCallProtocol_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->library_versions_len; ++i){
 		buf_free(tl->library_versions_[i]);
 	}
@@ -7552,6 +7677,7 @@ void tl_phoneCallProtocol_free(tl_t *tl_) {
 void tl_phone_phoneCall_free(tl_t *tl_) {
 	tl_phone_phoneCall_t *tl = (tl_phone_phoneCall_t *)tl_;
 	int i;
+	
 	tl_free(tl->phone_call_);
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
@@ -7563,7 +7689,7 @@ void tl_phone_phoneCall_free(tl_t *tl_) {
 
 void tl_upload_cdnFileReuploadNeeded_free(tl_t *tl_) {
 	tl_upload_cdnFileReuploadNeeded_t *tl = (tl_upload_cdnFileReuploadNeeded_t *)tl_;
-	int i;
+	
 	buf_free(tl->request_token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7571,7 +7697,7 @@ void tl_upload_cdnFileReuploadNeeded_free(tl_t *tl_) {
 
 void tl_upload_cdnFile_free(tl_t *tl_) {
 	tl_upload_cdnFile_t *tl = (tl_upload_cdnFile_t *)tl_;
-	int i;
+	
 	buf_free(tl->bytes_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7579,7 +7705,7 @@ void tl_upload_cdnFile_free(tl_t *tl_) {
 
 void tl_cdnPublicKey_free(tl_t *tl_) {
 	tl_cdnPublicKey_t *tl = (tl_cdnPublicKey_t *)tl_;
-	int i;
+	
 	buf_free(tl->public_key_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7588,6 +7714,7 @@ void tl_cdnPublicKey_free(tl_t *tl_) {
 void tl_cdnConfig_free(tl_t *tl_) {
 	tl_cdnConfig_t *tl = (tl_cdnConfig_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->public_keys_len; ++i){
 		tl_free(tl->public_keys_[i]);
 	}
@@ -7598,7 +7725,7 @@ void tl_cdnConfig_free(tl_t *tl_) {
 
 void tl_langPackString_free(tl_t *tl_) {
 	tl_langPackString_t *tl = (tl_langPackString_t *)tl_;
-	int i;
+	
 	buf_free(tl->key_);
 	buf_free(tl->value_);
 	buf_free(tl->_buf);
@@ -7607,7 +7734,7 @@ void tl_langPackString_free(tl_t *tl_) {
 
 void tl_langPackStringPluralized_free(tl_t *tl_) {
 	tl_langPackStringPluralized_t *tl = (tl_langPackStringPluralized_t *)tl_;
-	int i;
+	
 	buf_free(tl->key_);
 	buf_free(tl->zero_value_);
 	buf_free(tl->one_value_);
@@ -7621,7 +7748,7 @@ void tl_langPackStringPluralized_free(tl_t *tl_) {
 
 void tl_langPackStringDeleted_free(tl_t *tl_) {
 	tl_langPackStringDeleted_t *tl = (tl_langPackStringDeleted_t *)tl_;
-	int i;
+	
 	buf_free(tl->key_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7630,6 +7757,7 @@ void tl_langPackStringDeleted_free(tl_t *tl_) {
 void tl_langPackDifference_free(tl_t *tl_) {
 	tl_langPackDifference_t *tl = (tl_langPackDifference_t *)tl_;
 	int i;
+	
 	buf_free(tl->lang_code_);
 	for(i=0; i<tl->strings_len; ++i){
 		tl_free(tl->strings_[i]);
@@ -7641,7 +7769,7 @@ void tl_langPackDifference_free(tl_t *tl_) {
 
 void tl_langPackLanguage_free(tl_t *tl_) {
 	tl_langPackLanguage_t *tl = (tl_langPackLanguage_t *)tl_;
-	int i;
+	
 	buf_free(tl->name_);
 	buf_free(tl->native_name_);
 	buf_free(tl->lang_code_);
@@ -7654,7 +7782,7 @@ void tl_langPackLanguage_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangeTitle_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeTitle_t *tl = (tl_channelAdminLogEventActionChangeTitle_t *)tl_;
-	int i;
+	
 	buf_free(tl->prev_value_);
 	buf_free(tl->new_value_);
 	buf_free(tl->_buf);
@@ -7663,7 +7791,7 @@ void tl_channelAdminLogEventActionChangeTitle_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangeAbout_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeAbout_t *tl = (tl_channelAdminLogEventActionChangeAbout_t *)tl_;
-	int i;
+	
 	buf_free(tl->prev_value_);
 	buf_free(tl->new_value_);
 	buf_free(tl->_buf);
@@ -7672,7 +7800,7 @@ void tl_channelAdminLogEventActionChangeAbout_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangeUsername_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeUsername_t *tl = (tl_channelAdminLogEventActionChangeUsername_t *)tl_;
-	int i;
+	
 	buf_free(tl->prev_value_);
 	buf_free(tl->new_value_);
 	buf_free(tl->_buf);
@@ -7681,7 +7809,7 @@ void tl_channelAdminLogEventActionChangeUsername_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangePhoto_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangePhoto_t *tl = (tl_channelAdminLogEventActionChangePhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_photo_);
 	tl_free(tl->new_photo_);
 	buf_free(tl->_buf);
@@ -7690,7 +7818,7 @@ void tl_channelAdminLogEventActionChangePhoto_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionToggleInvites_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionToggleInvites_t *tl = (tl_channelAdminLogEventActionToggleInvites_t *)tl_;
-	int i;
+	
 	tl_free(tl->new_value_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7698,7 +7826,7 @@ void tl_channelAdminLogEventActionToggleInvites_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionToggleSignatures_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionToggleSignatures_t *tl = (tl_channelAdminLogEventActionToggleSignatures_t *)tl_;
-	int i;
+	
 	tl_free(tl->new_value_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7706,7 +7834,7 @@ void tl_channelAdminLogEventActionToggleSignatures_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionUpdatePinned_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionUpdatePinned_t *tl = (tl_channelAdminLogEventActionUpdatePinned_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7714,7 +7842,7 @@ void tl_channelAdminLogEventActionUpdatePinned_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionEditMessage_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionEditMessage_t *tl = (tl_channelAdminLogEventActionEditMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_message_);
 	tl_free(tl->new_message_);
 	buf_free(tl->_buf);
@@ -7723,7 +7851,7 @@ void tl_channelAdminLogEventActionEditMessage_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionDeleteMessage_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionDeleteMessage_t *tl = (tl_channelAdminLogEventActionDeleteMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7731,21 +7859,21 @@ void tl_channelAdminLogEventActionDeleteMessage_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionParticipantJoin_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionParticipantJoin_t *tl = (tl_channelAdminLogEventActionParticipantJoin_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channelAdminLogEventActionParticipantLeave_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionParticipantLeave_t *tl = (tl_channelAdminLogEventActionParticipantLeave_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channelAdminLogEventActionParticipantInvite_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionParticipantInvite_t *tl = (tl_channelAdminLogEventActionParticipantInvite_t *)tl_;
-	int i;
+	
 	tl_free(tl->participant_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7753,7 +7881,7 @@ void tl_channelAdminLogEventActionParticipantInvite_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionParticipantToggleBan_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionParticipantToggleBan_t *tl = (tl_channelAdminLogEventActionParticipantToggleBan_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_participant_);
 	tl_free(tl->new_participant_);
 	buf_free(tl->_buf);
@@ -7762,7 +7890,7 @@ void tl_channelAdminLogEventActionParticipantToggleBan_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionParticipantToggleAdmin_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionParticipantToggleAdmin_t *tl = (tl_channelAdminLogEventActionParticipantToggleAdmin_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_participant_);
 	tl_free(tl->new_participant_);
 	buf_free(tl->_buf);
@@ -7771,7 +7899,7 @@ void tl_channelAdminLogEventActionParticipantToggleAdmin_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangeStickerSet_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeStickerSet_t *tl = (tl_channelAdminLogEventActionChangeStickerSet_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_stickerset_);
 	tl_free(tl->new_stickerset_);
 	buf_free(tl->_buf);
@@ -7780,7 +7908,7 @@ void tl_channelAdminLogEventActionChangeStickerSet_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionTogglePreHistoryHidden_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionTogglePreHistoryHidden_t *tl = (tl_channelAdminLogEventActionTogglePreHistoryHidden_t *)tl_;
-	int i;
+	
 	tl_free(tl->new_value_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7788,7 +7916,7 @@ void tl_channelAdminLogEventActionTogglePreHistoryHidden_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionDefaultBannedRights_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionDefaultBannedRights_t *tl = (tl_channelAdminLogEventActionDefaultBannedRights_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_banned_rights_);
 	tl_free(tl->new_banned_rights_);
 	buf_free(tl->_buf);
@@ -7797,7 +7925,7 @@ void tl_channelAdminLogEventActionDefaultBannedRights_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionStopPoll_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionStopPoll_t *tl = (tl_channelAdminLogEventActionStopPoll_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7805,14 +7933,14 @@ void tl_channelAdminLogEventActionStopPoll_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangeLinkedChat_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeLinkedChat_t *tl = (tl_channelAdminLogEventActionChangeLinkedChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channelAdminLogEventActionChangeLocation_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeLocation_t *tl = (tl_channelAdminLogEventActionChangeLocation_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_value_);
 	tl_free(tl->new_value_);
 	buf_free(tl->_buf);
@@ -7821,14 +7949,14 @@ void tl_channelAdminLogEventActionChangeLocation_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionToggleSlowMode_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionToggleSlowMode_t *tl = (tl_channelAdminLogEventActionToggleSlowMode_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channelAdminLogEventActionStartGroupCall_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionStartGroupCall_t *tl = (tl_channelAdminLogEventActionStartGroupCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7836,7 +7964,7 @@ void tl_channelAdminLogEventActionStartGroupCall_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionDiscardGroupCall_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionDiscardGroupCall_t *tl = (tl_channelAdminLogEventActionDiscardGroupCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7844,7 +7972,7 @@ void tl_channelAdminLogEventActionDiscardGroupCall_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionParticipantMute_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionParticipantMute_t *tl = (tl_channelAdminLogEventActionParticipantMute_t *)tl_;
-	int i;
+	
 	tl_free(tl->participant_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7852,7 +7980,7 @@ void tl_channelAdminLogEventActionParticipantMute_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionParticipantUnmute_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionParticipantUnmute_t *tl = (tl_channelAdminLogEventActionParticipantUnmute_t *)tl_;
-	int i;
+	
 	tl_free(tl->participant_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7860,7 +7988,7 @@ void tl_channelAdminLogEventActionParticipantUnmute_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionToggleGroupCallSetting_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionToggleGroupCallSetting_t *tl = (tl_channelAdminLogEventActionToggleGroupCallSetting_t *)tl_;
-	int i;
+	
 	tl_free(tl->join_muted_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7868,7 +7996,7 @@ void tl_channelAdminLogEventActionToggleGroupCallSetting_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionParticipantJoinByInvite_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionParticipantJoinByInvite_t *tl = (tl_channelAdminLogEventActionParticipantJoinByInvite_t *)tl_;
-	int i;
+	
 	tl_free(tl->invite_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7876,7 +8004,7 @@ void tl_channelAdminLogEventActionParticipantJoinByInvite_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionExportedInviteDelete_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionExportedInviteDelete_t *tl = (tl_channelAdminLogEventActionExportedInviteDelete_t *)tl_;
-	int i;
+	
 	tl_free(tl->invite_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7884,7 +8012,7 @@ void tl_channelAdminLogEventActionExportedInviteDelete_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionExportedInviteRevoke_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionExportedInviteRevoke_t *tl = (tl_channelAdminLogEventActionExportedInviteRevoke_t *)tl_;
-	int i;
+	
 	tl_free(tl->invite_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7892,7 +8020,7 @@ void tl_channelAdminLogEventActionExportedInviteRevoke_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionExportedInviteEdit_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionExportedInviteEdit_t *tl = (tl_channelAdminLogEventActionExportedInviteEdit_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_invite_);
 	tl_free(tl->new_invite_);
 	buf_free(tl->_buf);
@@ -7901,7 +8029,7 @@ void tl_channelAdminLogEventActionExportedInviteEdit_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionParticipantVolume_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionParticipantVolume_t *tl = (tl_channelAdminLogEventActionParticipantVolume_t *)tl_;
-	int i;
+	
 	tl_free(tl->participant_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7909,14 +8037,14 @@ void tl_channelAdminLogEventActionParticipantVolume_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangeHistoryTTL_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeHistoryTTL_t *tl = (tl_channelAdminLogEventActionChangeHistoryTTL_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channelAdminLogEventActionParticipantJoinByRequest_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionParticipantJoinByRequest_t *tl = (tl_channelAdminLogEventActionParticipantJoinByRequest_t *)tl_;
-	int i;
+	
 	tl_free(tl->invite_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7924,7 +8052,7 @@ void tl_channelAdminLogEventActionParticipantJoinByRequest_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionToggleNoForwards_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionToggleNoForwards_t *tl = (tl_channelAdminLogEventActionToggleNoForwards_t *)tl_;
-	int i;
+	
 	tl_free(tl->new_value_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7932,7 +8060,7 @@ void tl_channelAdminLogEventActionToggleNoForwards_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionSendMessage_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionSendMessage_t *tl = (tl_channelAdminLogEventActionSendMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7940,7 +8068,7 @@ void tl_channelAdminLogEventActionSendMessage_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangeAvailableReactions_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeAvailableReactions_t *tl = (tl_channelAdminLogEventActionChangeAvailableReactions_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_value_);
 	tl_free(tl->new_value_);
 	buf_free(tl->_buf);
@@ -7950,6 +8078,7 @@ void tl_channelAdminLogEventActionChangeAvailableReactions_free(tl_t *tl_) {
 void tl_channelAdminLogEventActionChangeUsernames_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeUsernames_t *tl = (tl_channelAdminLogEventActionChangeUsernames_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->prev_value_len; ++i){
 		buf_free(tl->prev_value_[i]);
 	}
@@ -7964,7 +8093,7 @@ void tl_channelAdminLogEventActionChangeUsernames_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionToggleForum_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionToggleForum_t *tl = (tl_channelAdminLogEventActionToggleForum_t *)tl_;
-	int i;
+	
 	tl_free(tl->new_value_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7972,7 +8101,7 @@ void tl_channelAdminLogEventActionToggleForum_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionCreateTopic_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionCreateTopic_t *tl = (tl_channelAdminLogEventActionCreateTopic_t *)tl_;
-	int i;
+	
 	tl_free(tl->topic_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7980,7 +8109,7 @@ void tl_channelAdminLogEventActionCreateTopic_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionEditTopic_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionEditTopic_t *tl = (tl_channelAdminLogEventActionEditTopic_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_topic_);
 	tl_free(tl->new_topic_);
 	buf_free(tl->_buf);
@@ -7989,7 +8118,7 @@ void tl_channelAdminLogEventActionEditTopic_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionDeleteTopic_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionDeleteTopic_t *tl = (tl_channelAdminLogEventActionDeleteTopic_t *)tl_;
-	int i;
+	
 	tl_free(tl->topic_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -7997,7 +8126,7 @@ void tl_channelAdminLogEventActionDeleteTopic_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionPinTopic_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionPinTopic_t *tl = (tl_channelAdminLogEventActionPinTopic_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_topic_);
 	tl_free(tl->new_topic_);
 	buf_free(tl->_buf);
@@ -8006,7 +8135,7 @@ void tl_channelAdminLogEventActionPinTopic_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionToggleAntiSpam_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionToggleAntiSpam_t *tl = (tl_channelAdminLogEventActionToggleAntiSpam_t *)tl_;
-	int i;
+	
 	tl_free(tl->new_value_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8014,7 +8143,7 @@ void tl_channelAdminLogEventActionToggleAntiSpam_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangePeerColor_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangePeerColor_t *tl = (tl_channelAdminLogEventActionChangePeerColor_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_value_);
 	tl_free(tl->new_value_);
 	buf_free(tl->_buf);
@@ -8023,7 +8152,7 @@ void tl_channelAdminLogEventActionChangePeerColor_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangeProfilePeerColor_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeProfilePeerColor_t *tl = (tl_channelAdminLogEventActionChangeProfilePeerColor_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_value_);
 	tl_free(tl->new_value_);
 	buf_free(tl->_buf);
@@ -8032,7 +8161,7 @@ void tl_channelAdminLogEventActionChangeProfilePeerColor_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangeWallpaper_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeWallpaper_t *tl = (tl_channelAdminLogEventActionChangeWallpaper_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_value_);
 	tl_free(tl->new_value_);
 	buf_free(tl->_buf);
@@ -8041,7 +8170,7 @@ void tl_channelAdminLogEventActionChangeWallpaper_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangeEmojiStatus_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeEmojiStatus_t *tl = (tl_channelAdminLogEventActionChangeEmojiStatus_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_value_);
 	tl_free(tl->new_value_);
 	buf_free(tl->_buf);
@@ -8050,7 +8179,7 @@ void tl_channelAdminLogEventActionChangeEmojiStatus_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventActionChangeEmojiStickerSet_free(tl_t *tl_) {
 	tl_channelAdminLogEventActionChangeEmojiStickerSet_t *tl = (tl_channelAdminLogEventActionChangeEmojiStickerSet_t *)tl_;
-	int i;
+	
 	tl_free(tl->prev_stickerset_);
 	tl_free(tl->new_stickerset_);
 	buf_free(tl->_buf);
@@ -8059,7 +8188,7 @@ void tl_channelAdminLogEventActionChangeEmojiStickerSet_free(tl_t *tl_) {
 
 void tl_channelAdminLogEvent_free(tl_t *tl_) {
 	tl_channelAdminLogEvent_t *tl = (tl_channelAdminLogEvent_t *)tl_;
-	int i;
+	
 	tl_free(tl->action_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8068,6 +8197,7 @@ void tl_channelAdminLogEvent_free(tl_t *tl_) {
 void tl_channels_adminLogResults_free(tl_t *tl_) {
 	tl_channels_adminLogResults_t *tl = (tl_channels_adminLogResults_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->events_len; ++i){
 		tl_free(tl->events_[i]);
 	}
@@ -8086,21 +8216,21 @@ void tl_channels_adminLogResults_free(tl_t *tl_) {
 
 void tl_channelAdminLogEventsFilter_free(tl_t *tl_) {
 	tl_channelAdminLogEventsFilter_t *tl = (tl_channelAdminLogEventsFilter_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_popularContact_free(tl_t *tl_) {
 	tl_popularContact_t *tl = (tl_popularContact_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_favedStickersNotModified_free(tl_t *tl_) {
 	tl_messages_favedStickersNotModified_t *tl = (tl_messages_favedStickersNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -8108,6 +8238,7 @@ void tl_messages_favedStickersNotModified_free(tl_t *tl_) {
 void tl_messages_favedStickers_free(tl_t *tl_) {
 	tl_messages_favedStickers_t *tl = (tl_messages_favedStickers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->packs_len; ++i){
 		tl_free(tl->packs_[i]);
 	}
@@ -8122,7 +8253,7 @@ void tl_messages_favedStickers_free(tl_t *tl_) {
 
 void tl_recentMeUrlUnknown_free(tl_t *tl_) {
 	tl_recentMeUrlUnknown_t *tl = (tl_recentMeUrlUnknown_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8130,7 +8261,7 @@ void tl_recentMeUrlUnknown_free(tl_t *tl_) {
 
 void tl_recentMeUrlUser_free(tl_t *tl_) {
 	tl_recentMeUrlUser_t *tl = (tl_recentMeUrlUser_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8138,7 +8269,7 @@ void tl_recentMeUrlUser_free(tl_t *tl_) {
 
 void tl_recentMeUrlChat_free(tl_t *tl_) {
 	tl_recentMeUrlChat_t *tl = (tl_recentMeUrlChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8146,7 +8277,7 @@ void tl_recentMeUrlChat_free(tl_t *tl_) {
 
 void tl_recentMeUrlChatInvite_free(tl_t *tl_) {
 	tl_recentMeUrlChatInvite_t *tl = (tl_recentMeUrlChatInvite_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	tl_free(tl->chat_invite_);
 	buf_free(tl->_buf);
@@ -8155,7 +8286,7 @@ void tl_recentMeUrlChatInvite_free(tl_t *tl_) {
 
 void tl_recentMeUrlStickerSet_free(tl_t *tl_) {
 	tl_recentMeUrlStickerSet_t *tl = (tl_recentMeUrlStickerSet_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	tl_free(tl->set_);
 	buf_free(tl->_buf);
@@ -8165,6 +8296,7 @@ void tl_recentMeUrlStickerSet_free(tl_t *tl_) {
 void tl_help_recentMeUrls_free(tl_t *tl_) {
 	tl_help_recentMeUrls_t *tl = (tl_help_recentMeUrls_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->urls_len; ++i){
 		tl_free(tl->urls_[i]);
 	}
@@ -8184,6 +8316,7 @@ void tl_help_recentMeUrls_free(tl_t *tl_) {
 void tl_inputSingleMedia_free(tl_t *tl_) {
 	tl_inputSingleMedia_t *tl = (tl_inputSingleMedia_t *)tl_;
 	int i;
+	
 	tl_free(tl->media_);
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
@@ -8196,7 +8329,7 @@ void tl_inputSingleMedia_free(tl_t *tl_) {
 
 void tl_webAuthorization_free(tl_t *tl_) {
 	tl_webAuthorization_t *tl = (tl_webAuthorization_t *)tl_;
-	int i;
+	
 	buf_free(tl->domain_);
 	buf_free(tl->browser_);
 	buf_free(tl->platform_);
@@ -8209,6 +8342,7 @@ void tl_webAuthorization_free(tl_t *tl_) {
 void tl_account_webAuthorizations_free(tl_t *tl_) {
 	tl_account_webAuthorizations_t *tl = (tl_account_webAuthorizations_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->authorizations_len; ++i){
 		tl_free(tl->authorizations_[i]);
 	}
@@ -8223,35 +8357,35 @@ void tl_account_webAuthorizations_free(tl_t *tl_) {
 
 void tl_inputMessageID_free(tl_t *tl_) {
 	tl_inputMessageID_t *tl = (tl_inputMessageID_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessageReplyTo_free(tl_t *tl_) {
 	tl_inputMessageReplyTo_t *tl = (tl_inputMessageReplyTo_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessagePinned_free(tl_t *tl_) {
 	tl_inputMessagePinned_t *tl = (tl_inputMessagePinned_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputMessageCallbackQuery_free(tl_t *tl_) {
 	tl_inputMessageCallbackQuery_t *tl = (tl_inputMessageCallbackQuery_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputDialogPeer_free(tl_t *tl_) {
 	tl_inputDialogPeer_t *tl = (tl_inputDialogPeer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8259,14 +8393,14 @@ void tl_inputDialogPeer_free(tl_t *tl_) {
 
 void tl_inputDialogPeerFolder_free(tl_t *tl_) {
 	tl_inputDialogPeerFolder_t *tl = (tl_inputDialogPeerFolder_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_dialogPeer_free(tl_t *tl_) {
 	tl_dialogPeer_t *tl = (tl_dialogPeer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8274,14 +8408,14 @@ void tl_dialogPeer_free(tl_t *tl_) {
 
 void tl_dialogPeerFolder_free(tl_t *tl_) {
 	tl_dialogPeerFolder_t *tl = (tl_dialogPeerFolder_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_foundStickerSetsNotModified_free(tl_t *tl_) {
 	tl_messages_foundStickerSetsNotModified_t *tl = (tl_messages_foundStickerSetsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -8289,6 +8423,7 @@ void tl_messages_foundStickerSetsNotModified_free(tl_t *tl_) {
 void tl_messages_foundStickerSets_free(tl_t *tl_) {
 	tl_messages_foundStickerSets_t *tl = (tl_messages_foundStickerSets_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->sets_len; ++i){
 		tl_free(tl->sets_[i]);
 	}
@@ -8299,7 +8434,7 @@ void tl_messages_foundStickerSets_free(tl_t *tl_) {
 
 void tl_fileHash_free(tl_t *tl_) {
 	tl_fileHash_t *tl = (tl_fileHash_t *)tl_;
-	int i;
+	
 	buf_free(tl->hash_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8307,7 +8442,7 @@ void tl_fileHash_free(tl_t *tl_) {
 
 void tl_inputClientProxy_free(tl_t *tl_) {
 	tl_inputClientProxy_t *tl = (tl_inputClientProxy_t *)tl_;
-	int i;
+	
 	buf_free(tl->address_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8315,14 +8450,14 @@ void tl_inputClientProxy_free(tl_t *tl_) {
 
 void tl_help_termsOfServiceUpdateEmpty_free(tl_t *tl_) {
 	tl_help_termsOfServiceUpdateEmpty_t *tl = (tl_help_termsOfServiceUpdateEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_termsOfServiceUpdate_free(tl_t *tl_) {
 	tl_help_termsOfServiceUpdate_t *tl = (tl_help_termsOfServiceUpdate_t *)tl_;
-	int i;
+	
 	tl_free(tl->terms_of_service_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8330,7 +8465,7 @@ void tl_help_termsOfServiceUpdate_free(tl_t *tl_) {
 
 void tl_inputSecureFileUploaded_free(tl_t *tl_) {
 	tl_inputSecureFileUploaded_t *tl = (tl_inputSecureFileUploaded_t *)tl_;
-	int i;
+	
 	buf_free(tl->md5_checksum_);
 	buf_free(tl->file_hash_);
 	buf_free(tl->secret_);
@@ -8340,21 +8475,21 @@ void tl_inputSecureFileUploaded_free(tl_t *tl_) {
 
 void tl_inputSecureFile_free(tl_t *tl_) {
 	tl_inputSecureFile_t *tl = (tl_inputSecureFile_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureFileEmpty_free(tl_t *tl_) {
 	tl_secureFileEmpty_t *tl = (tl_secureFileEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureFile_free(tl_t *tl_) {
 	tl_secureFile_t *tl = (tl_secureFile_t *)tl_;
-	int i;
+	
 	buf_free(tl->file_hash_);
 	buf_free(tl->secret_);
 	buf_free(tl->_buf);
@@ -8363,7 +8498,7 @@ void tl_secureFile_free(tl_t *tl_) {
 
 void tl_secureData_free(tl_t *tl_) {
 	tl_secureData_t *tl = (tl_secureData_t *)tl_;
-	int i;
+	
 	buf_free(tl->data_);
 	buf_free(tl->data_hash_);
 	buf_free(tl->secret_);
@@ -8373,7 +8508,7 @@ void tl_secureData_free(tl_t *tl_) {
 
 void tl_securePlainPhone_free(tl_t *tl_) {
 	tl_securePlainPhone_t *tl = (tl_securePlainPhone_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8381,7 +8516,7 @@ void tl_securePlainPhone_free(tl_t *tl_) {
 
 void tl_securePlainEmail_free(tl_t *tl_) {
 	tl_securePlainEmail_t *tl = (tl_securePlainEmail_t *)tl_;
-	int i;
+	
 	buf_free(tl->email_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8389,91 +8524,91 @@ void tl_securePlainEmail_free(tl_t *tl_) {
 
 void tl_secureValueTypePersonalDetails_free(tl_t *tl_) {
 	tl_secureValueTypePersonalDetails_t *tl = (tl_secureValueTypePersonalDetails_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureValueTypePassport_free(tl_t *tl_) {
 	tl_secureValueTypePassport_t *tl = (tl_secureValueTypePassport_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureValueTypeDriverLicense_free(tl_t *tl_) {
 	tl_secureValueTypeDriverLicense_t *tl = (tl_secureValueTypeDriverLicense_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureValueTypeIdentityCard_free(tl_t *tl_) {
 	tl_secureValueTypeIdentityCard_t *tl = (tl_secureValueTypeIdentityCard_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureValueTypeInternalPassport_free(tl_t *tl_) {
 	tl_secureValueTypeInternalPassport_t *tl = (tl_secureValueTypeInternalPassport_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureValueTypeAddress_free(tl_t *tl_) {
 	tl_secureValueTypeAddress_t *tl = (tl_secureValueTypeAddress_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureValueTypeUtilityBill_free(tl_t *tl_) {
 	tl_secureValueTypeUtilityBill_t *tl = (tl_secureValueTypeUtilityBill_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureValueTypeBankStatement_free(tl_t *tl_) {
 	tl_secureValueTypeBankStatement_t *tl = (tl_secureValueTypeBankStatement_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureValueTypeRentalAgreement_free(tl_t *tl_) {
 	tl_secureValueTypeRentalAgreement_t *tl = (tl_secureValueTypeRentalAgreement_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureValueTypePassportRegistration_free(tl_t *tl_) {
 	tl_secureValueTypePassportRegistration_t *tl = (tl_secureValueTypePassportRegistration_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureValueTypeTemporaryRegistration_free(tl_t *tl_) {
 	tl_secureValueTypeTemporaryRegistration_t *tl = (tl_secureValueTypeTemporaryRegistration_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureValueTypePhone_free(tl_t *tl_) {
 	tl_secureValueTypePhone_t *tl = (tl_secureValueTypePhone_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_secureValueTypeEmail_free(tl_t *tl_) {
 	tl_secureValueTypeEmail_t *tl = (tl_secureValueTypeEmail_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -8481,6 +8616,7 @@ void tl_secureValueTypeEmail_free(tl_t *tl_) {
 void tl_secureValue_free(tl_t *tl_) {
 	tl_secureValue_t *tl = (tl_secureValue_t *)tl_;
 	int i;
+	
 	tl_free(tl->type_);
 	tl_free(tl->data_);
 	tl_free(tl->front_side_);
@@ -8503,6 +8639,7 @@ void tl_secureValue_free(tl_t *tl_) {
 void tl_inputSecureValue_free(tl_t *tl_) {
 	tl_inputSecureValue_t *tl = (tl_inputSecureValue_t *)tl_;
 	int i;
+	
 	tl_free(tl->type_);
 	tl_free(tl->data_);
 	tl_free(tl->front_side_);
@@ -8523,7 +8660,7 @@ void tl_inputSecureValue_free(tl_t *tl_) {
 
 void tl_secureValueHash_free(tl_t *tl_) {
 	tl_secureValueHash_t *tl = (tl_secureValueHash_t *)tl_;
-	int i;
+	
 	tl_free(tl->type_);
 	buf_free(tl->hash_);
 	buf_free(tl->_buf);
@@ -8532,7 +8669,7 @@ void tl_secureValueHash_free(tl_t *tl_) {
 
 void tl_secureValueErrorData_free(tl_t *tl_) {
 	tl_secureValueErrorData_t *tl = (tl_secureValueErrorData_t *)tl_;
-	int i;
+	
 	tl_free(tl->type_);
 	buf_free(tl->data_hash_);
 	buf_free(tl->field_);
@@ -8543,7 +8680,7 @@ void tl_secureValueErrorData_free(tl_t *tl_) {
 
 void tl_secureValueErrorFrontSide_free(tl_t *tl_) {
 	tl_secureValueErrorFrontSide_t *tl = (tl_secureValueErrorFrontSide_t *)tl_;
-	int i;
+	
 	tl_free(tl->type_);
 	buf_free(tl->file_hash_);
 	buf_free(tl->text_);
@@ -8553,7 +8690,7 @@ void tl_secureValueErrorFrontSide_free(tl_t *tl_) {
 
 void tl_secureValueErrorReverseSide_free(tl_t *tl_) {
 	tl_secureValueErrorReverseSide_t *tl = (tl_secureValueErrorReverseSide_t *)tl_;
-	int i;
+	
 	tl_free(tl->type_);
 	buf_free(tl->file_hash_);
 	buf_free(tl->text_);
@@ -8563,7 +8700,7 @@ void tl_secureValueErrorReverseSide_free(tl_t *tl_) {
 
 void tl_secureValueErrorSelfie_free(tl_t *tl_) {
 	tl_secureValueErrorSelfie_t *tl = (tl_secureValueErrorSelfie_t *)tl_;
-	int i;
+	
 	tl_free(tl->type_);
 	buf_free(tl->file_hash_);
 	buf_free(tl->text_);
@@ -8573,7 +8710,7 @@ void tl_secureValueErrorSelfie_free(tl_t *tl_) {
 
 void tl_secureValueErrorFile_free(tl_t *tl_) {
 	tl_secureValueErrorFile_t *tl = (tl_secureValueErrorFile_t *)tl_;
-	int i;
+	
 	tl_free(tl->type_);
 	buf_free(tl->file_hash_);
 	buf_free(tl->text_);
@@ -8584,6 +8721,7 @@ void tl_secureValueErrorFile_free(tl_t *tl_) {
 void tl_secureValueErrorFiles_free(tl_t *tl_) {
 	tl_secureValueErrorFiles_t *tl = (tl_secureValueErrorFiles_t *)tl_;
 	int i;
+	
 	tl_free(tl->type_);
 	for(i=0; i<tl->file_hash_len; ++i){
 		buf_free(tl->file_hash_[i]);
@@ -8596,7 +8734,7 @@ void tl_secureValueErrorFiles_free(tl_t *tl_) {
 
 void tl_secureValueError_free(tl_t *tl_) {
 	tl_secureValueError_t *tl = (tl_secureValueError_t *)tl_;
-	int i;
+	
 	tl_free(tl->type_);
 	buf_free(tl->hash_);
 	buf_free(tl->text_);
@@ -8606,7 +8744,7 @@ void tl_secureValueError_free(tl_t *tl_) {
 
 void tl_secureValueErrorTranslationFile_free(tl_t *tl_) {
 	tl_secureValueErrorTranslationFile_t *tl = (tl_secureValueErrorTranslationFile_t *)tl_;
-	int i;
+	
 	tl_free(tl->type_);
 	buf_free(tl->file_hash_);
 	buf_free(tl->text_);
@@ -8617,6 +8755,7 @@ void tl_secureValueErrorTranslationFile_free(tl_t *tl_) {
 void tl_secureValueErrorTranslationFiles_free(tl_t *tl_) {
 	tl_secureValueErrorTranslationFiles_t *tl = (tl_secureValueErrorTranslationFiles_t *)tl_;
 	int i;
+	
 	tl_free(tl->type_);
 	for(i=0; i<tl->file_hash_len; ++i){
 		buf_free(tl->file_hash_[i]);
@@ -8629,7 +8768,7 @@ void tl_secureValueErrorTranslationFiles_free(tl_t *tl_) {
 
 void tl_secureCredentialsEncrypted_free(tl_t *tl_) {
 	tl_secureCredentialsEncrypted_t *tl = (tl_secureCredentialsEncrypted_t *)tl_;
-	int i;
+	
 	buf_free(tl->data_);
 	buf_free(tl->hash_);
 	buf_free(tl->secret_);
@@ -8640,6 +8779,7 @@ void tl_secureCredentialsEncrypted_free(tl_t *tl_) {
 void tl_account_authorizationForm_free(tl_t *tl_) {
 	tl_account_authorizationForm_t *tl = (tl_account_authorizationForm_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->required_types_len; ++i){
 		tl_free(tl->required_types_[i]);
 	}
@@ -8663,7 +8803,7 @@ void tl_account_authorizationForm_free(tl_t *tl_) {
 
 void tl_account_sentEmailCode_free(tl_t *tl_) {
 	tl_account_sentEmailCode_t *tl = (tl_account_sentEmailCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->email_pattern_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8671,7 +8811,7 @@ void tl_account_sentEmailCode_free(tl_t *tl_) {
 
 void tl_help_deepLinkInfoEmpty_free(tl_t *tl_) {
 	tl_help_deepLinkInfoEmpty_t *tl = (tl_help_deepLinkInfoEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -8679,6 +8819,7 @@ void tl_help_deepLinkInfoEmpty_free(tl_t *tl_) {
 void tl_help_deepLinkInfo_free(tl_t *tl_) {
 	tl_help_deepLinkInfo_t *tl = (tl_help_deepLinkInfo_t *)tl_;
 	int i;
+	
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
 		tl_free(tl->entities_[i]);
@@ -8690,7 +8831,7 @@ void tl_help_deepLinkInfo_free(tl_t *tl_) {
 
 void tl_savedPhoneContact_free(tl_t *tl_) {
 	tl_savedPhoneContact_t *tl = (tl_savedPhoneContact_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_);
 	buf_free(tl->first_name_);
 	buf_free(tl->last_name_);
@@ -8700,21 +8841,21 @@ void tl_savedPhoneContact_free(tl_t *tl_) {
 
 void tl_account_takeout_free(tl_t *tl_) {
 	tl_account_takeout_t *tl = (tl_account_takeout_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_passwordKdfAlgoUnknown_free(tl_t *tl_) {
 	tl_passwordKdfAlgoUnknown_t *tl = (tl_passwordKdfAlgoUnknown_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow_free(tl_t *tl_) {
 	tl_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow_t *tl = (tl_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow_t *)tl_;
-	int i;
+	
 	buf_free(tl->salt1_);
 	buf_free(tl->salt2_);
 	buf_free(tl->p_);
@@ -8724,14 +8865,14 @@ void tl_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow_free(t
 
 void tl_securePasswordKdfAlgoUnknown_free(tl_t *tl_) {
 	tl_securePasswordKdfAlgoUnknown_t *tl = (tl_securePasswordKdfAlgoUnknown_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000_free(tl_t *tl_) {
 	tl_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000_t *tl = (tl_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000_t *)tl_;
-	int i;
+	
 	buf_free(tl->salt_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8739,7 +8880,7 @@ void tl_securePasswordKdfAlgoPBKDF2HMACSHA512iter100000_free(tl_t *tl_) {
 
 void tl_securePasswordKdfAlgoSHA512_free(tl_t *tl_) {
 	tl_securePasswordKdfAlgoSHA512_t *tl = (tl_securePasswordKdfAlgoSHA512_t *)tl_;
-	int i;
+	
 	buf_free(tl->salt_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8747,7 +8888,7 @@ void tl_securePasswordKdfAlgoSHA512_free(tl_t *tl_) {
 
 void tl_secureSecretSettings_free(tl_t *tl_) {
 	tl_secureSecretSettings_t *tl = (tl_secureSecretSettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->secure_algo_);
 	buf_free(tl->secure_secret_);
 	buf_free(tl->_buf);
@@ -8756,14 +8897,14 @@ void tl_secureSecretSettings_free(tl_t *tl_) {
 
 void tl_inputCheckPasswordEmpty_free(tl_t *tl_) {
 	tl_inputCheckPasswordEmpty_t *tl = (tl_inputCheckPasswordEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputCheckPasswordSRP_free(tl_t *tl_) {
 	tl_inputCheckPasswordSRP_t *tl = (tl_inputCheckPasswordSRP_t *)tl_;
-	int i;
+	
 	buf_free(tl->A_);
 	buf_free(tl->M1_);
 	buf_free(tl->_buf);
@@ -8772,7 +8913,7 @@ void tl_inputCheckPasswordSRP_free(tl_t *tl_) {
 
 void tl_secureRequiredType_free(tl_t *tl_) {
 	tl_secureRequiredType_t *tl = (tl_secureRequiredType_t *)tl_;
-	int i;
+	
 	tl_free(tl->type_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8781,6 +8922,7 @@ void tl_secureRequiredType_free(tl_t *tl_) {
 void tl_secureRequiredTypeOneOf_free(tl_t *tl_) {
 	tl_secureRequiredTypeOneOf_t *tl = (tl_secureRequiredTypeOneOf_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->types_len; ++i){
 		tl_free(tl->types_[i]);
 	}
@@ -8791,14 +8933,14 @@ void tl_secureRequiredTypeOneOf_free(tl_t *tl_) {
 
 void tl_help_passportConfigNotModified_free(tl_t *tl_) {
 	tl_help_passportConfigNotModified_t *tl = (tl_help_passportConfigNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_passportConfig_free(tl_t *tl_) {
 	tl_help_passportConfig_t *tl = (tl_help_passportConfig_t *)tl_;
-	int i;
+	
 	tl_free(tl->countries_langs_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8806,7 +8948,7 @@ void tl_help_passportConfig_free(tl_t *tl_) {
 
 void tl_inputAppEvent_free(tl_t *tl_) {
 	tl_inputAppEvent_t *tl = (tl_inputAppEvent_t *)tl_;
-	int i;
+	
 	buf_free(tl->type_);
 	tl_free(tl->data_);
 	buf_free(tl->_buf);
@@ -8815,7 +8957,7 @@ void tl_inputAppEvent_free(tl_t *tl_) {
 
 void tl_jsonObjectValue_free(tl_t *tl_) {
 	tl_jsonObjectValue_t *tl = (tl_jsonObjectValue_t *)tl_;
-	int i;
+	
 	buf_free(tl->key_);
 	tl_free(tl->value_);
 	buf_free(tl->_buf);
@@ -8824,14 +8966,14 @@ void tl_jsonObjectValue_free(tl_t *tl_) {
 
 void tl_jsonNull_free(tl_t *tl_) {
 	tl_jsonNull_t *tl = (tl_jsonNull_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_jsonBool_free(tl_t *tl_) {
 	tl_jsonBool_t *tl = (tl_jsonBool_t *)tl_;
-	int i;
+	
 	tl_free(tl->value_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8839,14 +8981,14 @@ void tl_jsonBool_free(tl_t *tl_) {
 
 void tl_jsonNumber_free(tl_t *tl_) {
 	tl_jsonNumber_t *tl = (tl_jsonNumber_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_jsonString_free(tl_t *tl_) {
 	tl_jsonString_t *tl = (tl_jsonString_t *)tl_;
-	int i;
+	
 	buf_free(tl->value_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8855,6 +8997,7 @@ void tl_jsonString_free(tl_t *tl_) {
 void tl_jsonArray_free(tl_t *tl_) {
 	tl_jsonArray_t *tl = (tl_jsonArray_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->value_len; ++i){
 		tl_free(tl->value_[i]);
 	}
@@ -8866,6 +9009,7 @@ void tl_jsonArray_free(tl_t *tl_) {
 void tl_jsonObject_free(tl_t *tl_) {
 	tl_jsonObject_t *tl = (tl_jsonObject_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->value_len; ++i){
 		tl_free(tl->value_[i]);
 	}
@@ -8876,7 +9020,7 @@ void tl_jsonObject_free(tl_t *tl_) {
 
 void tl_pageTableCell_free(tl_t *tl_) {
 	tl_pageTableCell_t *tl = (tl_pageTableCell_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8885,6 +9029,7 @@ void tl_pageTableCell_free(tl_t *tl_) {
 void tl_pageTableRow_free(tl_t *tl_) {
 	tl_pageTableRow_t *tl = (tl_pageTableRow_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->cells_len; ++i){
 		tl_free(tl->cells_[i]);
 	}
@@ -8895,7 +9040,7 @@ void tl_pageTableRow_free(tl_t *tl_) {
 
 void tl_pageCaption_free(tl_t *tl_) {
 	tl_pageCaption_t *tl = (tl_pageCaption_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	tl_free(tl->credit_);
 	buf_free(tl->_buf);
@@ -8904,7 +9049,7 @@ void tl_pageCaption_free(tl_t *tl_) {
 
 void tl_pageListItemText_free(tl_t *tl_) {
 	tl_pageListItemText_t *tl = (tl_pageListItemText_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8913,6 +9058,7 @@ void tl_pageListItemText_free(tl_t *tl_) {
 void tl_pageListItemBlocks_free(tl_t *tl_) {
 	tl_pageListItemBlocks_t *tl = (tl_pageListItemBlocks_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->blocks_len; ++i){
 		tl_free(tl->blocks_[i]);
 	}
@@ -8923,7 +9069,7 @@ void tl_pageListItemBlocks_free(tl_t *tl_) {
 
 void tl_pageListOrderedItemText_free(tl_t *tl_) {
 	tl_pageListOrderedItemText_t *tl = (tl_pageListOrderedItemText_t *)tl_;
-	int i;
+	
 	buf_free(tl->num_);
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
@@ -8933,6 +9079,7 @@ void tl_pageListOrderedItemText_free(tl_t *tl_) {
 void tl_pageListOrderedItemBlocks_free(tl_t *tl_) {
 	tl_pageListOrderedItemBlocks_t *tl = (tl_pageListOrderedItemBlocks_t *)tl_;
 	int i;
+	
 	buf_free(tl->num_);
 	for(i=0; i<tl->blocks_len; ++i){
 		tl_free(tl->blocks_[i]);
@@ -8944,7 +9091,7 @@ void tl_pageListOrderedItemBlocks_free(tl_t *tl_) {
 
 void tl_pageRelatedArticle_free(tl_t *tl_) {
 	tl_pageRelatedArticle_t *tl = (tl_pageRelatedArticle_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->title_);
 	buf_free(tl->description_);
@@ -8956,6 +9103,7 @@ void tl_pageRelatedArticle_free(tl_t *tl_) {
 void tl_page_free(tl_t *tl_) {
 	tl_page_t *tl = (tl_page_t *)tl_;
 	int i;
+	
 	buf_free(tl->url_);
 	for(i=0; i<tl->blocks_len; ++i){
 		tl_free(tl->blocks_[i]);
@@ -8975,7 +9123,7 @@ void tl_page_free(tl_t *tl_) {
 
 void tl_help_supportName_free(tl_t *tl_) {
 	tl_help_supportName_t *tl = (tl_help_supportName_t *)tl_;
-	int i;
+	
 	buf_free(tl->name_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -8983,7 +9131,7 @@ void tl_help_supportName_free(tl_t *tl_) {
 
 void tl_help_userInfoEmpty_free(tl_t *tl_) {
 	tl_help_userInfoEmpty_t *tl = (tl_help_userInfoEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -8991,6 +9139,7 @@ void tl_help_userInfoEmpty_free(tl_t *tl_) {
 void tl_help_userInfo_free(tl_t *tl_) {
 	tl_help_userInfo_t *tl = (tl_help_userInfo_t *)tl_;
 	int i;
+	
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
 		tl_free(tl->entities_[i]);
@@ -9003,7 +9152,7 @@ void tl_help_userInfo_free(tl_t *tl_) {
 
 void tl_pollAnswer_free(tl_t *tl_) {
 	tl_pollAnswer_t *tl = (tl_pollAnswer_t *)tl_;
-	int i;
+	
 	tl_free(tl->text_);
 	buf_free(tl->option_);
 	buf_free(tl->_buf);
@@ -9013,6 +9162,7 @@ void tl_pollAnswer_free(tl_t *tl_) {
 void tl_poll_free(tl_t *tl_) {
 	tl_poll_t *tl = (tl_poll_t *)tl_;
 	int i;
+	
 	tl_free(tl->question_);
 	for(i=0; i<tl->answers_len; ++i){
 		tl_free(tl->answers_[i]);
@@ -9024,7 +9174,7 @@ void tl_poll_free(tl_t *tl_) {
 
 void tl_pollAnswerVoters_free(tl_t *tl_) {
 	tl_pollAnswerVoters_t *tl = (tl_pollAnswerVoters_t *)tl_;
-	int i;
+	
 	buf_free(tl->option_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9033,6 +9183,7 @@ void tl_pollAnswerVoters_free(tl_t *tl_) {
 void tl_pollResults_free(tl_t *tl_) {
 	tl_pollResults_t *tl = (tl_pollResults_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->results_len; ++i){
 		tl_free(tl->results_[i]);
 	}
@@ -9052,14 +9203,14 @@ void tl_pollResults_free(tl_t *tl_) {
 
 void tl_chatOnlines_free(tl_t *tl_) {
 	tl_chatOnlines_t *tl = (tl_chatOnlines_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_statsURL_free(tl_t *tl_) {
 	tl_statsURL_t *tl = (tl_statsURL_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9067,28 +9218,28 @@ void tl_statsURL_free(tl_t *tl_) {
 
 void tl_chatAdminRights_free(tl_t *tl_) {
 	tl_chatAdminRights_t *tl = (tl_chatAdminRights_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_chatBannedRights_free(tl_t *tl_) {
 	tl_chatBannedRights_t *tl = (tl_chatBannedRights_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputWallPaper_free(tl_t *tl_) {
 	tl_inputWallPaper_t *tl = (tl_inputWallPaper_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputWallPaperSlug_free(tl_t *tl_) {
 	tl_inputWallPaperSlug_t *tl = (tl_inputWallPaperSlug_t *)tl_;
-	int i;
+	
 	buf_free(tl->slug_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9096,14 +9247,14 @@ void tl_inputWallPaperSlug_free(tl_t *tl_) {
 
 void tl_inputWallPaperNoFile_free(tl_t *tl_) {
 	tl_inputWallPaperNoFile_t *tl = (tl_inputWallPaperNoFile_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_wallPapersNotModified_free(tl_t *tl_) {
 	tl_account_wallPapersNotModified_t *tl = (tl_account_wallPapersNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -9111,6 +9262,7 @@ void tl_account_wallPapersNotModified_free(tl_t *tl_) {
 void tl_account_wallPapers_free(tl_t *tl_) {
 	tl_account_wallPapers_t *tl = (tl_account_wallPapers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->wallpapers_len; ++i){
 		tl_free(tl->wallpapers_[i]);
 	}
@@ -9122,6 +9274,7 @@ void tl_account_wallPapers_free(tl_t *tl_) {
 void tl_codeSettings_free(tl_t *tl_) {
 	tl_codeSettings_t *tl = (tl_codeSettings_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->logout_tokens_len; ++i){
 		buf_free(tl->logout_tokens_[i]);
 	}
@@ -9134,7 +9287,7 @@ void tl_codeSettings_free(tl_t *tl_) {
 
 void tl_wallPaperSettings_free(tl_t *tl_) {
 	tl_wallPaperSettings_t *tl = (tl_wallPaperSettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->emoticon_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9142,14 +9295,14 @@ void tl_wallPaperSettings_free(tl_t *tl_) {
 
 void tl_autoDownloadSettings_free(tl_t *tl_) {
 	tl_autoDownloadSettings_t *tl = (tl_autoDownloadSettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_autoDownloadSettings_free(tl_t *tl_) {
 	tl_account_autoDownloadSettings_t *tl = (tl_account_autoDownloadSettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->low_);
 	tl_free(tl->medium_);
 	tl_free(tl->high_);
@@ -9160,6 +9313,7 @@ void tl_account_autoDownloadSettings_free(tl_t *tl_) {
 void tl_emojiKeyword_free(tl_t *tl_) {
 	tl_emojiKeyword_t *tl = (tl_emojiKeyword_t *)tl_;
 	int i;
+	
 	buf_free(tl->keyword_);
 	for(i=0; i<tl->emoticons_len; ++i){
 		buf_free(tl->emoticons_[i]);
@@ -9172,6 +9326,7 @@ void tl_emojiKeyword_free(tl_t *tl_) {
 void tl_emojiKeywordDeleted_free(tl_t *tl_) {
 	tl_emojiKeywordDeleted_t *tl = (tl_emojiKeywordDeleted_t *)tl_;
 	int i;
+	
 	buf_free(tl->keyword_);
 	for(i=0; i<tl->emoticons_len; ++i){
 		buf_free(tl->emoticons_[i]);
@@ -9184,6 +9339,7 @@ void tl_emojiKeywordDeleted_free(tl_t *tl_) {
 void tl_emojiKeywordsDifference_free(tl_t *tl_) {
 	tl_emojiKeywordsDifference_t *tl = (tl_emojiKeywordsDifference_t *)tl_;
 	int i;
+	
 	buf_free(tl->lang_code_);
 	for(i=0; i<tl->keywords_len; ++i){
 		tl_free(tl->keywords_[i]);
@@ -9195,7 +9351,7 @@ void tl_emojiKeywordsDifference_free(tl_t *tl_) {
 
 void tl_emojiURL_free(tl_t *tl_) {
 	tl_emojiURL_t *tl = (tl_emojiURL_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9203,7 +9359,7 @@ void tl_emojiURL_free(tl_t *tl_) {
 
 void tl_emojiLanguage_free(tl_t *tl_) {
 	tl_emojiLanguage_t *tl = (tl_emojiLanguage_t *)tl_;
-	int i;
+	
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9211,7 +9367,7 @@ void tl_emojiLanguage_free(tl_t *tl_) {
 
 void tl_folder_free(tl_t *tl_) {
 	tl_folder_t *tl = (tl_folder_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	tl_free(tl->photo_);
 	buf_free(tl->_buf);
@@ -9220,7 +9376,7 @@ void tl_folder_free(tl_t *tl_) {
 
 void tl_inputFolderPeer_free(tl_t *tl_) {
 	tl_inputFolderPeer_t *tl = (tl_inputFolderPeer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9228,7 +9384,7 @@ void tl_inputFolderPeer_free(tl_t *tl_) {
 
 void tl_folderPeer_free(tl_t *tl_) {
 	tl_folderPeer_t *tl = (tl_folderPeer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9236,7 +9392,7 @@ void tl_folderPeer_free(tl_t *tl_) {
 
 void tl_messages_searchCounter_free(tl_t *tl_) {
 	tl_messages_searchCounter_t *tl = (tl_messages_searchCounter_t *)tl_;
-	int i;
+	
 	tl_free(tl->filter_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9244,7 +9400,7 @@ void tl_messages_searchCounter_free(tl_t *tl_) {
 
 void tl_urlAuthResultRequest_free(tl_t *tl_) {
 	tl_urlAuthResultRequest_t *tl = (tl_urlAuthResultRequest_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->domain_);
 	buf_free(tl->_buf);
@@ -9253,7 +9409,7 @@ void tl_urlAuthResultRequest_free(tl_t *tl_) {
 
 void tl_urlAuthResultAccepted_free(tl_t *tl_) {
 	tl_urlAuthResultAccepted_t *tl = (tl_urlAuthResultAccepted_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9261,21 +9417,21 @@ void tl_urlAuthResultAccepted_free(tl_t *tl_) {
 
 void tl_urlAuthResultDefault_free(tl_t *tl_) {
 	tl_urlAuthResultDefault_t *tl = (tl_urlAuthResultDefault_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channelLocationEmpty_free(tl_t *tl_) {
 	tl_channelLocationEmpty_t *tl = (tl_channelLocationEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channelLocation_free(tl_t *tl_) {
 	tl_channelLocation_t *tl = (tl_channelLocation_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_point_);
 	buf_free(tl->address_);
 	buf_free(tl->_buf);
@@ -9284,7 +9440,7 @@ void tl_channelLocation_free(tl_t *tl_) {
 
 void tl_peerLocated_free(tl_t *tl_) {
 	tl_peerLocated_t *tl = (tl_peerLocated_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9292,14 +9448,14 @@ void tl_peerLocated_free(tl_t *tl_) {
 
 void tl_peerSelfLocated_free(tl_t *tl_) {
 	tl_peerSelfLocated_t *tl = (tl_peerSelfLocated_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_restrictionReason_free(tl_t *tl_) {
 	tl_restrictionReason_t *tl = (tl_restrictionReason_t *)tl_;
-	int i;
+	
 	buf_free(tl->platform_);
 	buf_free(tl->reason_);
 	buf_free(tl->text_);
@@ -9309,14 +9465,14 @@ void tl_restrictionReason_free(tl_t *tl_) {
 
 void tl_inputTheme_free(tl_t *tl_) {
 	tl_inputTheme_t *tl = (tl_inputTheme_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputThemeSlug_free(tl_t *tl_) {
 	tl_inputThemeSlug_t *tl = (tl_inputThemeSlug_t *)tl_;
-	int i;
+	
 	buf_free(tl->slug_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9325,6 +9481,7 @@ void tl_inputThemeSlug_free(tl_t *tl_) {
 void tl_theme_free(tl_t *tl_) {
 	tl_theme_t *tl = (tl_theme_t *)tl_;
 	int i;
+	
 	buf_free(tl->slug_);
 	buf_free(tl->title_);
 	tl_free(tl->document_);
@@ -9339,7 +9496,7 @@ void tl_theme_free(tl_t *tl_) {
 
 void tl_account_themesNotModified_free(tl_t *tl_) {
 	tl_account_themesNotModified_t *tl = (tl_account_themesNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -9347,6 +9504,7 @@ void tl_account_themesNotModified_free(tl_t *tl_) {
 void tl_account_themes_free(tl_t *tl_) {
 	tl_account_themes_t *tl = (tl_account_themes_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->themes_len; ++i){
 		tl_free(tl->themes_[i]);
 	}
@@ -9357,7 +9515,7 @@ void tl_account_themes_free(tl_t *tl_) {
 
 void tl_auth_loginToken_free(tl_t *tl_) {
 	tl_auth_loginToken_t *tl = (tl_auth_loginToken_t *)tl_;
-	int i;
+	
 	buf_free(tl->token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9365,7 +9523,7 @@ void tl_auth_loginToken_free(tl_t *tl_) {
 
 void tl_auth_loginTokenMigrateTo_free(tl_t *tl_) {
 	tl_auth_loginTokenMigrateTo_t *tl = (tl_auth_loginTokenMigrateTo_t *)tl_;
-	int i;
+	
 	buf_free(tl->token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9373,7 +9531,7 @@ void tl_auth_loginTokenMigrateTo_free(tl_t *tl_) {
 
 void tl_auth_loginTokenSuccess_free(tl_t *tl_) {
 	tl_auth_loginTokenSuccess_t *tl = (tl_auth_loginTokenSuccess_t *)tl_;
-	int i;
+	
 	tl_free(tl->authorization_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9381,7 +9539,7 @@ void tl_auth_loginTokenSuccess_free(tl_t *tl_) {
 
 void tl_account_contentSettings_free(tl_t *tl_) {
 	tl_account_contentSettings_t *tl = (tl_account_contentSettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -9389,6 +9547,7 @@ void tl_account_contentSettings_free(tl_t *tl_) {
 void tl_messages_inactiveChats_free(tl_t *tl_) {
 	tl_messages_inactiveChats_t *tl = (tl_messages_inactiveChats_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->dates_len; ++i){
 	}
 	free(tl->dates_);
@@ -9406,35 +9565,35 @@ void tl_messages_inactiveChats_free(tl_t *tl_) {
 
 void tl_baseThemeClassic_free(tl_t *tl_) {
 	tl_baseThemeClassic_t *tl = (tl_baseThemeClassic_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_baseThemeDay_free(tl_t *tl_) {
 	tl_baseThemeDay_t *tl = (tl_baseThemeDay_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_baseThemeNight_free(tl_t *tl_) {
 	tl_baseThemeNight_t *tl = (tl_baseThemeNight_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_baseThemeTinted_free(tl_t *tl_) {
 	tl_baseThemeTinted_t *tl = (tl_baseThemeTinted_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_baseThemeArctic_free(tl_t *tl_) {
 	tl_baseThemeArctic_t *tl = (tl_baseThemeArctic_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -9442,6 +9601,7 @@ void tl_baseThemeArctic_free(tl_t *tl_) {
 void tl_inputThemeSettings_free(tl_t *tl_) {
 	tl_inputThemeSettings_t *tl = (tl_inputThemeSettings_t *)tl_;
 	int i;
+	
 	tl_free(tl->base_theme_);
 	for(i=0; i<tl->message_colors_len; ++i){
 	}
@@ -9455,6 +9615,7 @@ void tl_inputThemeSettings_free(tl_t *tl_) {
 void tl_themeSettings_free(tl_t *tl_) {
 	tl_themeSettings_t *tl = (tl_themeSettings_t *)tl_;
 	int i;
+	
 	tl_free(tl->base_theme_);
 	for(i=0; i<tl->message_colors_len; ++i){
 	}
@@ -9467,6 +9628,7 @@ void tl_themeSettings_free(tl_t *tl_) {
 void tl_webPageAttributeTheme_free(tl_t *tl_) {
 	tl_webPageAttributeTheme_t *tl = (tl_webPageAttributeTheme_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->documents_len; ++i){
 		tl_free(tl->documents_[i]);
 	}
@@ -9478,7 +9640,7 @@ void tl_webPageAttributeTheme_free(tl_t *tl_) {
 
 void tl_webPageAttributeStory_free(tl_t *tl_) {
 	tl_webPageAttributeStory_t *tl = (tl_webPageAttributeStory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->story_);
 	buf_free(tl->_buf);
@@ -9488,6 +9650,7 @@ void tl_webPageAttributeStory_free(tl_t *tl_) {
 void tl_webPageAttributeStickerSet_free(tl_t *tl_) {
 	tl_webPageAttributeStickerSet_t *tl = (tl_webPageAttributeStickerSet_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->stickers_len; ++i){
 		tl_free(tl->stickers_[i]);
 	}
@@ -9499,6 +9662,7 @@ void tl_webPageAttributeStickerSet_free(tl_t *tl_) {
 void tl_messages_votesList_free(tl_t *tl_) {
 	tl_messages_votesList_t *tl = (tl_messages_votesList_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->votes_len; ++i){
 		tl_free(tl->votes_[i]);
 	}
@@ -9518,7 +9682,7 @@ void tl_messages_votesList_free(tl_t *tl_) {
 
 void tl_bankCardOpenUrl_free(tl_t *tl_) {
 	tl_bankCardOpenUrl_t *tl = (tl_bankCardOpenUrl_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->name_);
 	buf_free(tl->_buf);
@@ -9528,6 +9692,7 @@ void tl_bankCardOpenUrl_free(tl_t *tl_) {
 void tl_payments_bankCardData_free(tl_t *tl_) {
 	tl_payments_bankCardData_t *tl = (tl_payments_bankCardData_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	for(i=0; i<tl->open_urls_len; ++i){
 		tl_free(tl->open_urls_[i]);
@@ -9540,6 +9705,7 @@ void tl_payments_bankCardData_free(tl_t *tl_) {
 void tl_dialogFilter_free(tl_t *tl_) {
 	tl_dialogFilter_t *tl = (tl_dialogFilter_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->emoticon_);
 	for(i=0; i<tl->pinned_peers_len; ++i){
@@ -9560,7 +9726,7 @@ void tl_dialogFilter_free(tl_t *tl_) {
 
 void tl_dialogFilterDefault_free(tl_t *tl_) {
 	tl_dialogFilterDefault_t *tl = (tl_dialogFilterDefault_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -9568,6 +9734,7 @@ void tl_dialogFilterDefault_free(tl_t *tl_) {
 void tl_dialogFilterChatlist_free(tl_t *tl_) {
 	tl_dialogFilterChatlist_t *tl = (tl_dialogFilterChatlist_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->emoticon_);
 	for(i=0; i<tl->pinned_peers_len; ++i){
@@ -9584,7 +9751,7 @@ void tl_dialogFilterChatlist_free(tl_t *tl_) {
 
 void tl_dialogFilterSuggested_free(tl_t *tl_) {
 	tl_dialogFilterSuggested_t *tl = (tl_dialogFilterSuggested_t *)tl_;
-	int i;
+	
 	tl_free(tl->filter_);
 	buf_free(tl->description_);
 	buf_free(tl->_buf);
@@ -9593,28 +9760,28 @@ void tl_dialogFilterSuggested_free(tl_t *tl_) {
 
 void tl_statsDateRangeDays_free(tl_t *tl_) {
 	tl_statsDateRangeDays_t *tl = (tl_statsDateRangeDays_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_statsAbsValueAndPrev_free(tl_t *tl_) {
 	tl_statsAbsValueAndPrev_t *tl = (tl_statsAbsValueAndPrev_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_statsPercentValue_free(tl_t *tl_) {
 	tl_statsPercentValue_t *tl = (tl_statsPercentValue_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_statsGraphAsync_free(tl_t *tl_) {
 	tl_statsGraphAsync_t *tl = (tl_statsGraphAsync_t *)tl_;
-	int i;
+	
 	buf_free(tl->token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9622,7 +9789,7 @@ void tl_statsGraphAsync_free(tl_t *tl_) {
 
 void tl_statsGraphError_free(tl_t *tl_) {
 	tl_statsGraphError_t *tl = (tl_statsGraphError_t *)tl_;
-	int i;
+	
 	buf_free(tl->error_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9630,7 +9797,7 @@ void tl_statsGraphError_free(tl_t *tl_) {
 
 void tl_statsGraph_free(tl_t *tl_) {
 	tl_statsGraph_t *tl = (tl_statsGraph_t *)tl_;
-	int i;
+	
 	tl_free(tl->json_);
 	buf_free(tl->zoom_token_);
 	buf_free(tl->_buf);
@@ -9640,6 +9807,7 @@ void tl_statsGraph_free(tl_t *tl_) {
 void tl_stats_broadcastStats_free(tl_t *tl_) {
 	tl_stats_broadcastStats_t *tl = (tl_stats_broadcastStats_t *)tl_;
 	int i;
+	
 	tl_free(tl->period_);
 	tl_free(tl->followers_);
 	tl_free(tl->views_per_post_);
@@ -9671,7 +9839,7 @@ void tl_stats_broadcastStats_free(tl_t *tl_) {
 
 void tl_help_promoDataEmpty_free(tl_t *tl_) {
 	tl_help_promoDataEmpty_t *tl = (tl_help_promoDataEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -9679,6 +9847,7 @@ void tl_help_promoDataEmpty_free(tl_t *tl_) {
 void tl_help_promoData_free(tl_t *tl_) {
 	tl_help_promoData_t *tl = (tl_help_promoData_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->chats_len; ++i){
 		tl_free(tl->chats_[i]);
@@ -9696,7 +9865,7 @@ void tl_help_promoData_free(tl_t *tl_) {
 
 void tl_videoSize_free(tl_t *tl_) {
 	tl_videoSize_t *tl = (tl_videoSize_t *)tl_;
-	int i;
+	
 	buf_free(tl->type_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9705,6 +9874,7 @@ void tl_videoSize_free(tl_t *tl_) {
 void tl_videoSizeEmojiMarkup_free(tl_t *tl_) {
 	tl_videoSizeEmojiMarkup_t *tl = (tl_videoSizeEmojiMarkup_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->background_colors_len; ++i){
 	}
 	free(tl->background_colors_);
@@ -9715,6 +9885,7 @@ void tl_videoSizeEmojiMarkup_free(tl_t *tl_) {
 void tl_videoSizeStickerMarkup_free(tl_t *tl_) {
 	tl_videoSizeStickerMarkup_t *tl = (tl_videoSizeStickerMarkup_t *)tl_;
 	int i;
+	
 	tl_free(tl->stickerset_);
 	for(i=0; i<tl->background_colors_len; ++i){
 	}
@@ -9725,21 +9896,21 @@ void tl_videoSizeStickerMarkup_free(tl_t *tl_) {
 
 void tl_statsGroupTopPoster_free(tl_t *tl_) {
 	tl_statsGroupTopPoster_t *tl = (tl_statsGroupTopPoster_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_statsGroupTopAdmin_free(tl_t *tl_) {
 	tl_statsGroupTopAdmin_t *tl = (tl_statsGroupTopAdmin_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_statsGroupTopInviter_free(tl_t *tl_) {
 	tl_statsGroupTopInviter_t *tl = (tl_statsGroupTopInviter_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -9747,6 +9918,7 @@ void tl_statsGroupTopInviter_free(tl_t *tl_) {
 void tl_stats_megagroupStats_free(tl_t *tl_) {
 	tl_stats_megagroupStats_t *tl = (tl_stats_megagroupStats_t *)tl_;
 	int i;
+	
 	tl_free(tl->period_);
 	tl_free(tl->members_);
 	tl_free(tl->messages_);
@@ -9782,7 +9954,7 @@ void tl_stats_megagroupStats_free(tl_t *tl_) {
 
 void tl_globalPrivacySettings_free(tl_t *tl_) {
 	tl_globalPrivacySettings_t *tl = (tl_globalPrivacySettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -9790,6 +9962,7 @@ void tl_globalPrivacySettings_free(tl_t *tl_) {
 void tl_help_countryCode_free(tl_t *tl_) {
 	tl_help_countryCode_t *tl = (tl_help_countryCode_t *)tl_;
 	int i;
+	
 	buf_free(tl->country_code_);
 	for(i=0; i<tl->prefixes_len; ++i){
 		buf_free(tl->prefixes_[i]);
@@ -9806,6 +9979,7 @@ void tl_help_countryCode_free(tl_t *tl_) {
 void tl_help_country_free(tl_t *tl_) {
 	tl_help_country_t *tl = (tl_help_country_t *)tl_;
 	int i;
+	
 	buf_free(tl->iso2_);
 	buf_free(tl->default_name_);
 	buf_free(tl->name_);
@@ -9819,7 +9993,7 @@ void tl_help_country_free(tl_t *tl_) {
 
 void tl_help_countriesListNotModified_free(tl_t *tl_) {
 	tl_help_countriesListNotModified_t *tl = (tl_help_countriesListNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -9827,6 +10001,7 @@ void tl_help_countriesListNotModified_free(tl_t *tl_) {
 void tl_help_countriesList_free(tl_t *tl_) {
 	tl_help_countriesList_t *tl = (tl_help_countriesList_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->countries_len; ++i){
 		tl_free(tl->countries_[i]);
 	}
@@ -9837,7 +10012,7 @@ void tl_help_countriesList_free(tl_t *tl_) {
 
 void tl_messageViews_free(tl_t *tl_) {
 	tl_messageViews_t *tl = (tl_messageViews_t *)tl_;
-	int i;
+	
 	tl_free(tl->replies_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9846,6 +10021,7 @@ void tl_messageViews_free(tl_t *tl_) {
 void tl_messages_messageViews_free(tl_t *tl_) {
 	tl_messages_messageViews_t *tl = (tl_messages_messageViews_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->views_len; ++i){
 		tl_free(tl->views_[i]);
 	}
@@ -9865,6 +10041,7 @@ void tl_messages_messageViews_free(tl_t *tl_) {
 void tl_messages_discussionMessage_free(tl_t *tl_) {
 	tl_messages_discussionMessage_t *tl = (tl_messages_discussionMessage_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->messages_len; ++i){
 		tl_free(tl->messages_[i]);
 	}
@@ -9884,6 +10061,7 @@ void tl_messages_discussionMessage_free(tl_t *tl_) {
 void tl_messageReplyHeader_free(tl_t *tl_) {
 	tl_messageReplyHeader_t *tl = (tl_messageReplyHeader_t *)tl_;
 	int i;
+	
 	tl_free(tl->reply_to_peer_id_);
 	tl_free(tl->reply_from_);
 	tl_free(tl->reply_media_);
@@ -9898,7 +10076,7 @@ void tl_messageReplyHeader_free(tl_t *tl_) {
 
 void tl_messageReplyStoryHeader_free(tl_t *tl_) {
 	tl_messageReplyStoryHeader_t *tl = (tl_messageReplyStoryHeader_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9907,6 +10085,7 @@ void tl_messageReplyStoryHeader_free(tl_t *tl_) {
 void tl_messageReplies_free(tl_t *tl_) {
 	tl_messageReplies_t *tl = (tl_messageReplies_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->recent_repliers_len; ++i){
 		tl_free(tl->recent_repliers_[i]);
 	}
@@ -9917,7 +10096,7 @@ void tl_messageReplies_free(tl_t *tl_) {
 
 void tl_peerBlocked_free(tl_t *tl_) {
 	tl_peerBlocked_t *tl = (tl_peerBlocked_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9925,7 +10104,7 @@ void tl_peerBlocked_free(tl_t *tl_) {
 
 void tl_stats_messageStats_free(tl_t *tl_) {
 	tl_stats_messageStats_t *tl = (tl_stats_messageStats_t *)tl_;
-	int i;
+	
 	tl_free(tl->views_graph_);
 	tl_free(tl->reactions_by_emotion_graph_);
 	buf_free(tl->_buf);
@@ -9934,14 +10113,14 @@ void tl_stats_messageStats_free(tl_t *tl_) {
 
 void tl_groupCallDiscarded_free(tl_t *tl_) {
 	tl_groupCallDiscarded_t *tl = (tl_groupCallDiscarded_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_groupCall_free(tl_t *tl_) {
 	tl_groupCall_t *tl = (tl_groupCall_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -9949,14 +10128,14 @@ void tl_groupCall_free(tl_t *tl_) {
 
 void tl_inputGroupCall_free(tl_t *tl_) {
 	tl_inputGroupCall_t *tl = (tl_inputGroupCall_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_groupCallParticipant_free(tl_t *tl_) {
 	tl_groupCallParticipant_t *tl = (tl_groupCallParticipant_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->about_);
 	tl_free(tl->video_);
@@ -9968,6 +10147,7 @@ void tl_groupCallParticipant_free(tl_t *tl_) {
 void tl_phone_groupCall_free(tl_t *tl_) {
 	tl_phone_groupCall_t *tl = (tl_phone_groupCall_t *)tl_;
 	int i;
+	
 	tl_free(tl->call_);
 	for(i=0; i<tl->participants_len; ++i){
 		tl_free(tl->participants_[i]);
@@ -9989,6 +10169,7 @@ void tl_phone_groupCall_free(tl_t *tl_) {
 void tl_phone_groupParticipants_free(tl_t *tl_) {
 	tl_phone_groupParticipants_t *tl = (tl_phone_groupParticipants_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->participants_len; ++i){
 		tl_free(tl->participants_[i]);
 	}
@@ -10008,56 +10189,56 @@ void tl_phone_groupParticipants_free(tl_t *tl_) {
 
 void tl_inlineQueryPeerTypeSameBotPM_free(tl_t *tl_) {
 	tl_inlineQueryPeerTypeSameBotPM_t *tl = (tl_inlineQueryPeerTypeSameBotPM_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inlineQueryPeerTypePM_free(tl_t *tl_) {
 	tl_inlineQueryPeerTypePM_t *tl = (tl_inlineQueryPeerTypePM_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inlineQueryPeerTypeChat_free(tl_t *tl_) {
 	tl_inlineQueryPeerTypeChat_t *tl = (tl_inlineQueryPeerTypeChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inlineQueryPeerTypeMegagroup_free(tl_t *tl_) {
 	tl_inlineQueryPeerTypeMegagroup_t *tl = (tl_inlineQueryPeerTypeMegagroup_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inlineQueryPeerTypeBroadcast_free(tl_t *tl_) {
 	tl_inlineQueryPeerTypeBroadcast_t *tl = (tl_inlineQueryPeerTypeBroadcast_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inlineQueryPeerTypeBotPM_free(tl_t *tl_) {
 	tl_inlineQueryPeerTypeBotPM_t *tl = (tl_inlineQueryPeerTypeBotPM_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_historyImport_free(tl_t *tl_) {
 	tl_messages_historyImport_t *tl = (tl_messages_historyImport_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_historyImportParsed_free(tl_t *tl_) {
 	tl_messages_historyImportParsed_t *tl = (tl_messages_historyImportParsed_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10066,6 +10247,7 @@ void tl_messages_historyImportParsed_free(tl_t *tl_) {
 void tl_messages_affectedFoundMessages_free(tl_t *tl_) {
 	tl_messages_affectedFoundMessages_t *tl = (tl_messages_affectedFoundMessages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->messages_len; ++i){
 	}
 	free(tl->messages_);
@@ -10075,7 +10257,7 @@ void tl_messages_affectedFoundMessages_free(tl_t *tl_) {
 
 void tl_chatInviteImporter_free(tl_t *tl_) {
 	tl_chatInviteImporter_t *tl = (tl_chatInviteImporter_t *)tl_;
-	int i;
+	
 	buf_free(tl->about_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10084,6 +10266,7 @@ void tl_chatInviteImporter_free(tl_t *tl_) {
 void tl_messages_exportedChatInvites_free(tl_t *tl_) {
 	tl_messages_exportedChatInvites_t *tl = (tl_messages_exportedChatInvites_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->invites_len; ++i){
 		tl_free(tl->invites_[i]);
 	}
@@ -10099,6 +10282,7 @@ void tl_messages_exportedChatInvites_free(tl_t *tl_) {
 void tl_messages_exportedChatInvite_free(tl_t *tl_) {
 	tl_messages_exportedChatInvite_t *tl = (tl_messages_exportedChatInvite_t *)tl_;
 	int i;
+	
 	tl_free(tl->invite_);
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
@@ -10111,6 +10295,7 @@ void tl_messages_exportedChatInvite_free(tl_t *tl_) {
 void tl_messages_exportedChatInviteReplaced_free(tl_t *tl_) {
 	tl_messages_exportedChatInviteReplaced_t *tl = (tl_messages_exportedChatInviteReplaced_t *)tl_;
 	int i;
+	
 	tl_free(tl->invite_);
 	tl_free(tl->new_invite_);
 	for(i=0; i<tl->users_len; ++i){
@@ -10124,6 +10309,7 @@ void tl_messages_exportedChatInviteReplaced_free(tl_t *tl_) {
 void tl_messages_chatInviteImporters_free(tl_t *tl_) {
 	tl_messages_chatInviteImporters_t *tl = (tl_messages_chatInviteImporters_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->importers_len; ++i){
 		tl_free(tl->importers_[i]);
 	}
@@ -10138,7 +10324,7 @@ void tl_messages_chatInviteImporters_free(tl_t *tl_) {
 
 void tl_chatAdminWithInvites_free(tl_t *tl_) {
 	tl_chatAdminWithInvites_t *tl = (tl_chatAdminWithInvites_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -10146,6 +10332,7 @@ void tl_chatAdminWithInvites_free(tl_t *tl_) {
 void tl_messages_chatAdminsWithInvites_free(tl_t *tl_) {
 	tl_messages_chatAdminsWithInvites_t *tl = (tl_messages_chatAdminsWithInvites_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->admins_len; ++i){
 		tl_free(tl->admins_[i]);
 	}
@@ -10160,7 +10347,7 @@ void tl_messages_chatAdminsWithInvites_free(tl_t *tl_) {
 
 void tl_messages_checkedHistoryImportPeer_free(tl_t *tl_) {
 	tl_messages_checkedHistoryImportPeer_t *tl = (tl_messages_checkedHistoryImportPeer_t *)tl_;
-	int i;
+	
 	buf_free(tl->confirm_text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10169,6 +10356,7 @@ void tl_messages_checkedHistoryImportPeer_free(tl_t *tl_) {
 void tl_phone_joinAsPeers_free(tl_t *tl_) {
 	tl_phone_joinAsPeers_t *tl = (tl_phone_joinAsPeers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->peers_len; ++i){
 		tl_free(tl->peers_[i]);
 	}
@@ -10187,7 +10375,7 @@ void tl_phone_joinAsPeers_free(tl_t *tl_) {
 
 void tl_phone_exportedGroupCallInvite_free(tl_t *tl_) {
 	tl_phone_exportedGroupCallInvite_t *tl = (tl_phone_exportedGroupCallInvite_t *)tl_;
-	int i;
+	
 	buf_free(tl->link_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10196,6 +10384,7 @@ void tl_phone_exportedGroupCallInvite_free(tl_t *tl_) {
 void tl_groupCallParticipantVideoSourceGroup_free(tl_t *tl_) {
 	tl_groupCallParticipantVideoSourceGroup_t *tl = (tl_groupCallParticipantVideoSourceGroup_t *)tl_;
 	int i;
+	
 	buf_free(tl->semantics_);
 	for(i=0; i<tl->sources_len; ++i){
 	}
@@ -10207,6 +10396,7 @@ void tl_groupCallParticipantVideoSourceGroup_free(tl_t *tl_) {
 void tl_groupCallParticipantVideo_free(tl_t *tl_) {
 	tl_groupCallParticipantVideo_t *tl = (tl_groupCallParticipantVideo_t *)tl_;
 	int i;
+	
 	buf_free(tl->endpoint_);
 	for(i=0; i<tl->source_groups_len; ++i){
 		tl_free(tl->source_groups_[i]);
@@ -10218,7 +10408,7 @@ void tl_groupCallParticipantVideo_free(tl_t *tl_) {
 
 void tl_stickers_suggestedShortName_free(tl_t *tl_) {
 	tl_stickers_suggestedShortName_t *tl = (tl_stickers_suggestedShortName_t *)tl_;
-	int i;
+	
 	buf_free(tl->short_name_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10226,35 +10416,35 @@ void tl_stickers_suggestedShortName_free(tl_t *tl_) {
 
 void tl_botCommandScopeDefault_free(tl_t *tl_) {
 	tl_botCommandScopeDefault_t *tl = (tl_botCommandScopeDefault_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_botCommandScopeUsers_free(tl_t *tl_) {
 	tl_botCommandScopeUsers_t *tl = (tl_botCommandScopeUsers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_botCommandScopeChats_free(tl_t *tl_) {
 	tl_botCommandScopeChats_t *tl = (tl_botCommandScopeChats_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_botCommandScopeChatAdmins_free(tl_t *tl_) {
 	tl_botCommandScopeChatAdmins_t *tl = (tl_botCommandScopeChatAdmins_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_botCommandScopePeer_free(tl_t *tl_) {
 	tl_botCommandScopePeer_t *tl = (tl_botCommandScopePeer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10262,7 +10452,7 @@ void tl_botCommandScopePeer_free(tl_t *tl_) {
 
 void tl_botCommandScopePeerAdmins_free(tl_t *tl_) {
 	tl_botCommandScopePeerAdmins_t *tl = (tl_botCommandScopePeerAdmins_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10270,7 +10460,7 @@ void tl_botCommandScopePeerAdmins_free(tl_t *tl_) {
 
 void tl_botCommandScopePeerUser_free(tl_t *tl_) {
 	tl_botCommandScopePeerUser_t *tl = (tl_botCommandScopePeerUser_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
@@ -10279,21 +10469,21 @@ void tl_botCommandScopePeerUser_free(tl_t *tl_) {
 
 void tl_account_resetPasswordFailedWait_free(tl_t *tl_) {
 	tl_account_resetPasswordFailedWait_t *tl = (tl_account_resetPasswordFailedWait_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_resetPasswordRequestedWait_free(tl_t *tl_) {
 	tl_account_resetPasswordRequestedWait_t *tl = (tl_account_resetPasswordRequestedWait_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_resetPasswordOk_free(tl_t *tl_) {
 	tl_account_resetPasswordOk_t *tl = (tl_account_resetPasswordOk_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -10301,6 +10491,7 @@ void tl_account_resetPasswordOk_free(tl_t *tl_) {
 void tl_sponsoredMessage_free(tl_t *tl_) {
 	tl_sponsoredMessage_t *tl = (tl_sponsoredMessage_t *)tl_;
 	int i;
+	
 	buf_free(tl->random_id_);
 	buf_free(tl->url_);
 	buf_free(tl->title_);
@@ -10321,6 +10512,7 @@ void tl_sponsoredMessage_free(tl_t *tl_) {
 void tl_messages_sponsoredMessages_free(tl_t *tl_) {
 	tl_messages_sponsoredMessages_t *tl = (tl_messages_sponsoredMessages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->messages_len; ++i){
 		tl_free(tl->messages_[i]);
 	}
@@ -10339,14 +10531,14 @@ void tl_messages_sponsoredMessages_free(tl_t *tl_) {
 
 void tl_messages_sponsoredMessagesEmpty_free(tl_t *tl_) {
 	tl_messages_sponsoredMessagesEmpty_t *tl = (tl_messages_sponsoredMessagesEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_searchResultsCalendarPeriod_free(tl_t *tl_) {
 	tl_searchResultsCalendarPeriod_t *tl = (tl_searchResultsCalendarPeriod_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -10354,6 +10546,7 @@ void tl_searchResultsCalendarPeriod_free(tl_t *tl_) {
 void tl_messages_searchResultsCalendar_free(tl_t *tl_) {
 	tl_messages_searchResultsCalendar_t *tl = (tl_messages_searchResultsCalendar_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->periods_len; ++i){
 		tl_free(tl->periods_[i]);
 	}
@@ -10376,7 +10569,7 @@ void tl_messages_searchResultsCalendar_free(tl_t *tl_) {
 
 void tl_searchResultPosition_free(tl_t *tl_) {
 	tl_searchResultPosition_t *tl = (tl_searchResultPosition_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -10384,6 +10577,7 @@ void tl_searchResultPosition_free(tl_t *tl_) {
 void tl_messages_searchResultsPositions_free(tl_t *tl_) {
 	tl_messages_searchResultsPositions_t *tl = (tl_messages_searchResultsPositions_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->positions_len; ++i){
 		tl_free(tl->positions_[i]);
 	}
@@ -10395,6 +10589,7 @@ void tl_messages_searchResultsPositions_free(tl_t *tl_) {
 void tl_channels_sendAsPeers_free(tl_t *tl_) {
 	tl_channels_sendAsPeers_t *tl = (tl_channels_sendAsPeers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->peers_len; ++i){
 		tl_free(tl->peers_[i]);
 	}
@@ -10414,6 +10609,7 @@ void tl_channels_sendAsPeers_free(tl_t *tl_) {
 void tl_users_userFull_free(tl_t *tl_) {
 	tl_users_userFull_t *tl = (tl_users_userFull_t *)tl_;
 	int i;
+	
 	tl_free(tl->full_user_);
 	for(i=0; i<tl->chats_len; ++i){
 		tl_free(tl->chats_[i]);
@@ -10430,6 +10626,7 @@ void tl_users_userFull_free(tl_t *tl_) {
 void tl_messages_peerSettings_free(tl_t *tl_) {
 	tl_messages_peerSettings_t *tl = (tl_messages_peerSettings_t *)tl_;
 	int i;
+	
 	tl_free(tl->settings_);
 	for(i=0; i<tl->chats_len; ++i){
 		tl_free(tl->chats_[i]);
@@ -10445,7 +10642,7 @@ void tl_messages_peerSettings_free(tl_t *tl_) {
 
 void tl_auth_loggedOut_free(tl_t *tl_) {
 	tl_auth_loggedOut_t *tl = (tl_auth_loggedOut_t *)tl_;
-	int i;
+	
 	buf_free(tl->future_auth_token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10453,7 +10650,7 @@ void tl_auth_loggedOut_free(tl_t *tl_) {
 
 void tl_reactionCount_free(tl_t *tl_) {
 	tl_reactionCount_t *tl = (tl_reactionCount_t *)tl_;
-	int i;
+	
 	tl_free(tl->reaction_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10462,6 +10659,7 @@ void tl_reactionCount_free(tl_t *tl_) {
 void tl_messageReactions_free(tl_t *tl_) {
 	tl_messageReactions_t *tl = (tl_messageReactions_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->results_len; ++i){
 		tl_free(tl->results_[i]);
 	}
@@ -10477,6 +10675,7 @@ void tl_messageReactions_free(tl_t *tl_) {
 void tl_messages_messageReactionsList_free(tl_t *tl_) {
 	tl_messages_messageReactionsList_t *tl = (tl_messages_messageReactionsList_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->reactions_len; ++i){
 		tl_free(tl->reactions_[i]);
 	}
@@ -10496,7 +10695,7 @@ void tl_messages_messageReactionsList_free(tl_t *tl_) {
 
 void tl_availableReaction_free(tl_t *tl_) {
 	tl_availableReaction_t *tl = (tl_availableReaction_t *)tl_;
-	int i;
+	
 	buf_free(tl->reaction_);
 	buf_free(tl->title_);
 	tl_free(tl->static_icon_);
@@ -10512,7 +10711,7 @@ void tl_availableReaction_free(tl_t *tl_) {
 
 void tl_messages_availableReactionsNotModified_free(tl_t *tl_) {
 	tl_messages_availableReactionsNotModified_t *tl = (tl_messages_availableReactionsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -10520,6 +10719,7 @@ void tl_messages_availableReactionsNotModified_free(tl_t *tl_) {
 void tl_messages_availableReactions_free(tl_t *tl_) {
 	tl_messages_availableReactions_t *tl = (tl_messages_availableReactions_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->reactions_len; ++i){
 		tl_free(tl->reactions_[i]);
 	}
@@ -10530,7 +10730,7 @@ void tl_messages_availableReactions_free(tl_t *tl_) {
 
 void tl_messagePeerReaction_free(tl_t *tl_) {
 	tl_messagePeerReaction_t *tl = (tl_messagePeerReaction_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_id_);
 	tl_free(tl->reaction_);
 	buf_free(tl->_buf);
@@ -10539,7 +10739,7 @@ void tl_messagePeerReaction_free(tl_t *tl_) {
 
 void tl_groupCallStreamChannel_free(tl_t *tl_) {
 	tl_groupCallStreamChannel_t *tl = (tl_groupCallStreamChannel_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -10547,6 +10747,7 @@ void tl_groupCallStreamChannel_free(tl_t *tl_) {
 void tl_phone_groupCallStreamChannels_free(tl_t *tl_) {
 	tl_phone_groupCallStreamChannels_t *tl = (tl_phone_groupCallStreamChannels_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->channels_len; ++i){
 		tl_free(tl->channels_[i]);
 	}
@@ -10557,7 +10758,7 @@ void tl_phone_groupCallStreamChannels_free(tl_t *tl_) {
 
 void tl_phone_groupCallStreamRtmpUrl_free(tl_t *tl_) {
 	tl_phone_groupCallStreamRtmpUrl_t *tl = (tl_phone_groupCallStreamRtmpUrl_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->key_);
 	buf_free(tl->_buf);
@@ -10566,7 +10767,7 @@ void tl_phone_groupCallStreamRtmpUrl_free(tl_t *tl_) {
 
 void tl_attachMenuBotIconColor_free(tl_t *tl_) {
 	tl_attachMenuBotIconColor_t *tl = (tl_attachMenuBotIconColor_t *)tl_;
-	int i;
+	
 	buf_free(tl->name_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10575,6 +10776,7 @@ void tl_attachMenuBotIconColor_free(tl_t *tl_) {
 void tl_attachMenuBotIcon_free(tl_t *tl_) {
 	tl_attachMenuBotIcon_t *tl = (tl_attachMenuBotIcon_t *)tl_;
 	int i;
+	
 	buf_free(tl->name_);
 	tl_free(tl->icon_);
 	for(i=0; i<tl->colors_len; ++i){
@@ -10588,6 +10790,7 @@ void tl_attachMenuBotIcon_free(tl_t *tl_) {
 void tl_attachMenuBot_free(tl_t *tl_) {
 	tl_attachMenuBot_t *tl = (tl_attachMenuBot_t *)tl_;
 	int i;
+	
 	buf_free(tl->short_name_);
 	for(i=0; i<tl->peer_types_len; ++i){
 		tl_free(tl->peer_types_[i]);
@@ -10603,7 +10806,7 @@ void tl_attachMenuBot_free(tl_t *tl_) {
 
 void tl_attachMenuBotsNotModified_free(tl_t *tl_) {
 	tl_attachMenuBotsNotModified_t *tl = (tl_attachMenuBotsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -10611,6 +10814,7 @@ void tl_attachMenuBotsNotModified_free(tl_t *tl_) {
 void tl_attachMenuBots_free(tl_t *tl_) {
 	tl_attachMenuBots_t *tl = (tl_attachMenuBots_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->bots_len; ++i){
 		tl_free(tl->bots_[i]);
 	}
@@ -10626,6 +10830,7 @@ void tl_attachMenuBots_free(tl_t *tl_) {
 void tl_attachMenuBotsBot_free(tl_t *tl_) {
 	tl_attachMenuBotsBot_t *tl = (tl_attachMenuBotsBot_t *)tl_;
 	int i;
+	
 	tl_free(tl->bot_);
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
@@ -10637,7 +10842,7 @@ void tl_attachMenuBotsBot_free(tl_t *tl_) {
 
 void tl_webViewResultUrl_free(tl_t *tl_) {
 	tl_webViewResultUrl_t *tl = (tl_webViewResultUrl_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10645,7 +10850,7 @@ void tl_webViewResultUrl_free(tl_t *tl_) {
 
 void tl_webViewMessageSent_free(tl_t *tl_) {
 	tl_webViewMessageSent_t *tl = (tl_webViewMessageSent_t *)tl_;
-	int i;
+	
 	tl_free(tl->msg_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10653,21 +10858,21 @@ void tl_webViewMessageSent_free(tl_t *tl_) {
 
 void tl_botMenuButtonDefault_free(tl_t *tl_) {
 	tl_botMenuButtonDefault_t *tl = (tl_botMenuButtonDefault_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_botMenuButtonCommands_free(tl_t *tl_) {
 	tl_botMenuButtonCommands_t *tl = (tl_botMenuButtonCommands_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_botMenuButton_free(tl_t *tl_) {
 	tl_botMenuButton_t *tl = (tl_botMenuButton_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
@@ -10676,7 +10881,7 @@ void tl_botMenuButton_free(tl_t *tl_) {
 
 void tl_account_savedRingtonesNotModified_free(tl_t *tl_) {
 	tl_account_savedRingtonesNotModified_t *tl = (tl_account_savedRingtonesNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -10684,6 +10889,7 @@ void tl_account_savedRingtonesNotModified_free(tl_t *tl_) {
 void tl_account_savedRingtones_free(tl_t *tl_) {
 	tl_account_savedRingtones_t *tl = (tl_account_savedRingtones_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->ringtones_len; ++i){
 		tl_free(tl->ringtones_[i]);
 	}
@@ -10694,21 +10900,21 @@ void tl_account_savedRingtones_free(tl_t *tl_) {
 
 void tl_notificationSoundDefault_free(tl_t *tl_) {
 	tl_notificationSoundDefault_t *tl = (tl_notificationSoundDefault_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_notificationSoundNone_free(tl_t *tl_) {
 	tl_notificationSoundNone_t *tl = (tl_notificationSoundNone_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_notificationSoundLocal_free(tl_t *tl_) {
 	tl_notificationSoundLocal_t *tl = (tl_notificationSoundLocal_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->data_);
 	buf_free(tl->_buf);
@@ -10717,21 +10923,21 @@ void tl_notificationSoundLocal_free(tl_t *tl_) {
 
 void tl_notificationSoundRingtone_free(tl_t *tl_) {
 	tl_notificationSoundRingtone_t *tl = (tl_notificationSoundRingtone_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_savedRingtone_free(tl_t *tl_) {
 	tl_account_savedRingtone_t *tl = (tl_account_savedRingtone_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_savedRingtoneConverted_free(tl_t *tl_) {
 	tl_account_savedRingtoneConverted_t *tl = (tl_account_savedRingtoneConverted_t *)tl_;
-	int i;
+	
 	tl_free(tl->document_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10739,42 +10945,42 @@ void tl_account_savedRingtoneConverted_free(tl_t *tl_) {
 
 void tl_attachMenuPeerTypeSameBotPM_free(tl_t *tl_) {
 	tl_attachMenuPeerTypeSameBotPM_t *tl = (tl_attachMenuPeerTypeSameBotPM_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_attachMenuPeerTypeBotPM_free(tl_t *tl_) {
 	tl_attachMenuPeerTypeBotPM_t *tl = (tl_attachMenuPeerTypeBotPM_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_attachMenuPeerTypePM_free(tl_t *tl_) {
 	tl_attachMenuPeerTypePM_t *tl = (tl_attachMenuPeerTypePM_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_attachMenuPeerTypeChat_free(tl_t *tl_) {
 	tl_attachMenuPeerTypeChat_t *tl = (tl_attachMenuPeerTypeChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_attachMenuPeerTypeBroadcast_free(tl_t *tl_) {
 	tl_attachMenuPeerTypeBroadcast_t *tl = (tl_attachMenuPeerTypeBroadcast_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputInvoiceMessage_free(tl_t *tl_) {
 	tl_inputInvoiceMessage_t *tl = (tl_inputInvoiceMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10782,7 +10988,7 @@ void tl_inputInvoiceMessage_free(tl_t *tl_) {
 
 void tl_inputInvoiceSlug_free(tl_t *tl_) {
 	tl_inputInvoiceSlug_t *tl = (tl_inputInvoiceSlug_t *)tl_;
-	int i;
+	
 	buf_free(tl->slug_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10790,7 +10996,7 @@ void tl_inputInvoiceSlug_free(tl_t *tl_) {
 
 void tl_inputInvoicePremiumGiftCode_free(tl_t *tl_) {
 	tl_inputInvoicePremiumGiftCode_t *tl = (tl_inputInvoicePremiumGiftCode_t *)tl_;
-	int i;
+	
 	tl_free(tl->purpose_);
 	tl_free(tl->option_);
 	buf_free(tl->_buf);
@@ -10799,7 +11005,7 @@ void tl_inputInvoicePremiumGiftCode_free(tl_t *tl_) {
 
 void tl_inputInvoiceStars_free(tl_t *tl_) {
 	tl_inputInvoiceStars_t *tl = (tl_inputInvoiceStars_t *)tl_;
-	int i;
+	
 	tl_free(tl->purpose_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10807,7 +11013,7 @@ void tl_inputInvoiceStars_free(tl_t *tl_) {
 
 void tl_payments_exportedInvoice_free(tl_t *tl_) {
 	tl_payments_exportedInvoice_t *tl = (tl_payments_exportedInvoice_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10815,7 +11021,7 @@ void tl_payments_exportedInvoice_free(tl_t *tl_) {
 
 void tl_messages_transcribedAudio_free(tl_t *tl_) {
 	tl_messages_transcribedAudio_t *tl = (tl_messages_transcribedAudio_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10824,6 +11030,7 @@ void tl_messages_transcribedAudio_free(tl_t *tl_) {
 void tl_help_premiumPromo_free(tl_t *tl_) {
 	tl_help_premiumPromo_t *tl = (tl_help_premiumPromo_t *)tl_;
 	int i;
+	
 	buf_free(tl->status_text_);
 	for(i=0; i<tl->status_entities_len; ++i){
 		tl_free(tl->status_entities_[i]);
@@ -10851,14 +11058,14 @@ void tl_help_premiumPromo_free(tl_t *tl_) {
 
 void tl_inputStorePaymentPremiumSubscription_free(tl_t *tl_) {
 	tl_inputStorePaymentPremiumSubscription_t *tl = (tl_inputStorePaymentPremiumSubscription_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputStorePaymentGiftPremium_free(tl_t *tl_) {
 	tl_inputStorePaymentGiftPremium_t *tl = (tl_inputStorePaymentGiftPremium_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->currency_);
 	buf_free(tl->_buf);
@@ -10868,6 +11075,7 @@ void tl_inputStorePaymentGiftPremium_free(tl_t *tl_) {
 void tl_inputStorePaymentPremiumGiftCode_free(tl_t *tl_) {
 	tl_inputStorePaymentPremiumGiftCode_t *tl = (tl_inputStorePaymentPremiumGiftCode_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
 	}
@@ -10881,6 +11089,7 @@ void tl_inputStorePaymentPremiumGiftCode_free(tl_t *tl_) {
 void tl_inputStorePaymentPremiumGiveaway_free(tl_t *tl_) {
 	tl_inputStorePaymentPremiumGiveaway_t *tl = (tl_inputStorePaymentPremiumGiveaway_t *)tl_;
 	int i;
+	
 	tl_free(tl->boost_peer_);
 	for(i=0; i<tl->additional_peers_len; ++i){
 		tl_free(tl->additional_peers_[i]);
@@ -10898,7 +11107,7 @@ void tl_inputStorePaymentPremiumGiveaway_free(tl_t *tl_) {
 
 void tl_inputStorePaymentStarsTopup_free(tl_t *tl_) {
 	tl_inputStorePaymentStarsTopup_t *tl = (tl_inputStorePaymentStarsTopup_t *)tl_;
-	int i;
+	
 	buf_free(tl->currency_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10906,7 +11115,7 @@ void tl_inputStorePaymentStarsTopup_free(tl_t *tl_) {
 
 void tl_inputStorePaymentStarsGift_free(tl_t *tl_) {
 	tl_inputStorePaymentStarsGift_t *tl = (tl_inputStorePaymentStarsGift_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->currency_);
 	buf_free(tl->_buf);
@@ -10915,7 +11124,7 @@ void tl_inputStorePaymentStarsGift_free(tl_t *tl_) {
 
 void tl_premiumGiftOption_free(tl_t *tl_) {
 	tl_premiumGiftOption_t *tl = (tl_premiumGiftOption_t *)tl_;
-	int i;
+	
 	buf_free(tl->currency_);
 	buf_free(tl->bot_url_);
 	buf_free(tl->store_product_);
@@ -10925,7 +11134,7 @@ void tl_premiumGiftOption_free(tl_t *tl_) {
 
 void tl_paymentFormMethod_free(tl_t *tl_) {
 	tl_paymentFormMethod_t *tl = (tl_paymentFormMethod_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
@@ -10934,28 +11143,28 @@ void tl_paymentFormMethod_free(tl_t *tl_) {
 
 void tl_emojiStatusEmpty_free(tl_t *tl_) {
 	tl_emojiStatusEmpty_t *tl = (tl_emojiStatusEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_emojiStatus_free(tl_t *tl_) {
 	tl_emojiStatus_t *tl = (tl_emojiStatus_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_emojiStatusUntil_free(tl_t *tl_) {
 	tl_emojiStatusUntil_t *tl = (tl_emojiStatusUntil_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_emojiStatusesNotModified_free(tl_t *tl_) {
 	tl_account_emojiStatusesNotModified_t *tl = (tl_account_emojiStatusesNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -10963,6 +11172,7 @@ void tl_account_emojiStatusesNotModified_free(tl_t *tl_) {
 void tl_account_emojiStatuses_free(tl_t *tl_) {
 	tl_account_emojiStatuses_t *tl = (tl_account_emojiStatuses_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->statuses_len; ++i){
 		tl_free(tl->statuses_[i]);
 	}
@@ -10973,14 +11183,14 @@ void tl_account_emojiStatuses_free(tl_t *tl_) {
 
 void tl_reactionEmpty_free(tl_t *tl_) {
 	tl_reactionEmpty_t *tl = (tl_reactionEmpty_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_reactionEmoji_free(tl_t *tl_) {
 	tl_reactionEmoji_t *tl = (tl_reactionEmoji_t *)tl_;
-	int i;
+	
 	buf_free(tl->emoticon_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -10988,21 +11198,21 @@ void tl_reactionEmoji_free(tl_t *tl_) {
 
 void tl_reactionCustomEmoji_free(tl_t *tl_) {
 	tl_reactionCustomEmoji_t *tl = (tl_reactionCustomEmoji_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_chatReactionsNone_free(tl_t *tl_) {
 	tl_chatReactionsNone_t *tl = (tl_chatReactionsNone_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_chatReactionsAll_free(tl_t *tl_) {
 	tl_chatReactionsAll_t *tl = (tl_chatReactionsAll_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -11010,6 +11220,7 @@ void tl_chatReactionsAll_free(tl_t *tl_) {
 void tl_chatReactionsSome_free(tl_t *tl_) {
 	tl_chatReactionsSome_t *tl = (tl_chatReactionsSome_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->reactions_len; ++i){
 		tl_free(tl->reactions_[i]);
 	}
@@ -11020,7 +11231,7 @@ void tl_chatReactionsSome_free(tl_t *tl_) {
 
 void tl_messages_reactionsNotModified_free(tl_t *tl_) {
 	tl_messages_reactionsNotModified_t *tl = (tl_messages_reactionsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -11028,6 +11239,7 @@ void tl_messages_reactionsNotModified_free(tl_t *tl_) {
 void tl_messages_reactions_free(tl_t *tl_) {
 	tl_messages_reactions_t *tl = (tl_messages_reactions_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->reactions_len; ++i){
 		tl_free(tl->reactions_[i]);
 	}
@@ -11038,7 +11250,7 @@ void tl_messages_reactions_free(tl_t *tl_) {
 
 void tl_emailVerifyPurposeLoginSetup_free(tl_t *tl_) {
 	tl_emailVerifyPurposeLoginSetup_t *tl = (tl_emailVerifyPurposeLoginSetup_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->phone_code_hash_);
 	buf_free(tl->_buf);
@@ -11047,21 +11259,21 @@ void tl_emailVerifyPurposeLoginSetup_free(tl_t *tl_) {
 
 void tl_emailVerifyPurposeLoginChange_free(tl_t *tl_) {
 	tl_emailVerifyPurposeLoginChange_t *tl = (tl_emailVerifyPurposeLoginChange_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_emailVerifyPurposePassport_free(tl_t *tl_) {
 	tl_emailVerifyPurposePassport_t *tl = (tl_emailVerifyPurposePassport_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_emailVerificationCode_free(tl_t *tl_) {
 	tl_emailVerificationCode_t *tl = (tl_emailVerificationCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->code_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11069,7 +11281,7 @@ void tl_emailVerificationCode_free(tl_t *tl_) {
 
 void tl_emailVerificationGoogle_free(tl_t *tl_) {
 	tl_emailVerificationGoogle_t *tl = (tl_emailVerificationGoogle_t *)tl_;
-	int i;
+	
 	buf_free(tl->token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11077,7 +11289,7 @@ void tl_emailVerificationGoogle_free(tl_t *tl_) {
 
 void tl_emailVerificationApple_free(tl_t *tl_) {
 	tl_emailVerificationApple_t *tl = (tl_emailVerificationApple_t *)tl_;
-	int i;
+	
 	buf_free(tl->token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11085,7 +11297,7 @@ void tl_emailVerificationApple_free(tl_t *tl_) {
 
 void tl_account_emailVerified_free(tl_t *tl_) {
 	tl_account_emailVerified_t *tl = (tl_account_emailVerified_t *)tl_;
-	int i;
+	
 	buf_free(tl->email_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11093,7 +11305,7 @@ void tl_account_emailVerified_free(tl_t *tl_) {
 
 void tl_account_emailVerifiedLogin_free(tl_t *tl_) {
 	tl_account_emailVerifiedLogin_t *tl = (tl_account_emailVerifiedLogin_t *)tl_;
-	int i;
+	
 	buf_free(tl->email_);
 	tl_free(tl->sent_code_);
 	buf_free(tl->_buf);
@@ -11102,7 +11314,7 @@ void tl_account_emailVerifiedLogin_free(tl_t *tl_) {
 
 void tl_premiumSubscriptionOption_free(tl_t *tl_) {
 	tl_premiumSubscriptionOption_t *tl = (tl_premiumSubscriptionOption_t *)tl_;
-	int i;
+	
 	buf_free(tl->transaction_);
 	buf_free(tl->currency_);
 	buf_free(tl->bot_url_);
@@ -11113,7 +11325,7 @@ void tl_premiumSubscriptionOption_free(tl_t *tl_) {
 
 void tl_sendAsPeer_free(tl_t *tl_) {
 	tl_sendAsPeer_t *tl = (tl_sendAsPeer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11121,7 +11333,7 @@ void tl_sendAsPeer_free(tl_t *tl_) {
 
 void tl_messageExtendedMediaPreview_free(tl_t *tl_) {
 	tl_messageExtendedMediaPreview_t *tl = (tl_messageExtendedMediaPreview_t *)tl_;
-	int i;
+	
 	tl_free(tl->thumb_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11129,7 +11341,7 @@ void tl_messageExtendedMediaPreview_free(tl_t *tl_) {
 
 void tl_messageExtendedMedia_free(tl_t *tl_) {
 	tl_messageExtendedMedia_t *tl = (tl_messageExtendedMedia_t *)tl_;
-	int i;
+	
 	tl_free(tl->media_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11138,6 +11350,7 @@ void tl_messageExtendedMedia_free(tl_t *tl_) {
 void tl_stickerKeyword_free(tl_t *tl_) {
 	tl_stickerKeyword_t *tl = (tl_stickerKeyword_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->keyword_len; ++i){
 		buf_free(tl->keyword_[i]);
 	}
@@ -11148,7 +11361,7 @@ void tl_stickerKeyword_free(tl_t *tl_) {
 
 void tl_username_free(tl_t *tl_) {
 	tl_username_t *tl = (tl_username_t *)tl_;
-	int i;
+	
 	buf_free(tl->username_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11156,14 +11369,14 @@ void tl_username_free(tl_t *tl_) {
 
 void tl_forumTopicDeleted_free(tl_t *tl_) {
 	tl_forumTopicDeleted_t *tl = (tl_forumTopicDeleted_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_forumTopic_free(tl_t *tl_) {
 	tl_forumTopic_t *tl = (tl_forumTopic_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	tl_free(tl->from_id_);
 	tl_free(tl->notify_settings_);
@@ -11175,6 +11388,7 @@ void tl_forumTopic_free(tl_t *tl_) {
 void tl_messages_forumTopics_free(tl_t *tl_) {
 	tl_messages_forumTopics_t *tl = (tl_messages_forumTopics_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->topics_len; ++i){
 		tl_free(tl->topics_[i]);
 	}
@@ -11197,14 +11411,14 @@ void tl_messages_forumTopics_free(tl_t *tl_) {
 
 void tl_defaultHistoryTTL_free(tl_t *tl_) {
 	tl_defaultHistoryTTL_t *tl = (tl_defaultHistoryTTL_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_exportedContactToken_free(tl_t *tl_) {
 	tl_exportedContactToken_t *tl = (tl_exportedContactToken_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11212,7 +11426,7 @@ void tl_exportedContactToken_free(tl_t *tl_) {
 
 void tl_requestPeerTypeUser_free(tl_t *tl_) {
 	tl_requestPeerTypeUser_t *tl = (tl_requestPeerTypeUser_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	tl_free(tl->premium_);
 	buf_free(tl->_buf);
@@ -11221,7 +11435,7 @@ void tl_requestPeerTypeUser_free(tl_t *tl_) {
 
 void tl_requestPeerTypeChat_free(tl_t *tl_) {
 	tl_requestPeerTypeChat_t *tl = (tl_requestPeerTypeChat_t *)tl_;
-	int i;
+	
 	tl_free(tl->has_username_);
 	tl_free(tl->forum_);
 	tl_free(tl->user_admin_rights_);
@@ -11232,7 +11446,7 @@ void tl_requestPeerTypeChat_free(tl_t *tl_) {
 
 void tl_requestPeerTypeBroadcast_free(tl_t *tl_) {
 	tl_requestPeerTypeBroadcast_t *tl = (tl_requestPeerTypeBroadcast_t *)tl_;
-	int i;
+	
 	tl_free(tl->has_username_);
 	tl_free(tl->user_admin_rights_);
 	tl_free(tl->bot_admin_rights_);
@@ -11242,7 +11456,7 @@ void tl_requestPeerTypeBroadcast_free(tl_t *tl_) {
 
 void tl_emojiListNotModified_free(tl_t *tl_) {
 	tl_emojiListNotModified_t *tl = (tl_emojiListNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -11250,6 +11464,7 @@ void tl_emojiListNotModified_free(tl_t *tl_) {
 void tl_emojiList_free(tl_t *tl_) {
 	tl_emojiList_t *tl = (tl_emojiList_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->document_id_len; ++i){
 	}
 	free(tl->document_id_);
@@ -11260,6 +11475,7 @@ void tl_emojiList_free(tl_t *tl_) {
 void tl_emojiGroup_free(tl_t *tl_) {
 	tl_emojiGroup_t *tl = (tl_emojiGroup_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	for(i=0; i<tl->emoticons_len; ++i){
 		buf_free(tl->emoticons_[i]);
@@ -11272,6 +11488,7 @@ void tl_emojiGroup_free(tl_t *tl_) {
 void tl_emojiGroupGreeting_free(tl_t *tl_) {
 	tl_emojiGroupGreeting_t *tl = (tl_emojiGroupGreeting_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	for(i=0; i<tl->emoticons_len; ++i){
 		buf_free(tl->emoticons_[i]);
@@ -11283,7 +11500,7 @@ void tl_emojiGroupGreeting_free(tl_t *tl_) {
 
 void tl_emojiGroupPremium_free(tl_t *tl_) {
 	tl_emojiGroupPremium_t *tl = (tl_emojiGroupPremium_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11291,7 +11508,7 @@ void tl_emojiGroupPremium_free(tl_t *tl_) {
 
 void tl_messages_emojiGroupsNotModified_free(tl_t *tl_) {
 	tl_messages_emojiGroupsNotModified_t *tl = (tl_messages_emojiGroupsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -11299,6 +11516,7 @@ void tl_messages_emojiGroupsNotModified_free(tl_t *tl_) {
 void tl_messages_emojiGroups_free(tl_t *tl_) {
 	tl_messages_emojiGroups_t *tl = (tl_messages_emojiGroups_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->groups_len; ++i){
 		tl_free(tl->groups_[i]);
 	}
@@ -11310,6 +11528,7 @@ void tl_messages_emojiGroups_free(tl_t *tl_) {
 void tl_textWithEntities_free(tl_t *tl_) {
 	tl_textWithEntities_t *tl = (tl_textWithEntities_t *)tl_;
 	int i;
+	
 	buf_free(tl->text_);
 	for(i=0; i<tl->entities_len; ++i){
 		tl_free(tl->entities_[i]);
@@ -11322,6 +11541,7 @@ void tl_textWithEntities_free(tl_t *tl_) {
 void tl_messages_translateResult_free(tl_t *tl_) {
 	tl_messages_translateResult_t *tl = (tl_messages_translateResult_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->result_len; ++i){
 		tl_free(tl->result_[i]);
 	}
@@ -11332,14 +11552,14 @@ void tl_messages_translateResult_free(tl_t *tl_) {
 
 void tl_autoSaveSettings_free(tl_t *tl_) {
 	tl_autoSaveSettings_t *tl = (tl_autoSaveSettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_autoSaveException_free(tl_t *tl_) {
 	tl_autoSaveException_t *tl = (tl_autoSaveException_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->settings_);
 	buf_free(tl->_buf);
@@ -11349,6 +11569,7 @@ void tl_autoSaveException_free(tl_t *tl_) {
 void tl_account_autoSaveSettings_free(tl_t *tl_) {
 	tl_account_autoSaveSettings_t *tl = (tl_account_autoSaveSettings_t *)tl_;
 	int i;
+	
 	tl_free(tl->users_settings_);
 	tl_free(tl->chats_settings_);
 	tl_free(tl->broadcasts_settings_);
@@ -11370,14 +11591,14 @@ void tl_account_autoSaveSettings_free(tl_t *tl_) {
 
 void tl_help_appConfigNotModified_free(tl_t *tl_) {
 	tl_help_appConfigNotModified_t *tl = (tl_help_appConfigNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_appConfig_free(tl_t *tl_) {
 	tl_help_appConfig_t *tl = (tl_help_appConfig_t *)tl_;
-	int i;
+	
 	tl_free(tl->config_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11385,14 +11606,14 @@ void tl_help_appConfig_free(tl_t *tl_) {
 
 void tl_inputBotAppID_free(tl_t *tl_) {
 	tl_inputBotAppID_t *tl = (tl_inputBotAppID_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputBotAppShortName_free(tl_t *tl_) {
 	tl_inputBotAppShortName_t *tl = (tl_inputBotAppShortName_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_id_);
 	buf_free(tl->short_name_);
 	buf_free(tl->_buf);
@@ -11401,14 +11622,14 @@ void tl_inputBotAppShortName_free(tl_t *tl_) {
 
 void tl_botAppNotModified_free(tl_t *tl_) {
 	tl_botAppNotModified_t *tl = (tl_botAppNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_botApp_free(tl_t *tl_) {
 	tl_botApp_t *tl = (tl_botApp_t *)tl_;
-	int i;
+	
 	buf_free(tl->short_name_);
 	buf_free(tl->title_);
 	buf_free(tl->description_);
@@ -11420,7 +11641,7 @@ void tl_botApp_free(tl_t *tl_) {
 
 void tl_messages_botApp_free(tl_t *tl_) {
 	tl_messages_botApp_t *tl = (tl_messages_botApp_t *)tl_;
-	int i;
+	
 	tl_free(tl->app_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11428,7 +11649,7 @@ void tl_messages_botApp_free(tl_t *tl_) {
 
 void tl_inlineBotWebView_free(tl_t *tl_) {
 	tl_inlineBotWebView_t *tl = (tl_inlineBotWebView_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
@@ -11437,14 +11658,14 @@ void tl_inlineBotWebView_free(tl_t *tl_) {
 
 void tl_readParticipantDate_free(tl_t *tl_) {
 	tl_readParticipantDate_t *tl = (tl_readParticipantDate_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputChatlistDialogFilter_free(tl_t *tl_) {
 	tl_inputChatlistDialogFilter_t *tl = (tl_inputChatlistDialogFilter_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -11452,6 +11673,7 @@ void tl_inputChatlistDialogFilter_free(tl_t *tl_) {
 void tl_exportedChatlistInvite_free(tl_t *tl_) {
 	tl_exportedChatlistInvite_t *tl = (tl_exportedChatlistInvite_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->url_);
 	for(i=0; i<tl->peers_len; ++i){
@@ -11464,7 +11686,7 @@ void tl_exportedChatlistInvite_free(tl_t *tl_) {
 
 void tl_chatlists_exportedChatlistInvite_free(tl_t *tl_) {
 	tl_chatlists_exportedChatlistInvite_t *tl = (tl_chatlists_exportedChatlistInvite_t *)tl_;
-	int i;
+	
 	tl_free(tl->filter_);
 	tl_free(tl->invite_);
 	buf_free(tl->_buf);
@@ -11474,6 +11696,7 @@ void tl_chatlists_exportedChatlistInvite_free(tl_t *tl_) {
 void tl_chatlists_exportedInvites_free(tl_t *tl_) {
 	tl_chatlists_exportedInvites_t *tl = (tl_chatlists_exportedInvites_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->invites_len; ++i){
 		tl_free(tl->invites_[i]);
 	}
@@ -11493,6 +11716,7 @@ void tl_chatlists_exportedInvites_free(tl_t *tl_) {
 void tl_chatlists_chatlistInviteAlready_free(tl_t *tl_) {
 	tl_chatlists_chatlistInviteAlready_t *tl = (tl_chatlists_chatlistInviteAlready_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->missing_peers_len; ++i){
 		tl_free(tl->missing_peers_[i]);
 	}
@@ -11516,6 +11740,7 @@ void tl_chatlists_chatlistInviteAlready_free(tl_t *tl_) {
 void tl_chatlists_chatlistInvite_free(tl_t *tl_) {
 	tl_chatlists_chatlistInvite_t *tl = (tl_chatlists_chatlistInvite_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->emoticon_);
 	for(i=0; i<tl->peers_len; ++i){
@@ -11537,6 +11762,7 @@ void tl_chatlists_chatlistInvite_free(tl_t *tl_) {
 void tl_chatlists_chatlistUpdates_free(tl_t *tl_) {
 	tl_chatlists_chatlistUpdates_t *tl = (tl_chatlists_chatlistUpdates_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->missing_peers_len; ++i){
 		tl_free(tl->missing_peers_[i]);
 	}
@@ -11555,7 +11781,7 @@ void tl_chatlists_chatlistUpdates_free(tl_t *tl_) {
 
 void tl_bots_botInfo_free(tl_t *tl_) {
 	tl_bots_botInfo_t *tl = (tl_bots_botInfo_t *)tl_;
-	int i;
+	
 	buf_free(tl->name_);
 	buf_free(tl->about_);
 	buf_free(tl->description_);
@@ -11565,7 +11791,7 @@ void tl_bots_botInfo_free(tl_t *tl_) {
 
 void tl_messagePeerVote_free(tl_t *tl_) {
 	tl_messagePeerVote_t *tl = (tl_messagePeerVote_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->option_);
 	buf_free(tl->_buf);
@@ -11574,7 +11800,7 @@ void tl_messagePeerVote_free(tl_t *tl_) {
 
 void tl_messagePeerVoteInputOption_free(tl_t *tl_) {
 	tl_messagePeerVoteInputOption_t *tl = (tl_messagePeerVoteInputOption_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11583,6 +11809,7 @@ void tl_messagePeerVoteInputOption_free(tl_t *tl_) {
 void tl_messagePeerVoteMultiple_free(tl_t *tl_) {
 	tl_messagePeerVoteMultiple_t *tl = (tl_messagePeerVoteMultiple_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->options_len; ++i){
 		buf_free(tl->options_[i]);
@@ -11595,6 +11822,7 @@ void tl_messagePeerVoteMultiple_free(tl_t *tl_) {
 void tl_storyViews_free(tl_t *tl_) {
 	tl_storyViews_t *tl = (tl_storyViews_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->reactions_len; ++i){
 		tl_free(tl->reactions_[i]);
 	}
@@ -11608,14 +11836,14 @@ void tl_storyViews_free(tl_t *tl_) {
 
 void tl_storyItemDeleted_free(tl_t *tl_) {
 	tl_storyItemDeleted_t *tl = (tl_storyItemDeleted_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_storyItemSkipped_free(tl_t *tl_) {
 	tl_storyItemSkipped_t *tl = (tl_storyItemSkipped_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -11623,6 +11851,7 @@ void tl_storyItemSkipped_free(tl_t *tl_) {
 void tl_storyItem_free(tl_t *tl_) {
 	tl_storyItem_t *tl = (tl_storyItem_t *)tl_;
 	int i;
+	
 	tl_free(tl->from_id_);
 	tl_free(tl->fwd_from_);
 	buf_free(tl->caption_);
@@ -11647,7 +11876,7 @@ void tl_storyItem_free(tl_t *tl_) {
 
 void tl_stories_allStoriesNotModified_free(tl_t *tl_) {
 	tl_stories_allStoriesNotModified_t *tl = (tl_stories_allStoriesNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->state_);
 	tl_free(tl->stealth_mode_);
 	buf_free(tl->_buf);
@@ -11657,6 +11886,7 @@ void tl_stories_allStoriesNotModified_free(tl_t *tl_) {
 void tl_stories_allStories_free(tl_t *tl_) {
 	tl_stories_allStories_t *tl = (tl_stories_allStories_t *)tl_;
 	int i;
+	
 	buf_free(tl->state_);
 	for(i=0; i<tl->peer_stories_len; ++i){
 		tl_free(tl->peer_stories_[i]);
@@ -11678,6 +11908,7 @@ void tl_stories_allStories_free(tl_t *tl_) {
 void tl_stories_stories_free(tl_t *tl_) {
 	tl_stories_stories_t *tl = (tl_stories_stories_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->stories_len; ++i){
 		tl_free(tl->stories_[i]);
 	}
@@ -11699,7 +11930,7 @@ void tl_stories_stories_free(tl_t *tl_) {
 
 void tl_storyView_free(tl_t *tl_) {
 	tl_storyView_t *tl = (tl_storyView_t *)tl_;
-	int i;
+	
 	tl_free(tl->reaction_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11707,7 +11938,7 @@ void tl_storyView_free(tl_t *tl_) {
 
 void tl_storyViewPublicForward_free(tl_t *tl_) {
 	tl_storyViewPublicForward_t *tl = (tl_storyViewPublicForward_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11715,7 +11946,7 @@ void tl_storyViewPublicForward_free(tl_t *tl_) {
 
 void tl_storyViewPublicRepost_free(tl_t *tl_) {
 	tl_storyViewPublicRepost_t *tl = (tl_storyViewPublicRepost_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_id_);
 	tl_free(tl->story_);
 	buf_free(tl->_buf);
@@ -11725,6 +11956,7 @@ void tl_storyViewPublicRepost_free(tl_t *tl_) {
 void tl_stories_storyViewsList_free(tl_t *tl_) {
 	tl_stories_storyViewsList_t *tl = (tl_stories_storyViewsList_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->views_len; ++i){
 		tl_free(tl->views_[i]);
 	}
@@ -11745,6 +11977,7 @@ void tl_stories_storyViewsList_free(tl_t *tl_) {
 void tl_stories_storyViews_free(tl_t *tl_) {
 	tl_stories_storyViews_t *tl = (tl_stories_storyViews_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->views_len; ++i){
 		tl_free(tl->views_[i]);
 	}
@@ -11760,6 +11993,7 @@ void tl_stories_storyViews_free(tl_t *tl_) {
 void tl_inputReplyToMessage_free(tl_t *tl_) {
 	tl_inputReplyToMessage_t *tl = (tl_inputReplyToMessage_t *)tl_;
 	int i;
+	
 	tl_free(tl->reply_to_peer_id_);
 	buf_free(tl->quote_text_);
 	for(i=0; i<tl->quote_entities_len; ++i){
@@ -11772,7 +12006,7 @@ void tl_inputReplyToMessage_free(tl_t *tl_) {
 
 void tl_inputReplyToStory_free(tl_t *tl_) {
 	tl_inputReplyToStory_t *tl = (tl_inputReplyToStory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11780,7 +12014,7 @@ void tl_inputReplyToStory_free(tl_t *tl_) {
 
 void tl_exportedStoryLink_free(tl_t *tl_) {
 	tl_exportedStoryLink_t *tl = (tl_exportedStoryLink_t *)tl_;
-	int i;
+	
 	buf_free(tl->link_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11788,21 +12022,21 @@ void tl_exportedStoryLink_free(tl_t *tl_) {
 
 void tl_storiesStealthMode_free(tl_t *tl_) {
 	tl_storiesStealthMode_t *tl = (tl_storiesStealthMode_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_mediaAreaCoordinates_free(tl_t *tl_) {
 	tl_mediaAreaCoordinates_t *tl = (tl_mediaAreaCoordinates_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_mediaAreaVenue_free(tl_t *tl_) {
 	tl_mediaAreaVenue_t *tl = (tl_mediaAreaVenue_t *)tl_;
-	int i;
+	
 	tl_free(tl->coordinates_);
 	tl_free(tl->geo_);
 	buf_free(tl->title_);
@@ -11816,7 +12050,7 @@ void tl_mediaAreaVenue_free(tl_t *tl_) {
 
 void tl_inputMediaAreaVenue_free(tl_t *tl_) {
 	tl_inputMediaAreaVenue_t *tl = (tl_inputMediaAreaVenue_t *)tl_;
-	int i;
+	
 	tl_free(tl->coordinates_);
 	buf_free(tl->result_id_);
 	buf_free(tl->_buf);
@@ -11825,7 +12059,7 @@ void tl_inputMediaAreaVenue_free(tl_t *tl_) {
 
 void tl_mediaAreaGeoPoint_free(tl_t *tl_) {
 	tl_mediaAreaGeoPoint_t *tl = (tl_mediaAreaGeoPoint_t *)tl_;
-	int i;
+	
 	tl_free(tl->coordinates_);
 	tl_free(tl->geo_);
 	tl_free(tl->address_);
@@ -11835,7 +12069,7 @@ void tl_mediaAreaGeoPoint_free(tl_t *tl_) {
 
 void tl_mediaAreaSuggestedReaction_free(tl_t *tl_) {
 	tl_mediaAreaSuggestedReaction_t *tl = (tl_mediaAreaSuggestedReaction_t *)tl_;
-	int i;
+	
 	tl_free(tl->coordinates_);
 	tl_free(tl->reaction_);
 	buf_free(tl->_buf);
@@ -11844,7 +12078,7 @@ void tl_mediaAreaSuggestedReaction_free(tl_t *tl_) {
 
 void tl_mediaAreaChannelPost_free(tl_t *tl_) {
 	tl_mediaAreaChannelPost_t *tl = (tl_mediaAreaChannelPost_t *)tl_;
-	int i;
+	
 	tl_free(tl->coordinates_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11852,7 +12086,7 @@ void tl_mediaAreaChannelPost_free(tl_t *tl_) {
 
 void tl_inputMediaAreaChannelPost_free(tl_t *tl_) {
 	tl_inputMediaAreaChannelPost_t *tl = (tl_inputMediaAreaChannelPost_t *)tl_;
-	int i;
+	
 	tl_free(tl->coordinates_);
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
@@ -11861,7 +12095,7 @@ void tl_inputMediaAreaChannelPost_free(tl_t *tl_) {
 
 void tl_mediaAreaUrl_free(tl_t *tl_) {
 	tl_mediaAreaUrl_t *tl = (tl_mediaAreaUrl_t *)tl_;
-	int i;
+	
 	tl_free(tl->coordinates_);
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
@@ -11870,7 +12104,7 @@ void tl_mediaAreaUrl_free(tl_t *tl_) {
 
 void tl_mediaAreaWeather_free(tl_t *tl_) {
 	tl_mediaAreaWeather_t *tl = (tl_mediaAreaWeather_t *)tl_;
-	int i;
+	
 	tl_free(tl->coordinates_);
 	buf_free(tl->emoji_);
 	buf_free(tl->_buf);
@@ -11880,6 +12114,7 @@ void tl_mediaAreaWeather_free(tl_t *tl_) {
 void tl_peerStories_free(tl_t *tl_) {
 	tl_peerStories_t *tl = (tl_peerStories_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->stories_len; ++i){
 		tl_free(tl->stories_[i]);
@@ -11892,6 +12127,7 @@ void tl_peerStories_free(tl_t *tl_) {
 void tl_stories_peerStories_free(tl_t *tl_) {
 	tl_stories_peerStories_t *tl = (tl_stories_peerStories_t *)tl_;
 	int i;
+	
 	tl_free(tl->stories_);
 	for(i=0; i<tl->chats_len; ++i){
 		tl_free(tl->chats_[i]);
@@ -11908,6 +12144,7 @@ void tl_stories_peerStories_free(tl_t *tl_) {
 void tl_messages_webPage_free(tl_t *tl_) {
 	tl_messages_webPage_t *tl = (tl_messages_webPage_t *)tl_;
 	int i;
+	
 	tl_free(tl->webpage_);
 	for(i=0; i<tl->chats_len; ++i){
 		tl_free(tl->chats_[i]);
@@ -11923,7 +12160,7 @@ void tl_messages_webPage_free(tl_t *tl_) {
 
 void tl_premiumGiftCodeOption_free(tl_t *tl_) {
 	tl_premiumGiftCodeOption_t *tl = (tl_premiumGiftCodeOption_t *)tl_;
-	int i;
+	
 	buf_free(tl->store_product_);
 	buf_free(tl->currency_);
 	buf_free(tl->_buf);
@@ -11933,6 +12170,7 @@ void tl_premiumGiftCodeOption_free(tl_t *tl_) {
 void tl_payments_checkedGiftCode_free(tl_t *tl_) {
 	tl_payments_checkedGiftCode_t *tl = (tl_payments_checkedGiftCode_t *)tl_;
 	int i;
+	
 	tl_free(tl->from_id_);
 	for(i=0; i<tl->chats_len; ++i){
 		tl_free(tl->chats_[i]);
@@ -11948,7 +12186,7 @@ void tl_payments_checkedGiftCode_free(tl_t *tl_) {
 
 void tl_payments_giveawayInfo_free(tl_t *tl_) {
 	tl_payments_giveawayInfo_t *tl = (tl_payments_giveawayInfo_t *)tl_;
-	int i;
+	
 	buf_free(tl->disallowed_country_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11956,7 +12194,7 @@ void tl_payments_giveawayInfo_free(tl_t *tl_) {
 
 void tl_payments_giveawayInfoResults_free(tl_t *tl_) {
 	tl_payments_giveawayInfoResults_t *tl = (tl_payments_giveawayInfoResults_t *)tl_;
-	int i;
+	
 	buf_free(tl->gift_code_slug_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -11964,14 +12202,14 @@ void tl_payments_giveawayInfoResults_free(tl_t *tl_) {
 
 void tl_prepaidGiveaway_free(tl_t *tl_) {
 	tl_prepaidGiveaway_t *tl = (tl_prepaidGiveaway_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_boost_free(tl_t *tl_) {
 	tl_boost_t *tl = (tl_boost_t *)tl_;
-	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->used_gift_slug_);
 	buf_free(tl->_buf);
@@ -11981,6 +12219,7 @@ void tl_boost_free(tl_t *tl_) {
 void tl_premium_boostsList_free(tl_t *tl_) {
 	tl_premium_boostsList_t *tl = (tl_premium_boostsList_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->boosts_len; ++i){
 		tl_free(tl->boosts_[i]);
 	}
@@ -11996,7 +12235,7 @@ void tl_premium_boostsList_free(tl_t *tl_) {
 
 void tl_myBoost_free(tl_t *tl_) {
 	tl_myBoost_t *tl = (tl_myBoost_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12005,6 +12244,7 @@ void tl_myBoost_free(tl_t *tl_) {
 void tl_premium_myBoosts_free(tl_t *tl_) {
 	tl_premium_myBoosts_t *tl = (tl_premium_myBoosts_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->my_boosts_len; ++i){
 		tl_free(tl->my_boosts_[i]);
 	}
@@ -12024,6 +12264,7 @@ void tl_premium_myBoosts_free(tl_t *tl_) {
 void tl_premium_boostsStatus_free(tl_t *tl_) {
 	tl_premium_boostsStatus_t *tl = (tl_premium_boostsStatus_t *)tl_;
 	int i;
+	
 	tl_free(tl->premium_audience_);
 	buf_free(tl->boost_url_);
 	for(i=0; i<tl->prepaid_giveaways_len; ++i){
@@ -12039,7 +12280,7 @@ void tl_premium_boostsStatus_free(tl_t *tl_) {
 
 void tl_storyFwdHeader_free(tl_t *tl_) {
 	tl_storyFwdHeader_t *tl = (tl_storyFwdHeader_t *)tl_;
-	int i;
+	
 	tl_free(tl->from_);
 	buf_free(tl->from_name_);
 	buf_free(tl->_buf);
@@ -12048,21 +12289,21 @@ void tl_storyFwdHeader_free(tl_t *tl_) {
 
 void tl_postInteractionCountersMessage_free(tl_t *tl_) {
 	tl_postInteractionCountersMessage_t *tl = (tl_postInteractionCountersMessage_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_postInteractionCountersStory_free(tl_t *tl_) {
 	tl_postInteractionCountersStory_t *tl = (tl_postInteractionCountersStory_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_stats_storyStats_free(tl_t *tl_) {
 	tl_stats_storyStats_t *tl = (tl_stats_storyStats_t *)tl_;
-	int i;
+	
 	tl_free(tl->views_graph_);
 	tl_free(tl->reactions_by_emotion_graph_);
 	buf_free(tl->_buf);
@@ -12071,7 +12312,7 @@ void tl_stats_storyStats_free(tl_t *tl_) {
 
 void tl_publicForwardMessage_free(tl_t *tl_) {
 	tl_publicForwardMessage_t *tl = (tl_publicForwardMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12079,7 +12320,7 @@ void tl_publicForwardMessage_free(tl_t *tl_) {
 
 void tl_publicForwardStory_free(tl_t *tl_) {
 	tl_publicForwardStory_t *tl = (tl_publicForwardStory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->story_);
 	buf_free(tl->_buf);
@@ -12089,6 +12330,7 @@ void tl_publicForwardStory_free(tl_t *tl_) {
 void tl_stats_publicForwards_free(tl_t *tl_) {
 	tl_stats_publicForwards_t *tl = (tl_stats_publicForwards_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->forwards_len; ++i){
 		tl_free(tl->forwards_[i]);
 	}
@@ -12108,7 +12350,7 @@ void tl_stats_publicForwards_free(tl_t *tl_) {
 
 void tl_peerColor_free(tl_t *tl_) {
 	tl_peerColor_t *tl = (tl_peerColor_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -12116,6 +12358,7 @@ void tl_peerColor_free(tl_t *tl_) {
 void tl_help_peerColorSet_free(tl_t *tl_) {
 	tl_help_peerColorSet_t *tl = (tl_help_peerColorSet_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->colors_len; ++i){
 	}
 	free(tl->colors_);
@@ -12126,6 +12369,7 @@ void tl_help_peerColorSet_free(tl_t *tl_) {
 void tl_help_peerColorProfileSet_free(tl_t *tl_) {
 	tl_help_peerColorProfileSet_t *tl = (tl_help_peerColorProfileSet_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->palette_colors_len; ++i){
 	}
 	free(tl->palette_colors_);
@@ -12141,7 +12385,7 @@ void tl_help_peerColorProfileSet_free(tl_t *tl_) {
 
 void tl_help_peerColorOption_free(tl_t *tl_) {
 	tl_help_peerColorOption_t *tl = (tl_help_peerColorOption_t *)tl_;
-	int i;
+	
 	tl_free(tl->colors_);
 	tl_free(tl->dark_colors_);
 	buf_free(tl->_buf);
@@ -12150,7 +12394,7 @@ void tl_help_peerColorOption_free(tl_t *tl_) {
 
 void tl_help_peerColorsNotModified_free(tl_t *tl_) {
 	tl_help_peerColorsNotModified_t *tl = (tl_help_peerColorsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -12158,6 +12402,7 @@ void tl_help_peerColorsNotModified_free(tl_t *tl_) {
 void tl_help_peerColors_free(tl_t *tl_) {
 	tl_help_peerColors_t *tl = (tl_help_peerColors_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->colors_len; ++i){
 		tl_free(tl->colors_[i]);
 	}
@@ -12168,7 +12413,7 @@ void tl_help_peerColors_free(tl_t *tl_) {
 
 void tl_storyReaction_free(tl_t *tl_) {
 	tl_storyReaction_t *tl = (tl_storyReaction_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_id_);
 	tl_free(tl->reaction_);
 	buf_free(tl->_buf);
@@ -12177,7 +12422,7 @@ void tl_storyReaction_free(tl_t *tl_) {
 
 void tl_storyReactionPublicForward_free(tl_t *tl_) {
 	tl_storyReactionPublicForward_t *tl = (tl_storyReactionPublicForward_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12185,7 +12430,7 @@ void tl_storyReactionPublicForward_free(tl_t *tl_) {
 
 void tl_storyReactionPublicRepost_free(tl_t *tl_) {
 	tl_storyReactionPublicRepost_t *tl = (tl_storyReactionPublicRepost_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_id_);
 	tl_free(tl->story_);
 	buf_free(tl->_buf);
@@ -12195,6 +12440,7 @@ void tl_storyReactionPublicRepost_free(tl_t *tl_) {
 void tl_stories_storyReactionsList_free(tl_t *tl_) {
 	tl_stories_storyReactionsList_t *tl = (tl_stories_storyReactionsList_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->reactions_len; ++i){
 		tl_free(tl->reactions_[i]);
 	}
@@ -12214,7 +12460,7 @@ void tl_stories_storyReactionsList_free(tl_t *tl_) {
 
 void tl_savedDialog_free(tl_t *tl_) {
 	tl_savedDialog_t *tl = (tl_savedDialog_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12223,6 +12469,7 @@ void tl_savedDialog_free(tl_t *tl_) {
 void tl_messages_savedDialogs_free(tl_t *tl_) {
 	tl_messages_savedDialogs_t *tl = (tl_messages_savedDialogs_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->dialogs_len; ++i){
 		tl_free(tl->dialogs_[i]);
 	}
@@ -12246,6 +12493,7 @@ void tl_messages_savedDialogs_free(tl_t *tl_) {
 void tl_messages_savedDialogsSlice_free(tl_t *tl_) {
 	tl_messages_savedDialogsSlice_t *tl = (tl_messages_savedDialogsSlice_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->dialogs_len; ++i){
 		tl_free(tl->dialogs_[i]);
 	}
@@ -12268,14 +12516,14 @@ void tl_messages_savedDialogsSlice_free(tl_t *tl_) {
 
 void tl_messages_savedDialogsNotModified_free(tl_t *tl_) {
 	tl_messages_savedDialogsNotModified_t *tl = (tl_messages_savedDialogsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_savedReactionTag_free(tl_t *tl_) {
 	tl_savedReactionTag_t *tl = (tl_savedReactionTag_t *)tl_;
-	int i;
+	
 	tl_free(tl->reaction_);
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
@@ -12284,7 +12532,7 @@ void tl_savedReactionTag_free(tl_t *tl_) {
 
 void tl_messages_savedReactionTagsNotModified_free(tl_t *tl_) {
 	tl_messages_savedReactionTagsNotModified_t *tl = (tl_messages_savedReactionTagsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -12292,6 +12540,7 @@ void tl_messages_savedReactionTagsNotModified_free(tl_t *tl_) {
 void tl_messages_savedReactionTags_free(tl_t *tl_) {
 	tl_messages_savedReactionTags_t *tl = (tl_messages_savedReactionTags_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->tags_len; ++i){
 		tl_free(tl->tags_[i]);
 	}
@@ -12302,14 +12551,14 @@ void tl_messages_savedReactionTags_free(tl_t *tl_) {
 
 void tl_outboxReadDate_free(tl_t *tl_) {
 	tl_outboxReadDate_t *tl = (tl_outboxReadDate_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_smsjobs_eligibleToJoin_free(tl_t *tl_) {
 	tl_smsjobs_eligibleToJoin_t *tl = (tl_smsjobs_eligibleToJoin_t *)tl_;
-	int i;
+	
 	buf_free(tl->terms_url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12317,7 +12566,7 @@ void tl_smsjobs_eligibleToJoin_free(tl_t *tl_) {
 
 void tl_smsjobs_status_free(tl_t *tl_) {
 	tl_smsjobs_status_t *tl = (tl_smsjobs_status_t *)tl_;
-	int i;
+	
 	buf_free(tl->last_gift_slug_);
 	buf_free(tl->terms_url_);
 	buf_free(tl->_buf);
@@ -12326,7 +12575,7 @@ void tl_smsjobs_status_free(tl_t *tl_) {
 
 void tl_smsJob_free(tl_t *tl_) {
 	tl_smsJob_t *tl = (tl_smsJob_t *)tl_;
-	int i;
+	
 	buf_free(tl->job_id_);
 	buf_free(tl->phone_number_);
 	buf_free(tl->text_);
@@ -12336,7 +12585,7 @@ void tl_smsJob_free(tl_t *tl_) {
 
 void tl_businessWeeklyOpen_free(tl_t *tl_) {
 	tl_businessWeeklyOpen_t *tl = (tl_businessWeeklyOpen_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -12344,6 +12593,7 @@ void tl_businessWeeklyOpen_free(tl_t *tl_) {
 void tl_businessWorkHours_free(tl_t *tl_) {
 	tl_businessWorkHours_t *tl = (tl_businessWorkHours_t *)tl_;
 	int i;
+	
 	buf_free(tl->timezone_id_);
 	for(i=0; i<tl->weekly_open_len; ++i){
 		tl_free(tl->weekly_open_[i]);
@@ -12355,7 +12605,7 @@ void tl_businessWorkHours_free(tl_t *tl_) {
 
 void tl_businessLocation_free(tl_t *tl_) {
 	tl_businessLocation_t *tl = (tl_businessLocation_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_point_);
 	buf_free(tl->address_);
 	buf_free(tl->_buf);
@@ -12365,6 +12615,7 @@ void tl_businessLocation_free(tl_t *tl_) {
 void tl_inputBusinessRecipients_free(tl_t *tl_) {
 	tl_inputBusinessRecipients_t *tl = (tl_inputBusinessRecipients_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
 	}
@@ -12376,6 +12627,7 @@ void tl_inputBusinessRecipients_free(tl_t *tl_) {
 void tl_businessRecipients_free(tl_t *tl_) {
 	tl_businessRecipients_t *tl = (tl_businessRecipients_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->users_len; ++i){
 	}
 	free(tl->users_);
@@ -12385,28 +12637,28 @@ void tl_businessRecipients_free(tl_t *tl_) {
 
 void tl_businessAwayMessageScheduleAlways_free(tl_t *tl_) {
 	tl_businessAwayMessageScheduleAlways_t *tl = (tl_businessAwayMessageScheduleAlways_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_businessAwayMessageScheduleOutsideWorkHours_free(tl_t *tl_) {
 	tl_businessAwayMessageScheduleOutsideWorkHours_t *tl = (tl_businessAwayMessageScheduleOutsideWorkHours_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_businessAwayMessageScheduleCustom_free(tl_t *tl_) {
 	tl_businessAwayMessageScheduleCustom_t *tl = (tl_businessAwayMessageScheduleCustom_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_inputBusinessGreetingMessage_free(tl_t *tl_) {
 	tl_inputBusinessGreetingMessage_t *tl = (tl_inputBusinessGreetingMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->recipients_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12414,7 +12666,7 @@ void tl_inputBusinessGreetingMessage_free(tl_t *tl_) {
 
 void tl_businessGreetingMessage_free(tl_t *tl_) {
 	tl_businessGreetingMessage_t *tl = (tl_businessGreetingMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->recipients_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12422,7 +12674,7 @@ void tl_businessGreetingMessage_free(tl_t *tl_) {
 
 void tl_inputBusinessAwayMessage_free(tl_t *tl_) {
 	tl_inputBusinessAwayMessage_t *tl = (tl_inputBusinessAwayMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->schedule_);
 	tl_free(tl->recipients_);
 	buf_free(tl->_buf);
@@ -12431,7 +12683,7 @@ void tl_inputBusinessAwayMessage_free(tl_t *tl_) {
 
 void tl_businessAwayMessage_free(tl_t *tl_) {
 	tl_businessAwayMessage_t *tl = (tl_businessAwayMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->schedule_);
 	tl_free(tl->recipients_);
 	buf_free(tl->_buf);
@@ -12440,7 +12692,7 @@ void tl_businessAwayMessage_free(tl_t *tl_) {
 
 void tl_timezone_free(tl_t *tl_) {
 	tl_timezone_t *tl = (tl_timezone_t *)tl_;
-	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->name_);
 	buf_free(tl->_buf);
@@ -12449,7 +12701,7 @@ void tl_timezone_free(tl_t *tl_) {
 
 void tl_help_timezonesListNotModified_free(tl_t *tl_) {
 	tl_help_timezonesListNotModified_t *tl = (tl_help_timezonesListNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -12457,6 +12709,7 @@ void tl_help_timezonesListNotModified_free(tl_t *tl_) {
 void tl_help_timezonesList_free(tl_t *tl_) {
 	tl_help_timezonesList_t *tl = (tl_help_timezonesList_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->timezones_len; ++i){
 		tl_free(tl->timezones_[i]);
 	}
@@ -12467,7 +12720,7 @@ void tl_help_timezonesList_free(tl_t *tl_) {
 
 void tl_quickReply_free(tl_t *tl_) {
 	tl_quickReply_t *tl = (tl_quickReply_t *)tl_;
-	int i;
+	
 	buf_free(tl->shortcut_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12475,7 +12728,7 @@ void tl_quickReply_free(tl_t *tl_) {
 
 void tl_inputQuickReplyShortcut_free(tl_t *tl_) {
 	tl_inputQuickReplyShortcut_t *tl = (tl_inputQuickReplyShortcut_t *)tl_;
-	int i;
+	
 	buf_free(tl->shortcut_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12483,7 +12736,7 @@ void tl_inputQuickReplyShortcut_free(tl_t *tl_) {
 
 void tl_inputQuickReplyShortcutId_free(tl_t *tl_) {
 	tl_inputQuickReplyShortcutId_t *tl = (tl_inputQuickReplyShortcutId_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -12491,6 +12744,7 @@ void tl_inputQuickReplyShortcutId_free(tl_t *tl_) {
 void tl_messages_quickReplies_free(tl_t *tl_) {
 	tl_messages_quickReplies_t *tl = (tl_messages_quickReplies_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->quick_replies_len; ++i){
 		tl_free(tl->quick_replies_[i]);
 	}
@@ -12513,14 +12767,14 @@ void tl_messages_quickReplies_free(tl_t *tl_) {
 
 void tl_messages_quickRepliesNotModified_free(tl_t *tl_) {
 	tl_messages_quickRepliesNotModified_t *tl = (tl_messages_quickRepliesNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_connectedBot_free(tl_t *tl_) {
 	tl_connectedBot_t *tl = (tl_connectedBot_t *)tl_;
-	int i;
+	
 	tl_free(tl->recipients_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12529,6 +12783,7 @@ void tl_connectedBot_free(tl_t *tl_) {
 void tl_account_connectedBots_free(tl_t *tl_) {
 	tl_account_connectedBots_t *tl = (tl_account_connectedBots_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->connected_bots_len; ++i){
 		tl_free(tl->connected_bots_[i]);
 	}
@@ -12544,6 +12799,7 @@ void tl_account_connectedBots_free(tl_t *tl_) {
 void tl_messages_dialogFilters_free(tl_t *tl_) {
 	tl_messages_dialogFilters_t *tl = (tl_messages_dialogFilters_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->filters_len; ++i){
 		tl_free(tl->filters_[i]);
 	}
@@ -12554,14 +12810,14 @@ void tl_messages_dialogFilters_free(tl_t *tl_) {
 
 void tl_birthday_free(tl_t *tl_) {
 	tl_birthday_t *tl = (tl_birthday_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_botBusinessConnection_free(tl_t *tl_) {
 	tl_botBusinessConnection_t *tl = (tl_botBusinessConnection_t *)tl_;
-	int i;
+	
 	buf_free(tl->connection_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12569,7 +12825,7 @@ void tl_botBusinessConnection_free(tl_t *tl_) {
 
 void tl_inputBusinessIntro_free(tl_t *tl_) {
 	tl_inputBusinessIntro_t *tl = (tl_inputBusinessIntro_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->description_);
 	tl_free(tl->sticker_);
@@ -12579,7 +12835,7 @@ void tl_inputBusinessIntro_free(tl_t *tl_) {
 
 void tl_businessIntro_free(tl_t *tl_) {
 	tl_businessIntro_t *tl = (tl_businessIntro_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->description_);
 	tl_free(tl->sticker_);
@@ -12590,6 +12846,7 @@ void tl_businessIntro_free(tl_t *tl_) {
 void tl_messages_myStickers_free(tl_t *tl_) {
 	tl_messages_myStickers_t *tl = (tl_messages_myStickers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->sets_len; ++i){
 		tl_free(tl->sets_[i]);
 	}
@@ -12600,7 +12857,7 @@ void tl_messages_myStickers_free(tl_t *tl_) {
 
 void tl_inputCollectibleUsername_free(tl_t *tl_) {
 	tl_inputCollectibleUsername_t *tl = (tl_inputCollectibleUsername_t *)tl_;
-	int i;
+	
 	buf_free(tl->username_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12608,7 +12865,7 @@ void tl_inputCollectibleUsername_free(tl_t *tl_) {
 
 void tl_inputCollectiblePhone_free(tl_t *tl_) {
 	tl_inputCollectiblePhone_t *tl = (tl_inputCollectiblePhone_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12616,7 +12873,7 @@ void tl_inputCollectiblePhone_free(tl_t *tl_) {
 
 void tl_fragment_collectibleInfo_free(tl_t *tl_) {
 	tl_fragment_collectibleInfo_t *tl = (tl_fragment_collectibleInfo_t *)tl_;
-	int i;
+	
 	buf_free(tl->currency_);
 	buf_free(tl->crypto_currency_);
 	buf_free(tl->url_);
@@ -12627,6 +12884,7 @@ void tl_fragment_collectibleInfo_free(tl_t *tl_) {
 void tl_inputBusinessBotRecipients_free(tl_t *tl_) {
 	tl_inputBusinessBotRecipients_t *tl = (tl_inputBusinessBotRecipients_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
 	}
@@ -12642,6 +12900,7 @@ void tl_inputBusinessBotRecipients_free(tl_t *tl_) {
 void tl_businessBotRecipients_free(tl_t *tl_) {
 	tl_businessBotRecipients_t *tl = (tl_businessBotRecipients_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->users_len; ++i){
 	}
 	free(tl->users_);
@@ -12654,7 +12913,7 @@ void tl_businessBotRecipients_free(tl_t *tl_) {
 
 void tl_contactBirthday_free(tl_t *tl_) {
 	tl_contactBirthday_t *tl = (tl_contactBirthday_t *)tl_;
-	int i;
+	
 	tl_free(tl->birthday_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12663,6 +12922,7 @@ void tl_contactBirthday_free(tl_t *tl_) {
 void tl_contacts_contactBirthdays_free(tl_t *tl_) {
 	tl_contacts_contactBirthdays_t *tl = (tl_contacts_contactBirthdays_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->contacts_len; ++i){
 		tl_free(tl->contacts_[i]);
 	}
@@ -12677,7 +12937,7 @@ void tl_contacts_contactBirthdays_free(tl_t *tl_) {
 
 void tl_missingInvitee_free(tl_t *tl_) {
 	tl_missingInvitee_t *tl = (tl_missingInvitee_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -12685,6 +12945,7 @@ void tl_missingInvitee_free(tl_t *tl_) {
 void tl_messages_invitedUsers_free(tl_t *tl_) {
 	tl_messages_invitedUsers_t *tl = (tl_messages_invitedUsers_t *)tl_;
 	int i;
+	
 	tl_free(tl->updates_);
 	for(i=0; i<tl->missing_invitees_len; ++i){
 		tl_free(tl->missing_invitees_[i]);
@@ -12697,6 +12958,7 @@ void tl_messages_invitedUsers_free(tl_t *tl_) {
 void tl_inputBusinessChatLink_free(tl_t *tl_) {
 	tl_inputBusinessChatLink_t *tl = (tl_inputBusinessChatLink_t *)tl_;
 	int i;
+	
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
 		tl_free(tl->entities_[i]);
@@ -12710,6 +12972,7 @@ void tl_inputBusinessChatLink_free(tl_t *tl_) {
 void tl_businessChatLink_free(tl_t *tl_) {
 	tl_businessChatLink_t *tl = (tl_businessChatLink_t *)tl_;
 	int i;
+	
 	buf_free(tl->link_);
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
@@ -12724,6 +12987,7 @@ void tl_businessChatLink_free(tl_t *tl_) {
 void tl_account_businessChatLinks_free(tl_t *tl_) {
 	tl_account_businessChatLinks_t *tl = (tl_account_businessChatLinks_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->links_len; ++i){
 		tl_free(tl->links_[i]);
 	}
@@ -12743,6 +13007,7 @@ void tl_account_businessChatLinks_free(tl_t *tl_) {
 void tl_account_resolvedBusinessChatLinks_free(tl_t *tl_) {
 	tl_account_resolvedBusinessChatLinks_t *tl = (tl_account_resolvedBusinessChatLinks_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
@@ -12763,7 +13028,7 @@ void tl_account_resolvedBusinessChatLinks_free(tl_t *tl_) {
 
 void tl_requestedPeerUser_free(tl_t *tl_) {
 	tl_requestedPeerUser_t *tl = (tl_requestedPeerUser_t *)tl_;
-	int i;
+	
 	buf_free(tl->first_name_);
 	buf_free(tl->last_name_);
 	buf_free(tl->username_);
@@ -12774,7 +13039,7 @@ void tl_requestedPeerUser_free(tl_t *tl_) {
 
 void tl_requestedPeerChat_free(tl_t *tl_) {
 	tl_requestedPeerChat_t *tl = (tl_requestedPeerChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	tl_free(tl->photo_);
 	buf_free(tl->_buf);
@@ -12783,7 +13048,7 @@ void tl_requestedPeerChat_free(tl_t *tl_) {
 
 void tl_requestedPeerChannel_free(tl_t *tl_) {
 	tl_requestedPeerChannel_t *tl = (tl_requestedPeerChannel_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->username_);
 	tl_free(tl->photo_);
@@ -12793,7 +13058,7 @@ void tl_requestedPeerChannel_free(tl_t *tl_) {
 
 void tl_sponsoredMessageReportOption_free(tl_t *tl_) {
 	tl_sponsoredMessageReportOption_t *tl = (tl_sponsoredMessageReportOption_t *)tl_;
-	int i;
+	
 	buf_free(tl->text_);
 	buf_free(tl->option_);
 	buf_free(tl->_buf);
@@ -12803,6 +13068,7 @@ void tl_sponsoredMessageReportOption_free(tl_t *tl_) {
 void tl_channels_sponsoredMessageReportResultChooseOption_free(tl_t *tl_) {
 	tl_channels_sponsoredMessageReportResultChooseOption_t *tl = (tl_channels_sponsoredMessageReportResultChooseOption_t *)tl_;
 	int i;
+	
 	buf_free(tl->title_);
 	for(i=0; i<tl->options_len; ++i){
 		tl_free(tl->options_[i]);
@@ -12814,21 +13080,21 @@ void tl_channels_sponsoredMessageReportResultChooseOption_free(tl_t *tl_) {
 
 void tl_channels_sponsoredMessageReportResultAdsHidden_free(tl_t *tl_) {
 	tl_channels_sponsoredMessageReportResultAdsHidden_t *tl = (tl_channels_sponsoredMessageReportResultAdsHidden_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channels_sponsoredMessageReportResultReported_free(tl_t *tl_) {
 	tl_channels_sponsoredMessageReportResultReported_t *tl = (tl_channels_sponsoredMessageReportResultReported_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_stats_broadcastRevenueStats_free(tl_t *tl_) {
 	tl_stats_broadcastRevenueStats_t *tl = (tl_stats_broadcastRevenueStats_t *)tl_;
-	int i;
+	
 	tl_free(tl->top_hours_graph_);
 	tl_free(tl->revenue_graph_);
 	tl_free(tl->balances_);
@@ -12838,7 +13104,7 @@ void tl_stats_broadcastRevenueStats_free(tl_t *tl_) {
 
 void tl_stats_broadcastRevenueWithdrawalUrl_free(tl_t *tl_) {
 	tl_stats_broadcastRevenueWithdrawalUrl_t *tl = (tl_stats_broadcastRevenueWithdrawalUrl_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12846,14 +13112,14 @@ void tl_stats_broadcastRevenueWithdrawalUrl_free(tl_t *tl_) {
 
 void tl_broadcastRevenueTransactionProceeds_free(tl_t *tl_) {
 	tl_broadcastRevenueTransactionProceeds_t *tl = (tl_broadcastRevenueTransactionProceeds_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_broadcastRevenueTransactionWithdrawal_free(tl_t *tl_) {
 	tl_broadcastRevenueTransactionWithdrawal_t *tl = (tl_broadcastRevenueTransactionWithdrawal_t *)tl_;
-	int i;
+	
 	buf_free(tl->provider_);
 	buf_free(tl->transaction_url_);
 	buf_free(tl->_buf);
@@ -12862,7 +13128,7 @@ void tl_broadcastRevenueTransactionWithdrawal_free(tl_t *tl_) {
 
 void tl_broadcastRevenueTransactionRefund_free(tl_t *tl_) {
 	tl_broadcastRevenueTransactionRefund_t *tl = (tl_broadcastRevenueTransactionRefund_t *)tl_;
-	int i;
+	
 	buf_free(tl->provider_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12871,6 +13137,7 @@ void tl_broadcastRevenueTransactionRefund_free(tl_t *tl_) {
 void tl_stats_broadcastRevenueTransactions_free(tl_t *tl_) {
 	tl_stats_broadcastRevenueTransactions_t *tl = (tl_stats_broadcastRevenueTransactions_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->transactions_len; ++i){
 		tl_free(tl->transactions_[i]);
 	}
@@ -12881,21 +13148,21 @@ void tl_stats_broadcastRevenueTransactions_free(tl_t *tl_) {
 
 void tl_reactionNotificationsFromContacts_free(tl_t *tl_) {
 	tl_reactionNotificationsFromContacts_t *tl = (tl_reactionNotificationsFromContacts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_reactionNotificationsFromAll_free(tl_t *tl_) {
 	tl_reactionNotificationsFromAll_t *tl = (tl_reactionNotificationsFromAll_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_reactionsNotifySettings_free(tl_t *tl_) {
 	tl_reactionsNotifySettings_t *tl = (tl_reactionsNotifySettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->messages_notify_from_);
 	tl_free(tl->stories_notify_from_);
 	tl_free(tl->sound_);
@@ -12906,14 +13173,14 @@ void tl_reactionsNotifySettings_free(tl_t *tl_) {
 
 void tl_broadcastRevenueBalances_free(tl_t *tl_) {
 	tl_broadcastRevenueBalances_t *tl = (tl_broadcastRevenueBalances_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_availableEffect_free(tl_t *tl_) {
 	tl_availableEffect_t *tl = (tl_availableEffect_t *)tl_;
-	int i;
+	
 	buf_free(tl->emoticon_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12921,7 +13188,7 @@ void tl_availableEffect_free(tl_t *tl_) {
 
 void tl_messages_availableEffectsNotModified_free(tl_t *tl_) {
 	tl_messages_availableEffectsNotModified_t *tl = (tl_messages_availableEffectsNotModified_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -12929,6 +13196,7 @@ void tl_messages_availableEffectsNotModified_free(tl_t *tl_) {
 void tl_messages_availableEffects_free(tl_t *tl_) {
 	tl_messages_availableEffects_t *tl = (tl_messages_availableEffects_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->effects_len; ++i){
 		tl_free(tl->effects_[i]);
 	}
@@ -12943,7 +13211,7 @@ void tl_messages_availableEffects_free(tl_t *tl_) {
 
 void tl_factCheck_free(tl_t *tl_) {
 	tl_factCheck_t *tl = (tl_factCheck_t *)tl_;
-	int i;
+	
 	buf_free(tl->country_);
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
@@ -12952,42 +13220,42 @@ void tl_factCheck_free(tl_t *tl_) {
 
 void tl_starsTransactionPeerUnsupported_free(tl_t *tl_) {
 	tl_starsTransactionPeerUnsupported_t *tl = (tl_starsTransactionPeerUnsupported_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_starsTransactionPeerAppStore_free(tl_t *tl_) {
 	tl_starsTransactionPeerAppStore_t *tl = (tl_starsTransactionPeerAppStore_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_starsTransactionPeerPlayMarket_free(tl_t *tl_) {
 	tl_starsTransactionPeerPlayMarket_t *tl = (tl_starsTransactionPeerPlayMarket_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_starsTransactionPeerPremiumBot_free(tl_t *tl_) {
 	tl_starsTransactionPeerPremiumBot_t *tl = (tl_starsTransactionPeerPremiumBot_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_starsTransactionPeerFragment_free(tl_t *tl_) {
 	tl_starsTransactionPeerFragment_t *tl = (tl_starsTransactionPeerFragment_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_starsTransactionPeer_free(tl_t *tl_) {
 	tl_starsTransactionPeer_t *tl = (tl_starsTransactionPeer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -12995,14 +13263,14 @@ void tl_starsTransactionPeer_free(tl_t *tl_) {
 
 void tl_starsTransactionPeerAds_free(tl_t *tl_) {
 	tl_starsTransactionPeerAds_t *tl = (tl_starsTransactionPeerAds_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_starsTopupOption_free(tl_t *tl_) {
 	tl_starsTopupOption_t *tl = (tl_starsTopupOption_t *)tl_;
-	int i;
+	
 	buf_free(tl->store_product_);
 	buf_free(tl->currency_);
 	buf_free(tl->_buf);
@@ -13012,6 +13280,7 @@ void tl_starsTopupOption_free(tl_t *tl_) {
 void tl_starsTransaction_free(tl_t *tl_) {
 	tl_starsTransaction_t *tl = (tl_starsTransaction_t *)tl_;
 	int i;
+	
 	buf_free(tl->id_);
 	tl_free(tl->peer_);
 	buf_free(tl->title_);
@@ -13030,6 +13299,7 @@ void tl_starsTransaction_free(tl_t *tl_) {
 void tl_payments_starsStatus_free(tl_t *tl_) {
 	tl_payments_starsStatus_t *tl = (tl_payments_starsStatus_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->history_len; ++i){
 		tl_free(tl->history_[i]);
 	}
@@ -13049,7 +13319,7 @@ void tl_payments_starsStatus_free(tl_t *tl_) {
 
 void tl_foundStory_free(tl_t *tl_) {
 	tl_foundStory_t *tl = (tl_foundStory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->story_);
 	buf_free(tl->_buf);
@@ -13059,6 +13329,7 @@ void tl_foundStory_free(tl_t *tl_) {
 void tl_stories_foundStories_free(tl_t *tl_) {
 	tl_stories_foundStories_t *tl = (tl_stories_foundStories_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->stories_len; ++i){
 		tl_free(tl->stories_[i]);
 	}
@@ -13078,7 +13349,7 @@ void tl_stories_foundStories_free(tl_t *tl_) {
 
 void tl_geoPointAddress_free(tl_t *tl_) {
 	tl_geoPointAddress_t *tl = (tl_geoPointAddress_t *)tl_;
-	int i;
+	
 	buf_free(tl->country_iso2_);
 	buf_free(tl->state_);
 	buf_free(tl->city_);
@@ -13089,14 +13360,14 @@ void tl_geoPointAddress_free(tl_t *tl_) {
 
 void tl_starsRevenueStatus_free(tl_t *tl_) {
 	tl_starsRevenueStatus_t *tl = (tl_starsRevenueStatus_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_payments_starsRevenueStats_free(tl_t *tl_) {
 	tl_payments_starsRevenueStats_t *tl = (tl_payments_starsRevenueStats_t *)tl_;
-	int i;
+	
 	tl_free(tl->revenue_graph_);
 	tl_free(tl->status_);
 	buf_free(tl->_buf);
@@ -13105,7 +13376,7 @@ void tl_payments_starsRevenueStats_free(tl_t *tl_) {
 
 void tl_payments_starsRevenueWithdrawalUrl_free(tl_t *tl_) {
 	tl_payments_starsRevenueWithdrawalUrl_t *tl = (tl_payments_starsRevenueWithdrawalUrl_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13113,7 +13384,7 @@ void tl_payments_starsRevenueWithdrawalUrl_free(tl_t *tl_) {
 
 void tl_payments_starsRevenueAdsAccountUrl_free(tl_t *tl_) {
 	tl_payments_starsRevenueAdsAccountUrl_t *tl = (tl_payments_starsRevenueAdsAccountUrl_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13121,7 +13392,7 @@ void tl_payments_starsRevenueAdsAccountUrl_free(tl_t *tl_) {
 
 void tl_inputStarsTransaction_free(tl_t *tl_) {
 	tl_inputStarsTransaction_t *tl = (tl_inputStarsTransaction_t *)tl_;
-	int i;
+	
 	buf_free(tl->id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13129,7 +13400,7 @@ void tl_inputStarsTransaction_free(tl_t *tl_) {
 
 void tl_starsGiftOption_free(tl_t *tl_) {
 	tl_starsGiftOption_t *tl = (tl_starsGiftOption_t *)tl_;
-	int i;
+	
 	buf_free(tl->store_product_);
 	buf_free(tl->currency_);
 	buf_free(tl->_buf);
@@ -13139,6 +13410,7 @@ void tl_starsGiftOption_free(tl_t *tl_) {
 void tl_bots_popularAppBots_free(tl_t *tl_) {
 	tl_bots_popularAppBots_t *tl = (tl_bots_popularAppBots_t *)tl_;
 	int i;
+	
 	buf_free(tl->next_offset_);
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
@@ -13150,7 +13422,7 @@ void tl_bots_popularAppBots_free(tl_t *tl_) {
 
 void tl_botPreviewMedia_free(tl_t *tl_) {
 	tl_botPreviewMedia_t *tl = (tl_botPreviewMedia_t *)tl_;
-	int i;
+	
 	tl_free(tl->media_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13159,6 +13431,7 @@ void tl_botPreviewMedia_free(tl_t *tl_) {
 void tl_bots_previewInfo_free(tl_t *tl_) {
 	tl_bots_previewInfo_t *tl = (tl_bots_previewInfo_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->media_len; ++i){
 		tl_free(tl->media_[i]);
 	}
@@ -13173,7 +13446,7 @@ void tl_bots_previewInfo_free(tl_t *tl_) {
 
 void tl_invokeAfterMsg_free(tl_t *tl_) {
 	tl_invokeAfterMsg_t *tl = (tl_invokeAfterMsg_t *)tl_;
-	int i;
+	
 	tl_free(tl->query_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13182,6 +13455,7 @@ void tl_invokeAfterMsg_free(tl_t *tl_) {
 void tl_invokeAfterMsgs_free(tl_t *tl_) {
 	tl_invokeAfterMsgs_t *tl = (tl_invokeAfterMsgs_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->msg_ids_len; ++i){
 	}
 	free(tl->msg_ids_);
@@ -13192,7 +13466,7 @@ void tl_invokeAfterMsgs_free(tl_t *tl_) {
 
 void tl_initConnection_free(tl_t *tl_) {
 	tl_initConnection_t *tl = (tl_initConnection_t *)tl_;
-	int i;
+	
 	buf_free(tl->device_model_);
 	buf_free(tl->system_version_);
 	buf_free(tl->app_version_);
@@ -13208,7 +13482,7 @@ void tl_initConnection_free(tl_t *tl_) {
 
 void tl_invokeWithLayer_free(tl_t *tl_) {
 	tl_invokeWithLayer_t *tl = (tl_invokeWithLayer_t *)tl_;
-	int i;
+	
 	tl_free(tl->query_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13216,7 +13490,7 @@ void tl_invokeWithLayer_free(tl_t *tl_) {
 
 void tl_invokeWithoutUpdates_free(tl_t *tl_) {
 	tl_invokeWithoutUpdates_t *tl = (tl_invokeWithoutUpdates_t *)tl_;
-	int i;
+	
 	tl_free(tl->query_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13224,7 +13498,7 @@ void tl_invokeWithoutUpdates_free(tl_t *tl_) {
 
 void tl_invokeWithMessagesRange_free(tl_t *tl_) {
 	tl_invokeWithMessagesRange_t *tl = (tl_invokeWithMessagesRange_t *)tl_;
-	int i;
+	
 	tl_free(tl->range_);
 	tl_free(tl->query_);
 	buf_free(tl->_buf);
@@ -13233,7 +13507,7 @@ void tl_invokeWithMessagesRange_free(tl_t *tl_) {
 
 void tl_invokeWithTakeout_free(tl_t *tl_) {
 	tl_invokeWithTakeout_t *tl = (tl_invokeWithTakeout_t *)tl_;
-	int i;
+	
 	tl_free(tl->query_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13241,7 +13515,7 @@ void tl_invokeWithTakeout_free(tl_t *tl_) {
 
 void tl_invokeWithBusinessConnection_free(tl_t *tl_) {
 	tl_invokeWithBusinessConnection_t *tl = (tl_invokeWithBusinessConnection_t *)tl_;
-	int i;
+	
 	buf_free(tl->connection_id_);
 	tl_free(tl->query_);
 	buf_free(tl->_buf);
@@ -13250,7 +13524,7 @@ void tl_invokeWithBusinessConnection_free(tl_t *tl_) {
 
 void tl_invokeWithGooglePlayIntegrity_free(tl_t *tl_) {
 	tl_invokeWithGooglePlayIntegrity_t *tl = (tl_invokeWithGooglePlayIntegrity_t *)tl_;
-	int i;
+	
 	buf_free(tl->nonce_);
 	buf_free(tl->token_);
 	tl_free(tl->query_);
@@ -13260,7 +13534,7 @@ void tl_invokeWithGooglePlayIntegrity_free(tl_t *tl_) {
 
 void tl_invokeWithApnsSecret_free(tl_t *tl_) {
 	tl_invokeWithApnsSecret_t *tl = (tl_invokeWithApnsSecret_t *)tl_;
-	int i;
+	
 	buf_free(tl->nonce_);
 	buf_free(tl->secret_);
 	tl_free(tl->query_);
@@ -13270,7 +13544,7 @@ void tl_invokeWithApnsSecret_free(tl_t *tl_) {
 
 void tl_auth_sendCode_free(tl_t *tl_) {
 	tl_auth_sendCode_t *tl = (tl_auth_sendCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->api_hash_);
 	tl_free(tl->settings_);
@@ -13280,7 +13554,7 @@ void tl_auth_sendCode_free(tl_t *tl_) {
 
 void tl_auth_signUp_free(tl_t *tl_) {
 	tl_auth_signUp_t *tl = (tl_auth_signUp_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->phone_code_hash_);
 	buf_free(tl->first_name_);
@@ -13291,7 +13565,7 @@ void tl_auth_signUp_free(tl_t *tl_) {
 
 void tl_auth_signIn_free(tl_t *tl_) {
 	tl_auth_signIn_t *tl = (tl_auth_signIn_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->phone_code_hash_);
 	buf_free(tl->phone_code_);
@@ -13302,28 +13576,28 @@ void tl_auth_signIn_free(tl_t *tl_) {
 
 void tl_auth_logOut_free(tl_t *tl_) {
 	tl_auth_logOut_t *tl = (tl_auth_logOut_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_resetAuthorizations_free(tl_t *tl_) {
 	tl_auth_resetAuthorizations_t *tl = (tl_auth_resetAuthorizations_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_exportAuthorization_free(tl_t *tl_) {
 	tl_auth_exportAuthorization_t *tl = (tl_auth_exportAuthorization_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_importAuthorization_free(tl_t *tl_) {
 	tl_auth_importAuthorization_t *tl = (tl_auth_importAuthorization_t *)tl_;
-	int i;
+	
 	buf_free(tl->bytes_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13331,7 +13605,7 @@ void tl_auth_importAuthorization_free(tl_t *tl_) {
 
 void tl_auth_bindTempAuthKey_free(tl_t *tl_) {
 	tl_auth_bindTempAuthKey_t *tl = (tl_auth_bindTempAuthKey_t *)tl_;
-	int i;
+	
 	buf_free(tl->encrypted_message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13339,7 +13613,7 @@ void tl_auth_bindTempAuthKey_free(tl_t *tl_) {
 
 void tl_auth_importBotAuthorization_free(tl_t *tl_) {
 	tl_auth_importBotAuthorization_t *tl = (tl_auth_importBotAuthorization_t *)tl_;
-	int i;
+	
 	buf_free(tl->api_hash_);
 	buf_free(tl->bot_auth_token_);
 	buf_free(tl->_buf);
@@ -13348,7 +13622,7 @@ void tl_auth_importBotAuthorization_free(tl_t *tl_) {
 
 void tl_auth_checkPassword_free(tl_t *tl_) {
 	tl_auth_checkPassword_t *tl = (tl_auth_checkPassword_t *)tl_;
-	int i;
+	
 	tl_free(tl->password_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13356,14 +13630,14 @@ void tl_auth_checkPassword_free(tl_t *tl_) {
 
 void tl_auth_requestPasswordRecovery_free(tl_t *tl_) {
 	tl_auth_requestPasswordRecovery_t *tl = (tl_auth_requestPasswordRecovery_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_auth_recoverPassword_free(tl_t *tl_) {
 	tl_auth_recoverPassword_t *tl = (tl_auth_recoverPassword_t *)tl_;
-	int i;
+	
 	buf_free(tl->code_);
 	tl_free(tl->new_settings_);
 	buf_free(tl->_buf);
@@ -13372,7 +13646,7 @@ void tl_auth_recoverPassword_free(tl_t *tl_) {
 
 void tl_auth_resendCode_free(tl_t *tl_) {
 	tl_auth_resendCode_t *tl = (tl_auth_resendCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->phone_code_hash_);
 	buf_free(tl->reason_);
@@ -13382,7 +13656,7 @@ void tl_auth_resendCode_free(tl_t *tl_) {
 
 void tl_auth_cancelCode_free(tl_t *tl_) {
 	tl_auth_cancelCode_t *tl = (tl_auth_cancelCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->phone_code_hash_);
 	buf_free(tl->_buf);
@@ -13392,6 +13666,7 @@ void tl_auth_cancelCode_free(tl_t *tl_) {
 void tl_auth_dropTempAuthKeys_free(tl_t *tl_) {
 	tl_auth_dropTempAuthKeys_t *tl = (tl_auth_dropTempAuthKeys_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->except_auth_keys_len; ++i){
 	}
 	free(tl->except_auth_keys_);
@@ -13402,6 +13677,7 @@ void tl_auth_dropTempAuthKeys_free(tl_t *tl_) {
 void tl_auth_exportLoginToken_free(tl_t *tl_) {
 	tl_auth_exportLoginToken_t *tl = (tl_auth_exportLoginToken_t *)tl_;
 	int i;
+	
 	buf_free(tl->api_hash_);
 	for(i=0; i<tl->except_ids_len; ++i){
 	}
@@ -13412,7 +13688,7 @@ void tl_auth_exportLoginToken_free(tl_t *tl_) {
 
 void tl_auth_importLoginToken_free(tl_t *tl_) {
 	tl_auth_importLoginToken_t *tl = (tl_auth_importLoginToken_t *)tl_;
-	int i;
+	
 	buf_free(tl->token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13420,7 +13696,7 @@ void tl_auth_importLoginToken_free(tl_t *tl_) {
 
 void tl_auth_acceptLoginToken_free(tl_t *tl_) {
 	tl_auth_acceptLoginToken_t *tl = (tl_auth_acceptLoginToken_t *)tl_;
-	int i;
+	
 	buf_free(tl->token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13428,7 +13704,7 @@ void tl_auth_acceptLoginToken_free(tl_t *tl_) {
 
 void tl_auth_checkRecoveryPassword_free(tl_t *tl_) {
 	tl_auth_checkRecoveryPassword_t *tl = (tl_auth_checkRecoveryPassword_t *)tl_;
-	int i;
+	
 	buf_free(tl->code_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13436,7 +13712,7 @@ void tl_auth_checkRecoveryPassword_free(tl_t *tl_) {
 
 void tl_auth_importWebTokenAuthorization_free(tl_t *tl_) {
 	tl_auth_importWebTokenAuthorization_t *tl = (tl_auth_importWebTokenAuthorization_t *)tl_;
-	int i;
+	
 	buf_free(tl->api_hash_);
 	buf_free(tl->web_auth_token_);
 	buf_free(tl->_buf);
@@ -13445,7 +13721,7 @@ void tl_auth_importWebTokenAuthorization_free(tl_t *tl_) {
 
 void tl_auth_requestFirebaseSms_free(tl_t *tl_) {
 	tl_auth_requestFirebaseSms_t *tl = (tl_auth_requestFirebaseSms_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->phone_code_hash_);
 	buf_free(tl->safety_net_token_);
@@ -13457,7 +13733,7 @@ void tl_auth_requestFirebaseSms_free(tl_t *tl_) {
 
 void tl_auth_resetLoginEmail_free(tl_t *tl_) {
 	tl_auth_resetLoginEmail_t *tl = (tl_auth_resetLoginEmail_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->phone_code_hash_);
 	buf_free(tl->_buf);
@@ -13466,7 +13742,7 @@ void tl_auth_resetLoginEmail_free(tl_t *tl_) {
 
 void tl_auth_reportMissingCode_free(tl_t *tl_) {
 	tl_auth_reportMissingCode_t *tl = (tl_auth_reportMissingCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->phone_code_hash_);
 	buf_free(tl->mnc_);
@@ -13477,6 +13753,7 @@ void tl_auth_reportMissingCode_free(tl_t *tl_) {
 void tl_account_registerDevice_free(tl_t *tl_) {
 	tl_account_registerDevice_t *tl = (tl_account_registerDevice_t *)tl_;
 	int i;
+	
 	buf_free(tl->token_);
 	tl_free(tl->app_sandbox_);
 	buf_free(tl->secret_);
@@ -13490,6 +13767,7 @@ void tl_account_registerDevice_free(tl_t *tl_) {
 void tl_account_unregisterDevice_free(tl_t *tl_) {
 	tl_account_unregisterDevice_t *tl = (tl_account_unregisterDevice_t *)tl_;
 	int i;
+	
 	buf_free(tl->token_);
 	for(i=0; i<tl->other_uids_len; ++i){
 	}
@@ -13500,7 +13778,7 @@ void tl_account_unregisterDevice_free(tl_t *tl_) {
 
 void tl_account_updateNotifySettings_free(tl_t *tl_) {
 	tl_account_updateNotifySettings_t *tl = (tl_account_updateNotifySettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->settings_);
 	buf_free(tl->_buf);
@@ -13509,7 +13787,7 @@ void tl_account_updateNotifySettings_free(tl_t *tl_) {
 
 void tl_account_getNotifySettings_free(tl_t *tl_) {
 	tl_account_getNotifySettings_t *tl = (tl_account_getNotifySettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13517,14 +13795,14 @@ void tl_account_getNotifySettings_free(tl_t *tl_) {
 
 void tl_account_resetNotifySettings_free(tl_t *tl_) {
 	tl_account_resetNotifySettings_t *tl = (tl_account_resetNotifySettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_updateProfile_free(tl_t *tl_) {
 	tl_account_updateProfile_t *tl = (tl_account_updateProfile_t *)tl_;
-	int i;
+	
 	buf_free(tl->first_name_);
 	buf_free(tl->last_name_);
 	buf_free(tl->about_);
@@ -13534,7 +13812,7 @@ void tl_account_updateProfile_free(tl_t *tl_) {
 
 void tl_account_updateStatus_free(tl_t *tl_) {
 	tl_account_updateStatus_t *tl = (tl_account_updateStatus_t *)tl_;
-	int i;
+	
 	tl_free(tl->offline_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13542,14 +13820,14 @@ void tl_account_updateStatus_free(tl_t *tl_) {
 
 void tl_account_getWallPapers_free(tl_t *tl_) {
 	tl_account_getWallPapers_t *tl = (tl_account_getWallPapers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_reportPeer_free(tl_t *tl_) {
 	tl_account_reportPeer_t *tl = (tl_account_reportPeer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reason_);
 	buf_free(tl->message_);
@@ -13559,7 +13837,7 @@ void tl_account_reportPeer_free(tl_t *tl_) {
 
 void tl_account_checkUsername_free(tl_t *tl_) {
 	tl_account_checkUsername_t *tl = (tl_account_checkUsername_t *)tl_;
-	int i;
+	
 	buf_free(tl->username_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13567,7 +13845,7 @@ void tl_account_checkUsername_free(tl_t *tl_) {
 
 void tl_account_updateUsername_free(tl_t *tl_) {
 	tl_account_updateUsername_t *tl = (tl_account_updateUsername_t *)tl_;
-	int i;
+	
 	buf_free(tl->username_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13575,7 +13853,7 @@ void tl_account_updateUsername_free(tl_t *tl_) {
 
 void tl_account_getPrivacy_free(tl_t *tl_) {
 	tl_account_getPrivacy_t *tl = (tl_account_getPrivacy_t *)tl_;
-	int i;
+	
 	tl_free(tl->key_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13584,6 +13862,7 @@ void tl_account_getPrivacy_free(tl_t *tl_) {
 void tl_account_setPrivacy_free(tl_t *tl_) {
 	tl_account_setPrivacy_t *tl = (tl_account_setPrivacy_t *)tl_;
 	int i;
+	
 	tl_free(tl->key_);
 	for(i=0; i<tl->rules_len; ++i){
 		tl_free(tl->rules_[i]);
@@ -13595,7 +13874,7 @@ void tl_account_setPrivacy_free(tl_t *tl_) {
 
 void tl_account_deleteAccount_free(tl_t *tl_) {
 	tl_account_deleteAccount_t *tl = (tl_account_deleteAccount_t *)tl_;
-	int i;
+	
 	buf_free(tl->reason_);
 	tl_free(tl->password_);
 	buf_free(tl->_buf);
@@ -13604,14 +13883,14 @@ void tl_account_deleteAccount_free(tl_t *tl_) {
 
 void tl_account_getAccountTTL_free(tl_t *tl_) {
 	tl_account_getAccountTTL_t *tl = (tl_account_getAccountTTL_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_setAccountTTL_free(tl_t *tl_) {
 	tl_account_setAccountTTL_t *tl = (tl_account_setAccountTTL_t *)tl_;
-	int i;
+	
 	tl_free(tl->ttl_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13619,7 +13898,7 @@ void tl_account_setAccountTTL_free(tl_t *tl_) {
 
 void tl_account_sendChangePhoneCode_free(tl_t *tl_) {
 	tl_account_sendChangePhoneCode_t *tl = (tl_account_sendChangePhoneCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	tl_free(tl->settings_);
 	buf_free(tl->_buf);
@@ -13628,7 +13907,7 @@ void tl_account_sendChangePhoneCode_free(tl_t *tl_) {
 
 void tl_account_changePhone_free(tl_t *tl_) {
 	tl_account_changePhone_t *tl = (tl_account_changePhone_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->phone_code_hash_);
 	buf_free(tl->phone_code_);
@@ -13638,35 +13917,35 @@ void tl_account_changePhone_free(tl_t *tl_) {
 
 void tl_account_updateDeviceLocked_free(tl_t *tl_) {
 	tl_account_updateDeviceLocked_t *tl = (tl_account_updateDeviceLocked_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getAuthorizations_free(tl_t *tl_) {
 	tl_account_getAuthorizations_t *tl = (tl_account_getAuthorizations_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_resetAuthorization_free(tl_t *tl_) {
 	tl_account_resetAuthorization_t *tl = (tl_account_resetAuthorization_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getPassword_free(tl_t *tl_) {
 	tl_account_getPassword_t *tl = (tl_account_getPassword_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getPasswordSettings_free(tl_t *tl_) {
 	tl_account_getPasswordSettings_t *tl = (tl_account_getPasswordSettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->password_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13674,7 +13953,7 @@ void tl_account_getPasswordSettings_free(tl_t *tl_) {
 
 void tl_account_updatePasswordSettings_free(tl_t *tl_) {
 	tl_account_updatePasswordSettings_t *tl = (tl_account_updatePasswordSettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->password_);
 	tl_free(tl->new_settings_);
 	buf_free(tl->_buf);
@@ -13683,7 +13962,7 @@ void tl_account_updatePasswordSettings_free(tl_t *tl_) {
 
 void tl_account_sendConfirmPhoneCode_free(tl_t *tl_) {
 	tl_account_sendConfirmPhoneCode_t *tl = (tl_account_sendConfirmPhoneCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->hash_);
 	tl_free(tl->settings_);
 	buf_free(tl->_buf);
@@ -13692,7 +13971,7 @@ void tl_account_sendConfirmPhoneCode_free(tl_t *tl_) {
 
 void tl_account_confirmPhone_free(tl_t *tl_) {
 	tl_account_confirmPhone_t *tl = (tl_account_confirmPhone_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_code_hash_);
 	buf_free(tl->phone_code_);
 	buf_free(tl->_buf);
@@ -13701,7 +13980,7 @@ void tl_account_confirmPhone_free(tl_t *tl_) {
 
 void tl_account_getTmpPassword_free(tl_t *tl_) {
 	tl_account_getTmpPassword_t *tl = (tl_account_getTmpPassword_t *)tl_;
-	int i;
+	
 	tl_free(tl->password_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13709,28 +13988,28 @@ void tl_account_getTmpPassword_free(tl_t *tl_) {
 
 void tl_account_getWebAuthorizations_free(tl_t *tl_) {
 	tl_account_getWebAuthorizations_t *tl = (tl_account_getWebAuthorizations_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_resetWebAuthorization_free(tl_t *tl_) {
 	tl_account_resetWebAuthorization_t *tl = (tl_account_resetWebAuthorization_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_resetWebAuthorizations_free(tl_t *tl_) {
 	tl_account_resetWebAuthorizations_t *tl = (tl_account_resetWebAuthorizations_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getAllSecureValues_free(tl_t *tl_) {
 	tl_account_getAllSecureValues_t *tl = (tl_account_getAllSecureValues_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -13738,6 +14017,7 @@ void tl_account_getAllSecureValues_free(tl_t *tl_) {
 void tl_account_getSecureValue_free(tl_t *tl_) {
 	tl_account_getSecureValue_t *tl = (tl_account_getSecureValue_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->types_len; ++i){
 		tl_free(tl->types_[i]);
 	}
@@ -13748,7 +14028,7 @@ void tl_account_getSecureValue_free(tl_t *tl_) {
 
 void tl_account_saveSecureValue_free(tl_t *tl_) {
 	tl_account_saveSecureValue_t *tl = (tl_account_saveSecureValue_t *)tl_;
-	int i;
+	
 	tl_free(tl->value_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13757,6 +14037,7 @@ void tl_account_saveSecureValue_free(tl_t *tl_) {
 void tl_account_deleteSecureValue_free(tl_t *tl_) {
 	tl_account_deleteSecureValue_t *tl = (tl_account_deleteSecureValue_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->types_len; ++i){
 		tl_free(tl->types_[i]);
 	}
@@ -13767,7 +14048,7 @@ void tl_account_deleteSecureValue_free(tl_t *tl_) {
 
 void tl_account_getAuthorizationForm_free(tl_t *tl_) {
 	tl_account_getAuthorizationForm_t *tl = (tl_account_getAuthorizationForm_t *)tl_;
-	int i;
+	
 	buf_free(tl->scope_);
 	buf_free(tl->public_key_);
 	buf_free(tl->_buf);
@@ -13777,6 +14058,7 @@ void tl_account_getAuthorizationForm_free(tl_t *tl_) {
 void tl_account_acceptAuthorization_free(tl_t *tl_) {
 	tl_account_acceptAuthorization_t *tl = (tl_account_acceptAuthorization_t *)tl_;
 	int i;
+	
 	buf_free(tl->scope_);
 	buf_free(tl->public_key_);
 	for(i=0; i<tl->value_hashes_len; ++i){
@@ -13790,7 +14072,7 @@ void tl_account_acceptAuthorization_free(tl_t *tl_) {
 
 void tl_account_sendVerifyPhoneCode_free(tl_t *tl_) {
 	tl_account_sendVerifyPhoneCode_t *tl = (tl_account_sendVerifyPhoneCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	tl_free(tl->settings_);
 	buf_free(tl->_buf);
@@ -13799,7 +14081,7 @@ void tl_account_sendVerifyPhoneCode_free(tl_t *tl_) {
 
 void tl_account_verifyPhone_free(tl_t *tl_) {
 	tl_account_verifyPhone_t *tl = (tl_account_verifyPhone_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_number_);
 	buf_free(tl->phone_code_hash_);
 	buf_free(tl->phone_code_);
@@ -13809,7 +14091,7 @@ void tl_account_verifyPhone_free(tl_t *tl_) {
 
 void tl_account_sendVerifyEmailCode_free(tl_t *tl_) {
 	tl_account_sendVerifyEmailCode_t *tl = (tl_account_sendVerifyEmailCode_t *)tl_;
-	int i;
+	
 	tl_free(tl->purpose_);
 	buf_free(tl->email_);
 	buf_free(tl->_buf);
@@ -13818,7 +14100,7 @@ void tl_account_sendVerifyEmailCode_free(tl_t *tl_) {
 
 void tl_account_verifyEmail_free(tl_t *tl_) {
 	tl_account_verifyEmail_t *tl = (tl_account_verifyEmail_t *)tl_;
-	int i;
+	
 	tl_free(tl->purpose_);
 	tl_free(tl->verification_);
 	buf_free(tl->_buf);
@@ -13827,21 +14109,21 @@ void tl_account_verifyEmail_free(tl_t *tl_) {
 
 void tl_account_initTakeoutSession_free(tl_t *tl_) {
 	tl_account_initTakeoutSession_t *tl = (tl_account_initTakeoutSession_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_finishTakeoutSession_free(tl_t *tl_) {
 	tl_account_finishTakeoutSession_t *tl = (tl_account_finishTakeoutSession_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_confirmPasswordEmail_free(tl_t *tl_) {
 	tl_account_confirmPasswordEmail_t *tl = (tl_account_confirmPasswordEmail_t *)tl_;
-	int i;
+	
 	buf_free(tl->code_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13849,28 +14131,28 @@ void tl_account_confirmPasswordEmail_free(tl_t *tl_) {
 
 void tl_account_resendPasswordEmail_free(tl_t *tl_) {
 	tl_account_resendPasswordEmail_t *tl = (tl_account_resendPasswordEmail_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_cancelPasswordEmail_free(tl_t *tl_) {
 	tl_account_cancelPasswordEmail_t *tl = (tl_account_cancelPasswordEmail_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getContactSignUpNotification_free(tl_t *tl_) {
 	tl_account_getContactSignUpNotification_t *tl = (tl_account_getContactSignUpNotification_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_setContactSignUpNotification_free(tl_t *tl_) {
 	tl_account_setContactSignUpNotification_t *tl = (tl_account_setContactSignUpNotification_t *)tl_;
-	int i;
+	
 	tl_free(tl->silent_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13878,7 +14160,7 @@ void tl_account_setContactSignUpNotification_free(tl_t *tl_) {
 
 void tl_account_getNotifyExceptions_free(tl_t *tl_) {
 	tl_account_getNotifyExceptions_t *tl = (tl_account_getNotifyExceptions_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13886,7 +14168,7 @@ void tl_account_getNotifyExceptions_free(tl_t *tl_) {
 
 void tl_account_getWallPaper_free(tl_t *tl_) {
 	tl_account_getWallPaper_t *tl = (tl_account_getWallPaper_t *)tl_;
-	int i;
+	
 	tl_free(tl->wallpaper_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13894,7 +14176,7 @@ void tl_account_getWallPaper_free(tl_t *tl_) {
 
 void tl_account_uploadWallPaper_free(tl_t *tl_) {
 	tl_account_uploadWallPaper_t *tl = (tl_account_uploadWallPaper_t *)tl_;
-	int i;
+	
 	tl_free(tl->file_);
 	buf_free(tl->mime_type_);
 	tl_free(tl->settings_);
@@ -13904,7 +14186,7 @@ void tl_account_uploadWallPaper_free(tl_t *tl_) {
 
 void tl_account_saveWallPaper_free(tl_t *tl_) {
 	tl_account_saveWallPaper_t *tl = (tl_account_saveWallPaper_t *)tl_;
-	int i;
+	
 	tl_free(tl->wallpaper_);
 	tl_free(tl->unsave_);
 	tl_free(tl->settings_);
@@ -13914,7 +14196,7 @@ void tl_account_saveWallPaper_free(tl_t *tl_) {
 
 void tl_account_installWallPaper_free(tl_t *tl_) {
 	tl_account_installWallPaper_t *tl = (tl_account_installWallPaper_t *)tl_;
-	int i;
+	
 	tl_free(tl->wallpaper_);
 	tl_free(tl->settings_);
 	buf_free(tl->_buf);
@@ -13923,21 +14205,21 @@ void tl_account_installWallPaper_free(tl_t *tl_) {
 
 void tl_account_resetWallPapers_free(tl_t *tl_) {
 	tl_account_resetWallPapers_t *tl = (tl_account_resetWallPapers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getAutoDownloadSettings_free(tl_t *tl_) {
 	tl_account_getAutoDownloadSettings_t *tl = (tl_account_getAutoDownloadSettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_saveAutoDownloadSettings_free(tl_t *tl_) {
 	tl_account_saveAutoDownloadSettings_t *tl = (tl_account_saveAutoDownloadSettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->settings_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -13945,7 +14227,7 @@ void tl_account_saveAutoDownloadSettings_free(tl_t *tl_) {
 
 void tl_account_uploadTheme_free(tl_t *tl_) {
 	tl_account_uploadTheme_t *tl = (tl_account_uploadTheme_t *)tl_;
-	int i;
+	
 	tl_free(tl->file_);
 	tl_free(tl->thumb_);
 	buf_free(tl->file_name_);
@@ -13957,6 +14239,7 @@ void tl_account_uploadTheme_free(tl_t *tl_) {
 void tl_account_createTheme_free(tl_t *tl_) {
 	tl_account_createTheme_t *tl = (tl_account_createTheme_t *)tl_;
 	int i;
+	
 	buf_free(tl->slug_);
 	buf_free(tl->title_);
 	tl_free(tl->document_);
@@ -13971,6 +14254,7 @@ void tl_account_createTheme_free(tl_t *tl_) {
 void tl_account_updateTheme_free(tl_t *tl_) {
 	tl_account_updateTheme_t *tl = (tl_account_updateTheme_t *)tl_;
 	int i;
+	
 	buf_free(tl->format_);
 	tl_free(tl->theme_);
 	buf_free(tl->slug_);
@@ -13986,7 +14270,7 @@ void tl_account_updateTheme_free(tl_t *tl_) {
 
 void tl_account_saveTheme_free(tl_t *tl_) {
 	tl_account_saveTheme_t *tl = (tl_account_saveTheme_t *)tl_;
-	int i;
+	
 	tl_free(tl->theme_);
 	tl_free(tl->unsave_);
 	buf_free(tl->_buf);
@@ -13995,7 +14279,7 @@ void tl_account_saveTheme_free(tl_t *tl_) {
 
 void tl_account_installTheme_free(tl_t *tl_) {
 	tl_account_installTheme_t *tl = (tl_account_installTheme_t *)tl_;
-	int i;
+	
 	tl_free(tl->theme_);
 	buf_free(tl->format_);
 	tl_free(tl->base_theme_);
@@ -14005,7 +14289,7 @@ void tl_account_installTheme_free(tl_t *tl_) {
 
 void tl_account_getTheme_free(tl_t *tl_) {
 	tl_account_getTheme_t *tl = (tl_account_getTheme_t *)tl_;
-	int i;
+	
 	buf_free(tl->format_);
 	tl_free(tl->theme_);
 	buf_free(tl->_buf);
@@ -14014,7 +14298,7 @@ void tl_account_getTheme_free(tl_t *tl_) {
 
 void tl_account_getThemes_free(tl_t *tl_) {
 	tl_account_getThemes_t *tl = (tl_account_getThemes_t *)tl_;
-	int i;
+	
 	buf_free(tl->format_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14022,14 +14306,14 @@ void tl_account_getThemes_free(tl_t *tl_) {
 
 void tl_account_setContentSettings_free(tl_t *tl_) {
 	tl_account_setContentSettings_t *tl = (tl_account_setContentSettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getContentSettings_free(tl_t *tl_) {
 	tl_account_getContentSettings_t *tl = (tl_account_getContentSettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -14037,6 +14321,7 @@ void tl_account_getContentSettings_free(tl_t *tl_) {
 void tl_account_getMultiWallPapers_free(tl_t *tl_) {
 	tl_account_getMultiWallPapers_t *tl = (tl_account_getMultiWallPapers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->wallpapers_len; ++i){
 		tl_free(tl->wallpapers_[i]);
 	}
@@ -14047,14 +14332,14 @@ void tl_account_getMultiWallPapers_free(tl_t *tl_) {
 
 void tl_account_getGlobalPrivacySettings_free(tl_t *tl_) {
 	tl_account_getGlobalPrivacySettings_t *tl = (tl_account_getGlobalPrivacySettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_setGlobalPrivacySettings_free(tl_t *tl_) {
 	tl_account_setGlobalPrivacySettings_t *tl = (tl_account_setGlobalPrivacySettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->settings_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14062,7 +14347,7 @@ void tl_account_setGlobalPrivacySettings_free(tl_t *tl_) {
 
 void tl_account_reportProfilePhoto_free(tl_t *tl_) {
 	tl_account_reportProfilePhoto_t *tl = (tl_account_reportProfilePhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->photo_id_);
 	tl_free(tl->reason_);
@@ -14073,35 +14358,35 @@ void tl_account_reportProfilePhoto_free(tl_t *tl_) {
 
 void tl_account_resetPassword_free(tl_t *tl_) {
 	tl_account_resetPassword_t *tl = (tl_account_resetPassword_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_declinePasswordReset_free(tl_t *tl_) {
 	tl_account_declinePasswordReset_t *tl = (tl_account_declinePasswordReset_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getChatThemes_free(tl_t *tl_) {
 	tl_account_getChatThemes_t *tl = (tl_account_getChatThemes_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_setAuthorizationTTL_free(tl_t *tl_) {
 	tl_account_setAuthorizationTTL_t *tl = (tl_account_setAuthorizationTTL_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_changeAuthorizationSettings_free(tl_t *tl_) {
 	tl_account_changeAuthorizationSettings_t *tl = (tl_account_changeAuthorizationSettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->encrypted_requests_disabled_);
 	tl_free(tl->call_requests_disabled_);
 	buf_free(tl->_buf);
@@ -14110,14 +14395,14 @@ void tl_account_changeAuthorizationSettings_free(tl_t *tl_) {
 
 void tl_account_getSavedRingtones_free(tl_t *tl_) {
 	tl_account_getSavedRingtones_t *tl = (tl_account_getSavedRingtones_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_saveRingtone_free(tl_t *tl_) {
 	tl_account_saveRingtone_t *tl = (tl_account_saveRingtone_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	tl_free(tl->unsave_);
 	buf_free(tl->_buf);
@@ -14126,7 +14411,7 @@ void tl_account_saveRingtone_free(tl_t *tl_) {
 
 void tl_account_uploadRingtone_free(tl_t *tl_) {
 	tl_account_uploadRingtone_t *tl = (tl_account_uploadRingtone_t *)tl_;
-	int i;
+	
 	tl_free(tl->file_);
 	buf_free(tl->file_name_);
 	buf_free(tl->mime_type_);
@@ -14136,7 +14421,7 @@ void tl_account_uploadRingtone_free(tl_t *tl_) {
 
 void tl_account_updateEmojiStatus_free(tl_t *tl_) {
 	tl_account_updateEmojiStatus_t *tl = (tl_account_updateEmojiStatus_t *)tl_;
-	int i;
+	
 	tl_free(tl->emoji_status_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14144,21 +14429,21 @@ void tl_account_updateEmojiStatus_free(tl_t *tl_) {
 
 void tl_account_getDefaultEmojiStatuses_free(tl_t *tl_) {
 	tl_account_getDefaultEmojiStatuses_t *tl = (tl_account_getDefaultEmojiStatuses_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getRecentEmojiStatuses_free(tl_t *tl_) {
 	tl_account_getRecentEmojiStatuses_t *tl = (tl_account_getRecentEmojiStatuses_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_clearRecentEmojiStatuses_free(tl_t *tl_) {
 	tl_account_clearRecentEmojiStatuses_t *tl = (tl_account_clearRecentEmojiStatuses_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -14166,6 +14451,7 @@ void tl_account_clearRecentEmojiStatuses_free(tl_t *tl_) {
 void tl_account_reorderUsernames_free(tl_t *tl_) {
 	tl_account_reorderUsernames_t *tl = (tl_account_reorderUsernames_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->order_len; ++i){
 		buf_free(tl->order_[i]);
 	}
@@ -14176,7 +14462,7 @@ void tl_account_reorderUsernames_free(tl_t *tl_) {
 
 void tl_account_toggleUsername_free(tl_t *tl_) {
 	tl_account_toggleUsername_t *tl = (tl_account_toggleUsername_t *)tl_;
-	int i;
+	
 	buf_free(tl->username_);
 	tl_free(tl->active_);
 	buf_free(tl->_buf);
@@ -14185,28 +14471,28 @@ void tl_account_toggleUsername_free(tl_t *tl_) {
 
 void tl_account_getDefaultProfilePhotoEmojis_free(tl_t *tl_) {
 	tl_account_getDefaultProfilePhotoEmojis_t *tl = (tl_account_getDefaultProfilePhotoEmojis_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getDefaultGroupPhotoEmojis_free(tl_t *tl_) {
 	tl_account_getDefaultGroupPhotoEmojis_t *tl = (tl_account_getDefaultGroupPhotoEmojis_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getAutoSaveSettings_free(tl_t *tl_) {
 	tl_account_getAutoSaveSettings_t *tl = (tl_account_getAutoSaveSettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_saveAutoSaveSettings_free(tl_t *tl_) {
 	tl_account_saveAutoSaveSettings_t *tl = (tl_account_saveAutoSaveSettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->settings_);
 	buf_free(tl->_buf);
@@ -14215,7 +14501,7 @@ void tl_account_saveAutoSaveSettings_free(tl_t *tl_) {
 
 void tl_account_deleteAutoSaveExceptions_free(tl_t *tl_) {
 	tl_account_deleteAutoSaveExceptions_t *tl = (tl_account_deleteAutoSaveExceptions_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -14223,6 +14509,7 @@ void tl_account_deleteAutoSaveExceptions_free(tl_t *tl_) {
 void tl_account_invalidateSignInCodes_free(tl_t *tl_) {
 	tl_account_invalidateSignInCodes_t *tl = (tl_account_invalidateSignInCodes_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->codes_len; ++i){
 		buf_free(tl->codes_[i]);
 	}
@@ -14233,35 +14520,35 @@ void tl_account_invalidateSignInCodes_free(tl_t *tl_) {
 
 void tl_account_updateColor_free(tl_t *tl_) {
 	tl_account_updateColor_t *tl = (tl_account_updateColor_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getDefaultBackgroundEmojis_free(tl_t *tl_) {
 	tl_account_getDefaultBackgroundEmojis_t *tl = (tl_account_getDefaultBackgroundEmojis_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getChannelDefaultEmojiStatuses_free(tl_t *tl_) {
 	tl_account_getChannelDefaultEmojiStatuses_t *tl = (tl_account_getChannelDefaultEmojiStatuses_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getChannelRestrictedStatusEmojis_free(tl_t *tl_) {
 	tl_account_getChannelRestrictedStatusEmojis_t *tl = (tl_account_getChannelRestrictedStatusEmojis_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_updateBusinessWorkHours_free(tl_t *tl_) {
 	tl_account_updateBusinessWorkHours_t *tl = (tl_account_updateBusinessWorkHours_t *)tl_;
-	int i;
+	
 	tl_free(tl->business_work_hours_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14269,7 +14556,7 @@ void tl_account_updateBusinessWorkHours_free(tl_t *tl_) {
 
 void tl_account_updateBusinessLocation_free(tl_t *tl_) {
 	tl_account_updateBusinessLocation_t *tl = (tl_account_updateBusinessLocation_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_point_);
 	buf_free(tl->address_);
 	buf_free(tl->_buf);
@@ -14278,7 +14565,7 @@ void tl_account_updateBusinessLocation_free(tl_t *tl_) {
 
 void tl_account_updateBusinessGreetingMessage_free(tl_t *tl_) {
 	tl_account_updateBusinessGreetingMessage_t *tl = (tl_account_updateBusinessGreetingMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14286,7 +14573,7 @@ void tl_account_updateBusinessGreetingMessage_free(tl_t *tl_) {
 
 void tl_account_updateBusinessAwayMessage_free(tl_t *tl_) {
 	tl_account_updateBusinessAwayMessage_t *tl = (tl_account_updateBusinessAwayMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14294,7 +14581,7 @@ void tl_account_updateBusinessAwayMessage_free(tl_t *tl_) {
 
 void tl_account_updateConnectedBot_free(tl_t *tl_) {
 	tl_account_updateConnectedBot_t *tl = (tl_account_updateConnectedBot_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	tl_free(tl->recipients_);
 	buf_free(tl->_buf);
@@ -14303,14 +14590,14 @@ void tl_account_updateConnectedBot_free(tl_t *tl_) {
 
 void tl_account_getConnectedBots_free(tl_t *tl_) {
 	tl_account_getConnectedBots_t *tl = (tl_account_getConnectedBots_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_getBotBusinessConnection_free(tl_t *tl_) {
 	tl_account_getBotBusinessConnection_t *tl = (tl_account_getBotBusinessConnection_t *)tl_;
-	int i;
+	
 	buf_free(tl->connection_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14318,7 +14605,7 @@ void tl_account_getBotBusinessConnection_free(tl_t *tl_) {
 
 void tl_account_updateBusinessIntro_free(tl_t *tl_) {
 	tl_account_updateBusinessIntro_t *tl = (tl_account_updateBusinessIntro_t *)tl_;
-	int i;
+	
 	tl_free(tl->intro_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14326,7 +14613,7 @@ void tl_account_updateBusinessIntro_free(tl_t *tl_) {
 
 void tl_account_toggleConnectedBotPaused_free(tl_t *tl_) {
 	tl_account_toggleConnectedBotPaused_t *tl = (tl_account_toggleConnectedBotPaused_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->paused_);
 	buf_free(tl->_buf);
@@ -14335,7 +14622,7 @@ void tl_account_toggleConnectedBotPaused_free(tl_t *tl_) {
 
 void tl_account_disablePeerConnectedBot_free(tl_t *tl_) {
 	tl_account_disablePeerConnectedBot_t *tl = (tl_account_disablePeerConnectedBot_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14343,7 +14630,7 @@ void tl_account_disablePeerConnectedBot_free(tl_t *tl_) {
 
 void tl_account_updateBirthday_free(tl_t *tl_) {
 	tl_account_updateBirthday_t *tl = (tl_account_updateBirthday_t *)tl_;
-	int i;
+	
 	tl_free(tl->birthday_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14351,7 +14638,7 @@ void tl_account_updateBirthday_free(tl_t *tl_) {
 
 void tl_account_createBusinessChatLink_free(tl_t *tl_) {
 	tl_account_createBusinessChatLink_t *tl = (tl_account_createBusinessChatLink_t *)tl_;
-	int i;
+	
 	tl_free(tl->link_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14359,7 +14646,7 @@ void tl_account_createBusinessChatLink_free(tl_t *tl_) {
 
 void tl_account_editBusinessChatLink_free(tl_t *tl_) {
 	tl_account_editBusinessChatLink_t *tl = (tl_account_editBusinessChatLink_t *)tl_;
-	int i;
+	
 	buf_free(tl->slug_);
 	tl_free(tl->link_);
 	buf_free(tl->_buf);
@@ -14368,7 +14655,7 @@ void tl_account_editBusinessChatLink_free(tl_t *tl_) {
 
 void tl_account_deleteBusinessChatLink_free(tl_t *tl_) {
 	tl_account_deleteBusinessChatLink_t *tl = (tl_account_deleteBusinessChatLink_t *)tl_;
-	int i;
+	
 	buf_free(tl->slug_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14376,14 +14663,14 @@ void tl_account_deleteBusinessChatLink_free(tl_t *tl_) {
 
 void tl_account_getBusinessChatLinks_free(tl_t *tl_) {
 	tl_account_getBusinessChatLinks_t *tl = (tl_account_getBusinessChatLinks_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_resolveBusinessChatLink_free(tl_t *tl_) {
 	tl_account_resolveBusinessChatLink_t *tl = (tl_account_resolveBusinessChatLink_t *)tl_;
-	int i;
+	
 	buf_free(tl->slug_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14391,7 +14678,7 @@ void tl_account_resolveBusinessChatLink_free(tl_t *tl_) {
 
 void tl_account_updatePersonalChannel_free(tl_t *tl_) {
 	tl_account_updatePersonalChannel_t *tl = (tl_account_updatePersonalChannel_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14399,7 +14686,7 @@ void tl_account_updatePersonalChannel_free(tl_t *tl_) {
 
 void tl_account_toggleSponsoredMessages_free(tl_t *tl_) {
 	tl_account_toggleSponsoredMessages_t *tl = (tl_account_toggleSponsoredMessages_t *)tl_;
-	int i;
+	
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14407,14 +14694,14 @@ void tl_account_toggleSponsoredMessages_free(tl_t *tl_) {
 
 void tl_account_getReactionsNotifySettings_free(tl_t *tl_) {
 	tl_account_getReactionsNotifySettings_t *tl = (tl_account_getReactionsNotifySettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_account_setReactionsNotifySettings_free(tl_t *tl_) {
 	tl_account_setReactionsNotifySettings_t *tl = (tl_account_setReactionsNotifySettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->settings_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14423,6 +14710,7 @@ void tl_account_setReactionsNotifySettings_free(tl_t *tl_) {
 void tl_users_getUsers_free(tl_t *tl_) {
 	tl_users_getUsers_t *tl = (tl_users_getUsers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 		tl_free(tl->id_[i]);
 	}
@@ -14433,7 +14721,7 @@ void tl_users_getUsers_free(tl_t *tl_) {
 
 void tl_users_getFullUser_free(tl_t *tl_) {
 	tl_users_getFullUser_t *tl = (tl_users_getFullUser_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14442,6 +14730,7 @@ void tl_users_getFullUser_free(tl_t *tl_) {
 void tl_users_setSecureValueErrors_free(tl_t *tl_) {
 	tl_users_setSecureValueErrors_t *tl = (tl_users_setSecureValueErrors_t *)tl_;
 	int i;
+	
 	tl_free(tl->id_);
 	for(i=0; i<tl->errors_len; ++i){
 		tl_free(tl->errors_[i]);
@@ -14454,6 +14743,7 @@ void tl_users_setSecureValueErrors_free(tl_t *tl_) {
 void tl_users_getIsPremiumRequiredToContact_free(tl_t *tl_) {
 	tl_users_getIsPremiumRequiredToContact_t *tl = (tl_users_getIsPremiumRequiredToContact_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 		tl_free(tl->id_[i]);
 	}
@@ -14464,21 +14754,21 @@ void tl_users_getIsPremiumRequiredToContact_free(tl_t *tl_) {
 
 void tl_contacts_getContactIDs_free(tl_t *tl_) {
 	tl_contacts_getContactIDs_t *tl = (tl_contacts_getContactIDs_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_contacts_getStatuses_free(tl_t *tl_) {
 	tl_contacts_getStatuses_t *tl = (tl_contacts_getStatuses_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_contacts_getContacts_free(tl_t *tl_) {
 	tl_contacts_getContacts_t *tl = (tl_contacts_getContacts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -14486,6 +14776,7 @@ void tl_contacts_getContacts_free(tl_t *tl_) {
 void tl_contacts_importContacts_free(tl_t *tl_) {
 	tl_contacts_importContacts_t *tl = (tl_contacts_importContacts_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->contacts_len; ++i){
 		tl_free(tl->contacts_[i]);
 	}
@@ -14497,6 +14788,7 @@ void tl_contacts_importContacts_free(tl_t *tl_) {
 void tl_contacts_deleteContacts_free(tl_t *tl_) {
 	tl_contacts_deleteContacts_t *tl = (tl_contacts_deleteContacts_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 		tl_free(tl->id_[i]);
 	}
@@ -14508,6 +14800,7 @@ void tl_contacts_deleteContacts_free(tl_t *tl_) {
 void tl_contacts_deleteByPhones_free(tl_t *tl_) {
 	tl_contacts_deleteByPhones_t *tl = (tl_contacts_deleteByPhones_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->phones_len; ++i){
 		buf_free(tl->phones_[i]);
 	}
@@ -14518,7 +14811,7 @@ void tl_contacts_deleteByPhones_free(tl_t *tl_) {
 
 void tl_contacts_block_free(tl_t *tl_) {
 	tl_contacts_block_t *tl = (tl_contacts_block_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14526,7 +14819,7 @@ void tl_contacts_block_free(tl_t *tl_) {
 
 void tl_contacts_unblock_free(tl_t *tl_) {
 	tl_contacts_unblock_t *tl = (tl_contacts_unblock_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14534,14 +14827,14 @@ void tl_contacts_unblock_free(tl_t *tl_) {
 
 void tl_contacts_getBlocked_free(tl_t *tl_) {
 	tl_contacts_getBlocked_t *tl = (tl_contacts_getBlocked_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_contacts_search_free(tl_t *tl_) {
 	tl_contacts_search_t *tl = (tl_contacts_search_t *)tl_;
-	int i;
+	
 	buf_free(tl->q_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14549,7 +14842,7 @@ void tl_contacts_search_free(tl_t *tl_) {
 
 void tl_contacts_resolveUsername_free(tl_t *tl_) {
 	tl_contacts_resolveUsername_t *tl = (tl_contacts_resolveUsername_t *)tl_;
-	int i;
+	
 	buf_free(tl->username_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14557,14 +14850,14 @@ void tl_contacts_resolveUsername_free(tl_t *tl_) {
 
 void tl_contacts_getTopPeers_free(tl_t *tl_) {
 	tl_contacts_getTopPeers_t *tl = (tl_contacts_getTopPeers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_contacts_resetTopPeerRating_free(tl_t *tl_) {
 	tl_contacts_resetTopPeerRating_t *tl = (tl_contacts_resetTopPeerRating_t *)tl_;
-	int i;
+	
 	tl_free(tl->category_);
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
@@ -14573,21 +14866,21 @@ void tl_contacts_resetTopPeerRating_free(tl_t *tl_) {
 
 void tl_contacts_resetSaved_free(tl_t *tl_) {
 	tl_contacts_resetSaved_t *tl = (tl_contacts_resetSaved_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_contacts_getSaved_free(tl_t *tl_) {
 	tl_contacts_getSaved_t *tl = (tl_contacts_getSaved_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_contacts_toggleTopPeers_free(tl_t *tl_) {
 	tl_contacts_toggleTopPeers_t *tl = (tl_contacts_toggleTopPeers_t *)tl_;
-	int i;
+	
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14595,7 +14888,7 @@ void tl_contacts_toggleTopPeers_free(tl_t *tl_) {
 
 void tl_contacts_addContact_free(tl_t *tl_) {
 	tl_contacts_addContact_t *tl = (tl_contacts_addContact_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->first_name_);
 	buf_free(tl->last_name_);
@@ -14606,7 +14899,7 @@ void tl_contacts_addContact_free(tl_t *tl_) {
 
 void tl_contacts_acceptContact_free(tl_t *tl_) {
 	tl_contacts_acceptContact_t *tl = (tl_contacts_acceptContact_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14614,7 +14907,7 @@ void tl_contacts_acceptContact_free(tl_t *tl_) {
 
 void tl_contacts_getLocated_free(tl_t *tl_) {
 	tl_contacts_getLocated_t *tl = (tl_contacts_getLocated_t *)tl_;
-	int i;
+	
 	tl_free(tl->geo_point_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14622,14 +14915,14 @@ void tl_contacts_getLocated_free(tl_t *tl_) {
 
 void tl_contacts_blockFromReplies_free(tl_t *tl_) {
 	tl_contacts_blockFromReplies_t *tl = (tl_contacts_blockFromReplies_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_contacts_resolvePhone_free(tl_t *tl_) {
 	tl_contacts_resolvePhone_t *tl = (tl_contacts_resolvePhone_t *)tl_;
-	int i;
+	
 	buf_free(tl->phone_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14637,14 +14930,14 @@ void tl_contacts_resolvePhone_free(tl_t *tl_) {
 
 void tl_contacts_exportContactToken_free(tl_t *tl_) {
 	tl_contacts_exportContactToken_t *tl = (tl_contacts_exportContactToken_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_contacts_importContactToken_free(tl_t *tl_) {
 	tl_contacts_importContactToken_t *tl = (tl_contacts_importContactToken_t *)tl_;
-	int i;
+	
 	buf_free(tl->token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14653,6 +14946,7 @@ void tl_contacts_importContactToken_free(tl_t *tl_) {
 void tl_contacts_editCloseFriends_free(tl_t *tl_) {
 	tl_contacts_editCloseFriends_t *tl = (tl_contacts_editCloseFriends_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 	}
 	free(tl->id_);
@@ -14663,6 +14957,7 @@ void tl_contacts_editCloseFriends_free(tl_t *tl_) {
 void tl_contacts_setBlocked_free(tl_t *tl_) {
 	tl_contacts_setBlocked_t *tl = (tl_contacts_setBlocked_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 		tl_free(tl->id_[i]);
 	}
@@ -14673,7 +14968,7 @@ void tl_contacts_setBlocked_free(tl_t *tl_) {
 
 void tl_contacts_getBirthdays_free(tl_t *tl_) {
 	tl_contacts_getBirthdays_t *tl = (tl_contacts_getBirthdays_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -14681,6 +14976,7 @@ void tl_contacts_getBirthdays_free(tl_t *tl_) {
 void tl_messages_getMessages_free(tl_t *tl_) {
 	tl_messages_getMessages_t *tl = (tl_messages_getMessages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 		tl_free(tl->id_[i]);
 	}
@@ -14691,7 +14987,7 @@ void tl_messages_getMessages_free(tl_t *tl_) {
 
 void tl_messages_getDialogs_free(tl_t *tl_) {
 	tl_messages_getDialogs_t *tl = (tl_messages_getDialogs_t *)tl_;
-	int i;
+	
 	tl_free(tl->offset_peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14699,7 +14995,7 @@ void tl_messages_getDialogs_free(tl_t *tl_) {
 
 void tl_messages_getHistory_free(tl_t *tl_) {
 	tl_messages_getHistory_t *tl = (tl_messages_getHistory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14708,6 +15004,7 @@ void tl_messages_getHistory_free(tl_t *tl_) {
 void tl_messages_search_free(tl_t *tl_) {
 	tl_messages_search_t *tl = (tl_messages_search_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->q_);
 	tl_free(tl->from_id_);
@@ -14723,7 +15020,7 @@ void tl_messages_search_free(tl_t *tl_) {
 
 void tl_messages_readHistory_free(tl_t *tl_) {
 	tl_messages_readHistory_t *tl = (tl_messages_readHistory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14731,7 +15028,7 @@ void tl_messages_readHistory_free(tl_t *tl_) {
 
 void tl_messages_deleteHistory_free(tl_t *tl_) {
 	tl_messages_deleteHistory_t *tl = (tl_messages_deleteHistory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14740,6 +15037,7 @@ void tl_messages_deleteHistory_free(tl_t *tl_) {
 void tl_messages_deleteMessages_free(tl_t *tl_) {
 	tl_messages_deleteMessages_t *tl = (tl_messages_deleteMessages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 	}
 	free(tl->id_);
@@ -14749,14 +15047,14 @@ void tl_messages_deleteMessages_free(tl_t *tl_) {
 
 void tl_messages_receivedMessages_free(tl_t *tl_) {
 	tl_messages_receivedMessages_t *tl = (tl_messages_receivedMessages_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_setTyping_free(tl_t *tl_) {
 	tl_messages_setTyping_t *tl = (tl_messages_setTyping_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->action_);
 	buf_free(tl->_buf);
@@ -14766,6 +15064,7 @@ void tl_messages_setTyping_free(tl_t *tl_) {
 void tl_messages_sendMessage_free(tl_t *tl_) {
 	tl_messages_sendMessage_t *tl = (tl_messages_sendMessage_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reply_to_);
 	buf_free(tl->message_);
@@ -14783,6 +15082,7 @@ void tl_messages_sendMessage_free(tl_t *tl_) {
 void tl_messages_sendMedia_free(tl_t *tl_) {
 	tl_messages_sendMedia_t *tl = (tl_messages_sendMedia_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reply_to_);
 	tl_free(tl->media_);
@@ -14801,6 +15101,7 @@ void tl_messages_sendMedia_free(tl_t *tl_) {
 void tl_messages_forwardMessages_free(tl_t *tl_) {
 	tl_messages_forwardMessages_t *tl = (tl_messages_forwardMessages_t *)tl_;
 	int i;
+	
 	tl_free(tl->from_peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -14817,7 +15118,7 @@ void tl_messages_forwardMessages_free(tl_t *tl_) {
 
 void tl_messages_reportSpam_free(tl_t *tl_) {
 	tl_messages_reportSpam_t *tl = (tl_messages_reportSpam_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14825,7 +15126,7 @@ void tl_messages_reportSpam_free(tl_t *tl_) {
 
 void tl_messages_getPeerSettings_free(tl_t *tl_) {
 	tl_messages_getPeerSettings_t *tl = (tl_messages_getPeerSettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14834,6 +15135,7 @@ void tl_messages_getPeerSettings_free(tl_t *tl_) {
 void tl_messages_report_free(tl_t *tl_) {
 	tl_messages_report_t *tl = (tl_messages_report_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -14847,6 +15149,7 @@ void tl_messages_report_free(tl_t *tl_) {
 void tl_messages_getChats_free(tl_t *tl_) {
 	tl_messages_getChats_t *tl = (tl_messages_getChats_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 	}
 	free(tl->id_);
@@ -14856,14 +15159,14 @@ void tl_messages_getChats_free(tl_t *tl_) {
 
 void tl_messages_getFullChat_free(tl_t *tl_) {
 	tl_messages_getFullChat_t *tl = (tl_messages_getFullChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_editChatTitle_free(tl_t *tl_) {
 	tl_messages_editChatTitle_t *tl = (tl_messages_editChatTitle_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14871,7 +15174,7 @@ void tl_messages_editChatTitle_free(tl_t *tl_) {
 
 void tl_messages_editChatPhoto_free(tl_t *tl_) {
 	tl_messages_editChatPhoto_t *tl = (tl_messages_editChatPhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->photo_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14879,7 +15182,7 @@ void tl_messages_editChatPhoto_free(tl_t *tl_) {
 
 void tl_messages_addChatUser_free(tl_t *tl_) {
 	tl_messages_addChatUser_t *tl = (tl_messages_addChatUser_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14887,7 +15190,7 @@ void tl_messages_addChatUser_free(tl_t *tl_) {
 
 void tl_messages_deleteChatUser_free(tl_t *tl_) {
 	tl_messages_deleteChatUser_t *tl = (tl_messages_deleteChatUser_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14896,6 +15199,7 @@ void tl_messages_deleteChatUser_free(tl_t *tl_) {
 void tl_messages_createChat_free(tl_t *tl_) {
 	tl_messages_createChat_t *tl = (tl_messages_createChat_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
 	}
@@ -14907,14 +15211,14 @@ void tl_messages_createChat_free(tl_t *tl_) {
 
 void tl_messages_getDhConfig_free(tl_t *tl_) {
 	tl_messages_getDhConfig_t *tl = (tl_messages_getDhConfig_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_requestEncryption_free(tl_t *tl_) {
 	tl_messages_requestEncryption_t *tl = (tl_messages_requestEncryption_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->g_a_);
 	buf_free(tl->_buf);
@@ -14923,7 +15227,7 @@ void tl_messages_requestEncryption_free(tl_t *tl_) {
 
 void tl_messages_acceptEncryption_free(tl_t *tl_) {
 	tl_messages_acceptEncryption_t *tl = (tl_messages_acceptEncryption_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->g_b_);
 	buf_free(tl->_buf);
@@ -14932,14 +15236,14 @@ void tl_messages_acceptEncryption_free(tl_t *tl_) {
 
 void tl_messages_discardEncryption_free(tl_t *tl_) {
 	tl_messages_discardEncryption_t *tl = (tl_messages_discardEncryption_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_setEncryptedTyping_free(tl_t *tl_) {
 	tl_messages_setEncryptedTyping_t *tl = (tl_messages_setEncryptedTyping_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->typing_);
 	buf_free(tl->_buf);
@@ -14948,7 +15252,7 @@ void tl_messages_setEncryptedTyping_free(tl_t *tl_) {
 
 void tl_messages_readEncryptedHistory_free(tl_t *tl_) {
 	tl_messages_readEncryptedHistory_t *tl = (tl_messages_readEncryptedHistory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -14956,7 +15260,7 @@ void tl_messages_readEncryptedHistory_free(tl_t *tl_) {
 
 void tl_messages_sendEncrypted_free(tl_t *tl_) {
 	tl_messages_sendEncrypted_t *tl = (tl_messages_sendEncrypted_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->data_);
 	buf_free(tl->_buf);
@@ -14965,7 +15269,7 @@ void tl_messages_sendEncrypted_free(tl_t *tl_) {
 
 void tl_messages_sendEncryptedFile_free(tl_t *tl_) {
 	tl_messages_sendEncryptedFile_t *tl = (tl_messages_sendEncryptedFile_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->data_);
 	tl_free(tl->file_);
@@ -14975,7 +15279,7 @@ void tl_messages_sendEncryptedFile_free(tl_t *tl_) {
 
 void tl_messages_sendEncryptedService_free(tl_t *tl_) {
 	tl_messages_sendEncryptedService_t *tl = (tl_messages_sendEncryptedService_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->data_);
 	buf_free(tl->_buf);
@@ -14984,14 +15288,14 @@ void tl_messages_sendEncryptedService_free(tl_t *tl_) {
 
 void tl_messages_receivedQueue_free(tl_t *tl_) {
 	tl_messages_receivedQueue_t *tl = (tl_messages_receivedQueue_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_reportEncryptedSpam_free(tl_t *tl_) {
 	tl_messages_reportEncryptedSpam_t *tl = (tl_messages_reportEncryptedSpam_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15000,6 +15304,7 @@ void tl_messages_reportEncryptedSpam_free(tl_t *tl_) {
 void tl_messages_readMessageContents_free(tl_t *tl_) {
 	tl_messages_readMessageContents_t *tl = (tl_messages_readMessageContents_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 	}
 	free(tl->id_);
@@ -15009,7 +15314,7 @@ void tl_messages_readMessageContents_free(tl_t *tl_) {
 
 void tl_messages_getStickers_free(tl_t *tl_) {
 	tl_messages_getStickers_t *tl = (tl_messages_getStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->emoticon_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15017,7 +15322,7 @@ void tl_messages_getStickers_free(tl_t *tl_) {
 
 void tl_messages_getAllStickers_free(tl_t *tl_) {
 	tl_messages_getAllStickers_t *tl = (tl_messages_getAllStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -15025,6 +15330,7 @@ void tl_messages_getAllStickers_free(tl_t *tl_) {
 void tl_messages_getWebPagePreview_free(tl_t *tl_) {
 	tl_messages_getWebPagePreview_t *tl = (tl_messages_getWebPagePreview_t *)tl_;
 	int i;
+	
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
 		tl_free(tl->entities_[i]);
@@ -15036,7 +15342,7 @@ void tl_messages_getWebPagePreview_free(tl_t *tl_) {
 
 void tl_messages_exportChatInvite_free(tl_t *tl_) {
 	tl_messages_exportChatInvite_t *tl = (tl_messages_exportChatInvite_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
@@ -15045,7 +15351,7 @@ void tl_messages_exportChatInvite_free(tl_t *tl_) {
 
 void tl_messages_checkChatInvite_free(tl_t *tl_) {
 	tl_messages_checkChatInvite_t *tl = (tl_messages_checkChatInvite_t *)tl_;
-	int i;
+	
 	buf_free(tl->hash_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15053,7 +15359,7 @@ void tl_messages_checkChatInvite_free(tl_t *tl_) {
 
 void tl_messages_importChatInvite_free(tl_t *tl_) {
 	tl_messages_importChatInvite_t *tl = (tl_messages_importChatInvite_t *)tl_;
-	int i;
+	
 	buf_free(tl->hash_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15061,7 +15367,7 @@ void tl_messages_importChatInvite_free(tl_t *tl_) {
 
 void tl_messages_getStickerSet_free(tl_t *tl_) {
 	tl_messages_getStickerSet_t *tl = (tl_messages_getStickerSet_t *)tl_;
-	int i;
+	
 	tl_free(tl->stickerset_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15069,7 +15375,7 @@ void tl_messages_getStickerSet_free(tl_t *tl_) {
 
 void tl_messages_installStickerSet_free(tl_t *tl_) {
 	tl_messages_installStickerSet_t *tl = (tl_messages_installStickerSet_t *)tl_;
-	int i;
+	
 	tl_free(tl->stickerset_);
 	tl_free(tl->archived_);
 	buf_free(tl->_buf);
@@ -15078,7 +15384,7 @@ void tl_messages_installStickerSet_free(tl_t *tl_) {
 
 void tl_messages_uninstallStickerSet_free(tl_t *tl_) {
 	tl_messages_uninstallStickerSet_t *tl = (tl_messages_uninstallStickerSet_t *)tl_;
-	int i;
+	
 	tl_free(tl->stickerset_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15086,7 +15392,7 @@ void tl_messages_uninstallStickerSet_free(tl_t *tl_) {
 
 void tl_messages_startBot_free(tl_t *tl_) {
 	tl_messages_startBot_t *tl = (tl_messages_startBot_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	tl_free(tl->peer_);
 	buf_free(tl->start_param_);
@@ -15097,6 +15403,7 @@ void tl_messages_startBot_free(tl_t *tl_) {
 void tl_messages_getMessagesViews_free(tl_t *tl_) {
 	tl_messages_getMessagesViews_t *tl = (tl_messages_getMessagesViews_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -15108,7 +15415,7 @@ void tl_messages_getMessagesViews_free(tl_t *tl_) {
 
 void tl_messages_editChatAdmin_free(tl_t *tl_) {
 	tl_messages_editChatAdmin_t *tl = (tl_messages_editChatAdmin_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	tl_free(tl->is_admin_);
 	buf_free(tl->_buf);
@@ -15117,14 +15424,14 @@ void tl_messages_editChatAdmin_free(tl_t *tl_) {
 
 void tl_messages_migrateChat_free(tl_t *tl_) {
 	tl_messages_migrateChat_t *tl = (tl_messages_migrateChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_searchGlobal_free(tl_t *tl_) {
 	tl_messages_searchGlobal_t *tl = (tl_messages_searchGlobal_t *)tl_;
-	int i;
+	
 	buf_free(tl->q_);
 	tl_free(tl->filter_);
 	tl_free(tl->offset_peer_);
@@ -15135,6 +15442,7 @@ void tl_messages_searchGlobal_free(tl_t *tl_) {
 void tl_messages_reorderStickerSets_free(tl_t *tl_) {
 	tl_messages_reorderStickerSets_t *tl = (tl_messages_reorderStickerSets_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->order_len; ++i){
 	}
 	free(tl->order_);
@@ -15144,7 +15452,7 @@ void tl_messages_reorderStickerSets_free(tl_t *tl_) {
 
 void tl_messages_getDocumentByHash_free(tl_t *tl_) {
 	tl_messages_getDocumentByHash_t *tl = (tl_messages_getDocumentByHash_t *)tl_;
-	int i;
+	
 	buf_free(tl->sha256_);
 	buf_free(tl->mime_type_);
 	buf_free(tl->_buf);
@@ -15153,14 +15461,14 @@ void tl_messages_getDocumentByHash_free(tl_t *tl_) {
 
 void tl_messages_getSavedGifs_free(tl_t *tl_) {
 	tl_messages_getSavedGifs_t *tl = (tl_messages_getSavedGifs_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_saveGif_free(tl_t *tl_) {
 	tl_messages_saveGif_t *tl = (tl_messages_saveGif_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	tl_free(tl->unsave_);
 	buf_free(tl->_buf);
@@ -15169,7 +15477,7 @@ void tl_messages_saveGif_free(tl_t *tl_) {
 
 void tl_messages_getInlineBotResults_free(tl_t *tl_) {
 	tl_messages_getInlineBotResults_t *tl = (tl_messages_getInlineBotResults_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	tl_free(tl->peer_);
 	tl_free(tl->geo_point_);
@@ -15182,6 +15490,7 @@ void tl_messages_getInlineBotResults_free(tl_t *tl_) {
 void tl_messages_setInlineBotResults_free(tl_t *tl_) {
 	tl_messages_setInlineBotResults_t *tl = (tl_messages_setInlineBotResults_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->results_len; ++i){
 		tl_free(tl->results_[i]);
 	}
@@ -15195,7 +15504,7 @@ void tl_messages_setInlineBotResults_free(tl_t *tl_) {
 
 void tl_messages_sendInlineBotResult_free(tl_t *tl_) {
 	tl_messages_sendInlineBotResult_t *tl = (tl_messages_sendInlineBotResult_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reply_to_);
 	buf_free(tl->id_);
@@ -15207,7 +15516,7 @@ void tl_messages_sendInlineBotResult_free(tl_t *tl_) {
 
 void tl_messages_getMessageEditData_free(tl_t *tl_) {
 	tl_messages_getMessageEditData_t *tl = (tl_messages_getMessageEditData_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15216,6 +15525,7 @@ void tl_messages_getMessageEditData_free(tl_t *tl_) {
 void tl_messages_editMessage_free(tl_t *tl_) {
 	tl_messages_editMessage_t *tl = (tl_messages_editMessage_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->message_);
 	tl_free(tl->media_);
@@ -15231,6 +15541,7 @@ void tl_messages_editMessage_free(tl_t *tl_) {
 void tl_messages_editInlineBotMessage_free(tl_t *tl_) {
 	tl_messages_editInlineBotMessage_t *tl = (tl_messages_editInlineBotMessage_t *)tl_;
 	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->message_);
 	tl_free(tl->media_);
@@ -15245,7 +15556,7 @@ void tl_messages_editInlineBotMessage_free(tl_t *tl_) {
 
 void tl_messages_getBotCallbackAnswer_free(tl_t *tl_) {
 	tl_messages_getBotCallbackAnswer_t *tl = (tl_messages_getBotCallbackAnswer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->data_);
 	tl_free(tl->password_);
@@ -15255,7 +15566,7 @@ void tl_messages_getBotCallbackAnswer_free(tl_t *tl_) {
 
 void tl_messages_setBotCallbackAnswer_free(tl_t *tl_) {
 	tl_messages_setBotCallbackAnswer_t *tl = (tl_messages_setBotCallbackAnswer_t *)tl_;
-	int i;
+	
 	buf_free(tl->message_);
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
@@ -15265,6 +15576,7 @@ void tl_messages_setBotCallbackAnswer_free(tl_t *tl_) {
 void tl_messages_getPeerDialogs_free(tl_t *tl_) {
 	tl_messages_getPeerDialogs_t *tl = (tl_messages_getPeerDialogs_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->peers_len; ++i){
 		tl_free(tl->peers_[i]);
 	}
@@ -15276,6 +15588,7 @@ void tl_messages_getPeerDialogs_free(tl_t *tl_) {
 void tl_messages_saveDraft_free(tl_t *tl_) {
 	tl_messages_saveDraft_t *tl = (tl_messages_saveDraft_t *)tl_;
 	int i;
+	
 	tl_free(tl->reply_to_);
 	tl_free(tl->peer_);
 	buf_free(tl->message_);
@@ -15290,14 +15603,14 @@ void tl_messages_saveDraft_free(tl_t *tl_) {
 
 void tl_messages_getAllDrafts_free(tl_t *tl_) {
 	tl_messages_getAllDrafts_t *tl = (tl_messages_getAllDrafts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getFeaturedStickers_free(tl_t *tl_) {
 	tl_messages_getFeaturedStickers_t *tl = (tl_messages_getFeaturedStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -15305,6 +15618,7 @@ void tl_messages_getFeaturedStickers_free(tl_t *tl_) {
 void tl_messages_readFeaturedStickers_free(tl_t *tl_) {
 	tl_messages_readFeaturedStickers_t *tl = (tl_messages_readFeaturedStickers_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 	}
 	free(tl->id_);
@@ -15314,14 +15628,14 @@ void tl_messages_readFeaturedStickers_free(tl_t *tl_) {
 
 void tl_messages_getRecentStickers_free(tl_t *tl_) {
 	tl_messages_getRecentStickers_t *tl = (tl_messages_getRecentStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_saveRecentSticker_free(tl_t *tl_) {
 	tl_messages_saveRecentSticker_t *tl = (tl_messages_saveRecentSticker_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	tl_free(tl->unsave_);
 	buf_free(tl->_buf);
@@ -15330,28 +15644,28 @@ void tl_messages_saveRecentSticker_free(tl_t *tl_) {
 
 void tl_messages_clearRecentStickers_free(tl_t *tl_) {
 	tl_messages_clearRecentStickers_t *tl = (tl_messages_clearRecentStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getArchivedStickers_free(tl_t *tl_) {
 	tl_messages_getArchivedStickers_t *tl = (tl_messages_getArchivedStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getMaskStickers_free(tl_t *tl_) {
 	tl_messages_getMaskStickers_t *tl = (tl_messages_getMaskStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getAttachedStickers_free(tl_t *tl_) {
 	tl_messages_getAttachedStickers_t *tl = (tl_messages_getAttachedStickers_t *)tl_;
-	int i;
+	
 	tl_free(tl->media_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15359,7 +15673,7 @@ void tl_messages_getAttachedStickers_free(tl_t *tl_) {
 
 void tl_messages_setGameScore_free(tl_t *tl_) {
 	tl_messages_setGameScore_t *tl = (tl_messages_setGameScore_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
@@ -15368,7 +15682,7 @@ void tl_messages_setGameScore_free(tl_t *tl_) {
 
 void tl_messages_setInlineGameScore_free(tl_t *tl_) {
 	tl_messages_setInlineGameScore_t *tl = (tl_messages_setInlineGameScore_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
@@ -15377,7 +15691,7 @@ void tl_messages_setInlineGameScore_free(tl_t *tl_) {
 
 void tl_messages_getGameHighScores_free(tl_t *tl_) {
 	tl_messages_getGameHighScores_t *tl = (tl_messages_getGameHighScores_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
@@ -15386,7 +15700,7 @@ void tl_messages_getGameHighScores_free(tl_t *tl_) {
 
 void tl_messages_getInlineGameHighScores_free(tl_t *tl_) {
 	tl_messages_getInlineGameHighScores_t *tl = (tl_messages_getInlineGameHighScores_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
@@ -15395,7 +15709,7 @@ void tl_messages_getInlineGameHighScores_free(tl_t *tl_) {
 
 void tl_messages_getCommonChats_free(tl_t *tl_) {
 	tl_messages_getCommonChats_t *tl = (tl_messages_getCommonChats_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15403,7 +15717,7 @@ void tl_messages_getCommonChats_free(tl_t *tl_) {
 
 void tl_messages_getWebPage_free(tl_t *tl_) {
 	tl_messages_getWebPage_t *tl = (tl_messages_getWebPage_t *)tl_;
-	int i;
+	
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15411,7 +15725,7 @@ void tl_messages_getWebPage_free(tl_t *tl_) {
 
 void tl_messages_toggleDialogPin_free(tl_t *tl_) {
 	tl_messages_toggleDialogPin_t *tl = (tl_messages_toggleDialogPin_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15420,6 +15734,7 @@ void tl_messages_toggleDialogPin_free(tl_t *tl_) {
 void tl_messages_reorderPinnedDialogs_free(tl_t *tl_) {
 	tl_messages_reorderPinnedDialogs_t *tl = (tl_messages_reorderPinnedDialogs_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->order_len; ++i){
 		tl_free(tl->order_[i]);
 	}
@@ -15430,7 +15745,7 @@ void tl_messages_reorderPinnedDialogs_free(tl_t *tl_) {
 
 void tl_messages_getPinnedDialogs_free(tl_t *tl_) {
 	tl_messages_getPinnedDialogs_t *tl = (tl_messages_getPinnedDialogs_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -15438,6 +15753,7 @@ void tl_messages_getPinnedDialogs_free(tl_t *tl_) {
 void tl_messages_setBotShippingResults_free(tl_t *tl_) {
 	tl_messages_setBotShippingResults_t *tl = (tl_messages_setBotShippingResults_t *)tl_;
 	int i;
+	
 	buf_free(tl->error_);
 	for(i=0; i<tl->shipping_options_len; ++i){
 		tl_free(tl->shipping_options_[i]);
@@ -15449,7 +15765,7 @@ void tl_messages_setBotShippingResults_free(tl_t *tl_) {
 
 void tl_messages_setBotPrecheckoutResults_free(tl_t *tl_) {
 	tl_messages_setBotPrecheckoutResults_t *tl = (tl_messages_setBotPrecheckoutResults_t *)tl_;
-	int i;
+	
 	buf_free(tl->error_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15457,7 +15773,7 @@ void tl_messages_setBotPrecheckoutResults_free(tl_t *tl_) {
 
 void tl_messages_uploadMedia_free(tl_t *tl_) {
 	tl_messages_uploadMedia_t *tl = (tl_messages_uploadMedia_t *)tl_;
-	int i;
+	
 	buf_free(tl->business_connection_id_);
 	tl_free(tl->peer_);
 	tl_free(tl->media_);
@@ -15467,7 +15783,7 @@ void tl_messages_uploadMedia_free(tl_t *tl_) {
 
 void tl_messages_sendScreenshotNotification_free(tl_t *tl_) {
 	tl_messages_sendScreenshotNotification_t *tl = (tl_messages_sendScreenshotNotification_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reply_to_);
 	buf_free(tl->_buf);
@@ -15476,14 +15792,14 @@ void tl_messages_sendScreenshotNotification_free(tl_t *tl_) {
 
 void tl_messages_getFavedStickers_free(tl_t *tl_) {
 	tl_messages_getFavedStickers_t *tl = (tl_messages_getFavedStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_faveSticker_free(tl_t *tl_) {
 	tl_messages_faveSticker_t *tl = (tl_messages_faveSticker_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	tl_free(tl->unfave_);
 	buf_free(tl->_buf);
@@ -15492,7 +15808,7 @@ void tl_messages_faveSticker_free(tl_t *tl_) {
 
 void tl_messages_getUnreadMentions_free(tl_t *tl_) {
 	tl_messages_getUnreadMentions_t *tl = (tl_messages_getUnreadMentions_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15500,7 +15816,7 @@ void tl_messages_getUnreadMentions_free(tl_t *tl_) {
 
 void tl_messages_readMentions_free(tl_t *tl_) {
 	tl_messages_readMentions_t *tl = (tl_messages_readMentions_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15508,7 +15824,7 @@ void tl_messages_readMentions_free(tl_t *tl_) {
 
 void tl_messages_getRecentLocations_free(tl_t *tl_) {
 	tl_messages_getRecentLocations_t *tl = (tl_messages_getRecentLocations_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15517,6 +15833,7 @@ void tl_messages_getRecentLocations_free(tl_t *tl_) {
 void tl_messages_sendMultiMedia_free(tl_t *tl_) {
 	tl_messages_sendMultiMedia_t *tl = (tl_messages_sendMultiMedia_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reply_to_);
 	for(i=0; i<tl->multi_media_len; ++i){
@@ -15531,7 +15848,7 @@ void tl_messages_sendMultiMedia_free(tl_t *tl_) {
 
 void tl_messages_uploadEncryptedFile_free(tl_t *tl_) {
 	tl_messages_uploadEncryptedFile_t *tl = (tl_messages_uploadEncryptedFile_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->file_);
 	buf_free(tl->_buf);
@@ -15540,7 +15857,7 @@ void tl_messages_uploadEncryptedFile_free(tl_t *tl_) {
 
 void tl_messages_searchStickerSets_free(tl_t *tl_) {
 	tl_messages_searchStickerSets_t *tl = (tl_messages_searchStickerSets_t *)tl_;
-	int i;
+	
 	buf_free(tl->q_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15548,14 +15865,14 @@ void tl_messages_searchStickerSets_free(tl_t *tl_) {
 
 void tl_messages_getSplitRanges_free(tl_t *tl_) {
 	tl_messages_getSplitRanges_t *tl = (tl_messages_getSplitRanges_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_markDialogUnread_free(tl_t *tl_) {
 	tl_messages_markDialogUnread_t *tl = (tl_messages_markDialogUnread_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15563,21 +15880,21 @@ void tl_messages_markDialogUnread_free(tl_t *tl_) {
 
 void tl_messages_getDialogUnreadMarks_free(tl_t *tl_) {
 	tl_messages_getDialogUnreadMarks_t *tl = (tl_messages_getDialogUnreadMarks_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_clearAllDrafts_free(tl_t *tl_) {
 	tl_messages_clearAllDrafts_t *tl = (tl_messages_clearAllDrafts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_updatePinnedMessage_free(tl_t *tl_) {
 	tl_messages_updatePinnedMessage_t *tl = (tl_messages_updatePinnedMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15586,6 +15903,7 @@ void tl_messages_updatePinnedMessage_free(tl_t *tl_) {
 void tl_messages_sendVote_free(tl_t *tl_) {
 	tl_messages_sendVote_t *tl = (tl_messages_sendVote_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->options_len; ++i){
 		buf_free(tl->options_[i]);
@@ -15597,7 +15915,7 @@ void tl_messages_sendVote_free(tl_t *tl_) {
 
 void tl_messages_getPollResults_free(tl_t *tl_) {
 	tl_messages_getPollResults_t *tl = (tl_messages_getPollResults_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15605,7 +15923,7 @@ void tl_messages_getPollResults_free(tl_t *tl_) {
 
 void tl_messages_getOnlines_free(tl_t *tl_) {
 	tl_messages_getOnlines_t *tl = (tl_messages_getOnlines_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15613,7 +15931,7 @@ void tl_messages_getOnlines_free(tl_t *tl_) {
 
 void tl_messages_editChatAbout_free(tl_t *tl_) {
 	tl_messages_editChatAbout_t *tl = (tl_messages_editChatAbout_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->about_);
 	buf_free(tl->_buf);
@@ -15622,7 +15940,7 @@ void tl_messages_editChatAbout_free(tl_t *tl_) {
 
 void tl_messages_editChatDefaultBannedRights_free(tl_t *tl_) {
 	tl_messages_editChatDefaultBannedRights_t *tl = (tl_messages_editChatDefaultBannedRights_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->banned_rights_);
 	buf_free(tl->_buf);
@@ -15631,7 +15949,7 @@ void tl_messages_editChatDefaultBannedRights_free(tl_t *tl_) {
 
 void tl_messages_getEmojiKeywords_free(tl_t *tl_) {
 	tl_messages_getEmojiKeywords_t *tl = (tl_messages_getEmojiKeywords_t *)tl_;
-	int i;
+	
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15639,7 +15957,7 @@ void tl_messages_getEmojiKeywords_free(tl_t *tl_) {
 
 void tl_messages_getEmojiKeywordsDifference_free(tl_t *tl_) {
 	tl_messages_getEmojiKeywordsDifference_t *tl = (tl_messages_getEmojiKeywordsDifference_t *)tl_;
-	int i;
+	
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15648,6 +15966,7 @@ void tl_messages_getEmojiKeywordsDifference_free(tl_t *tl_) {
 void tl_messages_getEmojiKeywordsLanguages_free(tl_t *tl_) {
 	tl_messages_getEmojiKeywordsLanguages_t *tl = (tl_messages_getEmojiKeywordsLanguages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->lang_codes_len; ++i){
 		buf_free(tl->lang_codes_[i]);
 	}
@@ -15658,7 +15977,7 @@ void tl_messages_getEmojiKeywordsLanguages_free(tl_t *tl_) {
 
 void tl_messages_getEmojiURL_free(tl_t *tl_) {
 	tl_messages_getEmojiURL_t *tl = (tl_messages_getEmojiURL_t *)tl_;
-	int i;
+	
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15667,6 +15986,7 @@ void tl_messages_getEmojiURL_free(tl_t *tl_) {
 void tl_messages_getSearchCounters_free(tl_t *tl_) {
 	tl_messages_getSearchCounters_t *tl = (tl_messages_getSearchCounters_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->saved_peer_id_);
 	for(i=0; i<tl->filters_len; ++i){
@@ -15679,7 +15999,7 @@ void tl_messages_getSearchCounters_free(tl_t *tl_) {
 
 void tl_messages_requestUrlAuth_free(tl_t *tl_) {
 	tl_messages_requestUrlAuth_t *tl = (tl_messages_requestUrlAuth_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
@@ -15688,7 +16008,7 @@ void tl_messages_requestUrlAuth_free(tl_t *tl_) {
 
 void tl_messages_acceptUrlAuth_free(tl_t *tl_) {
 	tl_messages_acceptUrlAuth_t *tl = (tl_messages_acceptUrlAuth_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->url_);
 	buf_free(tl->_buf);
@@ -15697,7 +16017,7 @@ void tl_messages_acceptUrlAuth_free(tl_t *tl_) {
 
 void tl_messages_hidePeerSettingsBar_free(tl_t *tl_) {
 	tl_messages_hidePeerSettingsBar_t *tl = (tl_messages_hidePeerSettingsBar_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15705,7 +16025,7 @@ void tl_messages_hidePeerSettingsBar_free(tl_t *tl_) {
 
 void tl_messages_getScheduledHistory_free(tl_t *tl_) {
 	tl_messages_getScheduledHistory_t *tl = (tl_messages_getScheduledHistory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15714,6 +16034,7 @@ void tl_messages_getScheduledHistory_free(tl_t *tl_) {
 void tl_messages_getScheduledMessages_free(tl_t *tl_) {
 	tl_messages_getScheduledMessages_t *tl = (tl_messages_getScheduledMessages_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -15725,6 +16046,7 @@ void tl_messages_getScheduledMessages_free(tl_t *tl_) {
 void tl_messages_sendScheduledMessages_free(tl_t *tl_) {
 	tl_messages_sendScheduledMessages_t *tl = (tl_messages_sendScheduledMessages_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -15736,6 +16058,7 @@ void tl_messages_sendScheduledMessages_free(tl_t *tl_) {
 void tl_messages_deleteScheduledMessages_free(tl_t *tl_) {
 	tl_messages_deleteScheduledMessages_t *tl = (tl_messages_deleteScheduledMessages_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -15746,7 +16069,7 @@ void tl_messages_deleteScheduledMessages_free(tl_t *tl_) {
 
 void tl_messages_getPollVotes_free(tl_t *tl_) {
 	tl_messages_getPollVotes_t *tl = (tl_messages_getPollVotes_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->option_);
 	buf_free(tl->offset_);
@@ -15757,6 +16080,7 @@ void tl_messages_getPollVotes_free(tl_t *tl_) {
 void tl_messages_toggleStickerSets_free(tl_t *tl_) {
 	tl_messages_toggleStickerSets_t *tl = (tl_messages_toggleStickerSets_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->stickersets_len; ++i){
 		tl_free(tl->stickersets_[i]);
 	}
@@ -15767,21 +16091,21 @@ void tl_messages_toggleStickerSets_free(tl_t *tl_) {
 
 void tl_messages_getDialogFilters_free(tl_t *tl_) {
 	tl_messages_getDialogFilters_t *tl = (tl_messages_getDialogFilters_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getSuggestedDialogFilters_free(tl_t *tl_) {
 	tl_messages_getSuggestedDialogFilters_t *tl = (tl_messages_getSuggestedDialogFilters_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_updateDialogFilter_free(tl_t *tl_) {
 	tl_messages_updateDialogFilter_t *tl = (tl_messages_updateDialogFilter_t *)tl_;
-	int i;
+	
 	tl_free(tl->filter_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15790,6 +16114,7 @@ void tl_messages_updateDialogFilter_free(tl_t *tl_) {
 void tl_messages_updateDialogFiltersOrder_free(tl_t *tl_) {
 	tl_messages_updateDialogFiltersOrder_t *tl = (tl_messages_updateDialogFiltersOrder_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->order_len; ++i){
 	}
 	free(tl->order_);
@@ -15799,14 +16124,14 @@ void tl_messages_updateDialogFiltersOrder_free(tl_t *tl_) {
 
 void tl_messages_getOldFeaturedStickers_free(tl_t *tl_) {
 	tl_messages_getOldFeaturedStickers_t *tl = (tl_messages_getOldFeaturedStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getReplies_free(tl_t *tl_) {
 	tl_messages_getReplies_t *tl = (tl_messages_getReplies_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15814,7 +16139,7 @@ void tl_messages_getReplies_free(tl_t *tl_) {
 
 void tl_messages_getDiscussionMessage_free(tl_t *tl_) {
 	tl_messages_getDiscussionMessage_t *tl = (tl_messages_getDiscussionMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15822,7 +16147,7 @@ void tl_messages_getDiscussionMessage_free(tl_t *tl_) {
 
 void tl_messages_readDiscussion_free(tl_t *tl_) {
 	tl_messages_readDiscussion_t *tl = (tl_messages_readDiscussion_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15830,7 +16155,7 @@ void tl_messages_readDiscussion_free(tl_t *tl_) {
 
 void tl_messages_unpinAllMessages_free(tl_t *tl_) {
 	tl_messages_unpinAllMessages_t *tl = (tl_messages_unpinAllMessages_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15838,21 +16163,21 @@ void tl_messages_unpinAllMessages_free(tl_t *tl_) {
 
 void tl_messages_deleteChat_free(tl_t *tl_) {
 	tl_messages_deleteChat_t *tl = (tl_messages_deleteChat_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_deletePhoneCallHistory_free(tl_t *tl_) {
 	tl_messages_deletePhoneCallHistory_t *tl = (tl_messages_deletePhoneCallHistory_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_checkHistoryImport_free(tl_t *tl_) {
 	tl_messages_checkHistoryImport_t *tl = (tl_messages_checkHistoryImport_t *)tl_;
-	int i;
+	
 	buf_free(tl->import_head_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15860,7 +16185,7 @@ void tl_messages_checkHistoryImport_free(tl_t *tl_) {
 
 void tl_messages_initHistoryImport_free(tl_t *tl_) {
 	tl_messages_initHistoryImport_t *tl = (tl_messages_initHistoryImport_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->file_);
 	buf_free(tl->_buf);
@@ -15869,7 +16194,7 @@ void tl_messages_initHistoryImport_free(tl_t *tl_) {
 
 void tl_messages_uploadImportedMedia_free(tl_t *tl_) {
 	tl_messages_uploadImportedMedia_t *tl = (tl_messages_uploadImportedMedia_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->file_name_);
 	tl_free(tl->media_);
@@ -15879,7 +16204,7 @@ void tl_messages_uploadImportedMedia_free(tl_t *tl_) {
 
 void tl_messages_startHistoryImport_free(tl_t *tl_) {
 	tl_messages_startHistoryImport_t *tl = (tl_messages_startHistoryImport_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15887,7 +16212,7 @@ void tl_messages_startHistoryImport_free(tl_t *tl_) {
 
 void tl_messages_getExportedChatInvites_free(tl_t *tl_) {
 	tl_messages_getExportedChatInvites_t *tl = (tl_messages_getExportedChatInvites_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->admin_id_);
 	buf_free(tl->offset_link_);
@@ -15897,7 +16222,7 @@ void tl_messages_getExportedChatInvites_free(tl_t *tl_) {
 
 void tl_messages_getExportedChatInvite_free(tl_t *tl_) {
 	tl_messages_getExportedChatInvite_t *tl = (tl_messages_getExportedChatInvite_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->link_);
 	buf_free(tl->_buf);
@@ -15906,7 +16231,7 @@ void tl_messages_getExportedChatInvite_free(tl_t *tl_) {
 
 void tl_messages_editExportedChatInvite_free(tl_t *tl_) {
 	tl_messages_editExportedChatInvite_t *tl = (tl_messages_editExportedChatInvite_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->link_);
 	tl_free(tl->request_needed_);
@@ -15917,7 +16242,7 @@ void tl_messages_editExportedChatInvite_free(tl_t *tl_) {
 
 void tl_messages_deleteRevokedExportedChatInvites_free(tl_t *tl_) {
 	tl_messages_deleteRevokedExportedChatInvites_t *tl = (tl_messages_deleteRevokedExportedChatInvites_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->admin_id_);
 	buf_free(tl->_buf);
@@ -15926,7 +16251,7 @@ void tl_messages_deleteRevokedExportedChatInvites_free(tl_t *tl_) {
 
 void tl_messages_deleteExportedChatInvite_free(tl_t *tl_) {
 	tl_messages_deleteExportedChatInvite_t *tl = (tl_messages_deleteExportedChatInvite_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->link_);
 	buf_free(tl->_buf);
@@ -15935,7 +16260,7 @@ void tl_messages_deleteExportedChatInvite_free(tl_t *tl_) {
 
 void tl_messages_getAdminsWithInvites_free(tl_t *tl_) {
 	tl_messages_getAdminsWithInvites_t *tl = (tl_messages_getAdminsWithInvites_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15943,7 +16268,7 @@ void tl_messages_getAdminsWithInvites_free(tl_t *tl_) {
 
 void tl_messages_getChatInviteImporters_free(tl_t *tl_) {
 	tl_messages_getChatInviteImporters_t *tl = (tl_messages_getChatInviteImporters_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->link_);
 	buf_free(tl->q_);
@@ -15954,7 +16279,7 @@ void tl_messages_getChatInviteImporters_free(tl_t *tl_) {
 
 void tl_messages_setHistoryTTL_free(tl_t *tl_) {
 	tl_messages_setHistoryTTL_t *tl = (tl_messages_setHistoryTTL_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15962,7 +16287,7 @@ void tl_messages_setHistoryTTL_free(tl_t *tl_) {
 
 void tl_messages_checkHistoryImportPeer_free(tl_t *tl_) {
 	tl_messages_checkHistoryImportPeer_t *tl = (tl_messages_checkHistoryImportPeer_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15970,7 +16295,7 @@ void tl_messages_checkHistoryImportPeer_free(tl_t *tl_) {
 
 void tl_messages_setChatTheme_free(tl_t *tl_) {
 	tl_messages_setChatTheme_t *tl = (tl_messages_setChatTheme_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->emoticon_);
 	buf_free(tl->_buf);
@@ -15979,7 +16304,7 @@ void tl_messages_setChatTheme_free(tl_t *tl_) {
 
 void tl_messages_getMessageReadParticipants_free(tl_t *tl_) {
 	tl_messages_getMessageReadParticipants_t *tl = (tl_messages_getMessageReadParticipants_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -15987,7 +16312,7 @@ void tl_messages_getMessageReadParticipants_free(tl_t *tl_) {
 
 void tl_messages_getSearchResultsCalendar_free(tl_t *tl_) {
 	tl_messages_getSearchResultsCalendar_t *tl = (tl_messages_getSearchResultsCalendar_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->saved_peer_id_);
 	tl_free(tl->filter_);
@@ -15997,7 +16322,7 @@ void tl_messages_getSearchResultsCalendar_free(tl_t *tl_) {
 
 void tl_messages_getSearchResultsPositions_free(tl_t *tl_) {
 	tl_messages_getSearchResultsPositions_t *tl = (tl_messages_getSearchResultsPositions_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->saved_peer_id_);
 	tl_free(tl->filter_);
@@ -16007,7 +16332,7 @@ void tl_messages_getSearchResultsPositions_free(tl_t *tl_) {
 
 void tl_messages_hideChatJoinRequest_free(tl_t *tl_) {
 	tl_messages_hideChatJoinRequest_t *tl = (tl_messages_hideChatJoinRequest_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
@@ -16016,7 +16341,7 @@ void tl_messages_hideChatJoinRequest_free(tl_t *tl_) {
 
 void tl_messages_hideAllChatJoinRequests_free(tl_t *tl_) {
 	tl_messages_hideAllChatJoinRequests_t *tl = (tl_messages_hideAllChatJoinRequests_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->link_);
 	buf_free(tl->_buf);
@@ -16025,7 +16350,7 @@ void tl_messages_hideAllChatJoinRequests_free(tl_t *tl_) {
 
 void tl_messages_toggleNoForwards_free(tl_t *tl_) {
 	tl_messages_toggleNoForwards_t *tl = (tl_messages_toggleNoForwards_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
@@ -16034,7 +16359,7 @@ void tl_messages_toggleNoForwards_free(tl_t *tl_) {
 
 void tl_messages_saveDefaultSendAs_free(tl_t *tl_) {
 	tl_messages_saveDefaultSendAs_t *tl = (tl_messages_saveDefaultSendAs_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->send_as_);
 	buf_free(tl->_buf);
@@ -16044,6 +16369,7 @@ void tl_messages_saveDefaultSendAs_free(tl_t *tl_) {
 void tl_messages_sendReaction_free(tl_t *tl_) {
 	tl_messages_sendReaction_t *tl = (tl_messages_sendReaction_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->reaction_len; ++i){
 		tl_free(tl->reaction_[i]);
@@ -16056,6 +16382,7 @@ void tl_messages_sendReaction_free(tl_t *tl_) {
 void tl_messages_getMessagesReactions_free(tl_t *tl_) {
 	tl_messages_getMessagesReactions_t *tl = (tl_messages_getMessagesReactions_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -16066,7 +16393,7 @@ void tl_messages_getMessagesReactions_free(tl_t *tl_) {
 
 void tl_messages_getMessageReactionsList_free(tl_t *tl_) {
 	tl_messages_getMessageReactionsList_t *tl = (tl_messages_getMessageReactionsList_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reaction_);
 	buf_free(tl->offset_);
@@ -16076,7 +16403,7 @@ void tl_messages_getMessageReactionsList_free(tl_t *tl_) {
 
 void tl_messages_setChatAvailableReactions_free(tl_t *tl_) {
 	tl_messages_setChatAvailableReactions_t *tl = (tl_messages_setChatAvailableReactions_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->available_reactions_);
 	buf_free(tl->_buf);
@@ -16085,14 +16412,14 @@ void tl_messages_setChatAvailableReactions_free(tl_t *tl_) {
 
 void tl_messages_getAvailableReactions_free(tl_t *tl_) {
 	tl_messages_getAvailableReactions_t *tl = (tl_messages_getAvailableReactions_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_setDefaultReaction_free(tl_t *tl_) {
 	tl_messages_setDefaultReaction_t *tl = (tl_messages_setDefaultReaction_t *)tl_;
-	int i;
+	
 	tl_free(tl->reaction_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16101,6 +16428,7 @@ void tl_messages_setDefaultReaction_free(tl_t *tl_) {
 void tl_messages_translateText_free(tl_t *tl_) {
 	tl_messages_translateText_t *tl = (tl_messages_translateText_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -16116,7 +16444,7 @@ void tl_messages_translateText_free(tl_t *tl_) {
 
 void tl_messages_getUnreadReactions_free(tl_t *tl_) {
 	tl_messages_getUnreadReactions_t *tl = (tl_messages_getUnreadReactions_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16124,7 +16452,7 @@ void tl_messages_getUnreadReactions_free(tl_t *tl_) {
 
 void tl_messages_readReactions_free(tl_t *tl_) {
 	tl_messages_readReactions_t *tl = (tl_messages_readReactions_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16132,7 +16460,7 @@ void tl_messages_readReactions_free(tl_t *tl_) {
 
 void tl_messages_searchSentMedia_free(tl_t *tl_) {
 	tl_messages_searchSentMedia_t *tl = (tl_messages_searchSentMedia_t *)tl_;
-	int i;
+	
 	buf_free(tl->q_);
 	tl_free(tl->filter_);
 	buf_free(tl->_buf);
@@ -16141,14 +16469,14 @@ void tl_messages_searchSentMedia_free(tl_t *tl_) {
 
 void tl_messages_getAttachMenuBots_free(tl_t *tl_) {
 	tl_messages_getAttachMenuBots_t *tl = (tl_messages_getAttachMenuBots_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getAttachMenuBot_free(tl_t *tl_) {
 	tl_messages_getAttachMenuBot_t *tl = (tl_messages_getAttachMenuBot_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16156,7 +16484,7 @@ void tl_messages_getAttachMenuBot_free(tl_t *tl_) {
 
 void tl_messages_toggleBotInAttachMenu_free(tl_t *tl_) {
 	tl_messages_toggleBotInAttachMenu_t *tl = (tl_messages_toggleBotInAttachMenu_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
@@ -16165,7 +16493,7 @@ void tl_messages_toggleBotInAttachMenu_free(tl_t *tl_) {
 
 void tl_messages_requestWebView_free(tl_t *tl_) {
 	tl_messages_requestWebView_t *tl = (tl_messages_requestWebView_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->bot_);
 	buf_free(tl->url_);
@@ -16180,7 +16508,7 @@ void tl_messages_requestWebView_free(tl_t *tl_) {
 
 void tl_messages_prolongWebView_free(tl_t *tl_) {
 	tl_messages_prolongWebView_t *tl = (tl_messages_prolongWebView_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->bot_);
 	tl_free(tl->reply_to_);
@@ -16191,7 +16519,7 @@ void tl_messages_prolongWebView_free(tl_t *tl_) {
 
 void tl_messages_requestSimpleWebView_free(tl_t *tl_) {
 	tl_messages_requestSimpleWebView_t *tl = (tl_messages_requestSimpleWebView_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->url_);
 	buf_free(tl->start_param_);
@@ -16203,7 +16531,7 @@ void tl_messages_requestSimpleWebView_free(tl_t *tl_) {
 
 void tl_messages_sendWebViewResultMessage_free(tl_t *tl_) {
 	tl_messages_sendWebViewResultMessage_t *tl = (tl_messages_sendWebViewResultMessage_t *)tl_;
-	int i;
+	
 	buf_free(tl->bot_query_id_);
 	tl_free(tl->result_);
 	buf_free(tl->_buf);
@@ -16212,7 +16540,7 @@ void tl_messages_sendWebViewResultMessage_free(tl_t *tl_) {
 
 void tl_messages_sendWebViewData_free(tl_t *tl_) {
 	tl_messages_sendWebViewData_t *tl = (tl_messages_sendWebViewData_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->button_text_);
 	buf_free(tl->data_);
@@ -16222,7 +16550,7 @@ void tl_messages_sendWebViewData_free(tl_t *tl_) {
 
 void tl_messages_transcribeAudio_free(tl_t *tl_) {
 	tl_messages_transcribeAudio_t *tl = (tl_messages_transcribeAudio_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16230,7 +16558,7 @@ void tl_messages_transcribeAudio_free(tl_t *tl_) {
 
 void tl_messages_rateTranscribedAudio_free(tl_t *tl_) {
 	tl_messages_rateTranscribedAudio_t *tl = (tl_messages_rateTranscribedAudio_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->good_);
 	buf_free(tl->_buf);
@@ -16240,6 +16568,7 @@ void tl_messages_rateTranscribedAudio_free(tl_t *tl_) {
 void tl_messages_getCustomEmojiDocuments_free(tl_t *tl_) {
 	tl_messages_getCustomEmojiDocuments_t *tl = (tl_messages_getCustomEmojiDocuments_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->document_id_len; ++i){
 	}
 	free(tl->document_id_);
@@ -16249,21 +16578,21 @@ void tl_messages_getCustomEmojiDocuments_free(tl_t *tl_) {
 
 void tl_messages_getEmojiStickers_free(tl_t *tl_) {
 	tl_messages_getEmojiStickers_t *tl = (tl_messages_getEmojiStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getFeaturedEmojiStickers_free(tl_t *tl_) {
 	tl_messages_getFeaturedEmojiStickers_t *tl = (tl_messages_getFeaturedEmojiStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_reportReaction_free(tl_t *tl_) {
 	tl_messages_reportReaction_t *tl = (tl_messages_reportReaction_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reaction_peer_);
 	buf_free(tl->_buf);
@@ -16272,21 +16601,21 @@ void tl_messages_reportReaction_free(tl_t *tl_) {
 
 void tl_messages_getTopReactions_free(tl_t *tl_) {
 	tl_messages_getTopReactions_t *tl = (tl_messages_getTopReactions_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getRecentReactions_free(tl_t *tl_) {
 	tl_messages_getRecentReactions_t *tl = (tl_messages_getRecentReactions_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_clearRecentReactions_free(tl_t *tl_) {
 	tl_messages_clearRecentReactions_t *tl = (tl_messages_clearRecentReactions_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -16294,6 +16623,7 @@ void tl_messages_clearRecentReactions_free(tl_t *tl_) {
 void tl_messages_getExtendedMedia_free(tl_t *tl_) {
 	tl_messages_getExtendedMedia_t *tl = (tl_messages_getExtendedMedia_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -16304,14 +16634,14 @@ void tl_messages_getExtendedMedia_free(tl_t *tl_) {
 
 void tl_messages_setDefaultHistoryTTL_free(tl_t *tl_) {
 	tl_messages_setDefaultHistoryTTL_t *tl = (tl_messages_setDefaultHistoryTTL_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getDefaultHistoryTTL_free(tl_t *tl_) {
 	tl_messages_getDefaultHistoryTTL_t *tl = (tl_messages_getDefaultHistoryTTL_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -16319,6 +16649,7 @@ void tl_messages_getDefaultHistoryTTL_free(tl_t *tl_) {
 void tl_messages_sendBotRequestedPeer_free(tl_t *tl_) {
 	tl_messages_sendBotRequestedPeer_t *tl = (tl_messages_sendBotRequestedPeer_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->requested_peers_len; ++i){
 		tl_free(tl->requested_peers_[i]);
@@ -16330,28 +16661,28 @@ void tl_messages_sendBotRequestedPeer_free(tl_t *tl_) {
 
 void tl_messages_getEmojiGroups_free(tl_t *tl_) {
 	tl_messages_getEmojiGroups_t *tl = (tl_messages_getEmojiGroups_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getEmojiStatusGroups_free(tl_t *tl_) {
 	tl_messages_getEmojiStatusGroups_t *tl = (tl_messages_getEmojiStatusGroups_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getEmojiProfilePhotoGroups_free(tl_t *tl_) {
 	tl_messages_getEmojiProfilePhotoGroups_t *tl = (tl_messages_getEmojiProfilePhotoGroups_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_searchCustomEmoji_free(tl_t *tl_) {
 	tl_messages_searchCustomEmoji_t *tl = (tl_messages_searchCustomEmoji_t *)tl_;
-	int i;
+	
 	buf_free(tl->emoticon_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16359,7 +16690,7 @@ void tl_messages_searchCustomEmoji_free(tl_t *tl_) {
 
 void tl_messages_togglePeerTranslations_free(tl_t *tl_) {
 	tl_messages_togglePeerTranslations_t *tl = (tl_messages_togglePeerTranslations_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16367,7 +16698,7 @@ void tl_messages_togglePeerTranslations_free(tl_t *tl_) {
 
 void tl_messages_getBotApp_free(tl_t *tl_) {
 	tl_messages_getBotApp_t *tl = (tl_messages_getBotApp_t *)tl_;
-	int i;
+	
 	tl_free(tl->app_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16375,7 +16706,7 @@ void tl_messages_getBotApp_free(tl_t *tl_) {
 
 void tl_messages_requestAppWebView_free(tl_t *tl_) {
 	tl_messages_requestAppWebView_t *tl = (tl_messages_requestAppWebView_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->app_);
 	buf_free(tl->start_param_);
@@ -16387,7 +16718,7 @@ void tl_messages_requestAppWebView_free(tl_t *tl_) {
 
 void tl_messages_setChatWallPaper_free(tl_t *tl_) {
 	tl_messages_setChatWallPaper_t *tl = (tl_messages_setChatWallPaper_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->wallpaper_);
 	tl_free(tl->settings_);
@@ -16397,7 +16728,7 @@ void tl_messages_setChatWallPaper_free(tl_t *tl_) {
 
 void tl_messages_searchEmojiStickerSets_free(tl_t *tl_) {
 	tl_messages_searchEmojiStickerSets_t *tl = (tl_messages_searchEmojiStickerSets_t *)tl_;
-	int i;
+	
 	buf_free(tl->q_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16405,7 +16736,7 @@ void tl_messages_searchEmojiStickerSets_free(tl_t *tl_) {
 
 void tl_messages_getSavedDialogs_free(tl_t *tl_) {
 	tl_messages_getSavedDialogs_t *tl = (tl_messages_getSavedDialogs_t *)tl_;
-	int i;
+	
 	tl_free(tl->offset_peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16413,7 +16744,7 @@ void tl_messages_getSavedDialogs_free(tl_t *tl_) {
 
 void tl_messages_getSavedHistory_free(tl_t *tl_) {
 	tl_messages_getSavedHistory_t *tl = (tl_messages_getSavedHistory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16421,7 +16752,7 @@ void tl_messages_getSavedHistory_free(tl_t *tl_) {
 
 void tl_messages_deleteSavedHistory_free(tl_t *tl_) {
 	tl_messages_deleteSavedHistory_t *tl = (tl_messages_deleteSavedHistory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16429,14 +16760,14 @@ void tl_messages_deleteSavedHistory_free(tl_t *tl_) {
 
 void tl_messages_getPinnedSavedDialogs_free(tl_t *tl_) {
 	tl_messages_getPinnedSavedDialogs_t *tl = (tl_messages_getPinnedSavedDialogs_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_toggleSavedDialogPin_free(tl_t *tl_) {
 	tl_messages_toggleSavedDialogPin_t *tl = (tl_messages_toggleSavedDialogPin_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16445,6 +16776,7 @@ void tl_messages_toggleSavedDialogPin_free(tl_t *tl_) {
 void tl_messages_reorderPinnedSavedDialogs_free(tl_t *tl_) {
 	tl_messages_reorderPinnedSavedDialogs_t *tl = (tl_messages_reorderPinnedSavedDialogs_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->order_len; ++i){
 		tl_free(tl->order_[i]);
 	}
@@ -16455,7 +16787,7 @@ void tl_messages_reorderPinnedSavedDialogs_free(tl_t *tl_) {
 
 void tl_messages_getSavedReactionTags_free(tl_t *tl_) {
 	tl_messages_getSavedReactionTags_t *tl = (tl_messages_getSavedReactionTags_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16463,7 +16795,7 @@ void tl_messages_getSavedReactionTags_free(tl_t *tl_) {
 
 void tl_messages_updateSavedReactionTag_free(tl_t *tl_) {
 	tl_messages_updateSavedReactionTag_t *tl = (tl_messages_updateSavedReactionTag_t *)tl_;
-	int i;
+	
 	tl_free(tl->reaction_);
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
@@ -16472,14 +16804,14 @@ void tl_messages_updateSavedReactionTag_free(tl_t *tl_) {
 
 void tl_messages_getDefaultTagReactions_free(tl_t *tl_) {
 	tl_messages_getDefaultTagReactions_t *tl = (tl_messages_getDefaultTagReactions_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getOutboxReadDate_free(tl_t *tl_) {
 	tl_messages_getOutboxReadDate_t *tl = (tl_messages_getOutboxReadDate_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16487,7 +16819,7 @@ void tl_messages_getOutboxReadDate_free(tl_t *tl_) {
 
 void tl_messages_getQuickReplies_free(tl_t *tl_) {
 	tl_messages_getQuickReplies_t *tl = (tl_messages_getQuickReplies_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -16495,6 +16827,7 @@ void tl_messages_getQuickReplies_free(tl_t *tl_) {
 void tl_messages_reorderQuickReplies_free(tl_t *tl_) {
 	tl_messages_reorderQuickReplies_t *tl = (tl_messages_reorderQuickReplies_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->order_len; ++i){
 	}
 	free(tl->order_);
@@ -16504,7 +16837,7 @@ void tl_messages_reorderQuickReplies_free(tl_t *tl_) {
 
 void tl_messages_checkQuickReplyShortcut_free(tl_t *tl_) {
 	tl_messages_checkQuickReplyShortcut_t *tl = (tl_messages_checkQuickReplyShortcut_t *)tl_;
-	int i;
+	
 	buf_free(tl->shortcut_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16512,7 +16845,7 @@ void tl_messages_checkQuickReplyShortcut_free(tl_t *tl_) {
 
 void tl_messages_editQuickReplyShortcut_free(tl_t *tl_) {
 	tl_messages_editQuickReplyShortcut_t *tl = (tl_messages_editQuickReplyShortcut_t *)tl_;
-	int i;
+	
 	buf_free(tl->shortcut_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16520,7 +16853,7 @@ void tl_messages_editQuickReplyShortcut_free(tl_t *tl_) {
 
 void tl_messages_deleteQuickReplyShortcut_free(tl_t *tl_) {
 	tl_messages_deleteQuickReplyShortcut_t *tl = (tl_messages_deleteQuickReplyShortcut_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -16528,6 +16861,7 @@ void tl_messages_deleteQuickReplyShortcut_free(tl_t *tl_) {
 void tl_messages_getQuickReplyMessages_free(tl_t *tl_) {
 	tl_messages_getQuickReplyMessages_t *tl = (tl_messages_getQuickReplyMessages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 	}
 	free(tl->id_);
@@ -16538,6 +16872,7 @@ void tl_messages_getQuickReplyMessages_free(tl_t *tl_) {
 void tl_messages_sendQuickReplyMessages_free(tl_t *tl_) {
 	tl_messages_sendQuickReplyMessages_t *tl = (tl_messages_sendQuickReplyMessages_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -16552,6 +16887,7 @@ void tl_messages_sendQuickReplyMessages_free(tl_t *tl_) {
 void tl_messages_deleteQuickReplyMessages_free(tl_t *tl_) {
 	tl_messages_deleteQuickReplyMessages_t *tl = (tl_messages_deleteQuickReplyMessages_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 	}
 	free(tl->id_);
@@ -16561,7 +16897,7 @@ void tl_messages_deleteQuickReplyMessages_free(tl_t *tl_) {
 
 void tl_messages_toggleDialogFilterTags_free(tl_t *tl_) {
 	tl_messages_toggleDialogFilterTags_t *tl = (tl_messages_toggleDialogFilterTags_t *)tl_;
-	int i;
+	
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16569,28 +16905,28 @@ void tl_messages_toggleDialogFilterTags_free(tl_t *tl_) {
 
 void tl_messages_getMyStickers_free(tl_t *tl_) {
 	tl_messages_getMyStickers_t *tl = (tl_messages_getMyStickers_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getEmojiStickerGroups_free(tl_t *tl_) {
 	tl_messages_getEmojiStickerGroups_t *tl = (tl_messages_getEmojiStickerGroups_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_getAvailableEffects_free(tl_t *tl_) {
 	tl_messages_getAvailableEffects_t *tl = (tl_messages_getAvailableEffects_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_messages_editFactCheck_free(tl_t *tl_) {
 	tl_messages_editFactCheck_t *tl = (tl_messages_editFactCheck_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->text_);
 	buf_free(tl->_buf);
@@ -16599,7 +16935,7 @@ void tl_messages_editFactCheck_free(tl_t *tl_) {
 
 void tl_messages_deleteFactCheck_free(tl_t *tl_) {
 	tl_messages_deleteFactCheck_t *tl = (tl_messages_deleteFactCheck_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16608,6 +16944,7 @@ void tl_messages_deleteFactCheck_free(tl_t *tl_) {
 void tl_messages_getFactCheck_free(tl_t *tl_) {
 	tl_messages_getFactCheck_t *tl = (tl_messages_getFactCheck_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->msg_id_len; ++i){
 	}
@@ -16618,7 +16955,7 @@ void tl_messages_getFactCheck_free(tl_t *tl_) {
 
 void tl_messages_requestMainWebView_free(tl_t *tl_) {
 	tl_messages_requestMainWebView_t *tl = (tl_messages_requestMainWebView_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->bot_);
 	buf_free(tl->start_param_);
@@ -16630,21 +16967,21 @@ void tl_messages_requestMainWebView_free(tl_t *tl_) {
 
 void tl_updates_getState_free(tl_t *tl_) {
 	tl_updates_getState_t *tl = (tl_updates_getState_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updates_getDifference_free(tl_t *tl_) {
 	tl_updates_getDifference_t *tl = (tl_updates_getDifference_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_updates_getChannelDifference_free(tl_t *tl_) {
 	tl_updates_getChannelDifference_t *tl = (tl_updates_getChannelDifference_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->filter_);
 	buf_free(tl->_buf);
@@ -16653,7 +16990,7 @@ void tl_updates_getChannelDifference_free(tl_t *tl_) {
 
 void tl_photos_updateProfilePhoto_free(tl_t *tl_) {
 	tl_photos_updateProfilePhoto_t *tl = (tl_photos_updateProfilePhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	tl_free(tl->id_);
 	buf_free(tl->_buf);
@@ -16662,7 +16999,7 @@ void tl_photos_updateProfilePhoto_free(tl_t *tl_) {
 
 void tl_photos_uploadProfilePhoto_free(tl_t *tl_) {
 	tl_photos_uploadProfilePhoto_t *tl = (tl_photos_uploadProfilePhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	tl_free(tl->file_);
 	tl_free(tl->video_);
@@ -16674,6 +17011,7 @@ void tl_photos_uploadProfilePhoto_free(tl_t *tl_) {
 void tl_photos_deletePhotos_free(tl_t *tl_) {
 	tl_photos_deletePhotos_t *tl = (tl_photos_deletePhotos_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 		tl_free(tl->id_[i]);
 	}
@@ -16684,7 +17022,7 @@ void tl_photos_deletePhotos_free(tl_t *tl_) {
 
 void tl_photos_getUserPhotos_free(tl_t *tl_) {
 	tl_photos_getUserPhotos_t *tl = (tl_photos_getUserPhotos_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16692,7 +17030,7 @@ void tl_photos_getUserPhotos_free(tl_t *tl_) {
 
 void tl_photos_uploadContactProfilePhoto_free(tl_t *tl_) {
 	tl_photos_uploadContactProfilePhoto_t *tl = (tl_photos_uploadContactProfilePhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	tl_free(tl->file_);
 	tl_free(tl->video_);
@@ -16703,7 +17041,7 @@ void tl_photos_uploadContactProfilePhoto_free(tl_t *tl_) {
 
 void tl_upload_saveFilePart_free(tl_t *tl_) {
 	tl_upload_saveFilePart_t *tl = (tl_upload_saveFilePart_t *)tl_;
-	int i;
+	
 	buf_free(tl->bytes_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16711,7 +17049,7 @@ void tl_upload_saveFilePart_free(tl_t *tl_) {
 
 void tl_upload_getFile_free(tl_t *tl_) {
 	tl_upload_getFile_t *tl = (tl_upload_getFile_t *)tl_;
-	int i;
+	
 	tl_free(tl->location_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16719,7 +17057,7 @@ void tl_upload_getFile_free(tl_t *tl_) {
 
 void tl_upload_saveBigFilePart_free(tl_t *tl_) {
 	tl_upload_saveBigFilePart_t *tl = (tl_upload_saveBigFilePart_t *)tl_;
-	int i;
+	
 	buf_free(tl->bytes_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16727,7 +17065,7 @@ void tl_upload_saveBigFilePart_free(tl_t *tl_) {
 
 void tl_upload_getWebFile_free(tl_t *tl_) {
 	tl_upload_getWebFile_t *tl = (tl_upload_getWebFile_t *)tl_;
-	int i;
+	
 	tl_free(tl->location_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16735,7 +17073,7 @@ void tl_upload_getWebFile_free(tl_t *tl_) {
 
 void tl_upload_getCdnFile_free(tl_t *tl_) {
 	tl_upload_getCdnFile_t *tl = (tl_upload_getCdnFile_t *)tl_;
-	int i;
+	
 	buf_free(tl->file_token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16743,7 +17081,7 @@ void tl_upload_getCdnFile_free(tl_t *tl_) {
 
 void tl_upload_reuploadCdnFile_free(tl_t *tl_) {
 	tl_upload_reuploadCdnFile_t *tl = (tl_upload_reuploadCdnFile_t *)tl_;
-	int i;
+	
 	buf_free(tl->file_token_);
 	buf_free(tl->request_token_);
 	buf_free(tl->_buf);
@@ -16752,7 +17090,7 @@ void tl_upload_reuploadCdnFile_free(tl_t *tl_) {
 
 void tl_upload_getCdnFileHashes_free(tl_t *tl_) {
 	tl_upload_getCdnFileHashes_t *tl = (tl_upload_getCdnFileHashes_t *)tl_;
-	int i;
+	
 	buf_free(tl->file_token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16760,7 +17098,7 @@ void tl_upload_getCdnFileHashes_free(tl_t *tl_) {
 
 void tl_upload_getFileHashes_free(tl_t *tl_) {
 	tl_upload_getFileHashes_t *tl = (tl_upload_getFileHashes_t *)tl_;
-	int i;
+	
 	tl_free(tl->location_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16768,21 +17106,21 @@ void tl_upload_getFileHashes_free(tl_t *tl_) {
 
 void tl_help_getConfig_free(tl_t *tl_) {
 	tl_help_getConfig_t *tl = (tl_help_getConfig_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_getNearestDc_free(tl_t *tl_) {
 	tl_help_getNearestDc_t *tl = (tl_help_getNearestDc_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_getAppUpdate_free(tl_t *tl_) {
 	tl_help_getAppUpdate_t *tl = (tl_help_getAppUpdate_t *)tl_;
-	int i;
+	
 	buf_free(tl->source_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16790,21 +17128,21 @@ void tl_help_getAppUpdate_free(tl_t *tl_) {
 
 void tl_help_getInviteText_free(tl_t *tl_) {
 	tl_help_getInviteText_t *tl = (tl_help_getInviteText_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_getSupport_free(tl_t *tl_) {
 	tl_help_getSupport_t *tl = (tl_help_getSupport_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_setBotUpdatesStatus_free(tl_t *tl_) {
 	tl_help_setBotUpdatesStatus_t *tl = (tl_help_setBotUpdatesStatus_t *)tl_;
-	int i;
+	
 	buf_free(tl->message_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16812,14 +17150,14 @@ void tl_help_setBotUpdatesStatus_free(tl_t *tl_) {
 
 void tl_help_getCdnConfig_free(tl_t *tl_) {
 	tl_help_getCdnConfig_t *tl = (tl_help_getCdnConfig_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_getRecentMeUrls_free(tl_t *tl_) {
 	tl_help_getRecentMeUrls_t *tl = (tl_help_getRecentMeUrls_t *)tl_;
-	int i;
+	
 	buf_free(tl->referer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16827,14 +17165,14 @@ void tl_help_getRecentMeUrls_free(tl_t *tl_) {
 
 void tl_help_getTermsOfServiceUpdate_free(tl_t *tl_) {
 	tl_help_getTermsOfServiceUpdate_t *tl = (tl_help_getTermsOfServiceUpdate_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_acceptTermsOfService_free(tl_t *tl_) {
 	tl_help_acceptTermsOfService_t *tl = (tl_help_acceptTermsOfService_t *)tl_;
-	int i;
+	
 	tl_free(tl->id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16842,7 +17180,7 @@ void tl_help_acceptTermsOfService_free(tl_t *tl_) {
 
 void tl_help_getDeepLinkInfo_free(tl_t *tl_) {
 	tl_help_getDeepLinkInfo_t *tl = (tl_help_getDeepLinkInfo_t *)tl_;
-	int i;
+	
 	buf_free(tl->path_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16850,7 +17188,7 @@ void tl_help_getDeepLinkInfo_free(tl_t *tl_) {
 
 void tl_help_getAppConfig_free(tl_t *tl_) {
 	tl_help_getAppConfig_t *tl = (tl_help_getAppConfig_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -16858,6 +17196,7 @@ void tl_help_getAppConfig_free(tl_t *tl_) {
 void tl_help_saveAppLog_free(tl_t *tl_) {
 	tl_help_saveAppLog_t *tl = (tl_help_saveAppLog_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->events_len; ++i){
 		tl_free(tl->events_[i]);
 	}
@@ -16868,21 +17207,21 @@ void tl_help_saveAppLog_free(tl_t *tl_) {
 
 void tl_help_getPassportConfig_free(tl_t *tl_) {
 	tl_help_getPassportConfig_t *tl = (tl_help_getPassportConfig_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_getSupportName_free(tl_t *tl_) {
 	tl_help_getSupportName_t *tl = (tl_help_getSupportName_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_getUserInfo_free(tl_t *tl_) {
 	tl_help_getUserInfo_t *tl = (tl_help_getUserInfo_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16891,6 +17230,7 @@ void tl_help_getUserInfo_free(tl_t *tl_) {
 void tl_help_editUserInfo_free(tl_t *tl_) {
 	tl_help_editUserInfo_t *tl = (tl_help_editUserInfo_t *)tl_;
 	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->message_);
 	for(i=0; i<tl->entities_len; ++i){
@@ -16903,14 +17243,14 @@ void tl_help_editUserInfo_free(tl_t *tl_) {
 
 void tl_help_getPromoData_free(tl_t *tl_) {
 	tl_help_getPromoData_t *tl = (tl_help_getPromoData_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_hidePromoData_free(tl_t *tl_) {
 	tl_help_hidePromoData_t *tl = (tl_help_hidePromoData_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16918,7 +17258,7 @@ void tl_help_hidePromoData_free(tl_t *tl_) {
 
 void tl_help_dismissSuggestion_free(tl_t *tl_) {
 	tl_help_dismissSuggestion_t *tl = (tl_help_dismissSuggestion_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->suggestion_);
 	buf_free(tl->_buf);
@@ -16927,7 +17267,7 @@ void tl_help_dismissSuggestion_free(tl_t *tl_) {
 
 void tl_help_getCountriesList_free(tl_t *tl_) {
 	tl_help_getCountriesList_t *tl = (tl_help_getCountriesList_t *)tl_;
-	int i;
+	
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16935,35 +17275,35 @@ void tl_help_getCountriesList_free(tl_t *tl_) {
 
 void tl_help_getPremiumPromo_free(tl_t *tl_) {
 	tl_help_getPremiumPromo_t *tl = (tl_help_getPremiumPromo_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_getPeerColors_free(tl_t *tl_) {
 	tl_help_getPeerColors_t *tl = (tl_help_getPeerColors_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_getPeerProfileColors_free(tl_t *tl_) {
 	tl_help_getPeerProfileColors_t *tl = (tl_help_getPeerProfileColors_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_help_getTimezonesList_free(tl_t *tl_) {
 	tl_help_getTimezonesList_t *tl = (tl_help_getTimezonesList_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channels_readHistory_free(tl_t *tl_) {
 	tl_channels_readHistory_t *tl = (tl_channels_readHistory_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -16972,6 +17312,7 @@ void tl_channels_readHistory_free(tl_t *tl_) {
 void tl_channels_deleteMessages_free(tl_t *tl_) {
 	tl_channels_deleteMessages_t *tl = (tl_channels_deleteMessages_t *)tl_;
 	int i;
+	
 	tl_free(tl->channel_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -16983,6 +17324,7 @@ void tl_channels_deleteMessages_free(tl_t *tl_) {
 void tl_channels_reportSpam_free(tl_t *tl_) {
 	tl_channels_reportSpam_t *tl = (tl_channels_reportSpam_t *)tl_;
 	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->participant_);
 	for(i=0; i<tl->id_len; ++i){
@@ -16995,6 +17337,7 @@ void tl_channels_reportSpam_free(tl_t *tl_) {
 void tl_channels_getMessages_free(tl_t *tl_) {
 	tl_channels_getMessages_t *tl = (tl_channels_getMessages_t *)tl_;
 	int i;
+	
 	tl_free(tl->channel_);
 	for(i=0; i<tl->id_len; ++i){
 		tl_free(tl->id_[i]);
@@ -17006,7 +17349,7 @@ void tl_channels_getMessages_free(tl_t *tl_) {
 
 void tl_channels_getParticipants_free(tl_t *tl_) {
 	tl_channels_getParticipants_t *tl = (tl_channels_getParticipants_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->filter_);
 	buf_free(tl->_buf);
@@ -17015,7 +17358,7 @@ void tl_channels_getParticipants_free(tl_t *tl_) {
 
 void tl_channels_getParticipant_free(tl_t *tl_) {
 	tl_channels_getParticipant_t *tl = (tl_channels_getParticipant_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->participant_);
 	buf_free(tl->_buf);
@@ -17025,6 +17368,7 @@ void tl_channels_getParticipant_free(tl_t *tl_) {
 void tl_channels_getChannels_free(tl_t *tl_) {
 	tl_channels_getChannels_t *tl = (tl_channels_getChannels_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 		tl_free(tl->id_[i]);
 	}
@@ -17035,7 +17379,7 @@ void tl_channels_getChannels_free(tl_t *tl_) {
 
 void tl_channels_getFullChannel_free(tl_t *tl_) {
 	tl_channels_getFullChannel_t *tl = (tl_channels_getFullChannel_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17043,7 +17387,7 @@ void tl_channels_getFullChannel_free(tl_t *tl_) {
 
 void tl_channels_createChannel_free(tl_t *tl_) {
 	tl_channels_createChannel_t *tl = (tl_channels_createChannel_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->about_);
 	tl_free(tl->geo_point_);
@@ -17054,7 +17398,7 @@ void tl_channels_createChannel_free(tl_t *tl_) {
 
 void tl_channels_editAdmin_free(tl_t *tl_) {
 	tl_channels_editAdmin_t *tl = (tl_channels_editAdmin_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->user_id_);
 	tl_free(tl->admin_rights_);
@@ -17065,7 +17409,7 @@ void tl_channels_editAdmin_free(tl_t *tl_) {
 
 void tl_channels_editTitle_free(tl_t *tl_) {
 	tl_channels_editTitle_t *tl = (tl_channels_editTitle_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
@@ -17074,7 +17418,7 @@ void tl_channels_editTitle_free(tl_t *tl_) {
 
 void tl_channels_editPhoto_free(tl_t *tl_) {
 	tl_channels_editPhoto_t *tl = (tl_channels_editPhoto_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->photo_);
 	buf_free(tl->_buf);
@@ -17083,7 +17427,7 @@ void tl_channels_editPhoto_free(tl_t *tl_) {
 
 void tl_channels_checkUsername_free(tl_t *tl_) {
 	tl_channels_checkUsername_t *tl = (tl_channels_checkUsername_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->username_);
 	buf_free(tl->_buf);
@@ -17092,7 +17436,7 @@ void tl_channels_checkUsername_free(tl_t *tl_) {
 
 void tl_channels_updateUsername_free(tl_t *tl_) {
 	tl_channels_updateUsername_t *tl = (tl_channels_updateUsername_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->username_);
 	buf_free(tl->_buf);
@@ -17101,7 +17445,7 @@ void tl_channels_updateUsername_free(tl_t *tl_) {
 
 void tl_channels_joinChannel_free(tl_t *tl_) {
 	tl_channels_joinChannel_t *tl = (tl_channels_joinChannel_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17109,7 +17453,7 @@ void tl_channels_joinChannel_free(tl_t *tl_) {
 
 void tl_channels_leaveChannel_free(tl_t *tl_) {
 	tl_channels_leaveChannel_t *tl = (tl_channels_leaveChannel_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17118,6 +17462,7 @@ void tl_channels_leaveChannel_free(tl_t *tl_) {
 void tl_channels_inviteToChannel_free(tl_t *tl_) {
 	tl_channels_inviteToChannel_t *tl = (tl_channels_inviteToChannel_t *)tl_;
 	int i;
+	
 	tl_free(tl->channel_);
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
@@ -17129,7 +17474,7 @@ void tl_channels_inviteToChannel_free(tl_t *tl_) {
 
 void tl_channels_deleteChannel_free(tl_t *tl_) {
 	tl_channels_deleteChannel_t *tl = (tl_channels_deleteChannel_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17137,7 +17482,7 @@ void tl_channels_deleteChannel_free(tl_t *tl_) {
 
 void tl_channels_exportMessageLink_free(tl_t *tl_) {
 	tl_channels_exportMessageLink_t *tl = (tl_channels_exportMessageLink_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17145,7 +17490,7 @@ void tl_channels_exportMessageLink_free(tl_t *tl_) {
 
 void tl_channels_toggleSignatures_free(tl_t *tl_) {
 	tl_channels_toggleSignatures_t *tl = (tl_channels_toggleSignatures_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
@@ -17154,14 +17499,14 @@ void tl_channels_toggleSignatures_free(tl_t *tl_) {
 
 void tl_channels_getAdminedPublicChannels_free(tl_t *tl_) {
 	tl_channels_getAdminedPublicChannels_t *tl = (tl_channels_getAdminedPublicChannels_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channels_editBanned_free(tl_t *tl_) {
 	tl_channels_editBanned_t *tl = (tl_channels_editBanned_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->participant_);
 	tl_free(tl->banned_rights_);
@@ -17172,6 +17517,7 @@ void tl_channels_editBanned_free(tl_t *tl_) {
 void tl_channels_getAdminLog_free(tl_t *tl_) {
 	tl_channels_getAdminLog_t *tl = (tl_channels_getAdminLog_t *)tl_;
 	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->q_);
 	tl_free(tl->events_filter_);
@@ -17185,7 +17531,7 @@ void tl_channels_getAdminLog_free(tl_t *tl_) {
 
 void tl_channels_setStickers_free(tl_t *tl_) {
 	tl_channels_setStickers_t *tl = (tl_channels_setStickers_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->stickerset_);
 	buf_free(tl->_buf);
@@ -17195,6 +17541,7 @@ void tl_channels_setStickers_free(tl_t *tl_) {
 void tl_channels_readMessageContents_free(tl_t *tl_) {
 	tl_channels_readMessageContents_t *tl = (tl_channels_readMessageContents_t *)tl_;
 	int i;
+	
 	tl_free(tl->channel_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -17205,7 +17552,7 @@ void tl_channels_readMessageContents_free(tl_t *tl_) {
 
 void tl_channels_deleteHistory_free(tl_t *tl_) {
 	tl_channels_deleteHistory_t *tl = (tl_channels_deleteHistory_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17213,7 +17560,7 @@ void tl_channels_deleteHistory_free(tl_t *tl_) {
 
 void tl_channels_togglePreHistoryHidden_free(tl_t *tl_) {
 	tl_channels_togglePreHistoryHidden_t *tl = (tl_channels_togglePreHistoryHidden_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
@@ -17222,21 +17569,21 @@ void tl_channels_togglePreHistoryHidden_free(tl_t *tl_) {
 
 void tl_channels_getLeftChannels_free(tl_t *tl_) {
 	tl_channels_getLeftChannels_t *tl = (tl_channels_getLeftChannels_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channels_getGroupsForDiscussion_free(tl_t *tl_) {
 	tl_channels_getGroupsForDiscussion_t *tl = (tl_channels_getGroupsForDiscussion_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channels_setDiscussionGroup_free(tl_t *tl_) {
 	tl_channels_setDiscussionGroup_t *tl = (tl_channels_setDiscussionGroup_t *)tl_;
-	int i;
+	
 	tl_free(tl->broadcast_);
 	tl_free(tl->group_);
 	buf_free(tl->_buf);
@@ -17245,7 +17592,7 @@ void tl_channels_setDiscussionGroup_free(tl_t *tl_) {
 
 void tl_channels_editCreator_free(tl_t *tl_) {
 	tl_channels_editCreator_t *tl = (tl_channels_editCreator_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->user_id_);
 	tl_free(tl->password_);
@@ -17255,7 +17602,7 @@ void tl_channels_editCreator_free(tl_t *tl_) {
 
 void tl_channels_editLocation_free(tl_t *tl_) {
 	tl_channels_editLocation_t *tl = (tl_channels_editLocation_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->geo_point_);
 	buf_free(tl->address_);
@@ -17265,7 +17612,7 @@ void tl_channels_editLocation_free(tl_t *tl_) {
 
 void tl_channels_toggleSlowMode_free(tl_t *tl_) {
 	tl_channels_toggleSlowMode_t *tl = (tl_channels_toggleSlowMode_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17273,14 +17620,14 @@ void tl_channels_toggleSlowMode_free(tl_t *tl_) {
 
 void tl_channels_getInactiveChannels_free(tl_t *tl_) {
 	tl_channels_getInactiveChannels_t *tl = (tl_channels_getInactiveChannels_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_channels_convertToGigagroup_free(tl_t *tl_) {
 	tl_channels_convertToGigagroup_t *tl = (tl_channels_convertToGigagroup_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17288,7 +17635,7 @@ void tl_channels_convertToGigagroup_free(tl_t *tl_) {
 
 void tl_channels_viewSponsoredMessage_free(tl_t *tl_) {
 	tl_channels_viewSponsoredMessage_t *tl = (tl_channels_viewSponsoredMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->random_id_);
 	buf_free(tl->_buf);
@@ -17297,7 +17644,7 @@ void tl_channels_viewSponsoredMessage_free(tl_t *tl_) {
 
 void tl_channels_getSponsoredMessages_free(tl_t *tl_) {
 	tl_channels_getSponsoredMessages_t *tl = (tl_channels_getSponsoredMessages_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17305,7 +17652,7 @@ void tl_channels_getSponsoredMessages_free(tl_t *tl_) {
 
 void tl_channels_getSendAs_free(tl_t *tl_) {
 	tl_channels_getSendAs_t *tl = (tl_channels_getSendAs_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17313,7 +17660,7 @@ void tl_channels_getSendAs_free(tl_t *tl_) {
 
 void tl_channels_deleteParticipantHistory_free(tl_t *tl_) {
 	tl_channels_deleteParticipantHistory_t *tl = (tl_channels_deleteParticipantHistory_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->participant_);
 	buf_free(tl->_buf);
@@ -17322,7 +17669,7 @@ void tl_channels_deleteParticipantHistory_free(tl_t *tl_) {
 
 void tl_channels_toggleJoinToSend_free(tl_t *tl_) {
 	tl_channels_toggleJoinToSend_t *tl = (tl_channels_toggleJoinToSend_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
@@ -17331,7 +17678,7 @@ void tl_channels_toggleJoinToSend_free(tl_t *tl_) {
 
 void tl_channels_toggleJoinRequest_free(tl_t *tl_) {
 	tl_channels_toggleJoinRequest_t *tl = (tl_channels_toggleJoinRequest_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
@@ -17341,6 +17688,7 @@ void tl_channels_toggleJoinRequest_free(tl_t *tl_) {
 void tl_channels_reorderUsernames_free(tl_t *tl_) {
 	tl_channels_reorderUsernames_t *tl = (tl_channels_reorderUsernames_t *)tl_;
 	int i;
+	
 	tl_free(tl->channel_);
 	for(i=0; i<tl->order_len; ++i){
 		buf_free(tl->order_[i]);
@@ -17352,7 +17700,7 @@ void tl_channels_reorderUsernames_free(tl_t *tl_) {
 
 void tl_channels_toggleUsername_free(tl_t *tl_) {
 	tl_channels_toggleUsername_t *tl = (tl_channels_toggleUsername_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->username_);
 	tl_free(tl->active_);
@@ -17362,7 +17710,7 @@ void tl_channels_toggleUsername_free(tl_t *tl_) {
 
 void tl_channels_deactivateAllUsernames_free(tl_t *tl_) {
 	tl_channels_deactivateAllUsernames_t *tl = (tl_channels_deactivateAllUsernames_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17370,7 +17718,7 @@ void tl_channels_deactivateAllUsernames_free(tl_t *tl_) {
 
 void tl_channels_toggleForum_free(tl_t *tl_) {
 	tl_channels_toggleForum_t *tl = (tl_channels_toggleForum_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
@@ -17379,7 +17727,7 @@ void tl_channels_toggleForum_free(tl_t *tl_) {
 
 void tl_channels_createForumTopic_free(tl_t *tl_) {
 	tl_channels_createForumTopic_t *tl = (tl_channels_createForumTopic_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->title_);
 	tl_free(tl->send_as_);
@@ -17389,7 +17737,7 @@ void tl_channels_createForumTopic_free(tl_t *tl_) {
 
 void tl_channels_getForumTopics_free(tl_t *tl_) {
 	tl_channels_getForumTopics_t *tl = (tl_channels_getForumTopics_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->q_);
 	buf_free(tl->_buf);
@@ -17399,6 +17747,7 @@ void tl_channels_getForumTopics_free(tl_t *tl_) {
 void tl_channels_getForumTopicsByID_free(tl_t *tl_) {
 	tl_channels_getForumTopicsByID_t *tl = (tl_channels_getForumTopicsByID_t *)tl_;
 	int i;
+	
 	tl_free(tl->channel_);
 	for(i=0; i<tl->topics_len; ++i){
 	}
@@ -17409,7 +17758,7 @@ void tl_channels_getForumTopicsByID_free(tl_t *tl_) {
 
 void tl_channels_editForumTopic_free(tl_t *tl_) {
 	tl_channels_editForumTopic_t *tl = (tl_channels_editForumTopic_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->title_);
 	tl_free(tl->closed_);
@@ -17420,7 +17769,7 @@ void tl_channels_editForumTopic_free(tl_t *tl_) {
 
 void tl_channels_updatePinnedForumTopic_free(tl_t *tl_) {
 	tl_channels_updatePinnedForumTopic_t *tl = (tl_channels_updatePinnedForumTopic_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->pinned_);
 	buf_free(tl->_buf);
@@ -17429,7 +17778,7 @@ void tl_channels_updatePinnedForumTopic_free(tl_t *tl_) {
 
 void tl_channels_deleteTopicHistory_free(tl_t *tl_) {
 	tl_channels_deleteTopicHistory_t *tl = (tl_channels_deleteTopicHistory_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17438,6 +17787,7 @@ void tl_channels_deleteTopicHistory_free(tl_t *tl_) {
 void tl_channels_reorderPinnedForumTopics_free(tl_t *tl_) {
 	tl_channels_reorderPinnedForumTopics_t *tl = (tl_channels_reorderPinnedForumTopics_t *)tl_;
 	int i;
+	
 	tl_free(tl->channel_);
 	for(i=0; i<tl->order_len; ++i){
 	}
@@ -17448,7 +17798,7 @@ void tl_channels_reorderPinnedForumTopics_free(tl_t *tl_) {
 
 void tl_channels_toggleAntiSpam_free(tl_t *tl_) {
 	tl_channels_toggleAntiSpam_t *tl = (tl_channels_toggleAntiSpam_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
@@ -17457,7 +17807,7 @@ void tl_channels_toggleAntiSpam_free(tl_t *tl_) {
 
 void tl_channels_reportAntiSpamFalsePositive_free(tl_t *tl_) {
 	tl_channels_reportAntiSpamFalsePositive_t *tl = (tl_channels_reportAntiSpamFalsePositive_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17465,7 +17815,7 @@ void tl_channels_reportAntiSpamFalsePositive_free(tl_t *tl_) {
 
 void tl_channels_toggleParticipantsHidden_free(tl_t *tl_) {
 	tl_channels_toggleParticipantsHidden_t *tl = (tl_channels_toggleParticipantsHidden_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
@@ -17474,7 +17824,7 @@ void tl_channels_toggleParticipantsHidden_free(tl_t *tl_) {
 
 void tl_channels_clickSponsoredMessage_free(tl_t *tl_) {
 	tl_channels_clickSponsoredMessage_t *tl = (tl_channels_clickSponsoredMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->random_id_);
 	buf_free(tl->_buf);
@@ -17483,7 +17833,7 @@ void tl_channels_clickSponsoredMessage_free(tl_t *tl_) {
 
 void tl_channels_updateColor_free(tl_t *tl_) {
 	tl_channels_updateColor_t *tl = (tl_channels_updateColor_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17491,7 +17841,7 @@ void tl_channels_updateColor_free(tl_t *tl_) {
 
 void tl_channels_toggleViewForumAsMessages_free(tl_t *tl_) {
 	tl_channels_toggleViewForumAsMessages_t *tl = (tl_channels_toggleViewForumAsMessages_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->enabled_);
 	buf_free(tl->_buf);
@@ -17500,7 +17850,7 @@ void tl_channels_toggleViewForumAsMessages_free(tl_t *tl_) {
 
 void tl_channels_getChannelRecommendations_free(tl_t *tl_) {
 	tl_channels_getChannelRecommendations_t *tl = (tl_channels_getChannelRecommendations_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17508,7 +17858,7 @@ void tl_channels_getChannelRecommendations_free(tl_t *tl_) {
 
 void tl_channels_updateEmojiStatus_free(tl_t *tl_) {
 	tl_channels_updateEmojiStatus_t *tl = (tl_channels_updateEmojiStatus_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->emoji_status_);
 	buf_free(tl->_buf);
@@ -17517,7 +17867,7 @@ void tl_channels_updateEmojiStatus_free(tl_t *tl_) {
 
 void tl_channels_setBoostsToUnblockRestrictions_free(tl_t *tl_) {
 	tl_channels_setBoostsToUnblockRestrictions_t *tl = (tl_channels_setBoostsToUnblockRestrictions_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17525,7 +17875,7 @@ void tl_channels_setBoostsToUnblockRestrictions_free(tl_t *tl_) {
 
 void tl_channels_setEmojiStickers_free(tl_t *tl_) {
 	tl_channels_setEmojiStickers_t *tl = (tl_channels_setEmojiStickers_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->stickerset_);
 	buf_free(tl->_buf);
@@ -17534,7 +17884,7 @@ void tl_channels_setEmojiStickers_free(tl_t *tl_) {
 
 void tl_channels_reportSponsoredMessage_free(tl_t *tl_) {
 	tl_channels_reportSponsoredMessage_t *tl = (tl_channels_reportSponsoredMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->random_id_);
 	buf_free(tl->option_);
@@ -17544,7 +17894,7 @@ void tl_channels_reportSponsoredMessage_free(tl_t *tl_) {
 
 void tl_channels_restrictSponsoredMessages_free(tl_t *tl_) {
 	tl_channels_restrictSponsoredMessages_t *tl = (tl_channels_restrictSponsoredMessages_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->restricted_);
 	buf_free(tl->_buf);
@@ -17553,7 +17903,7 @@ void tl_channels_restrictSponsoredMessages_free(tl_t *tl_) {
 
 void tl_channels_searchPosts_free(tl_t *tl_) {
 	tl_channels_searchPosts_t *tl = (tl_channels_searchPosts_t *)tl_;
-	int i;
+	
 	buf_free(tl->hashtag_);
 	tl_free(tl->offset_peer_);
 	buf_free(tl->_buf);
@@ -17562,7 +17912,7 @@ void tl_channels_searchPosts_free(tl_t *tl_) {
 
 void tl_bots_sendCustomRequest_free(tl_t *tl_) {
 	tl_bots_sendCustomRequest_t *tl = (tl_bots_sendCustomRequest_t *)tl_;
-	int i;
+	
 	buf_free(tl->custom_method_);
 	tl_free(tl->params_);
 	buf_free(tl->_buf);
@@ -17571,7 +17921,7 @@ void tl_bots_sendCustomRequest_free(tl_t *tl_) {
 
 void tl_bots_answerWebhookJSONQuery_free(tl_t *tl_) {
 	tl_bots_answerWebhookJSONQuery_t *tl = (tl_bots_answerWebhookJSONQuery_t *)tl_;
-	int i;
+	
 	tl_free(tl->data_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17580,6 +17930,7 @@ void tl_bots_answerWebhookJSONQuery_free(tl_t *tl_) {
 void tl_bots_setBotCommands_free(tl_t *tl_) {
 	tl_bots_setBotCommands_t *tl = (tl_bots_setBotCommands_t *)tl_;
 	int i;
+	
 	tl_free(tl->scope_);
 	buf_free(tl->lang_code_);
 	for(i=0; i<tl->commands_len; ++i){
@@ -17592,7 +17943,7 @@ void tl_bots_setBotCommands_free(tl_t *tl_) {
 
 void tl_bots_resetBotCommands_free(tl_t *tl_) {
 	tl_bots_resetBotCommands_t *tl = (tl_bots_resetBotCommands_t *)tl_;
-	int i;
+	
 	tl_free(tl->scope_);
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
@@ -17601,7 +17952,7 @@ void tl_bots_resetBotCommands_free(tl_t *tl_) {
 
 void tl_bots_getBotCommands_free(tl_t *tl_) {
 	tl_bots_getBotCommands_t *tl = (tl_bots_getBotCommands_t *)tl_;
-	int i;
+	
 	tl_free(tl->scope_);
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
@@ -17610,7 +17961,7 @@ void tl_bots_getBotCommands_free(tl_t *tl_) {
 
 void tl_bots_setBotMenuButton_free(tl_t *tl_) {
 	tl_bots_setBotMenuButton_t *tl = (tl_bots_setBotMenuButton_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	tl_free(tl->button_);
 	buf_free(tl->_buf);
@@ -17619,7 +17970,7 @@ void tl_bots_setBotMenuButton_free(tl_t *tl_) {
 
 void tl_bots_getBotMenuButton_free(tl_t *tl_) {
 	tl_bots_getBotMenuButton_t *tl = (tl_bots_getBotMenuButton_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17627,7 +17978,7 @@ void tl_bots_getBotMenuButton_free(tl_t *tl_) {
 
 void tl_bots_setBotBroadcastDefaultAdminRights_free(tl_t *tl_) {
 	tl_bots_setBotBroadcastDefaultAdminRights_t *tl = (tl_bots_setBotBroadcastDefaultAdminRights_t *)tl_;
-	int i;
+	
 	tl_free(tl->admin_rights_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17635,7 +17986,7 @@ void tl_bots_setBotBroadcastDefaultAdminRights_free(tl_t *tl_) {
 
 void tl_bots_setBotGroupDefaultAdminRights_free(tl_t *tl_) {
 	tl_bots_setBotGroupDefaultAdminRights_t *tl = (tl_bots_setBotGroupDefaultAdminRights_t *)tl_;
-	int i;
+	
 	tl_free(tl->admin_rights_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17643,7 +17994,7 @@ void tl_bots_setBotGroupDefaultAdminRights_free(tl_t *tl_) {
 
 void tl_bots_setBotInfo_free(tl_t *tl_) {
 	tl_bots_setBotInfo_t *tl = (tl_bots_setBotInfo_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->lang_code_);
 	buf_free(tl->name_);
@@ -17655,7 +18006,7 @@ void tl_bots_setBotInfo_free(tl_t *tl_) {
 
 void tl_bots_getBotInfo_free(tl_t *tl_) {
 	tl_bots_getBotInfo_t *tl = (tl_bots_getBotInfo_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
@@ -17665,6 +18016,7 @@ void tl_bots_getBotInfo_free(tl_t *tl_) {
 void tl_bots_reorderUsernames_free(tl_t *tl_) {
 	tl_bots_reorderUsernames_t *tl = (tl_bots_reorderUsernames_t *)tl_;
 	int i;
+	
 	tl_free(tl->bot_);
 	for(i=0; i<tl->order_len; ++i){
 		buf_free(tl->order_[i]);
@@ -17676,7 +18028,7 @@ void tl_bots_reorderUsernames_free(tl_t *tl_) {
 
 void tl_bots_toggleUsername_free(tl_t *tl_) {
 	tl_bots_toggleUsername_t *tl = (tl_bots_toggleUsername_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->username_);
 	tl_free(tl->active_);
@@ -17686,7 +18038,7 @@ void tl_bots_toggleUsername_free(tl_t *tl_) {
 
 void tl_bots_canSendMessage_free(tl_t *tl_) {
 	tl_bots_canSendMessage_t *tl = (tl_bots_canSendMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17694,7 +18046,7 @@ void tl_bots_canSendMessage_free(tl_t *tl_) {
 
 void tl_bots_allowSendMessage_free(tl_t *tl_) {
 	tl_bots_allowSendMessage_t *tl = (tl_bots_allowSendMessage_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17702,7 +18054,7 @@ void tl_bots_allowSendMessage_free(tl_t *tl_) {
 
 void tl_bots_invokeWebViewCustomMethod_free(tl_t *tl_) {
 	tl_bots_invokeWebViewCustomMethod_t *tl = (tl_bots_invokeWebViewCustomMethod_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->custom_method_);
 	tl_free(tl->params_);
@@ -17712,7 +18064,7 @@ void tl_bots_invokeWebViewCustomMethod_free(tl_t *tl_) {
 
 void tl_bots_getPopularAppBots_free(tl_t *tl_) {
 	tl_bots_getPopularAppBots_t *tl = (tl_bots_getPopularAppBots_t *)tl_;
-	int i;
+	
 	buf_free(tl->offset_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17720,7 +18072,7 @@ void tl_bots_getPopularAppBots_free(tl_t *tl_) {
 
 void tl_bots_addPreviewMedia_free(tl_t *tl_) {
 	tl_bots_addPreviewMedia_t *tl = (tl_bots_addPreviewMedia_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->lang_code_);
 	tl_free(tl->media_);
@@ -17730,7 +18082,7 @@ void tl_bots_addPreviewMedia_free(tl_t *tl_) {
 
 void tl_bots_editPreviewMedia_free(tl_t *tl_) {
 	tl_bots_editPreviewMedia_t *tl = (tl_bots_editPreviewMedia_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->lang_code_);
 	tl_free(tl->media_);
@@ -17742,6 +18094,7 @@ void tl_bots_editPreviewMedia_free(tl_t *tl_) {
 void tl_bots_deletePreviewMedia_free(tl_t *tl_) {
 	tl_bots_deletePreviewMedia_t *tl = (tl_bots_deletePreviewMedia_t *)tl_;
 	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->lang_code_);
 	for(i=0; i<tl->media_len; ++i){
@@ -17755,6 +18108,7 @@ void tl_bots_deletePreviewMedia_free(tl_t *tl_) {
 void tl_bots_reorderPreviewMedias_free(tl_t *tl_) {
 	tl_bots_reorderPreviewMedias_t *tl = (tl_bots_reorderPreviewMedias_t *)tl_;
 	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->lang_code_);
 	for(i=0; i<tl->order_len; ++i){
@@ -17767,7 +18121,7 @@ void tl_bots_reorderPreviewMedias_free(tl_t *tl_) {
 
 void tl_bots_getPreviewInfo_free(tl_t *tl_) {
 	tl_bots_getPreviewInfo_t *tl = (tl_bots_getPreviewInfo_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
@@ -17776,7 +18130,7 @@ void tl_bots_getPreviewInfo_free(tl_t *tl_) {
 
 void tl_bots_getPreviewMedias_free(tl_t *tl_) {
 	tl_bots_getPreviewMedias_t *tl = (tl_bots_getPreviewMedias_t *)tl_;
-	int i;
+	
 	tl_free(tl->bot_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17784,7 +18138,7 @@ void tl_bots_getPreviewMedias_free(tl_t *tl_) {
 
 void tl_payments_getPaymentForm_free(tl_t *tl_) {
 	tl_payments_getPaymentForm_t *tl = (tl_payments_getPaymentForm_t *)tl_;
-	int i;
+	
 	tl_free(tl->invoice_);
 	tl_free(tl->theme_params_);
 	buf_free(tl->_buf);
@@ -17793,7 +18147,7 @@ void tl_payments_getPaymentForm_free(tl_t *tl_) {
 
 void tl_payments_getPaymentReceipt_free(tl_t *tl_) {
 	tl_payments_getPaymentReceipt_t *tl = (tl_payments_getPaymentReceipt_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17801,7 +18155,7 @@ void tl_payments_getPaymentReceipt_free(tl_t *tl_) {
 
 void tl_payments_validateRequestedInfo_free(tl_t *tl_) {
 	tl_payments_validateRequestedInfo_t *tl = (tl_payments_validateRequestedInfo_t *)tl_;
-	int i;
+	
 	tl_free(tl->invoice_);
 	tl_free(tl->info_);
 	buf_free(tl->_buf);
@@ -17810,7 +18164,7 @@ void tl_payments_validateRequestedInfo_free(tl_t *tl_) {
 
 void tl_payments_sendPaymentForm_free(tl_t *tl_) {
 	tl_payments_sendPaymentForm_t *tl = (tl_payments_sendPaymentForm_t *)tl_;
-	int i;
+	
 	tl_free(tl->invoice_);
 	buf_free(tl->requested_info_id_);
 	buf_free(tl->shipping_option_id_);
@@ -17821,21 +18175,21 @@ void tl_payments_sendPaymentForm_free(tl_t *tl_) {
 
 void tl_payments_getSavedInfo_free(tl_t *tl_) {
 	tl_payments_getSavedInfo_t *tl = (tl_payments_getSavedInfo_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_payments_clearSavedInfo_free(tl_t *tl_) {
 	tl_payments_clearSavedInfo_t *tl = (tl_payments_clearSavedInfo_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_payments_getBankCardData_free(tl_t *tl_) {
 	tl_payments_getBankCardData_t *tl = (tl_payments_getBankCardData_t *)tl_;
-	int i;
+	
 	buf_free(tl->number_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17843,7 +18197,7 @@ void tl_payments_getBankCardData_free(tl_t *tl_) {
 
 void tl_payments_exportInvoice_free(tl_t *tl_) {
 	tl_payments_exportInvoice_t *tl = (tl_payments_exportInvoice_t *)tl_;
-	int i;
+	
 	tl_free(tl->invoice_media_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17851,7 +18205,7 @@ void tl_payments_exportInvoice_free(tl_t *tl_) {
 
 void tl_payments_assignAppStoreTransaction_free(tl_t *tl_) {
 	tl_payments_assignAppStoreTransaction_t *tl = (tl_payments_assignAppStoreTransaction_t *)tl_;
-	int i;
+	
 	buf_free(tl->receipt_);
 	tl_free(tl->purpose_);
 	buf_free(tl->_buf);
@@ -17860,7 +18214,7 @@ void tl_payments_assignAppStoreTransaction_free(tl_t *tl_) {
 
 void tl_payments_assignPlayMarketTransaction_free(tl_t *tl_) {
 	tl_payments_assignPlayMarketTransaction_t *tl = (tl_payments_assignPlayMarketTransaction_t *)tl_;
-	int i;
+	
 	tl_free(tl->receipt_);
 	tl_free(tl->purpose_);
 	buf_free(tl->_buf);
@@ -17869,7 +18223,7 @@ void tl_payments_assignPlayMarketTransaction_free(tl_t *tl_) {
 
 void tl_payments_canPurchasePremium_free(tl_t *tl_) {
 	tl_payments_canPurchasePremium_t *tl = (tl_payments_canPurchasePremium_t *)tl_;
-	int i;
+	
 	tl_free(tl->purpose_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17877,7 +18231,7 @@ void tl_payments_canPurchasePremium_free(tl_t *tl_) {
 
 void tl_payments_getPremiumGiftCodeOptions_free(tl_t *tl_) {
 	tl_payments_getPremiumGiftCodeOptions_t *tl = (tl_payments_getPremiumGiftCodeOptions_t *)tl_;
-	int i;
+	
 	tl_free(tl->boost_peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17885,7 +18239,7 @@ void tl_payments_getPremiumGiftCodeOptions_free(tl_t *tl_) {
 
 void tl_payments_checkGiftCode_free(tl_t *tl_) {
 	tl_payments_checkGiftCode_t *tl = (tl_payments_checkGiftCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->slug_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17893,7 +18247,7 @@ void tl_payments_checkGiftCode_free(tl_t *tl_) {
 
 void tl_payments_applyGiftCode_free(tl_t *tl_) {
 	tl_payments_applyGiftCode_t *tl = (tl_payments_applyGiftCode_t *)tl_;
-	int i;
+	
 	buf_free(tl->slug_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17901,7 +18255,7 @@ void tl_payments_applyGiftCode_free(tl_t *tl_) {
 
 void tl_payments_getGiveawayInfo_free(tl_t *tl_) {
 	tl_payments_getGiveawayInfo_t *tl = (tl_payments_getGiveawayInfo_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17909,7 +18263,7 @@ void tl_payments_getGiveawayInfo_free(tl_t *tl_) {
 
 void tl_payments_launchPrepaidGiveaway_free(tl_t *tl_) {
 	tl_payments_launchPrepaidGiveaway_t *tl = (tl_payments_launchPrepaidGiveaway_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->purpose_);
 	buf_free(tl->_buf);
@@ -17918,14 +18272,14 @@ void tl_payments_launchPrepaidGiveaway_free(tl_t *tl_) {
 
 void tl_payments_getStarsTopupOptions_free(tl_t *tl_) {
 	tl_payments_getStarsTopupOptions_t *tl = (tl_payments_getStarsTopupOptions_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_payments_getStarsStatus_free(tl_t *tl_) {
 	tl_payments_getStarsStatus_t *tl = (tl_payments_getStarsStatus_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17933,7 +18287,7 @@ void tl_payments_getStarsStatus_free(tl_t *tl_) {
 
 void tl_payments_getStarsTransactions_free(tl_t *tl_) {
 	tl_payments_getStarsTransactions_t *tl = (tl_payments_getStarsTransactions_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->offset_);
 	buf_free(tl->_buf);
@@ -17942,7 +18296,7 @@ void tl_payments_getStarsTransactions_free(tl_t *tl_) {
 
 void tl_payments_sendStarsForm_free(tl_t *tl_) {
 	tl_payments_sendStarsForm_t *tl = (tl_payments_sendStarsForm_t *)tl_;
-	int i;
+	
 	tl_free(tl->invoice_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17950,7 +18304,7 @@ void tl_payments_sendStarsForm_free(tl_t *tl_) {
 
 void tl_payments_refundStarsCharge_free(tl_t *tl_) {
 	tl_payments_refundStarsCharge_t *tl = (tl_payments_refundStarsCharge_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->charge_id_);
 	buf_free(tl->_buf);
@@ -17959,7 +18313,7 @@ void tl_payments_refundStarsCharge_free(tl_t *tl_) {
 
 void tl_payments_getStarsRevenueStats_free(tl_t *tl_) {
 	tl_payments_getStarsRevenueStats_t *tl = (tl_payments_getStarsRevenueStats_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17967,7 +18321,7 @@ void tl_payments_getStarsRevenueStats_free(tl_t *tl_) {
 
 void tl_payments_getStarsRevenueWithdrawalUrl_free(tl_t *tl_) {
 	tl_payments_getStarsRevenueWithdrawalUrl_t *tl = (tl_payments_getStarsRevenueWithdrawalUrl_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->password_);
 	buf_free(tl->_buf);
@@ -17976,7 +18330,7 @@ void tl_payments_getStarsRevenueWithdrawalUrl_free(tl_t *tl_) {
 
 void tl_payments_getStarsRevenueAdsAccountUrl_free(tl_t *tl_) {
 	tl_payments_getStarsRevenueAdsAccountUrl_t *tl = (tl_payments_getStarsRevenueAdsAccountUrl_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -17985,6 +18339,7 @@ void tl_payments_getStarsRevenueAdsAccountUrl_free(tl_t *tl_) {
 void tl_payments_getStarsTransactionsByID_free(tl_t *tl_) {
 	tl_payments_getStarsTransactionsByID_t *tl = (tl_payments_getStarsTransactionsByID_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 		tl_free(tl->id_[i]);
@@ -17996,7 +18351,7 @@ void tl_payments_getStarsTransactionsByID_free(tl_t *tl_) {
 
 void tl_payments_getStarsGiftOptions_free(tl_t *tl_) {
 	tl_payments_getStarsGiftOptions_t *tl = (tl_payments_getStarsGiftOptions_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18005,6 +18360,7 @@ void tl_payments_getStarsGiftOptions_free(tl_t *tl_) {
 void tl_stickers_createStickerSet_free(tl_t *tl_) {
 	tl_stickers_createStickerSet_t *tl = (tl_stickers_createStickerSet_t *)tl_;
 	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->title_);
 	buf_free(tl->short_name_);
@@ -18020,7 +18376,7 @@ void tl_stickers_createStickerSet_free(tl_t *tl_) {
 
 void tl_stickers_removeStickerFromSet_free(tl_t *tl_) {
 	tl_stickers_removeStickerFromSet_t *tl = (tl_stickers_removeStickerFromSet_t *)tl_;
-	int i;
+	
 	tl_free(tl->sticker_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18028,7 +18384,7 @@ void tl_stickers_removeStickerFromSet_free(tl_t *tl_) {
 
 void tl_stickers_changeStickerPosition_free(tl_t *tl_) {
 	tl_stickers_changeStickerPosition_t *tl = (tl_stickers_changeStickerPosition_t *)tl_;
-	int i;
+	
 	tl_free(tl->sticker_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18036,7 +18392,7 @@ void tl_stickers_changeStickerPosition_free(tl_t *tl_) {
 
 void tl_stickers_addStickerToSet_free(tl_t *tl_) {
 	tl_stickers_addStickerToSet_t *tl = (tl_stickers_addStickerToSet_t *)tl_;
-	int i;
+	
 	tl_free(tl->stickerset_);
 	tl_free(tl->sticker_);
 	buf_free(tl->_buf);
@@ -18045,7 +18401,7 @@ void tl_stickers_addStickerToSet_free(tl_t *tl_) {
 
 void tl_stickers_setStickerSetThumb_free(tl_t *tl_) {
 	tl_stickers_setStickerSetThumb_t *tl = (tl_stickers_setStickerSetThumb_t *)tl_;
-	int i;
+	
 	tl_free(tl->stickerset_);
 	tl_free(tl->thumb_);
 	buf_free(tl->_buf);
@@ -18054,7 +18410,7 @@ void tl_stickers_setStickerSetThumb_free(tl_t *tl_) {
 
 void tl_stickers_checkShortName_free(tl_t *tl_) {
 	tl_stickers_checkShortName_t *tl = (tl_stickers_checkShortName_t *)tl_;
-	int i;
+	
 	buf_free(tl->short_name_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18062,7 +18418,7 @@ void tl_stickers_checkShortName_free(tl_t *tl_) {
 
 void tl_stickers_suggestShortName_free(tl_t *tl_) {
 	tl_stickers_suggestShortName_t *tl = (tl_stickers_suggestShortName_t *)tl_;
-	int i;
+	
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18070,7 +18426,7 @@ void tl_stickers_suggestShortName_free(tl_t *tl_) {
 
 void tl_stickers_changeSticker_free(tl_t *tl_) {
 	tl_stickers_changeSticker_t *tl = (tl_stickers_changeSticker_t *)tl_;
-	int i;
+	
 	tl_free(tl->sticker_);
 	buf_free(tl->emoji_);
 	tl_free(tl->mask_coords_);
@@ -18081,7 +18437,7 @@ void tl_stickers_changeSticker_free(tl_t *tl_) {
 
 void tl_stickers_renameStickerSet_free(tl_t *tl_) {
 	tl_stickers_renameStickerSet_t *tl = (tl_stickers_renameStickerSet_t *)tl_;
-	int i;
+	
 	tl_free(tl->stickerset_);
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
@@ -18090,7 +18446,7 @@ void tl_stickers_renameStickerSet_free(tl_t *tl_) {
 
 void tl_stickers_deleteStickerSet_free(tl_t *tl_) {
 	tl_stickers_deleteStickerSet_t *tl = (tl_stickers_deleteStickerSet_t *)tl_;
-	int i;
+	
 	tl_free(tl->stickerset_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18098,7 +18454,7 @@ void tl_stickers_deleteStickerSet_free(tl_t *tl_) {
 
 void tl_stickers_replaceSticker_free(tl_t *tl_) {
 	tl_stickers_replaceSticker_t *tl = (tl_stickers_replaceSticker_t *)tl_;
-	int i;
+	
 	tl_free(tl->sticker_);
 	tl_free(tl->new_sticker_);
 	buf_free(tl->_buf);
@@ -18107,14 +18463,14 @@ void tl_stickers_replaceSticker_free(tl_t *tl_) {
 
 void tl_phone_getCallConfig_free(tl_t *tl_) {
 	tl_phone_getCallConfig_t *tl = (tl_phone_getCallConfig_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_phone_requestCall_free(tl_t *tl_) {
 	tl_phone_requestCall_t *tl = (tl_phone_requestCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->user_id_);
 	buf_free(tl->g_a_hash_);
 	tl_free(tl->protocol_);
@@ -18124,7 +18480,7 @@ void tl_phone_requestCall_free(tl_t *tl_) {
 
 void tl_phone_acceptCall_free(tl_t *tl_) {
 	tl_phone_acceptCall_t *tl = (tl_phone_acceptCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->g_b_);
 	tl_free(tl->protocol_);
@@ -18134,7 +18490,7 @@ void tl_phone_acceptCall_free(tl_t *tl_) {
 
 void tl_phone_confirmCall_free(tl_t *tl_) {
 	tl_phone_confirmCall_t *tl = (tl_phone_confirmCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->g_a_);
 	tl_free(tl->protocol_);
@@ -18144,7 +18500,7 @@ void tl_phone_confirmCall_free(tl_t *tl_) {
 
 void tl_phone_receivedCall_free(tl_t *tl_) {
 	tl_phone_receivedCall_t *tl = (tl_phone_receivedCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18152,7 +18508,7 @@ void tl_phone_receivedCall_free(tl_t *tl_) {
 
 void tl_phone_discardCall_free(tl_t *tl_) {
 	tl_phone_discardCall_t *tl = (tl_phone_discardCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reason_);
 	buf_free(tl->_buf);
@@ -18161,7 +18517,7 @@ void tl_phone_discardCall_free(tl_t *tl_) {
 
 void tl_phone_setCallRating_free(tl_t *tl_) {
 	tl_phone_setCallRating_t *tl = (tl_phone_setCallRating_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->comment_);
 	buf_free(tl->_buf);
@@ -18170,7 +18526,7 @@ void tl_phone_setCallRating_free(tl_t *tl_) {
 
 void tl_phone_saveCallDebug_free(tl_t *tl_) {
 	tl_phone_saveCallDebug_t *tl = (tl_phone_saveCallDebug_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->debug_);
 	buf_free(tl->_buf);
@@ -18179,7 +18535,7 @@ void tl_phone_saveCallDebug_free(tl_t *tl_) {
 
 void tl_phone_sendSignalingData_free(tl_t *tl_) {
 	tl_phone_sendSignalingData_t *tl = (tl_phone_sendSignalingData_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->data_);
 	buf_free(tl->_buf);
@@ -18188,7 +18544,7 @@ void tl_phone_sendSignalingData_free(tl_t *tl_) {
 
 void tl_phone_createGroupCall_free(tl_t *tl_) {
 	tl_phone_createGroupCall_t *tl = (tl_phone_createGroupCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
@@ -18197,7 +18553,7 @@ void tl_phone_createGroupCall_free(tl_t *tl_) {
 
 void tl_phone_joinGroupCall_free(tl_t *tl_) {
 	tl_phone_joinGroupCall_t *tl = (tl_phone_joinGroupCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	tl_free(tl->join_as_);
 	buf_free(tl->invite_hash_);
@@ -18208,7 +18564,7 @@ void tl_phone_joinGroupCall_free(tl_t *tl_) {
 
 void tl_phone_leaveGroupCall_free(tl_t *tl_) {
 	tl_phone_leaveGroupCall_t *tl = (tl_phone_leaveGroupCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18217,6 +18573,7 @@ void tl_phone_leaveGroupCall_free(tl_t *tl_) {
 void tl_phone_inviteToGroupCall_free(tl_t *tl_) {
 	tl_phone_inviteToGroupCall_t *tl = (tl_phone_inviteToGroupCall_t *)tl_;
 	int i;
+	
 	tl_free(tl->call_);
 	for(i=0; i<tl->users_len; ++i){
 		tl_free(tl->users_[i]);
@@ -18228,7 +18585,7 @@ void tl_phone_inviteToGroupCall_free(tl_t *tl_) {
 
 void tl_phone_discardGroupCall_free(tl_t *tl_) {
 	tl_phone_discardGroupCall_t *tl = (tl_phone_discardGroupCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18236,7 +18593,7 @@ void tl_phone_discardGroupCall_free(tl_t *tl_) {
 
 void tl_phone_toggleGroupCallSettings_free(tl_t *tl_) {
 	tl_phone_toggleGroupCallSettings_t *tl = (tl_phone_toggleGroupCallSettings_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	tl_free(tl->join_muted_);
 	buf_free(tl->_buf);
@@ -18245,7 +18602,7 @@ void tl_phone_toggleGroupCallSettings_free(tl_t *tl_) {
 
 void tl_phone_getGroupCall_free(tl_t *tl_) {
 	tl_phone_getGroupCall_t *tl = (tl_phone_getGroupCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18254,6 +18611,7 @@ void tl_phone_getGroupCall_free(tl_t *tl_) {
 void tl_phone_getGroupParticipants_free(tl_t *tl_) {
 	tl_phone_getGroupParticipants_t *tl = (tl_phone_getGroupParticipants_t *)tl_;
 	int i;
+	
 	tl_free(tl->call_);
 	for(i=0; i<tl->ids_len; ++i){
 		tl_free(tl->ids_[i]);
@@ -18270,6 +18628,7 @@ void tl_phone_getGroupParticipants_free(tl_t *tl_) {
 void tl_phone_checkGroupCall_free(tl_t *tl_) {
 	tl_phone_checkGroupCall_t *tl = (tl_phone_checkGroupCall_t *)tl_;
 	int i;
+	
 	tl_free(tl->call_);
 	for(i=0; i<tl->sources_len; ++i){
 	}
@@ -18280,7 +18639,7 @@ void tl_phone_checkGroupCall_free(tl_t *tl_) {
 
 void tl_phone_toggleGroupCallRecord_free(tl_t *tl_) {
 	tl_phone_toggleGroupCallRecord_t *tl = (tl_phone_toggleGroupCallRecord_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->title_);
 	tl_free(tl->video_portrait_);
@@ -18290,7 +18649,7 @@ void tl_phone_toggleGroupCallRecord_free(tl_t *tl_) {
 
 void tl_phone_editGroupCallParticipant_free(tl_t *tl_) {
 	tl_phone_editGroupCallParticipant_t *tl = (tl_phone_editGroupCallParticipant_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	tl_free(tl->participant_);
 	tl_free(tl->muted_);
@@ -18304,7 +18663,7 @@ void tl_phone_editGroupCallParticipant_free(tl_t *tl_) {
 
 void tl_phone_editGroupCallTitle_free(tl_t *tl_) {
 	tl_phone_editGroupCallTitle_t *tl = (tl_phone_editGroupCallTitle_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->title_);
 	buf_free(tl->_buf);
@@ -18313,7 +18672,7 @@ void tl_phone_editGroupCallTitle_free(tl_t *tl_) {
 
 void tl_phone_getGroupCallJoinAs_free(tl_t *tl_) {
 	tl_phone_getGroupCallJoinAs_t *tl = (tl_phone_getGroupCallJoinAs_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18321,7 +18680,7 @@ void tl_phone_getGroupCallJoinAs_free(tl_t *tl_) {
 
 void tl_phone_exportGroupCallInvite_free(tl_t *tl_) {
 	tl_phone_exportGroupCallInvite_t *tl = (tl_phone_exportGroupCallInvite_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18329,7 +18688,7 @@ void tl_phone_exportGroupCallInvite_free(tl_t *tl_) {
 
 void tl_phone_toggleGroupCallStartSubscription_free(tl_t *tl_) {
 	tl_phone_toggleGroupCallStartSubscription_t *tl = (tl_phone_toggleGroupCallStartSubscription_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	tl_free(tl->subscribed_);
 	buf_free(tl->_buf);
@@ -18338,7 +18697,7 @@ void tl_phone_toggleGroupCallStartSubscription_free(tl_t *tl_) {
 
 void tl_phone_startScheduledGroupCall_free(tl_t *tl_) {
 	tl_phone_startScheduledGroupCall_t *tl = (tl_phone_startScheduledGroupCall_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18346,7 +18705,7 @@ void tl_phone_startScheduledGroupCall_free(tl_t *tl_) {
 
 void tl_phone_saveDefaultGroupCallJoinAs_free(tl_t *tl_) {
 	tl_phone_saveDefaultGroupCallJoinAs_t *tl = (tl_phone_saveDefaultGroupCallJoinAs_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->join_as_);
 	buf_free(tl->_buf);
@@ -18355,7 +18714,7 @@ void tl_phone_saveDefaultGroupCallJoinAs_free(tl_t *tl_) {
 
 void tl_phone_joinGroupCallPresentation_free(tl_t *tl_) {
 	tl_phone_joinGroupCallPresentation_t *tl = (tl_phone_joinGroupCallPresentation_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	tl_free(tl->params_);
 	buf_free(tl->_buf);
@@ -18364,7 +18723,7 @@ void tl_phone_joinGroupCallPresentation_free(tl_t *tl_) {
 
 void tl_phone_leaveGroupCallPresentation_free(tl_t *tl_) {
 	tl_phone_leaveGroupCallPresentation_t *tl = (tl_phone_leaveGroupCallPresentation_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18372,7 +18731,7 @@ void tl_phone_leaveGroupCallPresentation_free(tl_t *tl_) {
 
 void tl_phone_getGroupCallStreamChannels_free(tl_t *tl_) {
 	tl_phone_getGroupCallStreamChannels_t *tl = (tl_phone_getGroupCallStreamChannels_t *)tl_;
-	int i;
+	
 	tl_free(tl->call_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18380,7 +18739,7 @@ void tl_phone_getGroupCallStreamChannels_free(tl_t *tl_) {
 
 void tl_phone_getGroupCallStreamRtmpUrl_free(tl_t *tl_) {
 	tl_phone_getGroupCallStreamRtmpUrl_t *tl = (tl_phone_getGroupCallStreamRtmpUrl_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->revoke_);
 	buf_free(tl->_buf);
@@ -18389,7 +18748,7 @@ void tl_phone_getGroupCallStreamRtmpUrl_free(tl_t *tl_) {
 
 void tl_phone_saveCallLog_free(tl_t *tl_) {
 	tl_phone_saveCallLog_t *tl = (tl_phone_saveCallLog_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->file_);
 	buf_free(tl->_buf);
@@ -18398,7 +18757,7 @@ void tl_phone_saveCallLog_free(tl_t *tl_) {
 
 void tl_langpack_getLangPack_free(tl_t *tl_) {
 	tl_langpack_getLangPack_t *tl = (tl_langpack_getLangPack_t *)tl_;
-	int i;
+	
 	buf_free(tl->lang_pack_);
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
@@ -18408,6 +18767,7 @@ void tl_langpack_getLangPack_free(tl_t *tl_) {
 void tl_langpack_getStrings_free(tl_t *tl_) {
 	tl_langpack_getStrings_t *tl = (tl_langpack_getStrings_t *)tl_;
 	int i;
+	
 	buf_free(tl->lang_pack_);
 	buf_free(tl->lang_code_);
 	for(i=0; i<tl->keys_len; ++i){
@@ -18420,7 +18780,7 @@ void tl_langpack_getStrings_free(tl_t *tl_) {
 
 void tl_langpack_getDifference_free(tl_t *tl_) {
 	tl_langpack_getDifference_t *tl = (tl_langpack_getDifference_t *)tl_;
-	int i;
+	
 	buf_free(tl->lang_pack_);
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
@@ -18429,7 +18789,7 @@ void tl_langpack_getDifference_free(tl_t *tl_) {
 
 void tl_langpack_getLanguages_free(tl_t *tl_) {
 	tl_langpack_getLanguages_t *tl = (tl_langpack_getLanguages_t *)tl_;
-	int i;
+	
 	buf_free(tl->lang_pack_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18437,7 +18797,7 @@ void tl_langpack_getLanguages_free(tl_t *tl_) {
 
 void tl_langpack_getLanguage_free(tl_t *tl_) {
 	tl_langpack_getLanguage_t *tl = (tl_langpack_getLanguage_t *)tl_;
-	int i;
+	
 	buf_free(tl->lang_pack_);
 	buf_free(tl->lang_code_);
 	buf_free(tl->_buf);
@@ -18447,6 +18807,7 @@ void tl_langpack_getLanguage_free(tl_t *tl_) {
 void tl_folders_editPeerFolders_free(tl_t *tl_) {
 	tl_folders_editPeerFolders_t *tl = (tl_folders_editPeerFolders_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->folder_peers_len; ++i){
 		tl_free(tl->folder_peers_[i]);
 	}
@@ -18457,7 +18818,7 @@ void tl_folders_editPeerFolders_free(tl_t *tl_) {
 
 void tl_stats_getBroadcastStats_free(tl_t *tl_) {
 	tl_stats_getBroadcastStats_t *tl = (tl_stats_getBroadcastStats_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18465,7 +18826,7 @@ void tl_stats_getBroadcastStats_free(tl_t *tl_) {
 
 void tl_stats_loadAsyncGraph_free(tl_t *tl_) {
 	tl_stats_loadAsyncGraph_t *tl = (tl_stats_loadAsyncGraph_t *)tl_;
-	int i;
+	
 	buf_free(tl->token_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18473,7 +18834,7 @@ void tl_stats_loadAsyncGraph_free(tl_t *tl_) {
 
 void tl_stats_getMegagroupStats_free(tl_t *tl_) {
 	tl_stats_getMegagroupStats_t *tl = (tl_stats_getMegagroupStats_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18481,7 +18842,7 @@ void tl_stats_getMegagroupStats_free(tl_t *tl_) {
 
 void tl_stats_getMessagePublicForwards_free(tl_t *tl_) {
 	tl_stats_getMessagePublicForwards_t *tl = (tl_stats_getMessagePublicForwards_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->offset_);
 	buf_free(tl->_buf);
@@ -18490,7 +18851,7 @@ void tl_stats_getMessagePublicForwards_free(tl_t *tl_) {
 
 void tl_stats_getMessageStats_free(tl_t *tl_) {
 	tl_stats_getMessageStats_t *tl = (tl_stats_getMessageStats_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18498,7 +18859,7 @@ void tl_stats_getMessageStats_free(tl_t *tl_) {
 
 void tl_stats_getStoryStats_free(tl_t *tl_) {
 	tl_stats_getStoryStats_t *tl = (tl_stats_getStoryStats_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18506,7 +18867,7 @@ void tl_stats_getStoryStats_free(tl_t *tl_) {
 
 void tl_stats_getStoryPublicForwards_free(tl_t *tl_) {
 	tl_stats_getStoryPublicForwards_t *tl = (tl_stats_getStoryPublicForwards_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->offset_);
 	buf_free(tl->_buf);
@@ -18515,7 +18876,7 @@ void tl_stats_getStoryPublicForwards_free(tl_t *tl_) {
 
 void tl_stats_getBroadcastRevenueStats_free(tl_t *tl_) {
 	tl_stats_getBroadcastRevenueStats_t *tl = (tl_stats_getBroadcastRevenueStats_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18523,7 +18884,7 @@ void tl_stats_getBroadcastRevenueStats_free(tl_t *tl_) {
 
 void tl_stats_getBroadcastRevenueWithdrawalUrl_free(tl_t *tl_) {
 	tl_stats_getBroadcastRevenueWithdrawalUrl_t *tl = (tl_stats_getBroadcastRevenueWithdrawalUrl_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	tl_free(tl->password_);
 	buf_free(tl->_buf);
@@ -18532,7 +18893,7 @@ void tl_stats_getBroadcastRevenueWithdrawalUrl_free(tl_t *tl_) {
 
 void tl_stats_getBroadcastRevenueTransactions_free(tl_t *tl_) {
 	tl_stats_getBroadcastRevenueTransactions_t *tl = (tl_stats_getBroadcastRevenueTransactions_t *)tl_;
-	int i;
+	
 	tl_free(tl->channel_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18541,6 +18902,7 @@ void tl_stats_getBroadcastRevenueTransactions_free(tl_t *tl_) {
 void tl_chatlists_exportChatlistInvite_free(tl_t *tl_) {
 	tl_chatlists_exportChatlistInvite_t *tl = (tl_chatlists_exportChatlistInvite_t *)tl_;
 	int i;
+	
 	tl_free(tl->chatlist_);
 	buf_free(tl->title_);
 	for(i=0; i<tl->peers_len; ++i){
@@ -18553,7 +18915,7 @@ void tl_chatlists_exportChatlistInvite_free(tl_t *tl_) {
 
 void tl_chatlists_deleteExportedInvite_free(tl_t *tl_) {
 	tl_chatlists_deleteExportedInvite_t *tl = (tl_chatlists_deleteExportedInvite_t *)tl_;
-	int i;
+	
 	tl_free(tl->chatlist_);
 	buf_free(tl->slug_);
 	buf_free(tl->_buf);
@@ -18563,6 +18925,7 @@ void tl_chatlists_deleteExportedInvite_free(tl_t *tl_) {
 void tl_chatlists_editExportedInvite_free(tl_t *tl_) {
 	tl_chatlists_editExportedInvite_t *tl = (tl_chatlists_editExportedInvite_t *)tl_;
 	int i;
+	
 	tl_free(tl->chatlist_);
 	buf_free(tl->slug_);
 	buf_free(tl->title_);
@@ -18576,7 +18939,7 @@ void tl_chatlists_editExportedInvite_free(tl_t *tl_) {
 
 void tl_chatlists_getExportedInvites_free(tl_t *tl_) {
 	tl_chatlists_getExportedInvites_t *tl = (tl_chatlists_getExportedInvites_t *)tl_;
-	int i;
+	
 	tl_free(tl->chatlist_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18584,7 +18947,7 @@ void tl_chatlists_getExportedInvites_free(tl_t *tl_) {
 
 void tl_chatlists_checkChatlistInvite_free(tl_t *tl_) {
 	tl_chatlists_checkChatlistInvite_t *tl = (tl_chatlists_checkChatlistInvite_t *)tl_;
-	int i;
+	
 	buf_free(tl->slug_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18593,6 +18956,7 @@ void tl_chatlists_checkChatlistInvite_free(tl_t *tl_) {
 void tl_chatlists_joinChatlistInvite_free(tl_t *tl_) {
 	tl_chatlists_joinChatlistInvite_t *tl = (tl_chatlists_joinChatlistInvite_t *)tl_;
 	int i;
+	
 	buf_free(tl->slug_);
 	for(i=0; i<tl->peers_len; ++i){
 		tl_free(tl->peers_[i]);
@@ -18604,7 +18968,7 @@ void tl_chatlists_joinChatlistInvite_free(tl_t *tl_) {
 
 void tl_chatlists_getChatlistUpdates_free(tl_t *tl_) {
 	tl_chatlists_getChatlistUpdates_t *tl = (tl_chatlists_getChatlistUpdates_t *)tl_;
-	int i;
+	
 	tl_free(tl->chatlist_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18613,6 +18977,7 @@ void tl_chatlists_getChatlistUpdates_free(tl_t *tl_) {
 void tl_chatlists_joinChatlistUpdates_free(tl_t *tl_) {
 	tl_chatlists_joinChatlistUpdates_t *tl = (tl_chatlists_joinChatlistUpdates_t *)tl_;
 	int i;
+	
 	tl_free(tl->chatlist_);
 	for(i=0; i<tl->peers_len; ++i){
 		tl_free(tl->peers_[i]);
@@ -18624,7 +18989,7 @@ void tl_chatlists_joinChatlistUpdates_free(tl_t *tl_) {
 
 void tl_chatlists_hideChatlistUpdates_free(tl_t *tl_) {
 	tl_chatlists_hideChatlistUpdates_t *tl = (tl_chatlists_hideChatlistUpdates_t *)tl_;
-	int i;
+	
 	tl_free(tl->chatlist_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18632,7 +18997,7 @@ void tl_chatlists_hideChatlistUpdates_free(tl_t *tl_) {
 
 void tl_chatlists_getLeaveChatlistSuggestions_free(tl_t *tl_) {
 	tl_chatlists_getLeaveChatlistSuggestions_t *tl = (tl_chatlists_getLeaveChatlistSuggestions_t *)tl_;
-	int i;
+	
 	tl_free(tl->chatlist_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18641,6 +19006,7 @@ void tl_chatlists_getLeaveChatlistSuggestions_free(tl_t *tl_) {
 void tl_chatlists_leaveChatlist_free(tl_t *tl_) {
 	tl_chatlists_leaveChatlist_t *tl = (tl_chatlists_leaveChatlist_t *)tl_;
 	int i;
+	
 	tl_free(tl->chatlist_);
 	for(i=0; i<tl->peers_len; ++i){
 		tl_free(tl->peers_[i]);
@@ -18652,7 +19018,7 @@ void tl_chatlists_leaveChatlist_free(tl_t *tl_) {
 
 void tl_stories_canSendStory_free(tl_t *tl_) {
 	tl_stories_canSendStory_t *tl = (tl_stories_canSendStory_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18661,6 +19027,7 @@ void tl_stories_canSendStory_free(tl_t *tl_) {
 void tl_stories_sendStory_free(tl_t *tl_) {
 	tl_stories_sendStory_t *tl = (tl_stories_sendStory_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->media_);
 	for(i=0; i<tl->media_areas_len; ++i){
@@ -18684,6 +19051,7 @@ void tl_stories_sendStory_free(tl_t *tl_) {
 void tl_stories_editStory_free(tl_t *tl_) {
 	tl_stories_editStory_t *tl = (tl_stories_editStory_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->media_);
 	for(i=0; i<tl->media_areas_len; ++i){
@@ -18706,6 +19074,7 @@ void tl_stories_editStory_free(tl_t *tl_) {
 void tl_stories_deleteStories_free(tl_t *tl_) {
 	tl_stories_deleteStories_t *tl = (tl_stories_deleteStories_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -18717,6 +19086,7 @@ void tl_stories_deleteStories_free(tl_t *tl_) {
 void tl_stories_togglePinned_free(tl_t *tl_) {
 	tl_stories_togglePinned_t *tl = (tl_stories_togglePinned_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -18728,7 +19098,7 @@ void tl_stories_togglePinned_free(tl_t *tl_) {
 
 void tl_stories_getAllStories_free(tl_t *tl_) {
 	tl_stories_getAllStories_t *tl = (tl_stories_getAllStories_t *)tl_;
-	int i;
+	
 	buf_free(tl->state_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18736,7 +19106,7 @@ void tl_stories_getAllStories_free(tl_t *tl_) {
 
 void tl_stories_getPinnedStories_free(tl_t *tl_) {
 	tl_stories_getPinnedStories_t *tl = (tl_stories_getPinnedStories_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18744,7 +19114,7 @@ void tl_stories_getPinnedStories_free(tl_t *tl_) {
 
 void tl_stories_getStoriesArchive_free(tl_t *tl_) {
 	tl_stories_getStoriesArchive_t *tl = (tl_stories_getStoriesArchive_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18753,6 +19123,7 @@ void tl_stories_getStoriesArchive_free(tl_t *tl_) {
 void tl_stories_getStoriesByID_free(tl_t *tl_) {
 	tl_stories_getStoriesByID_t *tl = (tl_stories_getStoriesByID_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -18763,7 +19134,7 @@ void tl_stories_getStoriesByID_free(tl_t *tl_) {
 
 void tl_stories_toggleAllStoriesHidden_free(tl_t *tl_) {
 	tl_stories_toggleAllStoriesHidden_t *tl = (tl_stories_toggleAllStoriesHidden_t *)tl_;
-	int i;
+	
 	tl_free(tl->hidden_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18771,7 +19142,7 @@ void tl_stories_toggleAllStoriesHidden_free(tl_t *tl_) {
 
 void tl_stories_readStories_free(tl_t *tl_) {
 	tl_stories_readStories_t *tl = (tl_stories_readStories_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18780,6 +19151,7 @@ void tl_stories_readStories_free(tl_t *tl_) {
 void tl_stories_incrementStoryViews_free(tl_t *tl_) {
 	tl_stories_incrementStoryViews_t *tl = (tl_stories_incrementStoryViews_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -18790,7 +19162,7 @@ void tl_stories_incrementStoryViews_free(tl_t *tl_) {
 
 void tl_stories_getStoryViewsList_free(tl_t *tl_) {
 	tl_stories_getStoryViewsList_t *tl = (tl_stories_getStoryViewsList_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->q_);
 	buf_free(tl->offset_);
@@ -18801,6 +19173,7 @@ void tl_stories_getStoryViewsList_free(tl_t *tl_) {
 void tl_stories_getStoriesViews_free(tl_t *tl_) {
 	tl_stories_getStoriesViews_t *tl = (tl_stories_getStoriesViews_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -18811,7 +19184,7 @@ void tl_stories_getStoriesViews_free(tl_t *tl_) {
 
 void tl_stories_exportStoryLink_free(tl_t *tl_) {
 	tl_stories_exportStoryLink_t *tl = (tl_stories_exportStoryLink_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18820,6 +19193,7 @@ void tl_stories_exportStoryLink_free(tl_t *tl_) {
 void tl_stories_report_free(tl_t *tl_) {
 	tl_stories_report_t *tl = (tl_stories_report_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -18832,14 +19206,14 @@ void tl_stories_report_free(tl_t *tl_) {
 
 void tl_stories_activateStealthMode_free(tl_t *tl_) {
 	tl_stories_activateStealthMode_t *tl = (tl_stories_activateStealthMode_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_stories_sendReaction_free(tl_t *tl_) {
 	tl_stories_sendReaction_t *tl = (tl_stories_sendReaction_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reaction_);
 	buf_free(tl->_buf);
@@ -18848,7 +19222,7 @@ void tl_stories_sendReaction_free(tl_t *tl_) {
 
 void tl_stories_getPeerStories_free(tl_t *tl_) {
 	tl_stories_getPeerStories_t *tl = (tl_stories_getPeerStories_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18856,7 +19230,7 @@ void tl_stories_getPeerStories_free(tl_t *tl_) {
 
 void tl_stories_getAllReadPeerStories_free(tl_t *tl_) {
 	tl_stories_getAllReadPeerStories_t *tl = (tl_stories_getAllReadPeerStories_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -18864,6 +19238,7 @@ void tl_stories_getAllReadPeerStories_free(tl_t *tl_) {
 void tl_stories_getPeerMaxIDs_free(tl_t *tl_) {
 	tl_stories_getPeerMaxIDs_t *tl = (tl_stories_getPeerMaxIDs_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->id_len; ++i){
 		tl_free(tl->id_[i]);
 	}
@@ -18874,14 +19249,14 @@ void tl_stories_getPeerMaxIDs_free(tl_t *tl_) {
 
 void tl_stories_getChatsToSend_free(tl_t *tl_) {
 	tl_stories_getChatsToSend_t *tl = (tl_stories_getChatsToSend_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_stories_togglePeerStoriesHidden_free(tl_t *tl_) {
 	tl_stories_togglePeerStoriesHidden_t *tl = (tl_stories_togglePeerStoriesHidden_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->hidden_);
 	buf_free(tl->_buf);
@@ -18890,7 +19265,7 @@ void tl_stories_togglePeerStoriesHidden_free(tl_t *tl_) {
 
 void tl_stories_getStoryReactionsList_free(tl_t *tl_) {
 	tl_stories_getStoryReactionsList_t *tl = (tl_stories_getStoryReactionsList_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->reaction_);
 	buf_free(tl->offset_);
@@ -18901,6 +19276,7 @@ void tl_stories_getStoryReactionsList_free(tl_t *tl_) {
 void tl_stories_togglePinnedToTop_free(tl_t *tl_) {
 	tl_stories_togglePinnedToTop_t *tl = (tl_stories_togglePinnedToTop_t *)tl_;
 	int i;
+	
 	tl_free(tl->peer_);
 	for(i=0; i<tl->id_len; ++i){
 	}
@@ -18911,7 +19287,7 @@ void tl_stories_togglePinnedToTop_free(tl_t *tl_) {
 
 void tl_stories_searchPosts_free(tl_t *tl_) {
 	tl_stories_searchPosts_t *tl = (tl_stories_searchPosts_t *)tl_;
-	int i;
+	
 	buf_free(tl->hashtag_);
 	tl_free(tl->area_);
 	buf_free(tl->offset_);
@@ -18921,7 +19297,7 @@ void tl_stories_searchPosts_free(tl_t *tl_) {
 
 void tl_premium_getBoostsList_free(tl_t *tl_) {
 	tl_premium_getBoostsList_t *tl = (tl_premium_getBoostsList_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->offset_);
 	buf_free(tl->_buf);
@@ -18930,7 +19306,7 @@ void tl_premium_getBoostsList_free(tl_t *tl_) {
 
 void tl_premium_getMyBoosts_free(tl_t *tl_) {
 	tl_premium_getMyBoosts_t *tl = (tl_premium_getMyBoosts_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
@@ -18938,6 +19314,7 @@ void tl_premium_getMyBoosts_free(tl_t *tl_) {
 void tl_premium_applyBoost_free(tl_t *tl_) {
 	tl_premium_applyBoost_t *tl = (tl_premium_applyBoost_t *)tl_;
 	int i;
+	
 	for(i=0; i<tl->slots_len; ++i){
 	}
 	free(tl->slots_);
@@ -18948,7 +19325,7 @@ void tl_premium_applyBoost_free(tl_t *tl_) {
 
 void tl_premium_getBoostsStatus_free(tl_t *tl_) {
 	tl_premium_getBoostsStatus_t *tl = (tl_premium_getBoostsStatus_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -18956,7 +19333,7 @@ void tl_premium_getBoostsStatus_free(tl_t *tl_) {
 
 void tl_premium_getUserBoosts_free(tl_t *tl_) {
 	tl_premium_getUserBoosts_t *tl = (tl_premium_getUserBoosts_t *)tl_;
-	int i;
+	
 	tl_free(tl->peer_);
 	tl_free(tl->user_id_);
 	buf_free(tl->_buf);
@@ -18965,42 +19342,42 @@ void tl_premium_getUserBoosts_free(tl_t *tl_) {
 
 void tl_smsjobs_isEligibleToJoin_free(tl_t *tl_) {
 	tl_smsjobs_isEligibleToJoin_t *tl = (tl_smsjobs_isEligibleToJoin_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_smsjobs_join_free(tl_t *tl_) {
 	tl_smsjobs_join_t *tl = (tl_smsjobs_join_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_smsjobs_leave_free(tl_t *tl_) {
 	tl_smsjobs_leave_t *tl = (tl_smsjobs_leave_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_smsjobs_updateSettings_free(tl_t *tl_) {
 	tl_smsjobs_updateSettings_t *tl = (tl_smsjobs_updateSettings_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_smsjobs_getStatus_free(tl_t *tl_) {
 	tl_smsjobs_getStatus_t *tl = (tl_smsjobs_getStatus_t *)tl_;
-	int i;
+	
 	buf_free(tl->_buf);
 	free(tl);
 }
 
 void tl_smsjobs_getSmsJob_free(tl_t *tl_) {
 	tl_smsjobs_getSmsJob_t *tl = (tl_smsjobs_getSmsJob_t *)tl_;
-	int i;
+	
 	buf_free(tl->job_id_);
 	buf_free(tl->_buf);
 	free(tl);
@@ -19008,7 +19385,7 @@ void tl_smsjobs_getSmsJob_free(tl_t *tl_) {
 
 void tl_smsjobs_finishJob_free(tl_t *tl_) {
 	tl_smsjobs_finishJob_t *tl = (tl_smsjobs_finishJob_t *)tl_;
-	int i;
+	
 	buf_free(tl->job_id_);
 	buf_free(tl->error_);
 	buf_free(tl->_buf);
@@ -19017,7 +19394,7 @@ void tl_smsjobs_finishJob_free(tl_t *tl_) {
 
 void tl_fragment_getCollectibleInfo_free(tl_t *tl_) {
 	tl_fragment_getCollectibleInfo_t *tl = (tl_fragment_getCollectibleInfo_t *)tl_;
-	int i;
+	
 	tl_free(tl->collectible_);
 	buf_free(tl->_buf);
 	free(tl);

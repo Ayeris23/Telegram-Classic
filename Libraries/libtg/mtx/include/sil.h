@@ -12,6 +12,7 @@
 #include "tgt.h"
 
 extern abstract_t sil_abstract(tg_api_type_system_t);
-extern tg_api_type_system_t sil_concrete(abstract_t);
+extern tg_api_type_system_t *sil_concrete_ptr(abstract_t a);
+extern tg_api_type_system_t sil_concrete(abstract_t a);
 
 #endif /* defined(__mtx__sil__) */
