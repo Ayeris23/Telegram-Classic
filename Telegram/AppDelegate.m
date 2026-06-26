@@ -538,28 +538,29 @@ static void on_log(void *d, const char *msg)
 	}
 }
 
--(void)signIn:(NSString *)phone_number
-         code:(NSString *)code
-     sentCode:(tl_auth_sentCode_t *)sentCode
+- (void)signIn:(NSString *)phone_number
+          code:(NSString *)code
+      sentCode:(tl_auth_sentCode_t *)sentCode
 {
-	// set first launch
-	[[NSUserDefaults standardUserDefaults] setBool:NO
-                                            forKey:@"isNotFirstLaunch"];
+    tl_user_t *user =
+    tg_auth_signIn(
+                   self.tg,
+                   sentCode,
+                   [phone_number UTF8String],
+                   [code UTF8String]);
     
-	tl_user_t *user = tg_auth_signIn(
-                                     self.tg,
-                                     sentCode,
-                                     [phone_number UTF8String],
-                                     [code UTF8String]);
+    if (user) {
+        // Only mark first launch complete after authorization succeeds.
+        [[NSUserDefaults standardUserDefaults]
+         setBool:NO
+         forKey:@"isNotFirstLaunch"];
+        
+        [self afteLoginUser:user];
+        return;
+    }
     
-	if (user){
-		[self afteLoginUser:user];
-	}
-	// check password
-	[self askInput:@"enter password"
-            onDone:^(NSString *text){
-                [self chechPassword:text];
-            }];
+    [self showMessage:
+     @"Sign-in failed. Your verification code may be invalid or expired."];
 }
 
 - (void)sendCode:(NSString *)phone_number

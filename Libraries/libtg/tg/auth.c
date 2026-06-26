@@ -322,37 +322,50 @@ tg_auth_signIn(tg_t *tg,
 
     if (tl && tl->_id == id_auth_authorization) {
         tl_auth_authorization_t *auth =
-            (tl_auth_authorization_t *)tl;
-
-//        if (auth->setup_password_required_) {
-//            // throw error
-//            ON_ERR(tg, "SESSION_PASSWORD_NEEDED");
-//            return NULL;
-//        }
-
+        (tl_auth_authorization_t *)tl;
+        
         if (auth->future_auth_token_.size > 0) {
-            // save auth token
             char auth_token[BUFSIZ];
-            strncpy(
-                auth_token,
-                (char *)auth->future_auth_token_.data,
-                auth->future_auth_token_.size);
-
+            size_t token_length = auth->future_auth_token_.size;
+            
+            if (token_length >= sizeof(auth_token))
+                token_length = sizeof(auth_token) - 1;
+            
+            memcpy(auth_token,
+                   auth->future_auth_token_.data,
+                   token_length);
+            
+            auth_token[token_length] = '\0';
+            
             auth_token_to_database(tg, auth_token);
         }
-
-        // save auth_key_id
+        
         auth_key_to_database(tg, tg->key);
-
-        // save ip address
         ip_address_to_database(tg, tg->ip);
-
+        
         return (tl_user_t *)auth->user_;
     }
-
+    
+    if (tl && tl->_id == id_rpc_error) {
+        const char *error_message = RPC_ERROR(tl);
+        
+        AUTH_TRACE("AUTH: auth.signIn RPC error: %s\n",
+                   error_message ? error_message : "(null)");
+        
+        ON_ERR(tg,
+               "auth.signIn: %s",
+               error_message ? error_message : "RPC_ERROR");
+        
+        tl_free(tl);
+        return NULL;
+    }
+    
     if (tl) {
+        AUTH_TRACE("AUTH: auth.signIn unexpected response id=0x%08x\n",
+                   (unsigned int)tl->_id);
+        
         tl_free(tl);
     }
-
+    
     return NULL;
 }

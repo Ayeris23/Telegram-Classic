@@ -20,6 +20,8 @@
 #include <sys/socket.h>
 #include "stb_ds.h"
 #include "errors.h"
+#include <errno.h>
+
 #if INTPTR_MAX == INT32_MAX
     #define THIS_IS_32_BIT_ENVIRONMENT
 		#define _LD_ "%lld"
@@ -315,26 +317,46 @@ static void handle_tl(tg_queue_t *queue, tl_t *tl)
 
 	switch (tl->_id) {
 		case id_gzip_packed:
-			{
-				// handle gzip
-				tl_gzip_packed_t *obj =
-					(tl_gzip_packed_t *)tl;
-
-				buf_t buf;
-				int _e = gunzip_buf(&buf, obj->packed_data_);
-				if (_e)
-				{
-					char *err = gunzip_buf_err(_e);
-					ON_ERR(queue->tg, "%s: %s", __func__, err);
-					free(err);
-				}
-				tl_t *ttl = tl_deserialize(&buf);
-				buf_free(buf);
-				handle_tl(queue, ttl);
-				if (ttl)
-					tl_free(ttl);
-			}
-			break;
+            {
+                tl_gzip_packed_t *obj =
+                (tl_gzip_packed_t *)tl;
+                
+                buf_t buf;
+                tl_t *ttl = NULL;
+                int error;
+                
+                memset(&buf, 0, sizeof(buf));
+                
+                error = gunzip_buf(&buf, obj->packed_data_);
+                
+                if (error != 0) {
+                    char *description = gunzip_buf_err(error);
+                    
+                    ON_ERR(queue->tg,
+                           "%s: %s",
+                           __func__,
+                           description ? description : "gzip unpack failed");
+                    
+                    if (description)
+                        free(description);
+                    
+                    break;
+                }
+                
+                ttl = tl_deserialize(&buf);
+                buf_free(buf);
+                
+                if (ttl == NULL) {
+                    ON_ERR(queue->tg,
+                           "%s: couldn't deserialize gzip payload",
+                           __func__);
+                    break;
+                }
+                
+                handle_tl(queue, ttl);
+                tl_free(ttl);
+            }
+            break;
 		case id_msg_container:
 			{
 				tl_msg_container_t *container = 
@@ -483,19 +505,66 @@ static void handle_tl(tg_queue_t *queue, tl_t *tl)
 	}
 }
 
+static int tg_recv_exact(
+                         tg_queue_t *queue,
+                         int sockfd,
+                         void *destination,
+                         size_t expected)
+{
+    unsigned char *output = destination;
+    size_t received = 0;
+    
+    while (received < expected) {
+        ssize_t count = recv(
+                             sockfd,
+                             output + received,
+                             expected - received,
+                             0);
+        
+        if (count > 0) {
+            received += (size_t)count;
+            continue;
+        }
+        
+        if (count == 0) {
+            ON_ERR(queue->tg,
+                   "%s: server closed the connection",
+                   __func__);
+            return -1;
+        }
+        
+        if (errno == EINTR)
+            continue;
+        
+        if (errno == EAGAIN || errno == EWOULDBLOCK) {
+            ON_ERR(queue->tg,
+                   "%s: receive timed out",
+                   __func__);
+        } else {
+            ON_ERR(queue->tg,
+                   "%s: recv failed: errno=%d (%s)",
+                   __func__,
+                   errno,
+                   strerror(errno));
+        }
+        
+        return -1;
+    }
+    
+    return 0;
+}
+
 static enum RTL _tg_receive(tg_queue_t *queue, int sockfd)
 {
 	ON_LOG(queue->tg, "%s", __func__);
 	buf_t r = buf_new();
 	// get length of the package
-	uint32_t len;
-	int s = recv(sockfd, &len, 4, 0);
-	if (s<0){
-		ON_ERR(queue->tg, "%s: %d: socket error: %d", 
-				__func__, __LINE__, s);
-		buf_free(r);
-		return RTL_ERROR;
-	}
+	uint32_t len = 0;
+    
+    if (tg_recv_exact(queue, sockfd, &len, sizeof(len)) != 0) {
+        buf_free(r);
+        return RTL_ERROR;
+    }
 
 	ON_LOG(queue->tg, "%s: prepare to receive len: %d", __func__, len);
 	if (len < 0) {
@@ -504,6 +573,15 @@ static enum RTL _tg_receive(tg_queue_t *queue, int sockfd)
 		buf_free(r);
 		return RTL_ERROR;
 	}
+    
+    if (len == 0 || len > 16 * 1024 * 1024) {
+        ON_ERR(queue->tg,
+               "%s: invalid response length: %u",
+               __func__,
+               len);
+        buf_free(r);
+        return RTL_ERROR;
+    }
 
 	// realloc buf to be enough size
 	if (buf_realloc(&r, len)){
@@ -514,35 +592,18 @@ static enum RTL _tg_receive(tg_queue_t *queue, int sockfd)
 	}
 
 	// get data
-	uint32_t received = 0; 
-	while (received < len){
-		int s = recv(
-				sockfd, 
-				&r.data[received], 
-				len - received, 
-				0);	
-		if (s<0){
-			ON_ERR(queue->tg, "%s: %d: socket error: %d", 
-					__func__, __LINE__, s);
-			buf_free(r);
-			return RTL_ERROR;
-		}
-		received += s;
-		
-		ON_LOG(queue->tg, 
-				"%s: expected: %d, received: %d, total: %d (%d%%)", 
-				__func__, len, s, received, received*100/len);
-
-		if (queue->progress){
-			if(queue->progress(queue->progressp, received, len)){
-				buf_free(r);
-				ON_LOG(queue->tg, "%s: download canceled", __func__);
-				// drop
-				tg_add_todrop(queue->tg, queue->msgid);
-				return RTL_EXIT;
-			}
-		}
-	}
+	if (tg_recv_exact(queue, sockfd, r.data, len) != 0) {
+        buf_free(r);
+        return RTL_ERROR;
+    }
+    
+    if (queue->progress) {
+        if (queue->progress(queue->progressp, len, len)) {
+            buf_free(r);
+            tg_add_todrop(queue->tg, queue->msgid);
+            return RTL_EXIT;
+        }
+    }
 
 	// get payload 
 	r.size = len;
@@ -566,11 +627,20 @@ static enum RTL _tg_receive(tg_queue_t *queue, int sockfd)
 
 	// deserialize 
 	tl_t *tl = tl_deserialize(&msg);
-	buf_free(msg);
+    buf_free(msg);
+    
+    if (tl == NULL) {
+        ON_ERR(queue->tg,
+               "%s: couldn't deserialize response",
+               __func__);
+        
+        return RTL_ERROR;
+    }
 
 	// check server salt
 	if (tl->_id == id_bad_server_salt){
 		ON_LOG(queue->tg, "BAD SERVER SALT: resend query");
+        tl_free(tl);
 		// resend query
 		return RTL_RESEND;
 	}
@@ -629,6 +699,37 @@ static void tg_prepare_mtproto(tg_queue_t *queue)
 		tg->salt = buf_rand(8);
 }
 
+static int tg_send_all(
+                       int sockfd,
+                       const void *data,
+                       size_t size)
+{
+    const unsigned char *bytes =
+    (const unsigned char *)data;
+    
+    size_t sent_total = 0;
+    
+    while (sent_total < size) {
+        ssize_t sent =
+        send(sockfd,
+             bytes + sent_total,
+             size - sent_total,
+             0);
+        
+        if (sent > 0) {
+            sent_total += (size_t)sent;
+            continue;
+        }
+        
+        if (sent < 0 && errno == EINTR)
+            continue;
+        
+        return -1;
+    }
+    
+    return 0;
+}
+
 static int tg_send(void *data)
 {
 	// send query
@@ -664,14 +765,25 @@ static int tg_send(void *data)
 			queue->msgid);
 		
 	// send query
-	int s = 
-		send(queue->socket, b.data, b.size, 0);
-	if (s < 0){
-		ON_ERR(tg, "%s: socket error: %d", __func__, s);
-		buf_free(b);
-		tg_net_close(tg, queue->socket);
-		return 1;
-	}
+    if (tg_send_all(queue->socket, b.data, b.size) != 0) {
+        int socket_error = errno;
+        
+        ON_ERR(tg,
+               "%s: send failed: errno=%d (%s)",
+               __func__,
+               socket_error,
+               strerror(socket_error));
+        
+        buf_free(b);
+        
+        if (queue->socket >= 0) {
+            int socket_to_close = queue->socket;
+            queue->socket = -1;
+            tg_net_close(tg, socket_to_close);
+        }
+        
+        return 1;
+    }
 	
 	buf_free(b);
 	return 0;
@@ -679,10 +791,15 @@ static int tg_send(void *data)
 
 static void tg_queue_free(tg_queue_t *queue)
 {
-	/* TODO:  <03-12-25, yourname> */
-	// check of free works
-	buf_free(queue->query);
-	free(queue);
+    if (queue == NULL)
+        return;
+    
+    buf_free(queue->query);
+    
+    pthread_mutex_destroy(&queue->lock);
+    pthread_mutex_destroy(&queue->inloop_lock);
+    
+    free(queue);
 }
 
 static void *tg_run_queue_exit(tg_queue_t *queue, void *ret)
@@ -691,74 +808,42 @@ static void *tg_run_queue_exit(tg_queue_t *queue, void *ret)
 	return ret;
 }
 
-static void * tg_run_queue(void * data)
+static void *tg_run_queue(void *data)
 {
-	tg_queue_t *queue = data;
-	tg_t *tg = queue->tg;
-
-	// lock queue
-	tg_mutex_lock(tg, &queue->inloop_lock, 
-			ON_ERR(tg, "%s: can't lock queue loop", __func__);
-			return NULL);
-	
-	ON_LOG(tg, "%s", __func__);
-	// open socket
-	queue->socket = 
-		tg_net_open(tg, queue->ip, queue->port);
-	if (queue->socket < 0)
-	{
-		ON_ERR(tg, "%s: can't open socket", __func__);
-		return tg_run_queue_exit(queue, NULL);
-	}
-
-	// add to list
-	tg_queue_add(tg, queue);
-
-	// send ack - use container method in header.c
-	//tg_send_ack(data);
-	
-	// send
-	if (tg_send(data))
-		queue->loop = false;
-
-	// receive loop
-	enum RTL res; 
-	while (queue->loop) {
-		//res = _tg_receive(queue, queue->socket);
-		//if (res == RTL_RESEND)
-		//{	
-			//if (tg_send(data) == 0)
-				//continue;
-			//break;
-		//}
-
-		//if (res == RTL_EXIT || res == RTL_ERROR)
-			//break;
-
-		if (queue->multithread){
-			res = _tg_receive(queue, queue->socket);
-			if (res == RTL_RESEND)
-			{	
-				if (tg_send(data) == 0)
-					continue;
-				else 
-					break;
-			}
-
-			if (res == RTL_EXIT || res == RTL_ERROR)
-				break;
-
-			continue;
-		}
-
-		if (pthread_mutex_trylock(&tg->socket_mutex) == 0)
-        {
+    tg_queue_t *queue = data;
+    tg_t *tg = queue->tg;
+    tg_queue_t *unfinished = NULL;
+    
+    tg_mutex_lock(
+                  tg,
+                  &queue->inloop_lock,
+                  ON_ERR(tg, "%s: can't lock queue loop", __func__);
+                  return NULL);
+    
+    queue->socket = tg_net_open(tg, queue->ip, queue->port);
+    
+    if (queue->socket < 0) {
+        ON_ERR(tg, "%s: can't open socket", __func__);
+        
+        queue->loop = false;
+        
+        if (queue->on_done)
+            queue->on_done(queue->userdata, NULL);
+        
+        return tg_run_queue_exit(queue, NULL);
+    }
+    
+    tg_queue_add(tg, queue);
+    
+    if (tg_send(data) != 0) {
+        queue->loop = false;
+    } else {
+        enum RTL res;
+        
+        while (queue->loop) {
             res = _tg_receive(queue, queue->socket);
             
-            tg_mutex_unlock(&tg->socket_mutex);
-            
-            if (res == RTL_RESEND)
-            {
+            if (res == RTL_RESEND) {
                 if (tg_send(data) == 0)
                     continue;
                 
@@ -768,47 +853,65 @@ static void * tg_run_queue(void * data)
             if (res == RTL_EXIT || res == RTL_ERROR)
                 break;
         }
-        else
-        {
-            /*
-             * Another queue currently owns the shared socket.
-             * Avoid spinning continuously at 100% CPU.
-             */
-            usleep(1000);
-            continue;
-        }
-	}
-
-	// close socket
-	if (queue->socket >= 0)
-		tg_net_close(tg, queue->socket);
-
-	// remove from queue list
-	tg_queue_cut(tg, queue->msgid);
-
-	return tg_run_queue_exit(queue, NULL);
+    }
+    
+    queue->loop = false;
+    
+    if (queue->socket >= 0) {
+        int socket_to_close = queue->socket;
+        queue->socket = -1;
+        tg_net_close(tg, socket_to_close);
+    }
+    
+    /*
+     * A successful RPC result is removed by catched_tl().
+     * If it is still present here, no completion result arrived.
+     */
+    unfinished = tg_queue_cut(tg, queue->msgid);
+    
+    if (unfinished == queue && queue->on_done) {
+        queue->on_done(queue->userdata, NULL);
+    }
+    
+    return tg_run_queue_exit(queue, NULL);
 }
 
-static void * tg_run_timer(void * data)
+static void *tg_run_timer(void *data)
 {
-	// stop queue and free memory
-	tg_queue_t *queue = data;
-	tg_t *tg = queue->tg;
-
-	//usleep(1000); // in microseconds
-	sleep(60);
-	ON_LOG(tg, "%s: stop queue", __func__);
-	
-	queue->loop = false;
-	
-	// wait to stop
-	tg_mutex_lock(tg, &queue->inloop_lock, 
-			ON_ERR(tg, "%s: can't lock queue loop", __func__);
-			return NULL);
-	
-	// free queue
-	tg_queue_free(queue);
-	pthread_exit(NULL);	
+    tg_queue_t *queue = data;
+    tg_t *tg = queue->tg;
+    
+    sleep(30);
+    
+    /*
+     * If this succeeds, the worker already finished. This is normal
+     * cleanup, not a timeout.
+     */
+    if (pthread_mutex_trylock(&queue->inloop_lock) == 0) {
+        pthread_mutex_unlock(&queue->inloop_lock);
+        tg_queue_free(queue);
+        return NULL;
+    }
+    
+    /*
+     * The worker is still active after 30 seconds.
+     */
+    ON_ERR(tg, "%s: query timed out", __func__);
+    
+    queue->loop = false;
+    
+    if (queue->socket >= 0) {
+        shutdown(queue->socket, SHUT_RDWR);
+    }
+    
+    /*
+     * Wait until the worker exits before freeing its queue object.
+     */
+    pthread_mutex_lock(&queue->inloop_lock);
+    pthread_mutex_unlock(&queue->inloop_lock);
+    
+    tg_queue_free(queue);
+    return NULL;
 }
 
 tg_queue_t * tg_queue_new(
@@ -832,8 +935,9 @@ tg_queue_t * tg_queue_new(
 		return NULL;
 	}
 
-	queue->tg = tg;
-	queue->loop = true;
+	queue->socket = -1;
+    queue->tg = tg;
+    queue->loop = true;
 	queue->query = buf_add_buf(*query);
 	strncpy(queue->ip, ip, sizeof(queue->ip)-1);
 	queue->port = port;
